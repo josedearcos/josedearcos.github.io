@@ -50,12 +50,18 @@
 			  loc_obj.year=loc.firstyear;
 			  loc_obj.year=loc.lastyear;//fix this, it only will show the last year and I would like to show a range
 			}
-			else{
+			else if(loc.color=='yellow'){
 			  var loc_obj=paper.circle(xy.x, xy.y, 2).attr({fill: loc.color, stroke: 'DarkGreen', 'stroke-width': 2, cursor: 'pointer'});
 			  loc_obj.year=loc.tripyear;
 			}
+			else
+			{
+			  var loc_obj=paper.circle(xy.x, xy.y, 2).attr({fill: loc.color, stroke: '#808080', 'stroke-width': 2, cursor: 'pointer'});
+			  loc_obj.year=loc.tripyear;
+			}
 			
-			loc_obj.name=loc.name;
+			loc_obj.city=loc.city;
+			loc_obj.country=loc.country;
 			loc_obj.url=loc.url;
 			loc_obj.img=loc.img;
 			loc_obj.x=xy.x;
@@ -88,23 +94,21 @@
 		function overcity(){
 		    	this.attr({'stroke-width': 3});
 			//image_array[this.id]=paper.image(this.img+'.jpg', this.x+8, this.y-160, 150, 150).scale(scale, scale, 0, 0);
-			name.innerHTML=this.name+' ('+this.year+')';
-			
-			this.name.style.fontSize = fontSize;
-			var textheight = (this.name.clientHeight + 1) + "px";
-			var textwidth = (this.name.clientWidth + 1) + "px";
-  
-			rectangle = paper.rect(this.x+8, this.y-8,180,32,5).attr({fill: "white", stroke: 'black', 'stroke-width': 2, cursor: 'pointer'});
+			name.innerHTML=this.city+', '+this.country+' ('+this.year+')'+"<h1><br><br></h1>";
+			/*rectangle = paper.rect(this.x+8, this.y-8,180,32,5).attr({fill: "white", stroke: 'black', 'stroke-width': 2, cursor: 'pointer'});
 			textbox = paper.text(this.x+98, this.y+7, this.name);
 			textbox.attr({ "font-size": 16, "font-family": "Arial, Helvetica, sans-serif" });
+			*/
                 }
 		
 				
 		function outcity(){
 			this.attr({'stroke-width': 2});
-			name.innerHTML='Check out more or use the filters below!';
+			name.innerHTML='<h1><br><br></h1>';
+			/*
 			rectangle.remove();
 			textbox.remove();
+			*/
 		}
 		function clickcity(){
 			window.location.href = this.url;
@@ -150,7 +154,8 @@
 	// *********************************************Location Data*********************************************
 	var locations={
 		0: { 
-			name: 'Madrid',
+			city: 'Madrid',
+			country: 'Spain',
 			lat: 40.4000,
 			lng: -3.6833,
 			color: 'red',
@@ -160,7 +165,8 @@
 			lastyear: d.getFullYear(),
 		},
 		1: { 
-			name: 'Shanghai',
+			city: 'Shanghai',
+			country: 'China',
 			lat: 31.10,
 			lng: 121.366,
 			color: 'yellow',
@@ -169,7 +175,8 @@
 			tripyear: 2013
 		},
 		2: { 
-			name: 'New York',
+			city: 'New York',
+			country: 'USA',
 			lat: 40.7,
 			lng: -73.90,
 			color: 'yellow',
@@ -178,7 +185,8 @@
 			tripyear: 2011
 		},
 		3: { 
-			name: 'Los Angeles',
+			city: 'Los Angeles',
+			country: 'USA',
 			lat: 34.0,
 			lng: -118.25,
 			color: 'yellow',
@@ -187,7 +195,8 @@
 			tripyear: 2011
 		},
 		4: { 
-			name: 'Beijing',
+			city: 'Beijing',
+			country: 'China',
 			lat: 39.9139,
 			lng: 116.3917,
 			color: 'red',
@@ -197,7 +206,8 @@
 			lastyear:2014
 		},
 		5: { 
-			name: 'Chicago',
+			city: 'Chicago',
+			country: 'USA',
 			lat: 41.8819,
 			lng: -87.6278,
 			color: 'red',
@@ -207,7 +217,8 @@
 			lastyear: 2013
 		},
 		6: { 
-			name: 'Herrera de Alcantara',
+			city: 'Herrera de Alcantara',
+			country: 'Spain',
 			lat: 39.6333,
 			lng: -7.4000,
 			color: 'red',
@@ -217,7 +228,8 @@
 			lastyear: d.getFullYear()
 		},
 		7: { 
-			name: 'Singapore',
+			city: 'Singapore',
+			country: 'Singapore',
 			lat: 1.30,
 			lng: 103.83,
 			color: 'yellow',
@@ -226,7 +238,8 @@
 			tripyear: 2013
 		},
 		8: {
-		  	name: 'Boston',
+		  	city: 'Boston',
+			country: 'USA',
 			lat: 42.3581,
 			lng: -71.0636,
 			color: 'yellow',
@@ -235,7 +248,8 @@
 			tripyear: 2014,
 		},
 		9: { 
-			name: 'Torino',
+			city: 'Torino',
+			country: 'Italy',
 			lat: 45.0667,
 			lng: 7.7000,
 			color: 'yellow',
@@ -244,7 +258,8 @@
 			tripyear: 2011
 		},
 		10: { 
-			name: 'London',
+			city: 'London',
+			country: 'UK',
 			lat: 51.5072,
 			lng: 0.1275,
 			color: 'yellow',
@@ -253,7 +268,8 @@
 			tripyear: 2009
 		},
 		11: { 
-			name: 'Paris',
+			city: 'Paris',
+			country: 'France',
 			lat: 48.8567,
 			lng: 2.3508,
 			color: 'yellow',
@@ -262,7 +278,8 @@
 			tripyear: 2001
 		},
 		12: { 
-			name: 'Barcelona',
+			city: 'Barcelona',
+			country: 'Spain',
 			lat: 41.3833,
 			lng: 2.1833,
 			color: 'yellow',
@@ -271,7 +288,8 @@
 			tripyear: 2009
 		},
 		13: { 
-			name: 'Stockholm',
+			city: 'Stockholm',
+			country: 'Sweden',
 			lat: 59.3294,
 			lng: 18.0686,
 			color: 'yellow',
@@ -280,7 +298,8 @@
 			tripyear: 2013
 		},
 		14: { 
-			name: 'Prague',
+			city: 'Prague',
+			country: 'Czech Republic',
 			lat: 50.0833,
 			lng: 14.4167,
 			color: 'yellow',
@@ -289,7 +308,8 @@
 			tripyear: 2009
 		},
 		15: { 
-			name: 'Seattle',
+			city: 'Seattle',
+			country: 'USA',
 			lat: 47.6097,
 			lng: -122.3331,
 			color: 'yellow',
@@ -298,7 +318,8 @@
 			tripyear: 2011
 		},
 		16: { 
-			name: 'San Francisco',
+			city: 'San Francisco',
+			country: 'USA',
 			lat: 37.7833,
 			lng: -122.4167,
 			color: 'yellow',
@@ -307,7 +328,8 @@
 			tripyear: 2012
 		},
 		17: { 
-			name: 'Cambridge,UK',
+			city: 'Cambridge',
+			country: 'UK',
 			lat: 52.2050,
 			lng: 0.1190,
 			color: 'yellow',
@@ -316,7 +338,8 @@
 			tripyear: 2013
 		},
 		18: { 
-			name: 'Rome',
+			city: 'Rome',
+			country: 'Italy',
 			lat: 41.9000,
 			lng: 12.5000,
 			color: 'yellow',
@@ -325,7 +348,8 @@
 			tripyear: 2005
 		},
 		19: { 
-			name: 'Istanbul',
+			city: 'Istanbul',
+			country: 'Turkey',
 			lat: 41.0136,
 			lng: 28.9550,
 			color: 'yellow',
@@ -334,7 +358,8 @@
 			tripyear: 2009
 		},
 		20: { 
-			name: 'Xi\'an',
+			city: 'Xi\'an',
+			country: 'China',
 			lat: 34.2667,
 			lng: 108.9000,
 			color: 'yellow',
@@ -343,7 +368,8 @@
 			tripyear: 2012
 		},
 		21: { 
-			name: 'Kuala Lumpur',
+			city: 'Kuala Lumpur',
+			country: 'Malaysia',
 			lat: 3.1357,
 			lng: 101.6880,
 			color: 'yellow',
@@ -352,7 +378,8 @@
 			tripyear: 2013
 		},
 		22: { 
-			name: 'Venezia',
+			city: 'Venezia',
+			country: 'Italy',
 			lat: 45.4375,
 			lng: 12.3358,
 			color: 'yellow',
@@ -361,7 +388,8 @@
 			tripyear: 2013
 		},
 		23: { 
-			name: 'Denver',
+			city: 'Denver',
+			country: 'USA',
 			lat: 39.7392,
 			lng: -104.9847,
 			color: 'yellow',
@@ -370,7 +398,8 @@
 			tripyear: 2011
 		},
 		24: { 
-			name: 'Las Vegas',
+			city: 'Las Vegas',
+			country: 'USA',
 			lat: 36.1215,
 			lng: -115.1739,
 			color: 'yellow',
@@ -379,7 +408,8 @@
 			tripyear: 2011
 		},
 		25: { 
-			name: 'San Diego',
+			city: 'San Diego',
+			country: 'USA',
 			lat: 32.7150,
 			lng: -117.1625,
 			color: 'yellow',
@@ -388,7 +418,8 @@
 			tripyear: 2014
 		},
 		26: { 
-			name: 'Brussels',
+			city: 'Brussels',
+			country: 'Belgium',
 			lat: 50.8500,
 			lng: 4.3500,
 			color: 'yellow',
@@ -397,7 +428,8 @@
 			tripyear: 2009
 		},
 		27: { 
-			name: 'Amsterdam',
+			city: 'Amsterdam',
+			country: 'Holland',
 			lat: 52.3667,
 			lng: 4.9000,
 			color: 'yellow',
@@ -406,7 +438,8 @@
 			tripyear: 2009
 		},
 		28: { 
-			name: 'Saint Petersburg',
+			city: 'Saint Petersburg',
+			country: 'Russia',
 			lat: 59.9500,
 			lng: 30.3000,
 			color: 'yellow',
@@ -415,7 +448,8 @@
 			tripyear: 2014
 		},
 		29: { 
-			name: 'Tallin',
+			city: 'Tallin',
+			country: 'Estonia',
 			lat: 59.4372,
 			lng: 24.7453,
 			color: 'yellow',
@@ -424,7 +458,8 @@
 			tripyear: 2014
 		},
 		30: { 
-			name: 'Dublin',
+			city: 'Dublin',
+			country: 'Ireland',
 			lat: 53.3478,
 			lng: -6.2597,
 			color: 'yellow',
@@ -433,7 +468,8 @@
 			tripyear: 2013
 		},
 		31: { 
-			name: 'Positano',
+			city: 'Positano',
+			country: 'Italy',
 			lat: 40.6333,
 			lng: 14.4833,
 			color: 'yellow',
@@ -442,7 +478,8 @@
 			tripyear: 2012
 		},
 		32: { 
-			name: 'Cambridge',
+			city: 'Cambridge',
+			country: 'USA',
 			lat: 42.3736,
 			lng: -71.1106,
 			color: 'red',
@@ -451,6 +488,28 @@
 			firstyear: 2014,
 			lastyear: d.getFullYear()
 		},
+		33:
+		{
+		  	city: 'New Orleans',
+			country: 'USA',
+			lat:  29.9667,
+			lng: -90.0500,
+			color: 'silver',
+			img: 'NewOrleans',
+			url: '#NewOrleands',
+			tripyear: 2011,
+		},
+		34:
+		{
+		  	city: 'Cancun',
+			country: 'Mexico',
+			lat:  21.1606,
+			lng: -86.8475,
+			color: 'yellow',
+			img: 'cancun',
+			url: '#cancun',
+			tripyear: 2013,
+		}
 	}
 	
 
