@@ -1,28 +1,36 @@
-/* global Parse,console,require */
-
-var Mailgun = require('mailgun');
-Mailgun.initialize('josedearcos.com', 'key-b18d65be7172d2b16c24624d45c08b7c');
-
-Parse.Cloud.beforeSave("CommentObject", function(request, response) {
-
-	var text = "Comment Email\n" + 
-		"From: "+request.object.get("name") + "\n"+
-		"Email: "+request.object.get("email") + "\n"+
-		"Message:\n" + request.object.get("msg");
+/* global $,document,console,Parse */
+$(document).ready(function() {
 	
-	Mailgun.sendEmail({
-			to: "me@josedearcos.com",
-			from: request.object.get("email"),
-			subject: "Comment Form from josedearcos.com ",
-			text: text
-		}, {
-		success: function(httpResponse) {
-			response.success();
-		},
-		error: function(httpResponse) {
-			console.error(httpResponse);
-			response.error("Uh oh, something went wrong");
-		}
-	});
+	var parseAPPID = "dH2ujoC8Jx75CslZjfF1dh20uGNwFaFojkv7vAzJ";
+	var parseJSID = "hbj3kOAWKPg1tpaRQhNQqWzGypoxrOOdyEcAanlE";
+	
+	Parse.initialize(parseAPPID, parseJSID);
+	var CommentObject = Parse.Object.extend("CommentObject");
+	
+	$("#commentForm").on("submit", function(e) {
+		e.preventDefault();
 
+		console.log("Handling the submit");
+		//add error handling here
+		//gather the form data
+
+		var data = {};
+		data.name = $("#name").val();
+		data.email = $("#email").val();
+		data.msg = $("#msg").val();
+
+		var comment = new CommentObject();
+		comment.save(data, {
+			success:function() {
+				console.log("Success");
+				//Alerts are lame - but quick and easy
+				alert("Thanks for contacting me! I will get back to you as soon as possible.");
+			},
+			error:function(e) {
+				console.dir(e);
+			}
+		});
+		
+	});
+	
 });

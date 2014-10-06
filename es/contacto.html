@@ -14,10 +14,21 @@
   <title>Jos&eacute de Arcos</title>
 
 <!-- To avoid the user submiting the form pressing enter -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script src="../javascript/validator-min.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+    <script src="../javascript/app.js"></script> <!-- in this order, needs jquery-->
 <script>
 $(document).ready(function() {
-$(':input').not('textarea').keypress(function(event) {
-return event.keyCode != 13;
+$('input').keydown( function(e) {
+        var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+        if(key == 13) {
+            e.preventDefault();
+            var inputs = $(this).closest('form').find(':input:visible');
+            inputs.eq( inputs.index(this)+ 1 ).focus();
+        }
+    });
 });
 </script>
 
@@ -33,9 +44,7 @@ return event.keyCode != 13;
 </script>
 </head>
 <body>
-  
 
-		
   <div id="MainPage">
     <div class="nav">
       <div class="container">
@@ -63,7 +72,7 @@ return event.keyCode != 13;
 		<div class="container col-md-2">
 		</div>
       <div class="container col-md-8">
-      <form data-toggle="validator" role="form" >
+      <form id="commentForm" data-toggle="validator" role="form" >
 	<!--  <legend>Contact Form</legend>  -->
 		<div class="form-group">
 	        <label class="control-label">Name</label>
@@ -108,11 +117,5 @@ return event.keyCode != 13;
 		</form>
 		</div>
             </div>
-	       
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-    <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="../javascript/app.js"></script> <!-- in this order, needs jquery-->
-    <script src="../javascript/validator-min.js"></script>
 	</body>
 </html>
