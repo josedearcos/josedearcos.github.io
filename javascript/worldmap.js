@@ -34,7 +34,8 @@
 		try {
                     navigator.geolocation && navigator.geolocation.getCurrentPosition(function (pos) {
                         paper.circle().attr({fill: "none", stroke: "#f00", r: 5}).attr(get_xy(pos.coords.latitude, pos.coords.longitude));
-                    });
+                    this.toFront();
+		    });
                 } catch (e) {}
 
 		//create set of locations
