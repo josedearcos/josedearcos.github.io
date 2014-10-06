@@ -10,20 +10,14 @@
   "stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
   <link rel="stylesheet" href="../main.css" type="text/css" />
-  <script src="../javascript/validator.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-    
-  <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
-  <script src="../javascript/app.js"></script>
   
   <title>Jos&eacute de Arcos</title>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  
 <!-- To avoid the user submiting the form pressing enter -->
 <script>
 $(document).ready(function() {
-$(':input').not('textarea').keypress(function(event) { return event.keyCode != 13; });
+$(':input').not('textarea').keypress(function(event) {
+return event.keyCode != 13;
 });
 </script>
 
@@ -87,8 +81,8 @@ $(':input').not('textarea').keypress(function(event) { return event.keyCode != 1
 			    <div class="input-group">
 				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 					<input type="email" class="form-control" id="email" name="email" placeholder="Email" data-error="That email address seems invalid, I won't be able to contact you back!" required>
-				        <div class="help-block with-errors"></div>
 			    </div>
+			    <div class="help-block with-errors"></div>
 			</div>	
 		</div>
 		
@@ -114,6 +108,11 @@ $(':input').not('textarea').keypress(function(event) { return event.keyCode != 1
 		</form>
 		</div>
             </div>
-
+	       
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../javascript/app.js"></script> <!-- in this order, needs jquery-->
+    <script src="../javascript/validator-min.js"></script>
 	</body>
 </html>
