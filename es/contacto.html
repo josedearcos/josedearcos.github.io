@@ -27,64 +27,54 @@
   ga('send', 'pageview');
 </script>
 
-</head>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		
+		<h2>Contact Form</h2>
+		
+		<form id="commentForm">
+			
+			<p>
+			<label for="name">Your Name</label>
+			<input type="text" name="name" id="name" required>
+			</p>
 
-  <body>
+			<p>
+			<label for="email">Your Email</label>
+			<input type="email" name="email" id="email" required>
+			</p>
 
-  <div id="MainPage">
-    <div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-          <li><a href="principal.html">&iquestQui&eacuten es Jos&eacute de Arcos?</a></li>
-        </ul>
-        <ul class="pull-right">
-          <li><a href="viajes.html">Viajes</a></li>
-	   <li><a href="trabajo.html">Trabajo</a></li>
-	  <li><a href="fotos.html">Fotos</a></li>
-          <li><a href="actividades.html">Actividades</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="animate fadeInDown">Jos&eacute; de Arcos</h1><p>Welcome to my personal page, here you will get to know me a bit better.</p>
-      </div>
-     </div>
-    
-  <!--     <div class="container">
-  <h2 id="shake">CSS Shake Animation</h2>
-  <div class="showbox slideright">box 1</div>
-  </div>//-->
-  <div class="container">
-  <iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AlE6Zw1gv7qfdGJOeThldjcxMWF3WkpGZmhsU2xuMFE#gid&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
-  </div>
-    <div class="activities">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <h3><a href="./en/Work.html">Engineering</a></h3>
-                <p>When I was a child I wondered about how a computer, a phone
-                or a television worked. Telecommunication Engineering gave me
-                the answers to all my questions and provided me with the skills
-                to design the electronics and software of any device.</p>
-              </div>
-              <div class="col-md-4">
-                <h3><a href="./en/Work.html">Physics</a></h3>
-                <p>Since I was in high school I was amazed by the simplicity
-                and power of the Physics laws. After finishing my degree in
-                Telecommunication Engineering I decided to pursue a  <abbr title="Doctor of Philosophy">Ph.D.</abbr> in Physics to learn all I could about it.</p>
-              </div>
-              <div class="col-md-4">
-                <h3><a href="./en/Hobbies.html">Hobbies</a></h3>
-                <p>In my free time I tend to play a couple of matches of chess, I love to contemplate the beauty behind a queen
-                sacrifice. When I have the chance I enjoy travelling with my <abbr title="Digital Single-Lens Reflex camera" class="initialism">DSLR</abbr> looking for the perfect picture.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-  <script src="./javascript/Slideshow.js"></script>
-</body>
+			<p>
+			<label for="area">Your question involves:</label>
+			<select name="area" id="area">
+			<option value="stuff">Stuff</option>	
+			<option value="otherstuff">Other Stuff</option>	
+			<option value="starwars">Star Wars</option>	
+			<option value="startrek">Star Trek</option>	
+			</select>
+			</p>
+
+			<p>
+			<label for="comments">Your Comments<br/></label>
+			<textarea name="comments" id="comments" required></textarea>
+			</p>
+			
+			<p>
+			<input type="submit" value="Send Comments">
+			</p>
+		</form>
+		
+		<script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="../javascript/app.js"></script>
+	
+	</body>
 </html>
