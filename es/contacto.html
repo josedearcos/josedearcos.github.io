@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='UTF-8'>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link href=
   "http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel=
   "stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css">
-
   <link rel="stylesheet" href="../main.css" type="text/css" />
-
-  <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
-  <script src="../javascript/app.js"></script>
-
+  <script src="../javascript/validator.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
-  <script src="../javascript/jquery.validate.min.js"></script>
+  <script type="text/javascript">
+        $(window).on('load', function () {
+
+            $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });
+
+            // $('.selectpicker').selectpicker('hide');
+        });
+
+  </script>
+    
+  <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+  <script src="../javascript/app.js"></script>
 
   <title>Jos&eacute de Arcos</title>
 
@@ -31,50 +41,7 @@
   ga('send', 'pageview');
 </script>
 
-<script type="text/javascript">
-
-$(document).ready(function(){
-$(".myfirstform").validate(
-{rules:
-{name:"required",
-email:{required:true,email:true},
-website:{required:false,url:true},
-cate:"required",
-msg:{required:true, maxlength:300
-}},
-errorClass:"error",
-highlight: function(label) {
-    $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
-  },
-
-success: function(label) {
-    label
-      .text('Seems Perfect!').addClass('valid')
-	  .closest('.form-group').addClass('has-success');
-      
-  }
-}
-  
-);
-
-});
-
-</script>
-
-<script type="text/javascript">
-        $(window).on('load', function () {
-
-            $('.selectpicker').selectpicker({
-                'selectedText': 'cat'
-            });
-
-            // $('.selectpicker').selectpicker('hide');
-        });
-
-</script>
-
 </head>
-
 <body>
 		
   <div id="MainPage">
@@ -94,22 +61,23 @@ success: function(label) {
       </div>
     </div>
     
-    <div class="jumbotron">
+    <div class="jumbotron"></div>
     </div>
-		
-		<div class="well well-sm" style="text-align:center">
-		<h2> C&uacuteentame qu&eacute piensas</h2>
-</div>
+		<div class="text-center">
+		<h2> Cu&eacutentame qu&eacute piensas</h2>
+		</div>
+	       <div class="row">
+
 		<div class="container col-md-2">
 		</div>
-<div class="container col-md-8">
-      <form id="commentForm" role="form">
+      <div class="container col-md-8">
+      <form data-toggle="validator" role="form">
 	<!--  <legend>Contact Form</legend>  -->
 		<div class="form-group">
 	        <label class="control-label">Name</label>
 			<div class="controls">
 			    <div class="input-group">
-                                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                         <input type="text" class="form-control" name="name" placeholder="Name">
 				</div>
 			</div>
@@ -120,8 +88,9 @@ success: function(label) {
 			<div class="controls">
 			    <div class="input-group">
 				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					<input type="text" class="form-control" id="email" name="email" placeholder="Email">
-				</div>
+					<input type="email" class="form-control" id="email" name="email" placeholder="Email" data-error="That email address seems invalid, I won't be able to contact you back!" required>
+				        <div class="help-block with-errors"></div>
+			    </div>
 			</div>	
 		</div>
 		
@@ -130,8 +99,10 @@ success: function(label) {
 			<div class="controls">
 			    <div class="input-group">
 				<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					<textarea name="msg" class="form-control " rows="4" cols="78" placeholder="Enter your message here"></textarea>
-				</div>
+					<textarea maxlength="300" name="msg" class="form-control " rows="4" cols="78" placeholder="Enter your message here"></textarea>
+			    </div>
+			    <span class="help-block with-errors">Up to 300 characters</span>
+
 			</div>
 		</div>
 		<div class="container col-md-2">
@@ -144,5 +115,7 @@ success: function(label) {
 	      </div>
 		</form>
 		</div>
+            </div>
+
 	</body>
 </html>

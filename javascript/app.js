@@ -13,7 +13,7 @@ Parse.Cloud.beforeSave("CommentObject", function(request, response) {
 	Mailgun.sendEmail({
 			to: "me@josedearcos.com",
 			from: request.object.get("email"),
-			subject: "josedearcos.com Comment Form",
+			subject: "Comment Form from josedearcos.com ",
 			text: text
 		}, {
 		success: function(httpResponse) {

@@ -70,9 +70,7 @@
 			
 			location_set.push(loc_obj);
 		}
-	
-		var zpd = new RaphaelZPD(paper, { zoom: true, pan: true, drag: false });
-				
+					
 		var name = document.getElementById('location_name');
 		location_set.hover(overcity,outcity); 	//Adds event handlers for hovering over the element
 		location_set.click(clickcity);
