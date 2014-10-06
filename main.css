@@ -263,6 +263,21 @@
 	border-bottom:1px solid #dbdbdb;
 }
 
+/* Contact form*/
+label.error{
+color: red !important;
+}
+
+label.valid{
+margin-left: 5px !important;
+color: green !important;}
+
+#myads{
+width: 728px;
+
+margin : auto;
+}
+
 /*Others*/
 
 /*Flags*/

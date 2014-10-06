@@ -3,19 +3,21 @@
 <html>
 <head>
   <meta charset='UTF-8'>
-  <link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet" type="text/css">
-  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link href=
   "http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel=
   "stylesheet" type="text/css" />
-  <link rel="stylesheet" href=
-  "http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css"
-  type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
   <link rel="stylesheet" href="../main.css" type="text/css" />
 
   <title>Jos&eacute de Arcos</title>
-  
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+  <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+  <script src="../javascript/app.js"></script>
+  <script src="../javascript/validate.min.js"></script>
+
+
   <!--Google Analytics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,6 +27,48 @@
 
   ga('create', 'UA-55427691-1', 'auto');
   ga('send', 'pageview');
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+$(".myfirstform").validate(
+{rules:
+{name:"required",
+email:{required:true,email:true},
+website:{required:false,url:true},
+cate:"required",
+msg:{required:true, maxlength:300
+}},
+errorClass:"error",
+highlight: function(label) {
+    $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
+  },
+
+success: function(label) {
+    label
+      .text('Seems Perfect!').addClass('valid')
+	  .closest('.form-group').addClass('has-success');
+      
+  }
+}
+  
+);
+
+});
+
+</script>
+
+<script type="text/javascript">
+        $(window).on('load', function () {
+
+            $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });
+
+            // $('.selectpicker').selectpicker('hide');
+        });
+
 </script>
 
 <!DOCTYPE html>
@@ -38,43 +82,53 @@
 	</head>
 	<body>
 		
-		<h2>Contact Form</h2>
 		
-		<form id="commentForm">
-			
-			<p>
-			<label for="name">Your Name</label>
-			<input type="text" name="name" id="name" required>
-			</p>
-
-			<p>
-			<label for="email">Your Email</label>
-			<input type="email" name="email" id="email" required>
-			</p>
-
-			<p>
-			<label for="area">Your question involves:</label>
-			<select name="area" id="area">
-			<option value="stuff">Stuff</option>	
-			<option value="otherstuff">Other Stuff</option>	
-			<option value="starwars">Star Wars</option>	
-			<option value="startrek">Star Trek</option>	
-			</select>
-			</p>
-
-			<p>
-			<label for="comments">Your Comments<br/></label>
-			<textarea name="comments" id="comments" required></textarea>
-			</p>
-			
-			<p>
-			<input type="submit" value="Send Comments">
-			</p>
+		<div class="well well-sm" style="text-align:center">
+		<h2> C&uacuteentame qu&eacute piensas</h2>
+</div>
+		<div class="container col-md-2">
+		</div>
+<div class="container col-md-8">
+      <form id="commentForm" role="form">
+	<!--  <legend>Contact Form</legend>  -->
+		<div class="form-group">
+	        <label class="control-label">Name</label>
+			<div class="controls">
+			    <div class="input-group">
+                                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input type="text" class="form-control" name="name" placeholder="Name">
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+	        <label class="control-label">Email</label>
+			<div class="controls">
+			    <div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					<input type="text" class="form-control" id="email" name="email" placeholder="Email">
+				</div>
+			</div>	
+		</div>
+		
+		<div class="form-group ">
+	        <label class="control-label">Message</label>
+			<div class="controls">
+			    <div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+					<textarea name="msg" class="form-control " rows="4" cols="78" placeholder="Enter your message here"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="container col-md-2">
+		</div>
+		
+	      <div class="controls" style="margin-left: 45%;">
+		  
+			<input type="submit" value="Send Message">
+	        
+	      </div>
 		</form>
-		
-		<script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<script src="../javascript/app.js"></script>
-	
+		</div>
 	</body>
 </html>
