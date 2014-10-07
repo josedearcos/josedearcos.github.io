@@ -23,13 +23,16 @@ $(document).ready(function() {
 		comment.save(data, {
 			success:function() {
 				console.log("Success");
-				//Alerts are lame - but quick and easy
 				alert("Thanks for contacting me! I will get back to you as soon as possible.");
 			},
 			error:function(e) {
 				console.dir(e);
 			}
 		});
+		
+				$("#name").value = "Name";
+				$("#email").value = "Email";
+				$("#msg").value= "Enter your message here";
 		
 	});
 	
