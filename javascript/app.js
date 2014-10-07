@@ -7,13 +7,13 @@ $(document).ready(function() {
 	Parse.initialize(parseAPPID, parseJSID);
 	var CommentObject = Parse.Object.extend("CommentObject");
 	
+
 	$("#commentForm").on("submit", function(e) {
 		e.preventDefault();
 
 		console.log("Handling the submit");
 		//add error handling here
 		//gather the form data
-
 		var data = {};
 		data.name = $("#name").val();
 		data.email = $("#email").val();
@@ -29,10 +29,9 @@ $(document).ready(function() {
 				console.dir(e);
 			}
 		});
+
 		
-				$("#name").value = "Name";
-				$("#email").value = "Email";
-				$("#msg").value= "Enter your message here";
+
 		
 	});
 	

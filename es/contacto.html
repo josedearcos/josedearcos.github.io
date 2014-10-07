@@ -2,12 +2,6 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <link href=
-  "http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel=
-  "stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
   <link rel="stylesheet" href="../main.css" type="text/css" />
   <link rel="stylesheet" href="../jquery.motionCaptcha.0.2.css" type="text/css" />
@@ -98,7 +92,7 @@ $('input').keydown( function(e) {
     <div class="jumbotron"></div>
     </div>
 		<div class="text-center">
-		<h2> Cu&eacutentame qu&eacute piensas</h2>
+		<h2> Cu&eacutentame algo</h2>
 		</div>
 	       <div class="row">
 
@@ -108,40 +102,40 @@ $('input').keydown( function(e) {
       <form action="#" method="post" id="commentForm" data-toggle="validator" role="form" >
 	<!--  <legend>Contact Form</legend>  -->
 		<div class="form-group">
-	        <label class="control-label">Name</label>
+	        <label class="control-label">&iquestC&oacutemo te llamas?</label>
 			<div class="controls">
 			    <div class="input-group">
                                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="name" type="text" class="form-control" name="name" placeholder="Name">
+                                        <input id="name" type="text" class="form-control" name="name" placeholder="Nombre">
 				</div>
 			</div>
 		</div>
 		
 		<div class="form-group">
-	        <label class="control-label">Email</label>
+	        <label class="control-label">Escribe tu e-mail para que pueda contestarte</label>
 			<div class="controls">
 			    <div class="input-group">
 				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					<input type="email" class="form-control" id="email" name="email" placeholder="Email" data-error="That email address seems invalid, I won't be able to contact you back!" required>
+					<input type="email" class="form-control" id="email" name="email" placeholder="Email" data-error="Ese e-mail es inv&aacute;lido,&iexcl;no podr&eacute responderte!" required>
 			    </div>
 			    <div class="help-block with-errors"></div>
 			</div>	
 		</div>
 		
 		<div class="form-group ">
-	        <label class="control-label">Message</label>
+	        <label class="control-label">Mensaje</label>
 			<div class="controls">
 			    <div class="input-group">
 				<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					<textarea id="msg" maxlength="300" name="msg" class="form-control " rows="4" cols="78" placeholder="Enter your message here"></textarea>
+					<textarea id="msg" maxlength="300" name="msg" class="form-control " rows="4" cols="78" placeholder="Escribe tu mensaje aqu&iacute"></textarea>
 			    </div>
-			    <span class="help-block with-errors">Up to 300 characters</span>
+			    <span class="help-block with-errors">Hasta 300 car&aacute;cteres</span>
 			</div>
 			
 <div id="mc">
-<p>Please draw the shape in the box to submit the form: (<a onclick="window.location.reload()" href="#" title="Click for a new shape">new shape</a>)</p>
+<p>Por favor, dibuja con el rat&oacute;n la figura que hay dentro la caja para enviar el mensaje: (<a onclick="window.location.reload()" href="#" title="Click para ver una nueva figura">nueva figura</a>)</p>
 <canvas id="mc-canvas">
-Your browser doesn't support the canvas element - please visit in a modern browser.
+Tu navegador no soporta este captcha - por favor visita la p&aacute;gina desde un navegador moderno.
 </canvas>
 <input type="hidden" id="mc-action" value=""/>
 </div>
@@ -152,7 +146,7 @@ Your browser doesn't support the canvas element - please visit in a modern brows
 		
 	      <div class="controls" style="margin-left: 45%;">
 		  
-			<input disabled="disabled" autocomplete="false" type="submit" value="Send Message">
+			<input disabled="disabled" type="submit" value="Enviar mensaje">
 	        
 	      </div>
 		</form>

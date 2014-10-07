@@ -277,23 +277,6 @@ color: green !important;}
 /*Flags*/
 
 
-.Spain{
-    background-image:url("./Images/FlagIcons/Spain.png");
-    width: 20px;
-    height: 10px;
-}
-
-#slideshow{
-    background-image: url("http://placekitten.com/500/200");
-    opacity: 1;
-    margin: 0;
-    padding: 0;
-    z-index: -1;
-    position: absolute;
-    width: 500px;
-    height: 200px;
-}
-
   .showbox {
     float: left;
     margin: 4em 1em;
@@ -343,3 +326,8 @@ color: green !important;}
 .flag.flag-fr {background-position: 0 -15px}
 .flag.flag-gb {background-position: -25px -15px}
 .flag.flag-it {background-position: -50px -15px}
+
+.nav{
+	 margin-top:15px;
+	 margin-bottom:8px;
+}
