@@ -23,7 +23,23 @@
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
 </script>
+<script>
+$( document ).ready(function() {
+function top() {
+    
+     $('html,body').delay(500).animate({ scrollTop:getElementById("chrono").offsetTop }, 2000);
 
+};
+
+function bottom() {
+    window.setTimeout( function () { top(); }, 2000 );
+};
+
+bottom();
+
+});
+
+</script>
 </head>
 
   <body>
@@ -54,8 +70,8 @@
   <h2 id="shake">CSS Shake Animation</h2>
   <div class="showbox slideright">box 1</div>
   </div>//-->
-  <div class="container">
-  <iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AlE6Zw1gv7qfdGJOeThldjcxMWF3WkpGZmhsU2xuMFE&font=AbrilFatface-Average&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>  </div>
+  <div id="chrono">
+  <iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AlE6Zw1gv7qfdGJOeThldjcxMWF3WkpGZmhsU2xuMFE&font=AbrilFatface-Average&maptype=toner&lang=en&start_zoom_adjust=1&height=650' width='100%' height='650' frameborder='0'></iframe>  </div>
     <div class="activities">
           <div class="container">
             <div class="row">
