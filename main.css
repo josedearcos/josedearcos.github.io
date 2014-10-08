@@ -29,8 +29,7 @@
 
 @font-face {
 	font-family: 'JennaSue';
-	src: url('./fonts/JennaSue-Tilde.ttf');
-	src: local('JennaSue-Tilde'), local('JennaSue-Tilde'), url('./fonts/JennaSue-Tilde.ttf') format('truetype');
+	src: url('./fonts/JennaSue-Tilde.ttf') format('truetype');
 }
 
 /*Navigator tab*/
@@ -91,7 +90,7 @@
 
 .activities a {
   color:black;
-  font: 100 45px 'JennaSue', Helvetica, sans-serif;
+  font: 100 45px 'JennaSue', sans-serif;
 }
 
 /*Travel Map*/
@@ -106,7 +105,7 @@
 
 .trips h1 {
     text-align: center;
-    font: 400 1px 'JennaSue', Helvetica, sans-serif;
+    font: 400 1px 'JennaSue', sans-serif;
 }
 
 #map
@@ -114,7 +113,7 @@
   display: inline-block;
 }
 .trips h2{
-  font: 100 50px 'JennaSue', Helvetica, sans-serif;
+  font: 100 50px 'JennaSue', sans-serif;
 }
 
 .trips p {
@@ -122,7 +121,7 @@
 }
 
 .trips h3{
-  font: 100 40px 'JennaSue', Helvetica, sans-serif;
+  font: 100 40px 'JennaSue', sans-serif;
 }
 
 /*Travels page*/
@@ -132,11 +131,11 @@
 }
 
 .travels h1{
-  font: 100 45px 'JennaSue', Helvetica, sans-serif;
+  font: 400 45px 'JennaSue', sans-serif;
 }
 
 .travels h2{
-  font: 100 35px 'JennaSue', Helvetica, sans-serif;
+  font: 100 35px 'JennaSue', sans-serif;
 }
 
 .travels h3{
@@ -209,7 +208,7 @@
 	border-bottom:1px solid #dbdbdb;
 }
 .work h1{
-  font: 100 45px 'JennaSue', Helvetica, sans-serif;
+  font: 100 45px 'JennaSue', sans-serif;
 }
 
 .work h2{
