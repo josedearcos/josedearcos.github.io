@@ -30,7 +30,7 @@
 @font-face {
 	font-family: 'JennaSue';
 	src: url('./fonts/JennaSue-Tilde.ttf');
-	src: local('JennaSue'), local('JennaSue'), url('./fonts/JennaSue-Tilde.ttf') format('truetype');
+	src: local('JennaSue-Tilde'), local('JennaSue-Tilde'), url('./fonts/JennaSue-Tilde.ttf') format('truetype');
 }
 
 /*Navigator tab*/

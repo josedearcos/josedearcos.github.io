@@ -216,12 +216,12 @@
 			lastyear: 2013
 		},
 		6: { 
-			city: 'Herrera de Alcantara',
+			city: 'Herrera de Alc&aacute;ntara',
 			country: 'Spain',
 			lat: 39.6333,
 			lng: -7.4000,
 			color: 'red',
-			img: 'Herrera de Alc&aacutentara',
+			img: 'Herrera de Alc&aacute;ntara',
 			url: '#Herrera',
 			firstyear: 1988,
 			lastyear: d.getFullYear()
