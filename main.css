@@ -81,7 +81,8 @@
 }
 
 .activities h3 {
-  font: 100 45px 'JennaSue', Helvetica, sans-serif;
+  font: 100 45px 'JennaSue', 
+  100, sans-serif;
 }
 
 .activities p {
