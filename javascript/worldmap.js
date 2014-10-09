@@ -14,12 +14,45 @@
 		var height=400; 
 		var paper = Raphael(div, width, height); //create the Raphael canvas in the map div
 		//var paper = this;
+	        var panZoom = paper.panzoom({ initialZoom: 6, initialPosition: { x: 120, y: 70} });
+	        var isHandling = false;
+	
+               panZoom.enable();
+               paper.safari();
                 var background= paper.rect(0, 0, 1000, 400, 10).attr({
                     stroke: "none",
                     fill: "0-#9bb7cb-#adc8da"
                 });
 		//background.attr({fill: 'skyblue', 'stroke-width': 0}); 
 
+		
+	$("#mapContainer #up").click(function (e) {
+        panZoom.zoomIn(1);
+        e.preventDefault();
+    });
+
+    $("#mapContainer #down").click(function (e) {
+        panZoom.zoomOut(1);
+        e.preventDefault();
+    });
+    
+    $("#others #moveTopLeft").click(function (e) {
+        panZoom.pan(1,1);
+    });
+    
+	function animateOver() {
+        if (this.data("hoverFill")) {
+            this.attr("fill", this.data("hoverFill"));
+        }
+    }
+
+    function animateOut() {
+        if (this.data("fill")) {
+            this.attr("fill", this.data("fill"));
+        }
+    }
+    
+    
 		//create the map		
 		paper.setStart();
 		 for (var country in map_path.shapes) {
@@ -47,17 +80,17 @@
 			var xy=get_xy(loc.lat, loc.lng);
 			
 			if (loc.color=='red') {
-			  var loc_obj=paper.circle(xy.x, xy.y, 4).attr({fill: loc.color, stroke: 'gold', 'stroke-width': 2, cursor: 'pointer'});
+			  var loc_obj=paper.circle(xy.x, xy.y, 1).attr({fill: loc.color, stroke: 'gold', 'stroke-width': 1, cursor: 'pointer'});
 			  loc_obj.year=loc.firstyear;
 			  loc_obj.year=loc.lastyear;//fix this, it only will show the last year and I would like to show a range
 			}
 			else if(loc.color=='yellow'){
-			  var loc_obj=paper.circle(xy.x, xy.y, 2).attr({fill: loc.color, stroke: 'DarkGreen', 'stroke-width': 2, cursor: 'pointer'});
+			  var loc_obj=paper.circle(xy.x, xy.y, 1).attr({fill: loc.color, stroke: 'DarkGreen', 'stroke-width': 1, cursor: 'pointer'});
 			  loc_obj.year=loc.tripyear;
 			}
 			else
 			{
-			  var loc_obj=paper.circle(xy.x, xy.y, 2).attr({fill: loc.color, stroke: '#808080', 'stroke-width': 2, cursor: 'pointer'});
+			  var loc_obj=paper.circle(xy.x, xy.y, 1).attr({fill: loc.color, stroke: '#808080', 'stroke-width': 1, cursor: 'pointer'});
 			  loc_obj.year=loc.tripyear;
 			}
 			

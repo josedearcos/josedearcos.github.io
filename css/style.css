@@ -1,0 +1,5 @@
+
+#mapContainer #map {  display: inline-block; }
+#mapContainer #mapControls { position: absolute; left: 15px; top: 15px; width: 29px; }
+#mapContainer #mapControls #up { background: url(../Images/iconUp.png) no-repeat center top; display: block; height: 26px; width: 29px; }
+#mapContainer #mapControls #down { background: url(../Images/iconDown.png) no-repeat center top; display: block; height: 27px; width: 29px; }

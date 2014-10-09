@@ -8,7 +8,7 @@
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="../javascript/raphael-min.js"></script>
-  <script type="text/javascript" src="../../src/raphael.pan-zoom.min.js"></script>
+  <script type="text/javascript" src="../javascript/raphael.pan-zoom.min.js"></script>
   <script src="../javascript/world.js"></script>
   <script src="../javascript/worldmap.js"></script>
     <!--Google Analytics-->
@@ -51,14 +51,18 @@
      <h2>Around the world</h2>
      </div>
     
-     <div class="MapContainer">
+     <div class="mapContainer">
 	<div id="map"></div>
 	<div>
         <h2 id="location_name"> Hover over a city or click the dot to see more info <h1><br><br></h1></h2>
 	</div>
+	
      </div>
-     	<div id="mapControls"><a id="up" href="javascript:;"></a><a id="down" href="javascript:;"></a></div>
-
+     
+     	<div id="mapContainer">
+		<div id="map"></div>
+		<div id="mapControls"><a id="up" href="javascript:;"></a><a id="down" href="javascript:;"></a></div>
+	</div>
 </div>
 
 <div class="travels">
