@@ -2,11 +2,13 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">  <link rel="stylesheet" href="../main.css" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+  <link rel="stylesheet" href="../css/main.css" type="text/css" />
   <title>Travels</title>
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="../javascript/raphael-min.js"></script>
+  <script type="text/javascript" src="../../src/raphael.pan-zoom.min.js"></script>
   <script src="../javascript/world.js"></script>
   <script src="../javascript/worldmap.js"></script>
     <!--Google Analytics-->
@@ -49,15 +51,18 @@
      <h2>Around the world</h2>
      </div>
     
-     <div class="container map">
+     <div class="MapContainer">
 	<div id="map"></div>
 	<div>
         <h2 id="location_name"> Hover over a city or click the dot to see more info <h1><br><br></h1></h2>
 	</div>
      </div>
+     	<div id="mapControls"><a id="up" href="javascript:;"></a><a id="down" href="javascript:;"></a></div>
+
 </div>
 
 <div class="travels">
+<div class="images">
         
     <div class="container">
         <h1>My cities</h1>
@@ -107,7 +112,7 @@
           </div>
         </div>
         </div>
-
+    </div>
     <div class="container">
         
             <h1 id="Madrid">Madrid, Spain</h1>
