@@ -14,45 +14,16 @@
 		var height=400; 
 		var paper = Raphael(div, width, height); //create the Raphael canvas in the map div
 		//var paper = this;
-	        var panZoom = paper.panzoom({ initialZoom: 6, initialPosition: { x: 120, y: 70} });
-	        var isHandling = false;
-	
-               panZoom.enable();
-               paper.safari();
+		
+                panZoom = paper.panzoom({ initialZoom: 0, initialPosition: { x: 0, y: 0} });
+                panZoom.enable();
+
                 var background= paper.rect(0, 0, 1000, 400, 10).attr({
                     stroke: "none",
                     fill: "0-#9bb7cb-#adc8da"
                 });
 		//background.attr({fill: 'skyblue', 'stroke-width': 0}); 
 
-		
-	$("#mapContainer #up").click(function (e) {
-        panZoom.zoomIn(1);
-        e.preventDefault();
-    });
-
-    $("#mapContainer #down").click(function (e) {
-        panZoom.zoomOut(1);
-        e.preventDefault();
-    });
-    
-    $("#others #moveTopLeft").click(function (e) {
-        panZoom.pan(1,1);
-    });
-    
-	function animateOver() {
-        if (this.data("hoverFill")) {
-            this.attr("fill", this.data("hoverFill"));
-        }
-    }
-
-    function animateOut() {
-        if (this.data("fill")) {
-            this.attr("fill", this.data("fill"));
-        }
-    }
-    
-    
 		//create the map		
 		paper.setStart();
 		 for (var country in map_path.shapes) {
@@ -80,7 +51,7 @@
 			var xy=get_xy(loc.lat, loc.lng);
 			
 			if (loc.color=='red') {
-			  var loc_obj=paper.circle(xy.x, xy.y, 1).attr({fill: loc.color, stroke: 'gold', 'stroke-width': 1, cursor: 'pointer'});
+			  var loc_obj=paper.circle(xy.x, xy.y, 1).attr({fill: loc.color, stroke: 'gold', 'stroke-width':1, cursor: 'pointer'});
 			  loc_obj.year=loc.firstyear;
 			  loc_obj.year=loc.lastyear;//fix this, it only will show the last year and I would like to show a range
 			}
@@ -541,7 +512,138 @@
 			img: 'cancun',
 			url: '#cancun',
 			tripyear: 2013,
+		},
+		35:
+		{
+		  	city: 'Lijiang',
+			country: 'China',
+			lat:  26.8833,
+			lng: 100.2333,
+			color: 'yellow',
+			img: 'Lijiang',
+			url: '#Lijiang',
+			tripyear: 2013,
+		},
+		36:
+		{
+		  	city: 'Shenzhen',
+			country: 'China',
+			lat:  22.5500,
+			lng: 114.10,
+			color: 'silver',
+			img: 'Shenzhen',
+			url: '#Shenzhen',
+			tripyear: 2012,
+		},
+		37:
+		{
+		  	city: 'Hong Kong',
+			country: 'China',
+			lat:  22.15,
+			lng: 114.10,
+			color: 'yellow',
+			img: 'HongKong',
+			url: '#HongKong',
+			tripyear: 2012,
+		},
+		38:
+		{
+		  	city: 'Yangshuo',
+			country: 'China',
+			lat:  24.7833,
+			lng: 110.5,
+			color: 'yellow',
+			img: 'Yangshuo',
+			url: '#Yangshuo',
+			tripyear: 2013,
+		},
+		39:
+		{
+		  	city: 'Guilin',
+			country: 'China',
+			lat:  25.2667,
+			lng: 110.2833,
+			color: 'yellow',
+			img: 'Guilin',
+			url: '#Guilin',
+			tripyear: 2013,
+		},
+		40:
+		{
+		  	city: 'Kunming',
+			country: 'China',
+			lat:  25.0667,
+			lng: 102.6833,
+			color: 'yellow',
+			img: 'Kunming',
+			url: '#Kunming',
+			tripyear: 2013,
+		},
+		41:
+		{
+		  	city: 'Dali',
+			country: 'China',
+			lat:  25.6,
+			lng: 100.2667,
+			color: 'yellow',
+			img: 'Dali',
+			url: '#Dali',
+			tripyear: 2013,
+		},
+		41:
+		{
+		  	city: 'Kota Kinabalu',
+			country: 'Malaysia',
+			lat: 5.9714,
+			lng: 116.0953,
+			color: 'yellow',
+			img: 'KotaKinabalu',
+			url: '#KotaKinabalu',
+			tripyear: 2013,
+		},
+		42:
+		{
+		  	city: 'Pulau Mengalum',
+			country: 'Malaysia',
+			lat: 6.12,
+			lng: 115.3459988,
+			color: 'yellow',
+			img: 'PulauMengalum',
+			url: '#PulauMengalum',
+			tripyear: 2013,
+		},
+		42:
+		{
+		  	city: 'Helsinki',
+			country: 'Finland',
+			lat: 60.10,
+			lng: 24.56,
+			color: 'yellow',
+			img: 'Helsinki',
+			url: '#Helsinki',
+			tripyear: 2013,
+		},
+		43:
+		{
+		  	city: 'Lisbon',
+			country: 'Portugal',
+			lat: 38.7138,
+			lng: -9.1394,
+			color: 'yellow',
+			img: 'Lisbon',
+			url: '#Lisbon',
+			tripyear: 2003,
+		},
+		44:
+		{
+		  	city: 'Porto',
+			country: 'Portugal',
+			lat: 41.1621,
+			lng: -8.6220,
+			color: 'yellow',
+			img: 'Porto',
+			url: '#Porto',
+			tripyear: 2007,
 		}
 	}
 	
-
