@@ -61,7 +61,7 @@
 			}
 			else
 			{
-			  var loc_obj=paper.circle(xy.x, xy.y, 1).attr({fill: loc.color, stroke: '#808080', 'stroke-width': 1, cursor: 'pointer'});
+			  var loc_obj=paper.circle(xy.x, xy.y, 1).attr({fill: loc.color, stroke: '#0F02C2', 'stroke-width': 1, cursor: 'pointer'});
 			  loc_obj.year=loc.tripyear;
 			}
 			
@@ -211,8 +211,8 @@
 		5: { 
 			city: 'Chicago',
 			country: 'USA',
-			lat: 41.8819,
-			lng: -87.6278,
+			lat: 41.8369,
+			lng: -87.6847,
 			color: 'red',
 			img: 'Chicago',
 			url: '#Chicago',
@@ -497,7 +497,7 @@
 			country: 'USA',
 			lat:  29.9667,
 			lng: -90.0500,
-			color: 'silver',
+			color: 'yellow',
 			img: 'NewOrleans',
 			url: '#NewOrleands',
 			tripyear: 2011,
@@ -530,7 +530,7 @@
 			country: 'China',
 			lat:  22.5500,
 			lng: 114.10,
-			color: 'silver',
+			color: 'gold',
 			img: 'Shenzhen',
 			url: '#Shenzhen',
 			tripyear: 2012,
@@ -612,7 +612,7 @@
 			url: '#PulauMengalum',
 			tripyear: 2013,
 		},
-		42:
+		43:
 		{
 		  	city: 'Helsinki',
 			country: 'Finland',
@@ -623,7 +623,7 @@
 			url: '#Helsinki',
 			tripyear: 2013,
 		},
-		43:
+		44:
 		{
 		  	city: 'Lisbon',
 			country: 'Portugal',
@@ -634,7 +634,7 @@
 			url: '#Lisbon',
 			tripyear: 2003,
 		},
-		44:
+		45:
 		{
 		  	city: 'Porto',
 			country: 'Portugal',
