@@ -207,6 +207,7 @@
 
 	border-bottom:1px solid #dbdbdb;
 }
+
 .work h1{
   font: 100 45px 'JennaSue', sans-serif;
 }
@@ -258,11 +259,6 @@
   -ms-transition-timing-function: ease-out;
 }
 
-.work .container
-{
-	border-bottom:1px solid #dbdbdb;
-}
-
 /* Contact form*/
 label.error{
 color: red !important;
@@ -276,6 +272,26 @@ color: green !important;}
 {
 	border-bottom:1px solid #dbdbdb;
 }
+
+/*Pictures*/
+
+.pictures h2
+{
+  font: 100 50px 'JennaSue', sans-serif;
+}
+
+.pictures h3
+{
+  font: 100 40px 'JennaSue', sans-serif;
+}
+
+#showalbum
+{
+	 margin-top:40px;
+	 margin-bottom:40px;
+}
+
+.top-buffer { margin-top:40px; }
 
 /*Others*/
 
@@ -319,6 +335,11 @@ color: green !important;}
 {
      white-space: normal;
 }
+
+.btn-toolbar{
+  text-align: center;
+}
+
 /* CSS Sprite of flags for languages */
 .flag {
 	width: 25px;

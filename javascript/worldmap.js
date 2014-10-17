@@ -504,12 +504,12 @@
 		},
 		34:
 		{
-		  	city: 'Cancun',
+		  	city: 'Canc&uacute;n',
 			country: 'Mexico',
 			lat:  21.1606,
 			lng: -86.8475,
 			color: 'yellow',
-			img: 'cancun',
+			img: 'cancu&uacute;n',
 			url: '#cancun',
 			tripyear: 2013,
 		},

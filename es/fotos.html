@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <meta charset='UTF-8'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
-  <link rel="stylesheet" href="../css/main.css" type="text/css" />
+  <link rel="stylesheet" href="../css/main.css" type="text/css">
 
   <title>Pictures</title>
-  
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+          <style>
+            /* This rule is read by Galleria to define the gallery height: */
+       #Album{height:300px}
+
+
+        </style>
+
+        <!-- load Galleria -->
+        <script src="../javascript/galleria-1.4.2.min.js"></script>
+
+        <!-- load flickr plugin -->
+        <script src="../javascript/galleria.flickr.js"></script>
+	
   <!--Google Analytics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -21,12 +34,283 @@
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
 </script>
+<script type="text/javascript" language="javascript">
+  
+  //Use hashtable to simplify code:
+  var CityList = {
+  /*Africa:{Color:'inverse'
+  }*/
+  America: {Color:'danger',
+  Boston:{
+    set:'set:72157648356380100',
+    EngName:'Boston',
+    EspName:'Boston'},
+  Cancun:{
+    set:'set:72157648352949017',
+    EngName:'Canc&uacute;n',
+    EspName:'Canc&uacute;n'},
+  Chicago:{
+    set:'set:72157648187015148',
+    EngName:'Chicago',
+    EspName:'Chicago'},
+  NewYork:{
+    set:'set:72157631115040372',
+    EngName:'New York',
+    EspName:'Nueva York'},
+  SanFrancisco:{
+    set:'set:72157648501440386',
+    EngName:'San Francisco',
+    EspName:'San Francisco'}},
+  Asia: {Color:'warning',
+  BeijingSummer:{
+    set:'set:72157648138148509',
+    EngName:'Beijing Summer',
+    EspName:'Beijing en verano'},
+  BeijingWinter:{
+    set:'set:72157648138148509',
+    EngName:'Beijing Winter',
+    EspName:'Beijing en invierno'},
+  Guilin:{
+    set:'set:72157648138798399',
+    EngName:'Guilin',
+    EspName:'Guilin'},
+  KualaLumpur:{
+    set:'set:72157648136632998',
+    EngName:'Kuala Lumpur',
+    EspName:'Kuala Lumpur'},
+  KunMing:{
+    set:'set:72157648822806375',
+    EngName:'Kungming',
+    EspName:'Kungming'},
+  Shanghai:{
+    set:'set:72157648187015148',
+    EngName:'Shanghai',
+    EspName:'Shanghai'},
+  Singapore:{
+    set:'set:72157648129916047',
+    EngName:'Singapore',
+    EspName:'Singapore'},
+  Yangshuo:{
+    set:'set:72157648143258160',
+    EngName:'Yangshuo',
+    EspName:'Yangshuo'
+    }},
+  Europe: {Color:'primary',
+  AmalfiCoast:{
+    set:'',
+    EngName:'Amalfi Coast',
+    EspName:'Costa Amalfitana',
+    src:'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'},
+  BalticCruise:{
+    set:'set:72157648566796075',
+    EngName:'Baltic Cruise',
+    EspName:'Crucero por el B&aacute;ltico',
+    src:'https://c3.staticflickr.com/3/2946/15484519375_de7efa93f2_c.jpg'},
+  Barcelona:{
+    set:'set:72157648154325809',
+    EngName:'Barcelona',
+    EspName:'Barcelona',
+    src:'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'},
+  Dublin:{
+    set:'set:72157648356380100',
+    EspName:'Dublin',
+    EngName:'Dublin',
+    src:'http://c2.staticflickr.com/4/3936/15513844096_80a14ee4ec_c.jpg'},
+  Herrera:{
+    set:'set:72157648581125502',
+    EngName:'Herrera de Alc&aacute;ntara',
+    EspName:'Herrera de Alc&aacute;ntara',
+    src:'https://c2.staticflickr.com/4/3946/15305540608_849864b3e7_c.jpg'},
+  London2012:{
+    set:'set:72157648598779175',
+    EspName:'Londres 2012',
+    EngName:'London 2012',
+    src:'https://c4.staticflickr.com/4/3932/15558095275_fd0bd60141_c.jpg'},
+  London2013:{
+    set:'set:72157648598779175',
+    EspName:'Londres 2013',
+    EngName:'London 2013',
+    src:'https://c2.staticflickr.com/6/5601/15305573457_5653d6bfb2_c.jpg'},
+  Madrid:{
+    set:'set:72157648356380100',
+    EspName:'Madrid',
+    EngName:'Madrid'},
+  Monasteriodepiedra:{
+    set:'set:72157648358378998',
+    EspName:'Monasterio de piedra',
+    EngName:'The Stone Monastery',
+    src:'https://c4.staticflickr.com/4/3936/15351697320_0e9274b9bf_c.jpg'},
+  Nerja:{
+    set:'set:72157648176087737',
+    EspName:'Nerja',
+    EngName:'Nerja',
+    src:'https://c3.staticflickr.com/3/2947/15489315551_fd0756c571_c.jpg'},
+  Torino:{
+    set:'set:72157648036849407',
+    EngName:'Torino',
+    EspName:'Torino'},
+  Toscany:{
+    set:'set:72157648036849407',
+    EngName:'Toscany',
+    EspName:'Toscana',
+    src:'https://c3.staticflickr.com/3/2945/15460043465_e534fe663e_c.jpg'}
+   }
+    /*Oceany:{Color:'success'
+    }*/
+  };
+      
+  $(document).ready(function(){
 
+   //Dinamically create lists 
+   for(continent in CityList)
+   {
+     $('<div class="btn-group"><button type="button" class="btn btn-'+CityList[continent]['Color']+' '+continent+'Button">'+continent+'</button><button type="button" class="btn btn-'+CityList[continent]['Color']+' dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu '+continent+'List" role="menu"></ul></div>').appendTo(".btn-toolbar");
+          var currentcontinent = CityList[continent];
+      for(city in currentcontinent) {
+      if (city!='Color') {
+        $('<li><a data-name="'+city+'" href="#'+city+'">'+CityList[continent][city]['EngName']+'</a></li>').appendTo("."+continent+"List");
+        }
+     }
+    $('<li class="divider"></li>').appendTo("."+continent+"List");
+    $('<li><a data-name="'+continent+'" href="#'+continent+'">All</a></li>').appendTo("."+continent+"List");
+  
+   }
+   //Dinamically create thumbnails 
+   for(continent in CityList)
+   {
+      var data = '<div id="'+continent+'""><div class="container"><div class="row">';
+       
+      var currentcontinent = CityList[continent];
+       
+       for(city in currentcontinent) {
+	      if (city!='Color') {
+                data += '<div class="col-md-4"><div class="thumbnail"><div class="caption"><h3>'+CityList[continent][city]['EspName']+'</h3><a data-name="'+city+'" href="#'+city+'"> <img src="'+CityList[continent][city]['src']+'" style="min-height:250px;height:250px;"/></a></div></div></div>'
+              }
+       }
+       
+       data+='</div></div></div>';
+       $(data).appendTo('#Display');
+       $('#'+continent).hide();
+    }
+   
+  //Run an instance of the gallery to be displayed chosen by ID
+   function LoadSlide(id) {
+    
+   //Look for flickr set according to id
+   for(continent in CityList)
+   {
+    var currentcontinent = CityList[continent];
+    
+    for(city in currentcontinent) {
+        if(city==id)
+	{
+	flickrset = CityList[continent][city]['set'];
+	break;
+      }
+   }
+   }
+
+    // Load the classic theme
+    Galleria.loadTheme('../javascript/galleria.classic.min.js');
+
+    // Initialize Galleria
+    Galleria.run('#Album', {
+        // search flickr for "galleria"
+	
+	height: 0.5625,//16:9
+        autoplay: 5000,//5 seconds between pictures
+        clicknext: true,//disables other links in pics but allows to pass the pictures with a click
+	flickr: flickrset,
+
+        flickrOptions: {
+            // sort by interestingness
+            sort: 'interestingness-desc'
+        }
+     });
+  }
+  
+    //Show continent album and hide the others
+    $('.btn-toolbar').on('click', '.AfricaButton', function() {
+        $("#Album").hide();
+        $("#Asia").slideUp("fast");
+        $("#America").slideUp("fast");
+	$("#Europe").slideUp("fast");
+        $("#Oceany").slideUp("fast");
+        $("#Africa").toggle("slow");
+	$('#showalbum').empty();
+    });
+    $('.btn-toolbar').on('click', '.AmericaButton', function() {
+        $("#Album").hide();
+        $("#Asia").slideUp("fast");
+        $("#Africa").slideUp("fast");
+	$("#Europe").slideUp("fast");
+        $("#Oceany").slideUp("fast");
+        $("#America").toggle("slow");
+	$('#showalbum').empty();
+	});
+    $('.btn-toolbar').on('click', '.AsiaButton', function() {
+        $("#Album").hide();
+        $("#Africa").slideUp("fast");
+        $("#America").slideUp("fast");
+	$("#Europe").slideUp("fast");
+        $("#Oceany").slideUp("fast");
+        $("#Asia").toggle("slow");
+	$('#showalbum').empty();
+    });
+    $('.btn-toolbar').on('click', '.EuropeButton', function() {
+        $("#Album").hide();
+        $("#Asia").slideUp("fast");
+        $("#Africa").slideUp("fast");
+        $("#America").slideUp("fast");
+        $("#Oceany").slideUp("fast");
+        $("#Europe").toggle("slow");
+        $('#showalbum').empty();
+    });
+    $('.btn-toolbar').on('click', '.OceanyButton', function() {
+        $("#Album").hide();
+	$("#Asia").slideUp("fast");
+        $("#Africa").slideUp("fast");
+	$("#America").slideUp("fast");
+	$("#Europe").slideUp("fast");
+        $("#Oceany").toggle("slow");
+	$('#showalbum').empty();
+    });
+ 
+  function CopyAppend(id) {
+           $("#Africa").slideUp("fast");
+	   $("#America").slideUp("fast");
+	   $("#Asia").slideUp("fast");
+	   $("#Europe").slideUp("fast");
+           $("#Oceany").slideUp("fast");
+	   
+       LoadSlide(id);
+       
+       $("#Album").show();
+
+       $('#showalbum').empty();
+       
+       var e = document.getElementById("#Album");
+       
+       var copy = $(e).clone();
+       copy.appendTo('#showalbum');
+  }
+  
+   //Choose album from dropdown menu
+   $(".dropdown-menu li a").click(function(){
+      CopyAppend($(this).attr("data-name"));
+   });
+   //Choose album from thumbnail
+   $(".caption a").click(function(){
+      CopyAppend($(this).attr("data-name"));
+   });
+});
+
+</script>  
 </head>
 
-  <body>
+<body>
 
-  <div id="MainPage">
+<div class="pictures">
     <div class="nav">
       <div class="container">
         <ul class="pull-left">
@@ -39,99 +323,36 @@
           <li><a href="trabajo.html">Trabajo</a></li>
           <li><a href="actividades.html">Actividades</a></li>
 	  <li><a href="contacto.html">Contacto</a></li>
-
         </ul>
       </div>
     </div>
+  
+  <div class="jumbotron"></div>
+  
+  <div class="container" align="center">
+    <h2>&Aacute;lbumes de fotos:</h2>
 
-
-    <div class="jumbotron">
-     </div>
-    
-  <!--     <div class="container">
-  <h2 id="shake">CSS Shake Animation</h2>
-  <div class="showbox slideright">box 1</div>
-  </div>//-->
-    <div class="cities">
-      <div class="container">
-        <h2>My cities</h2>
-
-        <p>I have lived in a few cities all around the world, and I am sure I
-        will add a few more in this list.</p>
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img data-src="holder.js/100%x75/social" src=
-              "http://www.singlesphere.com/crimson/img/ss%20harvard%20pics/sanders.jpg" />
-            </div>
-
-            <div class="thumbnail">
-              <img data-src="holder.js/100%x75/social" src=
-              "http://www.kaleidoscopeadventures.com/wp-content/uploads/2014/04/chicago_bean_and_life_by_alierturk-d3agi0u.jpg" />
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img data-src="holder.js/100%x75/social" src=
-              "http://cdn2.independent.ie/incoming/article29294291.ece/9ddc5/ALTERNATES/h342/2405-madrid.jpg" />
-            </div>
-
-            <div class="thumbnail">
-              <img data-src="holder.js/100%x75/social" src=
-              "http://1.bp.blogspot.com/-6kUbfiz_pr0/UrcXQAGjc8I/AAAAAAAAQ8s/uNUnrE_SFQ4/s1600/Temple+of+Heaven+%25281%2529.gif" />
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img data-src="holder.js/100%x75/social"src=
-              "http://www.casaruralarcodetrajano.es/wp-content/uploads/2013/10/Herrera-de-Alc%C3%A1ntara.jpg"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="learn-more">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <h3>Telecommunication Engineering</h3>
-
-                <p>When I was a child I wondered about how a computer, a phone
-                or a television worked. Telecommunication Engineering gave me
-                the answers to all my questions and provided me with the skills
-                to design the electronics and software of any device.</p>
-
-                <p><a href="#">Learn more about my degree</a></p>
-              </div>
-
-              <div class="col-md-4">
-                <h3>Physics</h3>
-
-                <p>Since I was in high school I was absorved by the simplicity
-                and power of the Physics laws. After finishing my degree in
-                Telecommunication Engineering I decided to pursue a PhD. in
-                Physics to learn all I could about it.</p>
-
-                <p><a href="#">Do you want to know more about Physics?</a></p>
-              </div>
-
-              <div class="col-md-4">
-                <h3>Chess</h3>
-
-                <p>In my free time I tend to play a couple of matches of the
-                eternal game. I love to contemplate the beauty behind a queen
-                sacrifice.</p>
-
-                <p><a href="#">Play correspondence chess with me</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <p> Cuando viajo mi Canon 60D y yo s&oacute;mos inseparables. Estas son algunas de las memorias que capturamos juntos:</p>
+    <div class="row top-buffer">
+      <div class="span12">
+      <div class="btn-toolbar" role="toolbar" align="center">
+	<!-- All the code to load the buttons is run in javascript-->
+      </div>
       </div>
     </div>
   </div>
-  
+  <div class='top-buffer'>
+    <div id="Display"></div>
+    <!-- All the code to load the thumbnails is run in javascript-->
+    <div id='Album'></div>
+       	<!-- All the code to load the albums is run in javascript-->
+    </div>
+</div>
+   <div align="center">
+      <div class="container">
+        <div id='showalbum'></div>
+      </div>
+   </div>
+ 
 </body>
 </html>
