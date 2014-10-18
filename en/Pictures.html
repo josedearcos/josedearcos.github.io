@@ -189,7 +189,7 @@
        
        for(city in currentcontinent) {
 	      if (city!='Color') {
-                data += '<div class="col-md-4"><div class="thumbnail"><div class="caption"><h3>'+CityList[continent][city]['EngName']+'</h3><a data-name="'+city+'" href="#'+city+'"> <img src="'+CityList[continent][city]['src']+'" style="min-height:250px;height:250px;"/></a></div></div></div>'
+                data += '<div class="col-md-4"><div class="thumbnail"><div class="caption"><a data-name="'+city+'" href="#'+city+'"> <img src="'+CityList[continent][city]['src']+'" style="min-height:250px;height:250px;"/></a><h3 align="center">'+CityList[continent][city]['EngName']+'</h3></div></div></div>'
               }
        }
        
