@@ -33,7 +33,9 @@
 }
 
 /*For mobile and tablets*/
-@media(min-width:767px){.thumbnail img { min-height:175px; height:175px;}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px){.thumbnail img { min-height:175px; height:175px;}
 .framepdf {
    width:auto;
    height:200px;
@@ -41,17 +43,11 @@
 .col-xs-6{
 	padding:0px;	
 }
-.col-sm-6{
-	padding:0px;	
 }
-}
-@media(min-width:768px){.thumbnail img { min-height:100px; height:100px;}
+@media(min-width:768px){.thumbnail img { min-height:100px; height:100px;}/*tablets, ipad*/
 .framepdf {
    width:auto;
    height:200px;
-}
-.col-xs-6{
-	padding:0px;	
 }
 .col-sm-6{
 	padding:0px;	
