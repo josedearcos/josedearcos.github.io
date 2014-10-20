@@ -34,7 +34,7 @@
 
 /*For mobile and tablets*/
 @media(max-width:767px){.thumbnail img { min-height:100px; height:100px; }}
-@media(min-width:768px){.thumbnail img { min-height:150px; height:150px; }}
+@media(min-width:768px){.thumbnail img { min-height:100px; height:100px; }}
 @media(min-width:980px){.thumbnail img { min-height:250px; height:250px; }}
 @media(min-width:1200px){.thumbnail img { min-height:250px; height:250px; }}
 
