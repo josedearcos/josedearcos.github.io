@@ -35,12 +35,12 @@
 /*For mobile and tablets*/
 @media(max-width:767px){.thumbnail img { min-height:100px; height:100px;
 .framepdf {
-   width:100%;
+   width:auto;
    height:200px;
 }}}
 @media(min-width:768px){.thumbnail img { min-height:100px; height:100px;
 .framepdf {
-   width:100%;
+   width:auto;
    height:200px;
 }}}
 @media(min-width:980px){.thumbnail img { min-height:250px; height:250px;
