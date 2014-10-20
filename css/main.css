@@ -36,13 +36,13 @@
 @media(min-device-width : 320px) {.thumbnail img { min-height:100px; height:100px;}
 .framepdf {width:auto; height:100px;}
 }
-@media(min-width:768px){.thumbnail img { min-height:125px; height:125px;}/*tablets, ipad*/
+@media(min-width:768px){.thumbnail img { min-height:125px; height:125px;}/*tablets, */
 .framepdf {width:auto; height:125px;}
 }
 
-@media (min-width: 980px) and (max-width: 1024px) {
-.thumbnail img { min-height:200px; height:200px;}
-.framepdf {width:auto; height:200px;}
+@media (min-width: 980px) and (max-width: 1024px) {/*ipad*/
+.thumbnail img { min-height:125px; height:125px;}
+.framepdf {width:auto; height:125px;}
 }
 
 @media(min-width:980px){.thumbnail img { min-height:250px; height:250px;}
