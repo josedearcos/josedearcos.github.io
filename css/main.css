@@ -40,6 +40,13 @@
 
 /*Navigator tab*/
 
+.thumbnailframe {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    padding-top: 56.25% !important;/*16:9*/
+}
+
 .nav a {
   color: #5a5a5a;
   font-size: 11px;
