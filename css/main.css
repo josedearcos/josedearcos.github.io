@@ -32,6 +32,12 @@
 	src: url('../fonts/JennaSue-Regular.ttf') format('truetype');
 }
 
+/*For mobile and tablets*/
+@media(max-width:767px){.thumbnail img { min-height:100px; height:100px; }}
+@media(min-width:768px){.thumbnail img { min-height:150px; height:150px; }}
+@media(min-width:980px){.thumbnail img { min-height:250px; height:250px; }}
+@media(min-width:1200px){.thumbnail img { min-height:250px; height:250px; }}
+
 /*Navigator tab*/
 
 .nav a {
@@ -139,7 +145,7 @@
 }
 
 .travels h3{
-  font: 100 17px 'EB Garamond', Helvetica, sans-serif;
+  font: 100 50px 'JennaSue', sans-serif;
 }
 
 .travels p{
@@ -156,7 +162,12 @@
     font: 100 18px 'EB Garamond', Helvetica, sans-serif
 }
 
-.images img {
+.travels .container
+{
+	border-bottom:1px solid #dbdbdb;
+}
+
+.TravelThumbnail{
 
   /* Webkit for Chrome and Safari */
   -webkit-transform: scale(1, 1); // This is the scale for the normal size of the image.
@@ -174,7 +185,7 @@
   -ms-transition-timing-function: ease-out;
 }
 
-.images img:hover{
+.TravelThumbnail:hover{
 
   /* Webkit for Chrome and Safari */
   -webkit-transform: scale(1.2, 1.2); // This is the enlarged size scale of the image.
@@ -191,12 +202,7 @@
   -ms-transition-duration: 500ms;
   -ms-transition-timing-function: ease-out;
 }
-
-.travels .container
-{
-	border-bottom:1px solid #dbdbdb;
-}
-
+	
 /*Work page*/
 
 .work{
@@ -357,6 +363,8 @@ color: green !important;}
 	 margin-top:15px;
 	 margin-bottom:8px;
 }
+
+
 
 /*Zoom for map*/
 .grabbing { cursor: url(closedhand.cur), pointer !important; }
