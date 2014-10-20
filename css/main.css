@@ -33,7 +33,7 @@
 }
 
 /*For mobile and tablets*/
-@media(max-width:767px){.thumbnail img { min-height:175px; height:175px;
+@media(min-width:767px){.thumbnail img { min-height:175px; height:175px;
 .framepdf {
    width:auto;
    height:300px;
