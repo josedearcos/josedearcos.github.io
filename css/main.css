@@ -40,17 +40,11 @@ and (max-device-width : 480px){.thumbnail img { min-height:175px; height:175px;}
    width:auto;
    height:200px;
 }
-.col-xs-6{
-	padding:0px;	
 }
-}
-@media(min-width:768px){.thumbnail img { min-height:100px; height:100px;}/*tablets, ipad*/
+@media(min-width:768px){.thumbnail img { min-height:50px; height:50px;}/*tablets, ipad*/
 .framepdf {
    width:auto;
-   height:200px;
-}
-.col-sm-6{
-	padding:0px;	
+   height:150px;
 }
 }
 @media(min-width:980px){.thumbnail img { min-height:250px; height:250px;}
