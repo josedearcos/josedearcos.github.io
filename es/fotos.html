@@ -39,9 +39,17 @@
   
   //Use hashtable to simplify code:
   var CityList = {
-  /*Africa:{Color:'inverse'
+  /*Africa:{
+    Properties:{
+    EspName:'*Aacute;frica',
+    EngName:'Africa',
+    Color:'inverse'}
   }*/
-  America: {Color:'danger',
+  America: {
+    Properties:{
+    EspName:'Am&eacute;rica',
+    EngName:'America',
+    Color:'danger'},
   Boston:{
     set:'set:72157648356380100',
     EngName:'Boston',
@@ -62,7 +70,11 @@
     set:'set:72157648501440386',
     EngName:'San Francisco',
     EspName:'San Francisco'}},
-  Asia: {Color:'warning',
+  Asia: {
+    Properties:{
+    EspName:'Asia',
+    EngName:'Asia',
+    Color:'warning'},
   BeijingSummer:{
     set:'set:72157648138148509',
     EngName:'Beijing Summer',
@@ -96,25 +108,24 @@
     EngName:'Yangshuo',
     EspName:'Yangshuo'
     }},
-  Europe: {Color:'primary',
+  Europe: {
+    Properties:{
+    EspName:'Europa',
+    EngName:'Europe',
+    Color:'primary'},
   AmalfiCoast:{
-    set:'',
+    set:'set:72157648428193897',
     EngName:'Amalfi Coast',
     EspName:'Costa Amalfitana',
-    src:'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'},
+    src:'https://c4.staticflickr.com/4/3940/15567401435_843c8d7774_c.jpg'},
   BalticCruise:{
     set:'set:72157648566796075',
     EngName:'Baltic Cruise',
     EspName:'Crucero por el B&aacute;ltico',
     src:'https://c3.staticflickr.com/3/2946/15484519375_de7efa93f2_c.jpg'},
-  Barcelona:{
-    set:'set:72157648154325809',
-    EngName:'Barcelona',
-    EspName:'Barcelona',
-    src:'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'},
   Dublin:{
     set:'set:72157648356380100',
-    EspName:'Dublin',
+    EspName:'Dubl&iacute;n',
     EngName:'Dublin',
     src:'http://c2.staticflickr.com/4/3936/15513844096_80a14ee4ec_c.jpg'},
   Herrera:{
@@ -146,18 +157,26 @@
     EspName:'Nerja',
     EngName:'Nerja',
     src:'https://c3.staticflickr.com/3/2947/15489315551_fd0756c571_c.jpg'},
+  SagradaFamilia:{
+    set:'set:72157648154325809',
+    EngName:'Church of the Holy Family',
+    EspName:'La Sagrada Familia',
+    src:'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'},
   Torino:{
     set:'set:72157648036849407',
     EngName:'Torino',
-    EspName:'Torino'},
+    EspName:'Tur&iacute;n'},
   Toscany:{
     set:'set:72157648036849407',
     EngName:'Toscany',
     EspName:'Toscana',
     src:'https://c3.staticflickr.com/3/2945/15460043465_e534fe663e_c.jpg'}
    }
-    /*Oceany:{Color:'success'
-    }*/
+    /*Oceany:{
+    Properties:{
+    EspName:'Europa',
+    EngName:'Europe',
+    Color:'success'},*/
   };
       
   $(document).ready(function(){
@@ -165,11 +184,11 @@
    //Dinamically create lists 
    for(continent in CityList)
    {
-     $('<div class="btn-group"><button type="button" class="btn btn-'+CityList[continent]['Color']+' '+continent+'Button">'+continent+'</button><button type="button" class="btn btn-'+CityList[continent]['Color']+' dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu '+continent+'List" role="menu"></ul></div>').appendTo(".btn-toolbar");
+     $('<div class="btn-group"><button type="button" class="btn btn-'+CityList[continent]['Properties']['Color']+' '+continent+'Button">'+CityList[continent]['Properties']['EspName']+'</button><button type="button" class="btn btn-'+CityList[continent]['Properties']['Color']+' dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu '+continent+'List" role="menu"></ul></div>').appendTo(".btn-toolbar");
           var currentcontinent = CityList[continent];
       for(city in currentcontinent) {
-      if (city!='Color') {
-        $('<li><a data-name="'+city+'" href="#'+city+'">'+CityList[continent][city]['EngName']+'</a></li>').appendTo("."+continent+"List");
+      if (city!='Properties') {
+        $('<li><a data-name="'+city+'" href="#'+city+'">'+CityList[continent][city]['EspName']+'</a></li>').appendTo("."+continent+"List");
         }
      }
     $('<li class="divider"></li>').appendTo("."+continent+"List");
@@ -184,7 +203,7 @@
       var currentcontinent = CityList[continent];
        
        for(city in currentcontinent) {
-	      if (city!='Color') {
+	      if (city!='Properties') {
                 data += '<div class="col-md-4"><div class="thumbnail"><div class="caption"><a data-name="'+city+'" href="#'+city+'"> <img src="'+CityList[continent][city]['src']+'" style="min-height:250px;height:250px;"/></a><h3 align="center">'+CityList[continent][city]['EspName']+'</h3></div></div></div>'
               }
        }
@@ -333,7 +352,7 @@
   <div class="container" align="center">
     <h2>&Aacute;lbumes de fotos:</h2>
 
-    <p> Cuando viajo mi Canon 60D y yo s&oacute;mos inseparables. Estas son algunas de las memorias que capturamos juntos:</p>
+    <p> Cuando viajo mi Canon 60D y yo somos inseparables. Estas son algunas de las memorias que capturamos juntos:</p>
     <div class="row top-buffer">
       <div class="span12">
       <div class="btn-toolbar" role="toolbar" align="center">
