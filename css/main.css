@@ -33,9 +33,7 @@
 }
 
 /*For mobile and tablets*/
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px){.thumbnail img { min-height:175px; height:175px;}
+@media(min-device-width : 320px) {.thumbnail img { min-height:175px; height:175px;}
 .framepdf {width:auto; height:175px;}
 }
 @media(min-width:768px){.thumbnail img { min-height:200px; height:200px;}/*tablets, ipad*/
