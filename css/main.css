@@ -37,12 +37,12 @@
 .framepdf {width:100px; height:100px;}
 }
 @media(min-width:768px){.thumbnail img { min-height:125px; height:125px;}/*tablets, */
-.framepdf {width:auto; height:125px;}
+.framepdf {width:auto; height:125px; max-height: 125px}
 }
 
 @media (min-width: 980px) and (max-width: 1024px) {/*ipad*/
 .thumbnail img { min-height:125px; height:125px;}
-.framepdf {width:auto; height:125px;}
+.framepdf {width:auto; height:125px; max-height: 125px}
 }
 
 @media(min-width:980px){.thumbnail img { min-height:250px; height:250px;}
