@@ -38,7 +38,7 @@
    width:auto;
    height:300px;
 }}}
-@media(min-width:768px){.thumbnail img { min-height:175px; height:175px;
+@media(min-width:768px){.thumbnail img { min-height:100px; height:100px;
 .framepdf {
    width:auto;
    height:300px;
