@@ -63,7 +63,7 @@ opacity: 0;
            $('.ShowTravels').hide();
            $('.ShowCities').hide();
            $('.ShowMap').show();
-	   
+
    //Show buttons
     $('.btn-toolbar').on('click', '#MapButton', function() {
         $("#Album").hide();
@@ -87,7 +87,6 @@ opacity: 0;
 	$('#showalbum').empty();
     });
         //Display tabs on hover
-
        $('#pills a').hover(function (e) {
           e.preventDefault()
           $(this).tab('show')
@@ -141,20 +140,14 @@ opacity: 0;
 <div class = "ShowMap">
     <div class="container">
      <h2>Around the world</h2>
-     </div>
-    
-     <div class="mapContainer">
+     <div id="mapContainer">
 	<div id="map"></div>
 	<div id="mapControls"><a id="up" href="javascript:;"></a><a id="down" href="javascript:;"></a></div>
 	<div>
         <h2 id="location_name"> Hover over a city or click the dot to see more info <h1><br><br></h1></h2>
 	</div>
-	
      </div>
-     
-     	<div id="mapContainer">
-		<div id="map"></div>
-	</div>
+    </div>
 </div>
 
 <div class="ShowCities">
