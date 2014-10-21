@@ -25,12 +25,18 @@
                     fill: "0-#9bb7cb-#adc8da"
                 });
 		//background.attr({fill: 'skyblue', 'stroke-width': 0}); 
-
-		//create the map		
+		//create the map
+		
+		var myCountryArray = new Array();
+		
 		paper.setStart();
 		 for (var country in map_path.shapes) {
-                    paper.path(map_path.shapes[country]).attr({stroke: "#ccc6ae", fill: "#f0efeb", "stroke-opacity": 0.25});
-                }
+                    var myRPath = paper.path(map_path.shapes[country]).attr({stroke: "#ccc6ae", fill: "#f0efeb", "stroke-opacity": 0.25});
+		    myCountryArray[myRPath.id] = map_path.names[country];
+		    myRPath.hover(function() {
+                    showCountryTooltip(myCountryArray[this.id]);
+		    },function(){hideCountryTooltop()});
+	        }
 		var world = paper.setFinish();
 		
                 world.hover(over, out);
@@ -40,7 +46,6 @@
 		try {
                     navigator.geolocation && navigator.geolocation.getCurrentPosition(function (pos) {
                         paper.circle().attr({fill: "none", stroke: "#f00", r: 5}).attr(get_xy(pos.coords.latitude, pos.coords.longitude));
-                    this.toFront();
 		    });
                 } catch (e) {}
 
@@ -78,6 +83,7 @@
 		}
 					
 		var name = document.getElementById('location_name');
+
 		location_set.hover(overcity,outcity); 	//Adds event handlers for hovering over the element
 		location_set.click(clickcity);
 
@@ -109,7 +115,7 @@
 				
 		function outcity(){
 			this.attr({'stroke-width': 1});
-			name.innerHTML=' .<h1><br><br><br></h1>';
+			name.innerHTML='&nbsp;<h1><br><br><br></h1>';
 			/*
 			rectangle.remove();
 			textbox.remove();
@@ -119,6 +125,14 @@
 			window.location.href = this.url;
 		}
 		
+		function showCountryTooltip(countrytext) {
+                    name.innerHTML=countrytext+"<h1><br><br><br></h1>";
+                }
+
+		function hideCountryTooltop()
+		{
+		     name.innerHTML="&nbsp;<h1><br><br><br></h1>";
+		}
 		function get_xy(lat, lng){  //http://stackoverflow.com/questions/14329691/covert-latitude-longitude-point-to-a-pixels-x-y-on-mercator-projection
 			
 			// This map would show the world, limit latitude and longitude for a specific geographical area
