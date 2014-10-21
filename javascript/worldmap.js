@@ -97,7 +97,7 @@
 		function overcity(){
 		    	this.attr({'stroke-width': 3});
 			//image_array[this.id]=paper.image(this.img+'.jpg', this.x+8, this.y-160, 150, 150).scale(scale, scale, 0, 0);
-			name.innerHTML=this.city+', '+this.country+' ('+this.year+')'+"<h1><br><br></h1>";
+			name.innerHTML=this.city+', '+this.country+' ('+this.year+')'+"<h1><br><br><br></h1>";
 			/*rectangle = paper.rect(this.x+8, this.y-8,180,32,5).attr({fill: "white", stroke: 'black', 'stroke-width': 2, cursor: 'pointer'});
 			textbox = paper.text(this.x+98, this.y+7, this.name);
 			textbox.attr({ "font-size": 16, "font-family": "Arial, Helvetica, sans-serif" });
@@ -106,8 +106,8 @@
 		
 				
 		function outcity(){
-			this.attr({'stroke-width': 2});
-			name.innerHTML='<h1><br><br></h1>';
+			this.attr({'stroke-width': 1});
+			name.innerHTML=' .<h1><br><br><br></h1>';
 			/*
 			rectangle.remove();
 			textbox.remove();

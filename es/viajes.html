@@ -44,7 +44,6 @@ opacity: 0;
   <script type="text/javascript" src="../javascript/raphael.pan-zoom.min.js"></script>
   <script src="../javascript/world.js"></script>
   <script src="../javascript/worldmap.js"></script>
-
     <!--Google Analytics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -97,7 +96,32 @@ opacity: 0;
         //  e.preventDefault()
         //  $(this).click()
        //});
-    });
+    
+    //To zoom in/out the map
+    function UpClick()
+    {
+        panZoom.zoomIn(1);
+    }
+    function DownClick()
+    {
+        panZoom.zoomOut(1);
+    }
+    //In case somebody holds the button down
+var intervalId;
+$("#mapContainer #up").mousedown(function() {
+  UpClick();
+  intervalId = setInterval(UpClick, 75);
+}).mouseup(function() {
+  clearInterval(intervalId);
+});
+
+$("#mapContainer #down").mousedown(function() {
+  DownClick();
+  intervalId = setInterval(DownClick, 75);
+}).mouseup(function() {
+  clearInterval(intervalId);
+});
+});
 </script>
 
 </head>
@@ -121,7 +145,7 @@ opacity: 0;
     
     <div class="jumbotron"></div>
     
-  <div class="container" align="center">
+  <div class="container TravelTitle" align="center">
   <h2>Mi cuaderno de bit&aacute;cora</h2>
     <div class="row top-buffer">
      <div class="btn-toolbar centered">
@@ -147,7 +171,7 @@ opacity: 0;
 	<div id="map"></div>
 	<div id="mapControls"><a id="up" href="javascript:;"></a><a id="down" href="javascript:;"></a></div>
         <h2 id="location_name"> Pasa el cursor por encima de una ciudad o haz click sobre ella para ver detalles de ese viaje <h1><br><br></h1></h2>
-     </div>
+     </div> 
     </div>
 </div>
 

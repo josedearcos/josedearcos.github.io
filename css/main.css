@@ -117,9 +117,11 @@
 
 /*Travel Map*/
 
+.TravelTitle h2{
+    font: 400 60px 'JennaSue', sans-serif;
+}
 .ShowMap
 {
-  border-bottom:1px solid #dbdbdb;
   width: 100%;
   text-align: center;
   height: 580px;
@@ -134,7 +136,9 @@
 {
   display: inline-block;
 }
+
 .ShowMap h2{
+  margin-top:-20px;
   font: 100 50px 'JennaSue', sans-serif;
 }
 
@@ -178,11 +182,6 @@
     font: 100 18px 'EB Garamond', Helvetica, sans-serif
 }
 
-.ShowCities .container
-{
-	border-bottom:1px solid #dbdbdb;
-}
-
 .ShowTravels{
   margin-bottom:13px;
 }
@@ -211,11 +210,6 @@
 
 .ShowTravels a{
     font: 100 18px 'EB Garamond', Helvetica, sans-serif
-}
-
-.ShowTravels .container
-{
-	border-bottom:1px solid #dbdbdb;
 }
 
 @media(min-width:980px),(min-width:1200px){/*Only show hover zoom in large devices (it doesn't work well with touch devices)*/
@@ -332,7 +326,6 @@ color: green !important;}
 }
 
 .top-buffer { margin-top:40px; }
-
 /*Others*/
 
 /*Flags*/
@@ -394,10 +387,8 @@ color: green !important;}
 	 margin-bottom:8px;
 }
 
-
-
 /*Zoom for map*/
 .grabbing { cursor: url(closedhand.cur), pointer !important; }
-#mapContainer #mapControls { position: absolute; left: 15px; top: 15px; width: 29px; }
-#mapContainer #mapControls #up { background: url(iconUp.png) no-repeat center top; display: block; height: 26px; width: 29px; }
-#mapContainer #mapControls #down { background: url(iconDown.png) no-repeat center top; display: block; height: 27px; width: 29px; }
+#mapContainer #mapControls { position: relative; left: 80px; top: -229px; width: 29px; }
+#mapContainer #mapControls #up { background: url(../Images/iconUp.png) no-repeat center top; display: block; height: 26px; width: 29px; }
+#mapContainer #mapControls #down { background: url(../Images/iconDown.png) no-repeat center top; display: block; height: 27px; width: 29px; }

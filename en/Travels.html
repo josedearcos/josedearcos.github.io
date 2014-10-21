@@ -90,8 +90,33 @@ opacity: 0;
        $('#pills a').hover(function (e) {
           e.preventDefault()
           $(this).tab('show')
-       });
-    });
+       });    
+        
+    //To zoom in/out the map
+    function UpClick()
+    {
+        panZoom.zoomIn(1);
+    }
+    function DownClick()
+    {
+        panZoom.zoomOut(1);
+    }
+    //In case somebody holds the button down
+var intervalId;
+$("#mapContainer #up").mousedown(function() {
+  UpClick();
+  intervalId = setInterval(UpClick, 75);
+}).mouseup(function() {
+  clearInterval(intervalId);
+});
+
+$("#mapContainer #down").mousedown(function() {
+  DownClick();
+  intervalId = setInterval(DownClick, 75);
+}).mouseup(function() {
+  clearInterval(intervalId);
+});
+});
 </script>
 
 </head>
@@ -115,10 +140,9 @@ opacity: 0;
     
     <div class="jumbotron">
      </div>
-  <div class="container" align="center">
+  <div class="container TravelTitle" align="center">
   <h2>Mi cuaderno de bit&aacute;cora</h2>
     <div class="row top-buffer">
-<div class="text-center">
 <div class="btn-toolbar ">
 
      <div class="active btn-group">
@@ -134,7 +158,6 @@ opacity: 0;
      </div>
       </div>
       </div>
-    </div>
   </div>
 
 <div class = "ShowMap">
@@ -143,7 +166,7 @@ opacity: 0;
      <div id="mapContainer">
 	<div id="map"></div>
 	<div id="mapControls"><a id="up" href="javascript:;"></a><a id="down" href="javascript:;"></a></div>
-        <h2 id="location_name"> Hover over a city or click the dot to see more info <h1><br><br></h1></h2>
+        <h2 id="location_name"> Hover over a city or click the dot to see more info <h1><br><br><br></h1></h2>
      </div>
     </div>
 </div>
