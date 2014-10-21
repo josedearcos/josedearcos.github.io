@@ -8,7 +8,7 @@
 	
 	function worldmap(){
 	  
-	        $(document.getElementById('ShowMap')).show();
+	        $(document.getElementById('ShowMap')).show();//To avoid it is shown before the page is loaded.
 
 		image_array=[];
 		var div = document.getElementById('map');
