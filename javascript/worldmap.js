@@ -8,6 +8,8 @@
 	
 	function worldmap(){
 	  
+	        $(document.getElementById('ShowMap')).show();
+
 		image_array=[];
 		var div = document.getElementById('map');
 		var width=1000;

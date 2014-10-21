@@ -120,14 +120,14 @@
 .TravelTitle h2{
     font: 400 60px 'JennaSue', sans-serif;
 }
-.ShowMap
+#ShowMap
 {
   width: 100%;
   text-align: center;
   height: 580px;
 }
 
-.ShowMap h1 {
+#ShowMap h1 {
     text-align: center;
     font: 400 1px 'JennaSue', sans-serif;
 }
@@ -137,17 +137,17 @@
   display: inline-block;
 }
 
-.ShowMap h2{
-  margin-top:-20px;
+#ShowMap h2{
+  margin-top:-20px;/*To center the text*/
   font: 100 50px 'JennaSue', sans-serif;
 }
 
-.ShowMap p {
+#ShowMap p {
   font: 100 20px 'EB Garamond', Helvetica, sans-serif;
 }
 
-.ShowMap h3{
-  font: 100 40px 'JennaSue', sans-serif;
+#ShowMap h3{
+  font: 100 50px 'JennaSue', sans-serif;
 }
 
 /*Travels page*/

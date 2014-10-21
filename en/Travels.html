@@ -57,68 +57,6 @@ opacity: 0;
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
 </script>
-<script type="text/javascript" language="javascript">
-    $(document).ready(function(){
-
-           $('.ShowTravels').hide();
-           $('.ShowCities').hide();
-           $('.ShowMap').show();
-
-   //Show buttons
-    $('.btn-toolbar').on('click', '#MapButton', function() {
-        $("#Album").hide();
-        $(".ShowTravels").slideUp("fast");
-        $(".ShowCities").slideUp("fast");
-        $(".ShowMap").toggle("slow");
-	$('#showalbum').empty();
-    });
-    $('.btn-toolbar').on('click', '#TripButton', function() {
-        $("#Album").hide();
-        $(".ShowMap").slideUp("fast");
-        $(".ShowCities").slideUp("fast");
-        $(".ShowTravels").toggle("slow");
-	$('#showalbum').empty();
-	});
-    $('.btn-toolbar').on('click', '#CityButton', function() {
-        $("#Album").hide();
-        $(".ShowTravels").slideUp("fast");
-        $(".ShowMap").slideUp("fast");
-        $(".ShowCities").toggle("slow");
-	$('#showalbum').empty();
-    });
-        //Display tabs on hover
-       $('#pills a').hover(function (e) {
-          e.preventDefault()
-          $(this).tab('show')
-       });    
-        
-    //To zoom in/out the map
-    function UpClick()
-    {
-        panZoom.zoomIn(1);
-    }
-    function DownClick()
-    {
-        panZoom.zoomOut(1);
-    }
-    //In case somebody holds the button down
-var intervalId;
-$("#mapContainer #up").mousedown(function() {
-  UpClick();
-  intervalId = setInterval(UpClick, 75);
-}).mouseup(function() {
-  clearInterval(intervalId);
-});
-
-$("#mapContainer #down").mousedown(function() {
-  DownClick();
-  intervalId = setInterval(DownClick, 75);
-}).mouseup(function() {
-  clearInterval(intervalId);
-});
-});
-</script>
-
 </head>
 
   <body>
@@ -160,7 +98,7 @@ $("#mapContainer #down").mousedown(function() {
       </div>
   </div>
 
-<div class = "ShowMap">
+<div id = "ShowMap">
     <div class="container">
      <h2>Around the world</h2>
      <div id="mapContainer">
@@ -328,5 +266,66 @@ $("#mapContainer #down").mousedown(function() {
       </div>
 </div>
 </body>
+  
+  <script type="text/javascript" language="javascript">
+    $(document).ready(function(){
+
+   //Show buttons
+    $('.btn-toolbar').on('click', '#MapButton', function() {
+        $("#Album").hide();
+        $(".ShowTravels").slideUp("fast");
+        $(".ShowCities").slideUp("fast");
+        $("#ShowMap").toggle("slow");
+	$('#showalbum').empty();
+    });
+    $('.btn-toolbar').on('click', '#TripButton', function() {
+        $("#Album").hide();
+        $("#ShowMap").slideUp("fast");
+        $(".ShowCities").slideUp("fast");
+        $(".ShowTravels").toggle("slow");
+	$('#showalbum').empty();
+	});
+    $('.btn-toolbar').on('click', '#CityButton', function() {
+        $("#Album").hide();
+        $(".ShowTravels").slideUp("fast");
+        $("#ShowMap").slideUp("fast");
+        $(".ShowCities").toggle("slow");
+	$('#showalbum').empty();
+    });
+        //Display tabs on hover
+       $('#pills a').hover(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+       });    
+        
+    //To zoom in/out the map
+    function UpClick()
+    {
+        panZoom.zoomIn(1);
+    }
+    function DownClick()
+    {
+        panZoom.zoomOut(1);
+    }
+    //In case somebody holds the button down
+var intervalId;
+$("#mapContainer #up").mousedown(function() {
+  UpClick();
+  intervalId = setInterval(UpClick, 75);
+}).mouseup(function() {
+  clearInterval(intervalId);
+});
+
+$("#mapContainer #down").mousedown(function() {
+  DownClick();
+  intervalId = setInterval(DownClick, 75);
+}).mouseup(function() {
+  clearInterval(intervalId);
+});
+           $('.ShowTravels').hide();
+           $('.ShowCities').hide();
+           $('#ShowMap').hide();
+});
+</script>
 </html>
 
