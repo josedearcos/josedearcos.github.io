@@ -117,7 +117,7 @@
 
 /*Travel Map*/
 
-.trips
+.ShowMap
 {
   border-bottom:1px solid #dbdbdb;
   width: 100%;
@@ -125,7 +125,7 @@
   height: 580px;
 }
 
-.trips h1 {
+.ShowMap h1 {
     text-align: center;
     font: 400 1px 'JennaSue', sans-serif;
 }
@@ -134,51 +134,86 @@
 {
   display: inline-block;
 }
-.trips h2{
+.ShowMap h2{
   font: 100 50px 'JennaSue', sans-serif;
 }
 
-.trips p {
+.ShowMap p {
   font: 100 20px 'EB Garamond', Helvetica, sans-serif;
 }
 
-.trips h3{
+.ShowMap h3{
   font: 100 40px 'JennaSue', sans-serif;
 }
 
 /*Travels page*/
 
-.travels{
+.ShowCities{
   margin-bottom:13px;
 }
 
-.travels h1{
+.ShowCities h1{
   font: 400 45px 'JennaSue', sans-serif;
 }
 
-.travels h2{
+.ShowCities h2{
   font: 100 35px 'JennaSue', sans-serif;
 }
 
-.travels h3{
+.ShowCities h3{
   font: 100 50px 'JennaSue', sans-serif;
 }
 
-.travels p{
+.ShowCities p{
 
   font: 100 18px 'EB Garamond', Helvetica, sans-serif
   /*font: 100 20px 'Goudy Bookletter 1911', Helvetica, sans-serif;*/
 }
 
-.travels li{
+.ShowCities li{
     font: 100 15px 'EB Garamond', Helvetica, sans-serif;
 }
 
-.travels a{
+.ShowCities a{
     font: 100 18px 'EB Garamond', Helvetica, sans-serif
 }
 
-.travels .container
+.ShowCities .container
+{
+	border-bottom:1px solid #dbdbdb;
+}
+
+.ShowTravels{
+  margin-bottom:13px;
+}
+
+.ShowTravels h1{
+  font: 400 45px 'JennaSue', sans-serif;
+}
+
+.ShowTravels h2{
+  font: 100 35px 'JennaSue', sans-serif;
+}
+
+.ShowTravels h3{
+  font: 100 50px 'JennaSue', sans-serif;
+}
+
+.ShowTravels p{
+
+  font: 100 18px 'EB Garamond', Helvetica, sans-serif
+  /*font: 100 20px 'Goudy Bookletter 1911', Helvetica, sans-serif;*/
+}
+
+.ShowTravels li{
+    font: 100 15px 'EB Garamond', Helvetica, sans-serif;
+}
+
+.ShowTravels a{
+    font: 100 18px 'EB Garamond', Helvetica, sans-serif
+}
+
+.ShowTravels .container
 {
 	border-bottom:1px solid #dbdbdb;
 }
@@ -339,10 +374,6 @@ color: green !important;}
 #coding .dl-horizontal dt
 {
      white-space: normal;
-}
-
-.btn-toolbar{
-  text-align: center;
 }
 
 /* CSS Sprite of flags for languages */

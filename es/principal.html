@@ -11,6 +11,8 @@
   <title>Jos&eacute de Arcos</title>
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+
   <!--Google Analytics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -23,7 +25,11 @@
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
 </script>
-
+<script>
+$( document ).ready(function() {
+$(function () { $("[data-toggle='tooltip']").tooltip(); });
+});
+</script>
 </head>
 
   <body>
@@ -72,7 +78,7 @@
               </div>
               <div class="col-md-4">
                 <h3><a href="fotos.html">Actividades</a></h3>
-                <p> Si tengo la oportunidad me encanta viajar con mi <abbr title="C&aacute;mara r&eacute;flex digital (Digital Single-Lens Reflex camera)" class="initialism">DSLR</abbr> en busca de la foto perfecta. En mi tiempo libre tambi&eacute;n me gusta jugar un par de partidas de ajedrez y estudiar otros idiomas. </p>
+                <p> Si tengo la oportunidad me encanta viajar con mi <abbr data-toggle="tooltip" data-html="true" title="C&aacute;mara r&eacute;flex digital <br> (Digital Single-Lens Reflex camera)">DSLR</abbr> en busca de la foto perfecta. En mi tiempo libre tambi&eacute;n me gusta jugar un par de partidas de ajedrez y estudiar otros idiomas. </p>
               </div>
             </div>
           </div>

@@ -9,11 +9,42 @@
 
   <title>Viajes</title>
 	
+<style>
+.fade {
+opacity: 0;
+-webkit-transition: opacity .75s;
+  -moz-transition: opacity .75s;
+   -ms-transition: opacity .75s;
+	-o-transition: opacity .75s;
+	   transition: opacity .75s;
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+
+.nav-tabs > li, .btn-toolbar > li {
+    float:none;
+    display:inline-block;
+}
+
+.nav-tabs, .btn-toolbar {
+    text-align:center;
+}
+</style>
+	
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
   <script src="../javascript/raphael-min.js"></script>
   <script type="text/javascript" src="../javascript/raphael.pan-zoom.min.js"></script>
   <script src="../javascript/world.js"></script>
   <script src="../javascript/worldmap.js"></script>
+
     <!--Google Analytics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,6 +56,48 @@
   ga('require', 'displayfeatures');
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
+</script>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function(){
+
+           $('.ShowTravels').hide();
+           $('.ShowCities').hide();
+           $('.ShowMap').show();
+	   
+   //Show buttons
+    $('.btn-toolbar').on('click', '#MapButton', function() {
+        $("#Album").hide();
+        $(".ShowTravels").slideUp("fast");
+        $(".ShowCities").slideUp("fast");
+        $(".ShowMap").toggle("slow");
+	$('#showalbum').empty();
+    });
+    $('.btn-toolbar').on('click', '#TripButton', function() {
+        $("#Album").hide();
+        $(".ShowMap").slideUp("fast");
+        $(".ShowCities").slideUp("fast");
+        $(".ShowTravels").toggle("slow");
+	$('#showalbum').empty();
+	});
+    $('.btn-toolbar').on('click', '#CityButton', function() {
+        $("#Album").hide();
+        $(".ShowTravels").slideUp("fast");
+        $(".ShowMap").slideUp("fast");
+        $(".ShowCities").toggle("slow");
+	$('#showalbum').empty();
+    });
+      //Display tabs on hover
+
+       $('#pills a').hover(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+       });
+        //I prefer not to activate the buttons without click
+        //  $('.btn-toolbar button').mouseenter(function(e) {
+        //  e.preventDefault()
+        //  $(this).click()
+       //});
+    });
 </script>
 
 </head>
@@ -46,10 +119,28 @@
       </div>
     </div>
     
-    <div class="jumbotron">
+    <div class="jumbotron"></div>
+    
+  <div class="container" align="center">
+  <h2>Mi cuaderno de bit&aacute;cora</h2>
+    <div class="row top-buffer">
+     <div class="btn-toolbar centered">
+     <div class="active btn-group">
+     <button type="button" class="btn btn-success" id="MapButton"> Mapa del mundo</button>
      </div>
-
-<div class = trips>
+     
+      <div class="btn-group">
+     <button type="button" class="btn btn-info" id="CityButton"> Mis hogares </button>
+     </div>
+      
+     <div class="btn-group">
+     <button type="button" class="btn btn-danger" id="TripButton"> Viajes para recordar </button>
+     </div>
+    </div>
+    </div>
+  </div>
+  
+<div class = "ShowMap">
     <div class="container">
      <h2>Alrededor del mundo</h2>
      </div>
@@ -63,28 +154,21 @@
     </div>
 </div>
 
-<div class="tabbable"> <!-- Only required for left/right tabs -->
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
-        <li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+<div class="ShowCities">
+    <div class="container">
+        <h3 align="center">Mis hogares</h3>
+	
+        <p>A lo largo de mi vida he residido en unas cuantas ciudades alrededor del mundo, las circunstancias que me llevaron a cada una de ellas est&aacute;n resumidas en las siguientes l&iacute;neas:</p>
+    <ul class="nav nav-pills" id="pills">
+     <li class="active"><a href="#Madrid" data-toggle="pill">Madrid</a></li>
+     <li><a href="#Chicago" data-toggle="pill">Chicago</a></li>
+     <li><a href="#Beijing" data-toggle="pill">Beijing</a></li>
+     <li><a href="#Cambridge" data-toggle="pill">Cambridge</a></li>
+     <li><a href="#Herrera" data-toggle="pill">Herrera</a></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="tab1">
-            <p>I'm in Section 1.</p>
-        </div>
-        <div class="tab-pane" id="tab2">
-            <p>Howdy, I'm in Section 2.</p>
-        </div>
-    </div>
-</div>
-
-<div class="travels">
-    <div class="container">
-        <h3 align="center">My cities</h3>
-        
-        <p>I have lived in a few cities all around the world, the circumstances that brought me to each of them are resumed in the following lines:</p>
-	
-            <h1 id="Madrid">Madrid, Spain</h1>
+	<div class="tab-pane fade in active" id="Madrid">
+            <h1 align="center">Madrid, Espa&ntilde;a</h1>
             <p> I had the luck to be born in Madrid, capital of Spain, a vibrating city where there is always a multicultural mixture of people wandering around its streets. Downtown is always full of life until late in the night, together with its mild weather and affable inhabitants made me fall in love with this city instantly.</p>
             <div class="row">
 	    <div class="col-md-offset-4 col-sx-offset-4  col-sm-offset-4 col-md-4 col-sx-4 col-sm-4">
@@ -96,10 +180,11 @@
             </div>
           </div>
 	  </div>
-	   
+	 
 	    <p> In Madrid I studied Telecommunication Engineering in the Politechnic University of Madrid, one of the top educational institutions in the country. In 2010 I left Spain looking for new experiences. I wanted to become fluent in English and expand my comfort zone, learn about new cultures and new people, so I went to America.</p>
-            
-            <h1 id="Chicago">Chicago, Illinois, United States</h1>
+        </div>
+	<div class="tab-pane fade" id="Chicago">
+            <h1 align="center">Chicago, Illinois, Estados Unidos</h1>
             <p> The second city will always be the first one in my heart. Its architecture is as beautiful as it can get, and its deep-dish pizzas are equally delicious, but let's leave aside its freezing winters. </p>
             <div class="row">
 	    <div class="col-md-offset-4 col-sx-offset-2  col-sm-offset-2 col-md-4 col-sx-6 col-sm-6">
@@ -114,9 +199,10 @@
 	   
 	    <p> Chicago was the door to my american experience, I moved here in 2010 to start a Master's in Physics, one of my passions, and what I thought would be a one year trip became my home.
             A year later I found myself very comfortable and I had the chance to pursue a PhD. in Experimental Particle Physics at Illinois Institute of Technology. </p>
-            <p> In the meantime I could enjoy watching the NBA in live for first time, flying a small plane on top of Navy Pier or sailing the Michigan Lake. </p>
-            
-            <h1 id="Beijing">Beijing, China</h1>
+            <p> In the meantime I could enjoy watching the NBA in live for first time, flying a small plane on top of Navy Pier or sailing the Michigan Lake. </p> 
+        </div>
+	<div class="tab-pane fade" id="Beijing">
+            <h1 align="center">Beijing, China</h1>
             <p> In 2014 I was granted the Pengnian scholarship and I spent a semester as a visiting researcher at Tsinghua University (清华大学).</p>
 	    <div class="row">
 	    <div class="col-md-offset-4 col-sx-offset-2  col-sm-offset-2 col-md-4 col-sx-6 col-sm-6">
@@ -128,11 +214,11 @@
             </div>
            </div>
 	    </div>
-		    
 	    <p> In that time I had the chance to be immersed in a culture like no other, I could learn about Chinese arts, food, architecture, language and most importantly its people. </p>
             <p> Being in such a different environment makes you realize that travelling and being far from home can be hard at times, but the unforgettable experiences you get in return are the best reward, so I will keep doing it as long as possible.</p>
-            
-	    <h1 id="Cambridge">Cambridge, Massachussetts, United States</h1>
+	</div>
+	<div class="tab-pane fade" id="Cambridge">
+	    <h1 align="center">Cambridge, Massachussetts, Estados Unidos</h1>
             <p> In my last year of PhD. I moved to Cambridge, a fantastic little town near Boston that is home of two of the most renowned universities in the world,i.e., Harvard and <abbr title="Massachussetts Institute of Technology">MIT</abbr>.</p>
             
 	    <div class="row">
@@ -147,8 +233,9 @@
 	    </div>
 	    <p> This makes Cambridge a very intelectual challenging environment, where I would like to stay for a few more years. Right now I am looking forward to find a job or research position in the neighborhood.</p>
 	    <p> If you know about a position that could fit my profile, <a href="Contact.html">let me know!</a></p>
-
-            <h1 id="Herrera">Herrera de Alcantara, Spain</h1>
+	</div>
+	<div class="tab-pane fade" id="Herrera">
+            <h1 align="center">Herrera de Alc&aacute;ntara, Espa&ntilde;a</h1>
             <p> Enjoying this little town nearby Portugal is the best way to rest from the frenetic city life and find yourself back in the old traditions, natural food and clean starry skies.</p>
             
 	    <div class="row">
@@ -163,26 +250,65 @@
 	  </div>
 	    <p> It is not by chance that in summer its population doubles when the expatriates come back to their roots. No matter the distance, I will always return to its peaceful roads and gorgeous sightseeings. </p>
             
-      </div>
+	</div>
+    </div>
+    </div>
+</div>
+<div class="ShowTravels">
     <div class="container">
 	
-      <h1>Memorable trips</h1>
-     	     
-            <h2>2005 Rome</h2>
-	    
-            <h2>2009 Turkey</h2>
-	    
-            <h2>2009 Holland</h2>
-	    
-            <h2>2011 Route 66</h2>
-               
-            <h2>2011 Along the Mississippi </h2>
-	    
-            <h2>2012 Amalfi Coast </h2>
-	    
-            <h2>2013 South of China</h2>
+	 <h1 align="center">Viajes para recordar</h1>
+	 
+  <ul class="nav nav-pills nav-stacked col-md-1" id="pills">
+  <li class="active"><a href="#Rome" data-toggle="pill">Rome</a></li>
+  <li><a href="#Turkey" data-toggle="pill">Turkey</a></li>
+  <li><a href="#Holland" data-toggle="pill">Holland</a></li>
+  <li><a href="#Route66" data-toggle="pill">Route66</a></li>
+    <li><a href="#Mississippi" data-toggle="pill">Mississippi</a></li>
+  <li><a href="#Amalfi" data-toggle="pill">Amalfi</a></li>
+  <li><a href="#China" data-toggle="pill">China</a></li>
+</ul>
+<div class="tab-content col-md-offset-1 col-md-10">
+        <div class="tab-pane active" id="Rome">
+	<h2>2005 Rome</h2>
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                ac turpis egestas.</p>
+        </div>
+        <div class="tab-pane" id="Turkey">
+             <h2>2009 Turkey</h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                ac turpis egestas.</p>
+        </div>
+        <div class="tab-pane" id="Holland">
+             <h2>2009 Holland</h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                ac turpis egestas.</p>
+        </div>
+
+	 <div class="tab-pane" id="Route66">
+              <h2>2011 Route 66</h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                ac turpis egestas.</p>
+        </div>
+	  <div class="tab-pane" id="Mississippi">
+              <h2>2011 Along the Mississippi </h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                ac turpis egestas.</p>
+        </div>
+	   <div class="tab-pane" id="Amalfi">
+             <h2>2012 Amalfi Coast </h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                ac turpis egestas.</p>
+        </div>
+	    <div class="tab-pane" id="tab_d">
+              <h2>2013 South of China</h2>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                ac turpis egestas.</p>
+        </div>
+</div><!-- tab content -->
+    </div>
+
       </div>
 </div>
-  </div>
 </body>
 </html>

@@ -11,6 +11,8 @@
   <title>Jos&eacute de Arcos</title>
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+
   <!--Google Analytics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,20 +27,8 @@
 </script>
 <script>
 $( document ).ready(function() {
-function top() {
-    
-     $('html,body').delay(500).animate({ scrollTop:getElementById("chrono").offsetTop }, 2000);
-
-};
-
-function bottom() {
-    window.setTimeout( function () { top(); }, 2000 );
-};
-
-bottom();
-
+$(function () { $("[data-toggle='tooltip']").tooltip(); });
 });
-
 </script>
 </head>
 
@@ -86,11 +76,11 @@ bottom();
                 <h3><a href="./en/Work.html#Physics">Physics</a></h3>
                 <p>Since I was in high school I was amazed by the simplicity
                 and power of the laws of nature. After finishing my degree in
-                Telecommunication Engineering I decided to pursue a  <abbr title="Doctor of Philosophy">Ph.D.</abbr> in Physics to learn all I could about it.</p>
+                Telecommunication Engineering I decided to pursue a <abbr data-toggle="tooltip" title="Doctor of Philosophy">Ph.D.</abbr> in Physics to learn all I could about it.</p>
               </div>
               <div class="col-md-4">
                 <h3><a href="./en/Pictures.html">Hobbies</a></h3>
-                <p>Whenever I have the chance I enjoy travelling with my <abbr title="Digital Single-Lens Reflex camera" class="initialism">DSLR</abbr> looking for the perfect picture.
+                <p>Whenever I have the chance I enjoy travelling with my <abbr data-toggle="tooltip" title="Digital Single-Lens Reflex camera">DSLR</abbr> looking for the perfect picture.
 		In my free time I also enjoy playing a couple of matches of chess and studing foreign languages. </p>
               </div>
             </div>
