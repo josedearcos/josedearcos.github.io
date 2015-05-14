@@ -256,6 +256,7 @@
 
 .work p{
 
+  margin: 1em;
   font: 100 18px 'EB Garamond', Helvetica, sans-serif
   /*font: 100 20px 'Goudy Bookletter 1911', Helvetica, sans-serif;*/
 }
