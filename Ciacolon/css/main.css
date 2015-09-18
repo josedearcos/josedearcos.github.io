@@ -1,31 +1,6 @@
+/* Fonts */
+
 *{font-family:'Lato',Geneva, sans-serif;}
-
-/*
-@font-face {
-	font-family: 'ankecallig';
-	src: url('../fonts/ankecallig-fg.ttf');
-	src: local('ankecallig'), local('ankecallig'), url('../fonts/ankecallig-fg.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'ChatMoss';
-	src: url('../fonts/ChatMoss.ttf');
-	src: local('ChatMoss'), local('ChatMoss'), url('../fonts/ChatMoss.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'JH2TRIAL';
-	src: url('../fonts/JH2TRIAL.ttf');
-	src: local('JH2TRIAL'), local('JH2TRIAL'), url('../fonts/JH2TRIAL.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'TalkingToTheMoon';
-	src: url('../fonts/TalkingToTheMoon.ttf');
-	src: local('TalkingToTheMoon'), local('TalkingToTheMoon'), url('../fonts/TalkingToTheMoon.ttf') format('truetype');
-}
-
-*/
 
 @font-face {
 	font-family: 'JennaSue';
@@ -56,6 +31,73 @@
 
 @media(min-width:1200px){.thumbnail img { min-height:250px; height:250px; }
 .framepdf {width:100%; height:400px;}
+}
+
+/* Webpage wrapper */
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	width: 100%;
+}
+#wrapper {
+	min-height:100%;
+	width:100%;
+	position:relative;
+	overflow-y: hidden;
+	overflow-x: hidden;
+
+}
+#header-main
+{	width:100%;
+	height:40px;
+	position:fixed;
+	background:#090274;
+	color:white;
+}
+
+#header {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  font-size: 72px;
+  height:80px;
+  background:white;
+  color: #fff;
+  font-family: 'PT Sans', sans-serif;
+  transition: all 0.4s ease;
+  margin: 0;
+  clear: both;
+  top: 0;
+    z-index:900;
+}
+
+#header-line
+{
+	position: fixed;
+	height:80px;
+	margin-left:10%;
+	width: 80%;
+	border-bottom:1px solid #090631;
+	  z-index:900;
+
+}
+
+#content {
+	height:auto;
+	width:100%;
+	padding-top:40px;
+	padding-bottom:40px;   /* Height of the footer element */
+}
+#footer {
+	width:100%;
+	height:40px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background:#090274;
+	color:white;
 }
 
 /*Navigator tab*/
@@ -198,6 +240,7 @@ color: green !important;}
 
 
 /*Circular menu*/
+
 .circular-menu {
     position:absolute;
     top:50%;/*middle of the screen*/
@@ -302,6 +345,7 @@ color: green !important;}
     left:50%;
 }
 
+/* Entry button */
 #bienvenuti_message{
 	font-family: 'HomemadeApple';
 	font-weight: 100;
@@ -317,6 +361,27 @@ color: green !important;}
         -moz-transition: all 0.4s ease-out;
         transition: all 0.4s ease-out;
 }
+
+
+/* Video */
+
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+
+/* Info */
 
 .address_message
 {
@@ -356,7 +421,7 @@ color: green !important;}
 
 }
 
-/* Menu */
+/* Food menu */
 .Menu
 {
 	position:relative;
@@ -386,71 +451,4 @@ p.info_menu
   margin-top: 1em;
   margin-bottom: 2em;
   font-size:15px;
-}
-
-/* Sticky footer */
-html,
-body {
-	margin:0;
-	padding:0;
-	height:100%;
-	width: 100%;
-}
-#wrapper {
-	min-height:100%;
-	width:100%;
-	position:relative;
-	overflow-y: hidden;
-	overflow-x: hidden;
-
-}
-#header-main
-{	width:100%;
-	height:40px;
-	position:fixed;
-	background:#090274;
-	color:white;
-}
-
-#header {
-  position: fixed;
-  width: 100%;
-  text-align: center;
-  font-size: 72px;
-  height:80px;
-  background:white;
-  color: #fff;
-  font-family: 'PT Sans', sans-serif;
-  transition: all 0.4s ease;
-  margin: 0;
-  clear: both;
-  top: 0;
-    z-index:900;
-}
-
-#header-line
-{
-	position: fixed;
-	height:80px;
-	margin-left:10%;
-	width: 80%;
-	border-bottom:1px solid #090631;
-	  z-index:900;
-
-}
-
-#content {
-	height:auto;
-	width:100%;
-	padding-top:40px;
-	padding-bottom:40px;   /* Height of the footer element */
-}
-#footer {
-	width:100%;
-	height:40px;
-	position:absolute;
-	bottom:0;
-	left:0;
-	background:#090274;
-	color:white;
 }
