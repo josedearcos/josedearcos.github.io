@@ -60,17 +60,24 @@
 
 /*Navigator tab*/
 
-
+.nav{
+	width:100%;
+	height: 60px;
+	position: fixed;
+	z-index:999;
+  }
+.nav ul{
+    margin:-30px 60px;
+}
 .nav a {
-  color: #5a5a5a;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 14px 10px;
+  color: #090274;
+  font-size: 13.5px;
+  font-weight:500;
   text-transform: uppercase;
 }
 
 .nav li {
-  display: inline;
+	display: inline;
 }
 
 /*Main image*/
@@ -100,9 +107,32 @@
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-#MainPage {
-  background-color: #090274; 
+.MainPage {
+  background-color: white; 
   border-bottom:1px solid #dbdbdb;
+  font-family:'HomemadeApple';
+}
+
+.MainPage h1 {
+  font: 100 60px 'HomemadeApple';
+    color:#090274;
+
+}
+
+.MainPage h2 {
+  font: 100 45px 'HomemadeApple', 
+}
+
+.MainPage h3 {
+  font: 100 30px 'HomemadeApple', 
+}
+
+.MainPage p {
+  font: 100 17px 'EB Garamond', Helvetica, sans-serif;
+}
+
+.MainPage a {
+  font: 100 45px 'HomemadeApple', sans-serif;
 }
 
 /*Activities in the main page*/
@@ -392,10 +422,6 @@ color: green !important;}
 .flag.flag-gb {background-position: -25px -15px}
 .flag.flag-it {background-position: -50px -15px}
 
-.nav{
-	 margin-top:15px;
-	 margin-bottom:8px;
-}
 
 /*Circular menu*/
 .circular-menu {
@@ -433,7 +459,7 @@ color: green !important;}
     position: absolute;
     z-index: 20;
     font-family:'HomemadeApple';
-    font-weight: 500;
+    font-weight: 100;
     font-size: 1.2em;
     color: #000000;
     height: 30%;
@@ -536,6 +562,51 @@ color: green !important;}
 	transition: all 2s ease;
 }
 
+/* Calendar */
+
+.calendar
+{
+	position: static;
+	right:10px;
+}
+
+.event-slideshow
+{
+	position:static;
+
+}
+
+/* Menu */
+.Menu
+{
+	position:relative;
+	width:500px;
+        height:auto;
+        top:50%;
+        left:50%;
+        margin:0 0 0 -250px;
+	border:1px solid #000;
+}
+
+p.menu_name
+{
+	font-family:HomemadeApple;
+	font-size:30px;
+        margin: 0em;
+	
+	
+}
+p.prezzo
+{
+	margin-top: -0.5em;
+	font-size:20px;
+}
+p.info_menu
+{
+  margin-top: 1em;
+  margin-bottom: 2em;
+  font-size:15px;
+}
 /* Sticky footer */
 html,
 body {
@@ -546,17 +617,50 @@ body {
 }
 #wrapper {
 	min-height:100%;
+	width:100%;
 	position:relative;
 	overflow-y: hidden;
 	overflow-x: hidden;
 
 }
-#header {
-	background:#090274;
-	width:100%;
+#header-main
+{	width:100%;
 	height:40px;
+	position:fixed;
+	background:#090274;
+	color:white;
 }
+
+#header {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  font-size: 72px;
+  height:80px;
+  background:white;
+  color: #fff;
+  font-family: 'PT Sans', sans-serif;
+  transition: all 0.4s ease;
+  margin: 0;
+  clear: both;
+  top: 0;
+    z-index:900;
+}
+
+#header-line
+{
+	position: fixed;
+	height:80px;
+	margin-left:10%;
+	width: 80%;
+	border-bottom:1px solid #090631;
+	  z-index:900;
+
+}
+
 #content {
+	height:auto;
+        margin-top: 80px;
 	width:100%;
 	padding:10px;
 	padding-bottom:40px;   /* Height of the footer element */
