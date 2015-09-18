@@ -107,232 +107,6 @@
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-.MainPage {
-  background-color: white; 
-  border-bottom:1px solid #dbdbdb;
-  font-family:'HomemadeApple';
-}
-
-.MainPage h1 {
-  font: 100 60px 'HomemadeApple';
-    color:#090274;
-
-}
-
-.MainPage h2 {
-  font: 100 45px 'HomemadeApple', 
-}
-
-.MainPage h3 {
-  font: 100 30px 'HomemadeApple', 
-}
-
-.MainPage p {
-  font: 100 17px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.MainPage a {
-  font: 100 45px 'HomemadeApple', sans-serif;
-}
-
-/*Activities in the main page*/
-.activities {
-  color:white;
-  background-color: #090274;
-  border-bottom:1px solid #dbdbdb;
-}
-
-.activities h3 {
-  font: 100 45px 'JennaSue', 
-  100, sans-serif;
-}
-
-.activities p {
-  font: 100 17px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.activities a {
-  font: 100 45px 'JennaSue', sans-serif;
-}
-
-/*Travel Map*/
-
-.TravelTitle h2{
-    font: 400 60px 'JennaSue', sans-serif;
-}
-#ShowMap
-{
-  width: 100%;
-  text-align: center;
-  height: 580px;
-}
-
-#ShowMap h1 {
-    text-align: center;
-    font: 400 1px 'JennaSue', sans-serif;
-}
-
-#map
-{
-  display: inline-block;
-}
-
-#ShowMap h2{
-  margin-top:-20px;/*To center the text*/
-  font: 100 50px 'JennaSue', sans-serif;
-}
-
-#ShowMap p {
-  font: 100 20px 'EB Garamond', Helvetica, sans-serif;
-}
-
-#ShowMap h3{
-  font: 100 50px 'JennaSue', sans-serif;
-}
-
-/*Travels page*/
-
-.ShowCities{
-  margin-bottom:13px;
-}
-
-.ShowCities h1{
-  font: 400 45px 'JennaSue', sans-serif;
-}
-
-.ShowCities h2{
-  font: 100 35px 'JennaSue', sans-serif;
-}
-
-.ShowCities h3{
-  font: 100 50px 'JennaSue', sans-serif;
-}
-
-.ShowCities p{
-
-  font: 100 18px 'EB Garamond', Helvetica, sans-serif
-  /*font: 100 20px 'Goudy Bookletter 1911', Helvetica, sans-serif;*/
-}
-
-.ShowCities li{
-    font: 100 15px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.ShowCities a{
-    font: 100 18px 'EB Garamond', Helvetica, sans-serif
-}
-
-.ShowTravels{
-  margin-bottom:13px;
-}
-
-.ShowTravels h1{
-  font: 400 45px 'JennaSue', sans-serif;
-}
-
-.ShowTravels h2{
-  font: 100 35px 'JennaSue', sans-serif;
-}
-
-.ShowTravels h3{
-  font: 100 50px 'JennaSue', sans-serif;
-}
-
-.ShowTravels p{
-
-  font: 100 18px 'EB Garamond', Helvetica, sans-serif
-  /*font: 100 20px 'Goudy Bookletter 1911', Helvetica, sans-serif;*/
-}
-
-.ShowTravels li{
-    font: 100 15px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.ShowTravels a{
-    font: 100 18px 'EB Garamond', Helvetica, sans-serif
-}
-
-@media(min-width:980px),(min-width:1200px){/*Only show hover zoom in large devices (it doesn't work well with touch devices)*/
-.TravelThumbnail:hover{
-
-  /* Webkit for Chrome and Safari */
-  -webkit-transform: scale(1.2, 1.2); // This is the enlarged size scale of the image.
-  -webkit-transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-out;
- 
-  /* Webkit for Mozila Firefox */
-  -moz-transform: scale(1.2, 1.2);
-  -moz-transition-duration: 500ms;
-  -moz-transition-timing-function: ease-out;
- 
-  /* Webkit for IE( Version: 11, 10 ) */
-  -ms-transform: scale(1.20, 1.20);
-  -ms-transition-duration: 500ms;
-  -ms-transition-timing-function: ease-out;
-}
-}
-/*Work page*/
-
-.work{
-  margin-bottom:13px;
-}
-
-.work .container{
-
-	border-bottom:1px solid #dbdbdb;
-}
-
-.work h1{
-  font: 100 45px 'JennaSue', sans-serif;
-}
-
-.work h2{
-  font: 300 17px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.work h3{
-  font: 100 17px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.work p{
-
-  font: 100 18px 'EB Garamond', Helvetica, sans-serif
-  /*font: 100 20px 'Goudy Bookletter 1911', Helvetica, sans-serif;*/
-}
-
-.work li{
-    font: 100 15px 'EB Garamond', Helvetica, sans-serif;
-}
-
-/*Extensible list in work page*/
-.sumario{
-    font: 100 17px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.lista
-{
- margin-top:10px;
- font: 100 15px 'EB Garamond', Helvetica, sans-serif;
-}
-@media(min-width:980px),(min-width:1200px){
-.work img:hover{
-
-  /* Webkit for Chrome and Safari */
-  -webkit-transform: scale(1.2, 1.2); // This is the enlarged size scale of the image.
-  -webkit-transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-out;
- 
-  /* Webkit for Mozila Firefox */
-  -moz-transform: scale(1.2, 1.2);
-  -moz-transition-duration: 500ms;
-  -moz-transition-timing-function: ease-out;
- 
-  /* Webkit for IE( Version: 11, 10 ) */
-  -ms-transform: scale(1.20, 1.20);
-  -ms-transition-duration: 500ms;
-  -ms-transition-timing-function: ease-out;
-}
-}
 /* Contact form*/
 label.error{
 color: red !important;
@@ -433,6 +207,7 @@ color: green !important;}
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    z-index: 0;
 }
 .circle {
     position:absolute;
@@ -451,17 +226,20 @@ color: green !important;}
 }
 .open.circle {
     opacity: 1;
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    transform: scale(1.3);
+    z-index: 20;
 }
 .circle a {
     position: absolute;
-    z-index: 20;
+    z-index: 25;
     font-family:'HomemadeApple';
     font-weight: 100;
-    font-size: 1.2em;
-    color: #000000;
+    font-size: 1.5em;
+    /*color: #000000;*/
+    color: white;
+    text-shadow: -1px 0 #090274, 0 1px #090274, 1px 0 #090274, 0 -1px #090274;
     height: 30%;
     width: 30%;
     margin-left: -15%;/* to center the image horizontally*/
@@ -470,8 +248,9 @@ color: green !important;}
     text-align: center;
     text-decoration:none;  /*takes out the underline when hovering*/
 }
+
 .circle a:hover {
-    color: red;
+    color: blue;
 }
 
 .menu-button {
@@ -487,36 +266,36 @@ color: green !important;}
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    
     text-decoration: none;
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
     z-index:15;
+    position: absolute;
 }
 
-.menu-button img {
+#logo{
     position: absolute;
     z-index: 15;
     top: 50%;
     left: 50%;
+    height: auto;
+    width: auto;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
 .open.menu-button {
-   -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
+
 }
 
-.placement{
+.text_placement{
     position:absolute;
     top: 80%;
     left:50%;
 }
 
-.placement2{
+.info_placement{
     position:absolute;
     top: 85%;
     width: 100%;
@@ -528,7 +307,8 @@ color: green !important;}
 	font-weight: 100;
         font-size: 2em;
 	position: relative;
-	color: #090274;
+	color: white;
+        text-shadow: -1px 0 #090274, 0 1px #090274, 1px 0 #090274, 0 -1px #090274;
 	top: 30%;
 	width: 289px;
 	left: -40px;
@@ -607,6 +387,7 @@ p.info_menu
   margin-bottom: 2em;
   font-size:15px;
 }
+
 /* Sticky footer */
 html,
 body {
@@ -660,9 +441,8 @@ body {
 
 #content {
 	height:auto;
-        margin-top: 80px;
 	width:100%;
-	padding:10px;
+	padding-top:40px;
 	padding-bottom:40px;   /* Height of the footer element */
 }
 #footer {
@@ -674,9 +454,3 @@ body {
 	background:#090274;
 	color:white;
 }
-
-/*Zoom for map*/
-.grabbing { cursor: url(closedhand.cur), pointer !important; }
-#mapContainer #mapControls { position: relative; left: 80px; top: -229px; width: 29px; }
-#mapContainer #mapControls #up { background: url(../Images/iconUp.png) no-repeat center top; display: block; height: 26px; width: 29px; }
-#mapContainer #mapControls #down { background: url(../Images/iconDown.png) no-repeat center top; display: block; height: 27px; width: 29px; }

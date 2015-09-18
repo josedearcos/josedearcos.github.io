@@ -41,19 +41,18 @@ $( document ).ready(function() {
     });
     
     /*Open circle*/
-    
-    var image = document.getElementById('Img1');
+
+    var image = document.getElementById('logo');
     var original_height = image.height;
 
     var large={width: "auto",height: original_height};
     var small={width: "auto",height: "350px"};
     var countcircle=1;
-    $("#Img1").css(large).on('click',function () { 
+    $("#logo").css(large).on('click',function () { 
         $(this).animate((countcircle==1)?small:large);
         countcircle = 1-countcircle;
     });
     
-
     /*Show/hide Enter button*/
     
     $('.menu-button').bind({
@@ -65,15 +64,12 @@ $( document ).ready(function() {
     var center={left: "0%"};
     var left={left:"-43%"};
     var right={left:"55%"};
-    var count2=1;
-    var count3=1;
-    if (count2!=0) {
-        $('.phone_message').animate((count2==1)?left:center);
-        count2 = 1-count2;
-    }
-    if (count3!=0) {
-        $('.address_message').animate((count3==1)?right:center);
-        count3 = 1-count3;
+    var count=1;
+    
+    if (count!=0) {
+        $('.phone_message').animate((count!=0)?left:center);
+        $('.address_message').animate((count!=0)?right:center);
+        count = 0;
     }
      },
      mouseleave: function(e) {
@@ -86,29 +82,29 @@ $( document ).ready(function() {
     var number_click=0;
     
     $('.menu-button').on('click', function(event) {
-    event.preventDefault();
-    $(this).toggleClass('open');
-    $('.circle').toggleClass('open');
-    $(this).trigger("mouseleave");
-
+        event.preventDefault();
+        $(this).toggleClass('open');
+        $('.circle').toggleClass('open');
+        $(this).trigger("mouseleave");
+    
         number_click++;
-
-    if (number_click%2!=0) {
+    
+        if (number_click%2!=0) {
             $(this).unbind("mouseenter mouseleave");
-    }
-    /*
-    else
-    {
-        $(this).bind({mouseenter: function(e) {
-        name.innerHTML='Entra';
-         },  mouseleave: function(e) {
-	name.innerHTML='';
-         }
-        });
-    }*/
-});
+        }
+        else
+        {
+            $(this).bind({mouseenter: function(e) {
+                 name.innerHTML='Entra';
+             },  mouseleave: function(e) {
+                 name.innerHTML='';
+             }
+            });
+        }
+    });
 
 $(function () { $("[data-toggle='tooltip']").tooltip(); });
+
 });
 </script>
 
@@ -119,7 +115,7 @@ $(function () { $("[data-toggle='tooltip']").tooltip(); });
     <div id="wrapper">
 	<div id="header-main"></div>
         <div id="content">
-
+            
             <div class="circular-menu">
                 <div class="circle">
                     <ul id="nav" class="circular-list navbar-default">
@@ -132,14 +128,14 @@ $(function () { $("[data-toggle='tooltip']").tooltip(); });
                     </ul>
                 </div>
             </div>
+            <div class="menu-button">
+                <img id="logo" src="./Images/blu2.png";/>
+            </div>
 
-            <a href="" class="menu-button">
-                <img id="Img1" src="./Images/blu2.png";/>
-            </a>
-            <div class = "placement">
+            <div class = "text_placement">
                  <p id ="bienvenuti_message"></p>
             </div>
-            <div class = "placement2">
+            <div class = "info_placement">
             <div class="container">
              <div class="row">
                <div class="col-sm-6">
@@ -150,7 +146,7 @@ $(function () { $("[data-toggle='tooltip']").tooltip(); });
                 </div>
              </div>
             </div>
-            <p class ="phone_message text-center"><img src="./Images/FlagIcons/telephone-16.png";/> 011 6611060<br><img src="./Images/FlagIcons/email-16.png";/> prenotazioni@ilciacolon.it</p> 
+                 <p class ="phone_message text-center"><img src="./Images/FlagIcons/telephone-16.png";/> 011 6611060<br><img src="./Images/FlagIcons/email-16.png";/> prenotazioni@ilciacolon.it</p> 
             </div>
 
         </div>
