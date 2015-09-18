@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+  <link rel="stylesheet" href="../css/main.css" type="text/css" />
+  <link rel="stylesheet" href="../jquery.motionCaptcha.0.2.css" type="text/css" />
+  <link rel="shortcut icon" href="./Images/ciacolon_icon.ico">
+      <title>Contatti</title>
+
+<style>
+/* MotionCAPTCHA canvas */
+#mc-canvas {
+    margin:0 auto 20px;
+    padding:1px;
+    display: block;
+    border: 4px solid #433e45;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+/* Red border when invalid */
+#mc-canvas.mc-invalid {
+    border: 4px solid #aa4444;
+}
+/* Green border when valid */
+#mc-canvas.mc-valid {
+    border: 4px solid #44aa44;
+}
+</style>
+
+
+  <title>Jos&eacute de Arcos</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script src="../javascript/validator-min.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+    <script src="../javascript/app.js"></script> <!-- in this order, needs jquery-->
+    <script src="../javascript/jquery.motionCaptcha.0.2.js" ></script>
+<!--Update captcha-->
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            // Do the biznizz:
+            $('#commentForm').motionCaptcha({
+                shapes: ['triangle', 'x', 'rectangle', 'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star']
+            });
+
+        });
+    </script>
+
+<!-- To avoid the user submiting the form pressing enter -->
+<script>
+$(document).ready(function() {
+$('input').keydown( function(e) {
+        var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+        if(key == 13) {
+            e.preventDefault();
+            var inputs = $(this).closest('form').find(':input:visible');
+            inputs.eq( inputs.index(this)+ 1 ).focus();
+        }
+    });
+});
+</script>
+
+  <!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55427691-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+
+  <div id="contact">
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="../index.html">Who is Jos&eacute; de Arcos</a></li>
+        </ul>
+        <ul class="pull-right">
+	  <li><a href="Travels.html">Travels</a></li>
+          <li><a href="Work.html">Work</a></li>
+          <li><a href="Pictures.html">Pictures</a></li>
+          <!--<li><a href="Hobbies.html">Hobbies</a></li>-->
+        </ul>
+      </div>
+    </div>
+    
+    <div class="jumbotron"></div>
+    </div>
+		<div class="text-center">
+		<h2> Write me a message:</h2>
+		</div>
+		<div class="container-fluid">
+
+	       <div class="row">
+
+		<div class="col-md-2">
+		</div>
+      <div class="col-md-8">
+      <form action="#" method="post" id="commentForm" data-toggle="validator" role="form" >
+	<!--  <legend>Contact Form</legend>  -->
+		<div class="form-group">
+	        <label class="control-label">What's your name?</label>
+			<div class="controls">
+			    <div class="input-group">
+                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="name" type="text" class="form-control" name="name" placeholder="Name">
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+	        <label class="control-label">Write your email address so I can get back to you!</label>
+			<div class="controls">
+			    <div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					<input type="email" class="form-control" id="email" name="email" placeholder="Email" data-error="That email address seems invalid, I won't be able to contact you back!" required>
+			    </div>
+			    <div class="help-block with-errors"></div>
+			</div>	
+		</div>
+		
+		<div class="form-group ">
+	        <label class="control-label">Message</label>
+			<div class="controls">
+			    <div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+					<textarea id="msg" maxlength="300" name="msg" class="form-control " rows="4" cols="78" placeholder="Enter your message here"></textarea>
+			    </div>
+			    <span class="help-block with-errors">Up to 300 characters</span>
+			</div>
+			
+<div id="mc">
+<p>Please draw the shape in the box to submit the form: (<a onclick="window.location.reload()" href="#" title="Click for a new shape">new shape</a>)</p>
+<canvas id="mc-canvas">
+Your browser doesn't support the canvas element - please visit in a modern browser.
+</canvas>
+<input type="hidden" id="mc-action" value=""/>
+</div>
+
+		</div>
+		<div class="col-md-2">
+		</div>
+		
+	      <div class="controls" style="margin-left: 44%;">
+		  
+			<input disabled="disabled" autocomplete="false" type="submit" value="Send Message">
+	        
+	      </div>
+		</form>
+		</div>
+            </div>
+     </div>
+</div>
+</body>
+</html>

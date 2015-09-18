@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+  <meta charset='UTF-8'>
+  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/main.css" type="text/css" />
+  <link rel="shortcut icon" href="./Images/ciacolon_icon.ico">
+
+  <title>Il Ciacolon</title>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+
+  <!--Google Analytics-->
+<!--<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55427691-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>-->
+<script>
+$( document ).ready(function() {
+    $('.carousel').carousel({
+        interval:1000
+    })
+    
+    var name = document.getElementById('bienvenuti_message');
+
+     /*Draw circle menu*/
+
+    var $items = $('.circle a');
+    var numitems = $items.length;
+    $items.each(function(index) {
+    $(this).css('left', 50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+    $(this).css('top', 50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+    });
+    
+    /*Open circle*/
+    
+    var image = document.getElementById('Img1');
+    var original_height = image.height;
+
+    var large={width: "auto",height: original_height};
+    var small={width: "auto",height: "350px"};
+    var countcircle=1;
+    $("#Img1").css(large).on('click',function () { 
+        $(this).animate((countcircle==1)?small:large);
+        countcircle = 1-countcircle;
+    });
+    
+
+    /*Show/hide Enter button*/
+    
+    $('.menu-button').bind({
+        mouseenter: function(e) {
+    /*This shows the message Enter*/
+    name.innerHTML='Entra';
+
+     /*This moves the address and the phone to the sides*/
+    var center={left: "0%"};
+    var left={left:"-43%"};
+    var right={left:"55%"};
+    var count2=1;
+    var count3=1;
+    if (count2!=0) {
+        $('.phone_message').animate((count2==1)?left:center);
+        count2 = 1-count2;
+    }
+    if (count3!=0) {
+        $('.address_message').animate((count3==1)?right:center);
+        count3 = 1-count3;
+    }
+     },
+     mouseleave: function(e) {
+    /*This hides the message Enter*/
+    name.innerHTML='';
+    }
+    });
+        
+    /*Hide Enter message when circle menu is open*/
+    var number_click=0;
+    
+    $('.menu-button').on('click', function(event) {
+    event.preventDefault();
+    $(this).toggleClass('open');
+    $('.circle').toggleClass('open');
+    $(this).trigger("mouseleave");
+
+        number_click++;
+
+    if (number_click%2!=0) {
+            $(this).unbind("mouseenter mouseleave");
+    }
+    /*
+    else
+    {
+        $(this).bind({mouseenter: function(e) {
+        name.innerHTML='Entra';
+         },  mouseleave: function(e) {
+	name.innerHTML='';
+         }
+        });
+    }*/
+});
+
+$(function () { $("[data-toggle='tooltip']").tooltip(); });
+});
+</script>
+
+</head>
+
+  <body>
+
+    <div id="wrapper">
+	<div id="header-main"></div>
+        <div id="content"> 
+        <!-- Carousel
+================================================== -->
+<div class="overlay">
+    
+            <div class="circular-menu">
+                <div class="circle">
+                    <ul id="nav" class="circular-list navbar-default">
+                         <li><a href="./it/Il_Nostro_Chef.html">Il Nostro Chef</a></li>
+                         <li><a href="./it/Menu.html">Men&uacute</a></li>
+                         <li><a href="./it/Galleria.html">Galleria</a></li>
+                         <li><a href="./it/Eventi_e_novita.html">Eventi e Novit&aacute</a></li>
+                         <li><a href="./it/La_Storia.html">La &nbspStoria</a></li>
+                         <li><a href="./it/Contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="" class="menu-button">
+                <img id="Img1" src="./Images/blu2.png";/>
+            </a>
+
+</div>
+
+<div id="myCarousel" class="carousel slide">
+  <!-- Indicators -->
+  <!-- <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol> -->
+  <div class="carousel-inner">
+    <div class="item active">
+                <img  class="img-responsive" >
+      <div class="container">
+        <div class="carousel-caption">
+          </div>
+      </div>
+    </div>
+    <div class="item">
+        <img  class="img-responsive" src="./Images/sala3.jpg">
+
+      <div class="container">
+        <div class="carousel-caption">
+          
+        </div>
+      </div>
+    </div>
+    <div class="item">
+    <img  class="img-responsive" src="./Images/bott2.jpg">
+
+      <div class="container">
+        <div class="carousel-caption">
+          
+        </div>
+      </div>
+    </div>
+    <div class="item">
+    <img  class="img-responsive" src="./Images/antipasti.jpg">
+
+      <div class="container">
+        <div class="carousel-caption">
+          
+        </div>
+      </div>
+    </div>
+
+  </div> 
+</div>
+<!-- /.carousel -->
+  
+   <!-- <div class="nav ">
+      <div class="container">
+	 <ul class="pull-left">
+	    <li><a href='./en/principal.html'><img src="blank.gif" class="flag flag-gb" title="English version" alt="English"/> English</li>
+        </ul>
+        <ul class="pull-right">
+          <li><a href="./it/La_Storia.html">La Storia</a></li>
+          <li><a href="./it/Menu.html">Menu</a></li>
+          <li><a href="./it/Novita_ed_eventi.html">Novit&aacute ed eventi</a></li>
+	  <li><a href="./it/Il_Nostro_Chef.html">Il Nostro Chef</a></li>
+	  <li><a href="./it/Galleria.html">Galleria</a></li>
+	  <li><a href="./it/Contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+    </div>
+    -->
+             <div class = "placement">
+                 <p id ="bienvenuti_message"></p>
+            </div>
+            <div class = "placement2">
+            <div class="container">
+             <div class="row">
+               <div class="col-sm-6">
+                <div class="address_message text-center">
+                  <img style="margin-top:3px" class="pull-right" src="./Images/address-32.png"/>
+                     Viale XXV Aprile 11<br> 10133 Torino
+                 </div>
+                </div>
+             </div>
+            </div>
+            <p class ="phone_message text-center"><img src="./Images/telephone-16.png";/> 011 6611060<br><img src="./Images/email-16.png";/> prenotazioni@ilciacolon.it</p> 
+            </div>
+            
+        </div><!--Content ends-->
+        <div id="footer"></div>
+
+   </div>
+</body>
+</html>
