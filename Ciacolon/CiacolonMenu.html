@@ -3,11 +3,12 @@
 <html>
 <head>
     
+    
   <meta charset='UTF-8'>
   <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
   <link rel="stylesheet" href="./css/main.css" type="text/css" />
-  <link rel="shortcut icon" href="./Images/ciacolon_icon.ico">
+  <link rel="shortcut icon" href="./Images/FlagIcons/ciacolon_icon.ico">
 
   <title>Il Ciacolon</title>
   
@@ -28,9 +29,6 @@
 </script>-->
 <script>
 $( document ).ready(function() {
-    $('.carousel').carousel({
-        interval:1000
-    })
     
     var name = document.getElementById('bienvenuti_message');
 
@@ -120,19 +118,16 @@ $(function () { $("[data-toggle='tooltip']").tooltip(); });
   <body>
 
     <div id="wrapper">
-	<div id="header-main"></div>
-        <div id="content"> 
-        <!-- Carousel
-================================================== -->
-<div class="overlay">
-    
+	<div id="header"></div>
+        <div id="content">
+
             <div class="circular-menu">
                 <div class="circle">
                     <ul id="nav" class="circular-list navbar-default">
                          <li><a href="./it/Il_Nostro_Chef.html">Il Nostro Chef</a></li>
                          <li><a href="./it/Menu.html">Men&uacute</a></li>
                          <li><a href="./it/Galleria.html">Galleria</a></li>
-                         <li><a href="./it/Eventi_e_novita.html">Eventi e Novit&aacute</a></li>
+                         <li><a href="./it/Novita_ed_eventi.html">Eventi e Novit&aacute</a></li>
                          <li><a href="./it/La_Storia.html">La &nbspStoria</a></li>
                          <li><a href="./it/Contatti.html">Contatti</a></li>
                     </ul>
@@ -142,55 +137,24 @@ $(function () { $("[data-toggle='tooltip']").tooltip(); });
             <a href="" class="menu-button">
                 <img id="Img1" src="./Images/blu2.png";/>
             </a>
+            <div class = "placement">
+                 <p id ="bienvenuti_message"></p>
+            </div>
+            <div class = "placement2">
+            <div class="container">
+             <div class="row">
+               <div class="col-sm-6">
+                <div class="address_message text-center">
+                  <img style="margin-top:3px" class="pull-right" src="./Images/FlagIcons/address-32.png"/>
+                     Viale XXV Aprile 11<br> 10133 Torino
+                 </div>
+                </div>
+             </div>
+            </div>
+            <p class ="phone_message text-center"><img src="./Images/FlagIcons/telephone-16.png";/> 011 6611060<br><img src="./Images/FlagIcons/email-16.png";/> prenotazioni@ilciacolon.it</p> 
+            </div>
 
-</div>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Indicators -->
-  <!-- <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol> -->
-  <div class="carousel-inner">
-    <div class="item active">
-                <img  class="img-responsive" >
-      <div class="container">
-        <div class="carousel-caption">
-          </div>
-      </div>
-    </div>
-    <div class="item">
-        <img  class="img-responsive" src="./Images/sala3.jpg">
-
-      <div class="container">
-        <div class="carousel-caption">
-          
         </div>
-      </div>
-    </div>
-    <div class="item">
-    <img  class="img-responsive" src="./Images/bott2.jpg">
-
-      <div class="container">
-        <div class="carousel-caption">
-          
-        </div>
-      </div>
-    </div>
-    <div class="item">
-    <img  class="img-responsive" src="./Images/antipasti.jpg">
-
-      <div class="container">
-        <div class="carousel-caption">
-          
-        </div>
-      </div>
-    </div>
-
-  </div> 
-</div>
-<!-- /.carousel -->
   
    <!-- <div class="nav ">
       <div class="container">
@@ -208,26 +172,7 @@ $(function () { $("[data-toggle='tooltip']").tooltip(); });
       </div>
     </div>
     -->
-             <div class = "placement">
-                 <p id ="bienvenuti_message"></p>
-            </div>
-            <div class = "placement2">
-            <div class="container">
-             <div class="row">
-               <div class="col-sm-6">
-                <div class="address_message text-center">
-                  <img style="margin-top:3px" class="pull-right" src="./Images/address-32.png"/>
-                     Viale XXV Aprile 11<br> 10133 Torino
-                 </div>
-                </div>
-             </div>
-            </div>
-            <p class ="phone_message text-center"><img src="./Images/telephone-16.png";/> 011 6611060<br><img src="./Images/email-16.png";/> prenotazioni@ilciacolon.it</p> 
-            </div>
-            
-        </div><!--Content ends-->
         <div id="footer"></div>
-
-   </div>
+  </div>
 </body>
 </html>
