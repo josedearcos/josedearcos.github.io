@@ -12,6 +12,20 @@
 	src: url('../fonts/HomemadeApple.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'Adobe Song';
+	src: url('../fonts/Adobe_Song_Std_L.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto Reg';
+	src: url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto Bold';
+	src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
 /*For mobile and tablets*/
 @media(min-device-width : 320px) {.thumbnail img { min-height:100px; height:100px;}
 .framepdf {width:100%; height:250px;}
@@ -31,6 +45,23 @@
 
 @media(min-width:1200px){.thumbnail img { min-height:250px; height:250px; }
 .framepdf {width:100%; height:400px;}
+}
+
+/*Ciacolon style*/
+
+.Ciacolon_Style
+{
+	
+}
+
+.Ciacolon_Style p
+{
+	
+}
+
+.Ciacolon_Style h1
+{
+	
 }
 
 /* Webpage wrapper */
@@ -84,11 +115,18 @@ body {
 
 }
 
-#content {
+#content-main
+{
 	height:auto;
 	width:100%;
 	padding-top:40px;
 	padding-bottom:40px;   /* Height of the footer element */
+}
+#content {
+	height:auto;
+	width:100%;
+	padding-top:80px;
+	padding-bottom:80px;   /* Height of the footer element */
 }
 #footer {
 	width:100%;
@@ -98,6 +136,59 @@ body {
 	left:0;
 	background:#090274;
 	color:white;
+}
+
+#footer-main {
+	width:100%;
+	height:40px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background:#090274;
+	color:white;
+}
+
+/*CSS Style for most of the webpage*/
+
+.MainPage {
+  background-color: white; 
+  font-family:'HomemadeApple';
+}
+
+.MainPage h1 {
+  font: 100 60px 'HomemadeApple';
+    color:#090274;
+
+}
+
+.MainPage h2 {
+  font: 100 45px 'HomemadeApple', 
+}
+
+.MainPage h3 {
+  font: 100 30px 'HomemadeApple', 
+}
+
+.MainPage h4 {
+  font: 100 18px 'Roboto Bold';
+    color:#090274;
+}
+
+.MainPage h5 {
+  font: 100 14px 'Roboto Reg';
+    color:#090274;
+}
+
+.MainPage h6 {
+  font: 100 14px 'Roboto Reg';
+}
+.MainPage p {
+	font: 100 18px 'Roboto Reg',
+  /*font: 100 17px 'EB Garamond', Helvetica, sans-serif;*/
+}
+
+.MainPage a {
+  font: 100 18px 'Roboto Reg';
 }
 
 /*Navigator tab*/
@@ -122,7 +213,7 @@ body {
 	display: inline;
 }
 
-/*Main image*/
+/*Banner*/
 
 .jumbotron {
   background-image: url("../Images/Il_Ciacolon_Banner.png");
@@ -186,29 +277,28 @@ color: green !important;}
 
 /*Flags*/
 
+.showbox {
+  float: left;
+  margin: 4em 1em;
+  width: 100px;
+  height: 60px;
+  border: 2px solid green;
+  background-color: #fff;
+  line-height: 60px;
+  text-align: center;
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
 
-  .showbox {
-    float: left;
-    margin: 4em 1em;
-    width: 100px;
-    height: 60px;
-    border: 2px solid green;
-    background-color: #fff;
-    line-height: 60px;
-    text-align: center;
-    -webkit-transition: 1s ease-in-out;
-    -moz-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-  }
-  
-  .showbox.slideright:hover {
-    -webkit-transform: translate(3em,0);
-    -moz-transform: translate(3em,0);
-    -o-transform: translate(3em,0);
-    -ms-transform: translate(3em,0);
-    transform: translate(3em,0);
-  }
+.showbox.slideright:hover {
+  -webkit-transform: translate(3em,0);
+  -moz-transform: translate(3em,0);
+  -o-transform: translate(3em,0);
+  -ms-transform: translate(3em,0);
+  transform: translate(3em,0);
+}
   
 .dl-horizontal dt 
 {
@@ -326,6 +416,9 @@ color: green !important;}
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+#chef{
+    border: 1px solid #000;
 }
 
 .open.menu-button {
