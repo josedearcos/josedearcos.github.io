@@ -1,422 +1,457 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-  <meta charset='UTF-8'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
-  <link rel="stylesheet" href="../css/main.css" type="text/css">
-  <link rel="shortcut icon" href="../Images/FlagIcons/cameraicon.ico">
+	<meta charset='UTF-8'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css" type="text/css">
+	<link rel="shortcut icon" href="../Images/FlagIcons/cameraicon.ico">
 
-  <title>Pictures</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<title>Pictures</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-          <style>
-            /* This rule is read by Galleria to define the gallery height: */
-       #Album{height:300px}
+	<style>
+		/* This rule is read by Galleria to define the gallery height: */
+		
+		#Album {
+			height: 300px
+		}
+	</style>
 
+	<!-- load Galleria -->
+	<script src="../javascript/galleria-1.4.2.min.js"></script>
 
-        </style>
+	<!-- load flickr plugin -->
+	<script src="../javascript/galleria.flickr.js"></script>
 
-        <!-- load Galleria -->
-        <script src="../javascript/galleria-1.4.2.min.js"></script>
+	<!--Google Analytics-->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        <!-- load flickr plugin -->
-        <script src="../javascript/galleria.flickr.js"></script>
-	
-  <!--Google Analytics-->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-55427691-1', 'auto');
+		ga('require', 'displayfeatures');
+		ga('require', 'linkid', 'linkid.js');
+		ga('send', 'pageview');
+	</script>
+	<script type="text/javascript" language="javascript">
+		//Use hashtable to simplify code:
+		var CityList = {
+			/*Africa:{
+			  Properties:{
+			  EspName:'*Aacute;frica',
+			  EngName:'Africa',
+			  Color:'inverse'}
+			}*/
+			America: {
+				Properties: {
+					EspName: 'Am&eacute;rica',
+					EngName: 'America',
+					Color: 'danger'
+				},
+				Boston: {
+					set: 'set:72157648356380100',
+					EngName: 'Boston',
+					EspName: 'Boston'
+				},
+				Cancun: {
+					set: 'set:72157648352949017',
+					EngName: 'Canc&uacute;n',
+					EspName: 'Canc&uacute;n',
+					src: "https://c2.staticflickr.com/6/5601/14917884344_6f8dfb0a26_c.jpg"
+				},
+				Chicago: {
+					set: 'set:72157648187015148',
+					EngName: 'Chicago',
+					EspName: 'Chicago'
+				},
+				NewYork: {
+					set: 'set:72157631115040372',
+					EngName: 'New York',
+					EspName: 'Nueva York',
+					src: "https://c1.staticflickr.com/9/8437/7803154838_32b662c75d_c.jpg"
+				},
+				NotreDame: {
+					set: 'set:72157648501440386',
+					EngName: 'Notre Dame',
+					EspName: 'Notre Dame',
+					src: "https://c2.staticflickr.com/4/3932/15299806359_9de693a4e9_c.jpg"
+				},
+				SanFrancisco: {
+					set: 'set:72157648501440386',
+					EngName: 'San Francisco',
+					EspName: 'San Francisco',
+					src: "https://c4.staticflickr.com/4/3943/15298140838_932ee9b312_c.jpg"
+				}
+			},
+			Asia: {
+				Properties: {
+					EspName: 'Asia',
+					EngName: 'Asia',
+					Color: 'warning'
+				},
+				BeijingAutumn: {
+					set: 'set:72157648041305797',
+					EngName: 'Beijing Autumn',
+					EspName: 'Beijing en oto&ntilde;o',
+					src: "https://c4.staticflickr.com/4/3931/15274221018_40ebb73a0a_c.jpg"
+				},
+				BeijingWinter: {
+					set: 'set:72157648179151297',
+					EngName: 'Beijing Winter',
+					EspName: 'Beijing en invierno',
+					src: "https://c4.staticflickr.com/8/7543/15464917499_c8ece47751_c.jpg"
+				},
+				Borneo: {
+					set: 'set:72157646499916844',
+					EngName: 'Borneo island',
+					EspName: 'Isla de Borneo',
+					src: "https://c2.staticflickr.com/6/5611/15375449220_b60e843510_c.jpg"
+				},
+				DayaBay: {
+					set: 'set:72157648163759678',
+					EngName: 'Daya Bay experimental site',
+					EspName: 'Experimento Daya Bay',
+					src: "https://c4.staticflickr.com/4/3944/15300090429_d4858d838d_c.jpg"
+				},
+				Dali: {
+					set: 'set:72157648760413576',
+					EngName: 'Dali',
+					EspName: 'Dali',
+					src: "https://c2.staticflickr.com/6/5606/15534597276_f0b3b9facd_c.jpg"
+				},
+				Guilin: {
+					set: 'set:72157648138798399',
+					EngName: 'Guilin',
+					EspName: 'Guilin',
+					src: "https://c4.staticflickr.com/4/3954/15480155821_90d8fc38d2_c.jpg"
+				},
+				KualaLumpur: {
+					set: 'set:72157648136632998',
+					EngName: 'Kuala Lumpur',
+					EspName: 'Kuala Lumpur',
+					src: "https://c4.staticflickr.com/4/3928/15294264647_3f2352d331_c.jpg"
+				},
+				KunMing: {
+					set: 'set:72157648822806375',
+					EngName: 'Kungming',
+					EspName: 'Kungming',
+					src: "https://c2.staticflickr.com/6/5603/15533739716_8fba12555a_c.jpg"
+				},
+				Lijiang: {
+					set: 'set:72157648812529412',
+					EngName: 'Lijiang',
+					EspName: 'Lijiang',
+					src: "https://c2.staticflickr.com/6/5610/15534051376_438f60f680_c.jpg"
+				},
+				Shanghai: {
+					set: 'set:72157648437630032',
+					EngName: 'Shanghai',
+					EspName: 'Shanghai',
+					src: "https://c4.staticflickr.com/4/3929/15455259271_3bba96bd0b_c.jpg"
+				},
+				Singapore: {
+					set: 'set:72157648129916047',
+					EngName: 'Singapore',
+					EspName: 'Singapore',
+					src: "https://c4.staticflickr.com/8/7535/15651263305_af9cca8eb8_c.jpg"
+				},
+				Yangshuo: {
+					set: 'set:72157648143258160',
+					EngName: 'Yangshuo',
+					EspName: 'Yangshuo',
+					src: "https://c4.staticflickr.com/4/3927/15480701841_cfcc95e86a_c.jpg"
+				}
+			},
+			Europe: {
+				Properties: {
+					EspName: 'Europa',
+					EngName: 'Europe',
+					Color: 'primary'
+				},
+				AmalfiCoast: {
+					set: 'set:72157648428193897',
+					EngName: 'Amalfi Coast',
+					EspName: 'Costa Amalfitana',
+					src: 'https://c4.staticflickr.com/4/3940/15567401435_843c8d7774_c.jpg'
+				},
+				BalticCruise: {
+					set: 'set:72157648566796075',
+					EngName: 'Baltic Cruise',
+					EspName: 'Crucero por el B&aacute;ltico',
+					src: 'https://c1.staticflickr.com/3/2945/15461460666_b58fc2ac8f_c.jpg'
+				},
+				Barcelona: {
+					set: 'set:72157648154325809',
+					EngName: 'Barcelona',
+					EspName: 'Barcelona',
+					src: 'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'
+				},
+				Dublin: {
+					set: 'set:72157648356380100',
+					EspName: 'Dubl&iacute;n',
+					EngName: 'Dublin',
+					src: 'http://c2.staticflickr.com/4/3936/15513844096_80a14ee4ec_c.jpg'
+				},
+				Herrera: {
+					set: 'set:72157648581125502',
+					EngName: 'Herrera de Alc&aacute;ntara',
+					EspName: 'Herrera de Alc&aacute;ntara',
+					src: 'https://c2.staticflickr.com/4/3946/15305540608_849864b3e7_c.jpg'
+				},
+				London2012: {
+					set: 'set:72157648598779175',
+					EspName: 'Londres 2012',
+					EngName: 'London 2012',
+					src: 'https://c4.staticflickr.com/4/3956/15596029205_114412ff2b_c.jpg'
+				},
+				London2013: {
+					set: 'set:72157648598779175',
+					EspName: 'Londres 2013',
+					EngName: 'London 2013',
+					src: 'https://c2.staticflickr.com/6/5601/15305573457_5653d6bfb2_c.jpg'
+				},
+				Madrid: {
+					set: 'set:72157648356380100',
+					EspName: 'Madrid',
+					EngName: 'Madrid'
+				},
+				Monasteriodepiedra: {
+					set: 'set:72157648358378998',
+					EspName: 'Monasterio de piedra',
+					EngName: 'The Stone Monastery',
+					src: 'https://c4.staticflickr.com/4/3936/15351697320_0e9274b9bf_c.jpg'
+				},
+				Nerja: {
+					set: 'set:72157648176087737',
+					EspName: 'Nerja',
+					EngName: 'Nerja',
+					src: 'https://c3.staticflickr.com/3/2947/15489315551_fd0756c571_c.jpg'
+				},
+				SagradaFamilia: {
+					set: 'set:72157648154325809',
+					EngName: 'Church of the Holy Family',
+					EspName: 'La Sagrada Familia',
+					src: 'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'
+				},
+				Torino: {
+					set: 'set:72157648036849407',
+					EngName: 'Torino',
+					EspName: 'Tur&iacute;n'
+				},
+				Toscany: {
+					set: 'set:72157648036849407',
+					EngName: 'Toscany',
+					EspName: 'Toscana',
+					src: 'https://c3.staticflickr.com/3/2945/15460043465_e534fe663e_c.jpg'
+				}
+			}
+			/*Oceany:{
+			Properties:{
+			EspName:'Europa',
+			EngName:'Europe',
+			Color:'success'},*/
+		};
 
-  ga('create', 'UA-55427691-1', 'auto');
-  ga('require', 'displayfeatures');
-  ga('require', 'linkid', 'linkid.js');
-  ga('send', 'pageview');
-</script>
-<script type="text/javascript" language="javascript">
-  
-  //Use hashtable to simplify code:
-  var CityList = {
-  /*Africa:{
-    Properties:{
-    EspName:'*Aacute;frica',
-    EngName:'Africa',
-    Color:'inverse'}
-  }*/
-  America: {
-    Properties:{
-    EspName:'Am&eacute;rica',
-    EngName:'America',
-    Color:'danger'},
-  Boston:{
-    set:'set:72157648356380100',
-    EngName:'Boston',
-    EspName:'Boston'
-  },
-  Cancun:{
-    set:'set:72157648352949017',
-    EngName:'Canc&uacute;n',
-    EspName:'Canc&uacute;n',
-    src:"https://c2.staticflickr.com/6/5601/14917884344_6f8dfb0a26_c.jpg"
-  },
-  Chicago:{
-    set:'set:72157648187015148',
-    EngName:'Chicago',
-    EspName:'Chicago'
-    },
-  NewYork:{
-    set:'set:72157631115040372',
-    EngName:'New York',
-    EspName:'Nueva York',
-    src:"https://c1.staticflickr.com/9/8437/7803154838_32b662c75d_c.jpg"
-    },
-  NotreDame:{
-    set:'set:72157648501440386',
-    EngName:'Notre Dame',
-    EspName:'Notre Dame',
-    src:"https://c2.staticflickr.com/4/3932/15299806359_9de693a4e9_c.jpg"},
-  SanFrancisco:{
-    set:'set:72157648501440386',
-    EngName:'San Francisco',
-    EspName:'San Francisco',
-    src:"https://c4.staticflickr.com/4/3943/15298140838_932ee9b312_c.jpg"}},
-  Asia: { Properties:{
-    EspName:'Asia',
-    EngName:'Asia',
-    Color:'warning'},
-  BeijingAutumn:{
-    set:'set:72157648041305797',
-    EngName:'Beijing Autumn',
-    EspName:'Beijing en oto&ntilde;o',
-    src:"https://c4.staticflickr.com/4/3931/15274221018_40ebb73a0a_c.jpg"
-    },
-  BeijingWinter:{
-    set:'set:72157648179151297',
-    EngName:'Beijing Winter',
-    EspName:'Beijing en invierno',
-    src:"https://c4.staticflickr.com/8/7543/15464917499_c8ece47751_c.jpg"},
-  Borneo:{
-    set:'set:72157646499916844',
-    EngName:'Borneo island',
-    EspName:'Isla de Borneo',
-    src: "https://c2.staticflickr.com/6/5611/15375449220_b60e843510_c.jpg"},
-  DayaBay:{
-    set:'set:72157648163759678',
-    EngName:'Daya Bay experimental site',
-    EspName:'Experimento Daya Bay',
-   src: "https://c4.staticflickr.com/4/3944/15300090429_d4858d838d_c.jpg"},
-  Dali:{
-    set:'set:72157648760413576',
-    EngName:'Dali',
-    EspName:'Dali',
-   src: "https://c2.staticflickr.com/6/5606/15534597276_f0b3b9facd_c.jpg"},
-  Guilin:{
-    set:'set:72157648138798399',
-    EngName:'Guilin',
-    EspName:'Guilin',
-    src: "https://c4.staticflickr.com/4/3954/15480155821_90d8fc38d2_c.jpg"},
-  KualaLumpur:{
-    set:'set:72157648136632998',
-    EngName:'Kuala Lumpur',
-    EspName:'Kuala Lumpur',
-    src:"https://c4.staticflickr.com/4/3928/15294264647_3f2352d331_c.jpg"},
-  KunMing:{
-    set:'set:72157648822806375',
-    EngName:'Kungming',
-    EspName:'Kungming',
-    src: "https://c2.staticflickr.com/6/5603/15533739716_8fba12555a_c.jpg"},
-  Lijiang:{
-    set:'set:72157648812529412',
-    EngName:'Lijiang',
-    EspName:'Lijiang',
-    src: "https://c2.staticflickr.com/6/5610/15534051376_438f60f680_c.jpg"},
-  Shanghai:{
-    set:'set:72157648437630032',
-    EngName:'Shanghai',
-    EspName:'Shanghai',
-    src: "https://c4.staticflickr.com/4/3929/15455259271_3bba96bd0b_c.jpg"},
-  Singapore:{
-    set:'set:72157648129916047',
-    EngName:'Singapore',
-    EspName:'Singapore',
-    src: "https://c4.staticflickr.com/8/7535/15651263305_af9cca8eb8_c.jpg"},
-  Yangshuo:{
-    set:'set:72157648143258160',
-    EngName:'Yangshuo',
-    EspName:'Yangshuo',
-    src: "https://c4.staticflickr.com/4/3927/15480701841_cfcc95e86a_c.jpg"
-    }},
-  Europe: {
-    Properties:{
-    EspName:'Europa',
-    EngName:'Europe',
-    Color:'primary'},
-  AmalfiCoast:{
-    set:'set:72157648428193897',
-    EngName:'Amalfi Coast',
-    EspName:'Costa Amalfitana',
-    src:'https://c4.staticflickr.com/4/3940/15567401435_843c8d7774_c.jpg'},
-  BalticCruise:{
-    set:'set:72157648566796075',
-    EngName:'Baltic Cruise',
-    EspName:'Crucero por el B&aacute;ltico',
-    src:'https://c1.staticflickr.com/3/2945/15461460666_b58fc2ac8f_c.jpg'},
-  Barcelona:{
-    set:'set:72157648154325809',
-    EngName:'Barcelona',
-    EspName:'Barcelona',
-    src:'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'},
-  Dublin:{
-    set:'set:72157648356380100',
-    EspName:'Dubl&iacute;n',
-    EngName:'Dublin',
-    src:'http://c2.staticflickr.com/4/3936/15513844096_80a14ee4ec_c.jpg'},
-  Herrera:{
-    set:'set:72157648581125502',
-    EngName:'Herrera de Alc&aacute;ntara',
-    EspName:'Herrera de Alc&aacute;ntara',
-    src:'https://c2.staticflickr.com/4/3946/15305540608_849864b3e7_c.jpg'},
-  London2012:{
-    set:'set:72157648598779175',
-    EspName:'Londres 2012',
-    EngName:'London 2012',
-    src:'https://c4.staticflickr.com/4/3956/15596029205_114412ff2b_c.jpg'},
-  London2013:{
-    set:'set:72157648598779175',
-    EspName:'Londres 2013',
-    EngName:'London 2013',
-    src:'https://c2.staticflickr.com/6/5601/15305573457_5653d6bfb2_c.jpg'},
-  Madrid:{
-    set:'set:72157648356380100',
-    EspName:'Madrid',
-    EngName:'Madrid'},
-  Monasteriodepiedra:{
-    set:'set:72157648358378998',
-    EspName:'Monasterio de piedra',
-    EngName:'The Stone Monastery',
-    src:'https://c4.staticflickr.com/4/3936/15351697320_0e9274b9bf_c.jpg'},
-  Nerja:{
-    set:'set:72157648176087737',
-    EspName:'Nerja',
-    EngName:'Nerja',
-    src:'https://c3.staticflickr.com/3/2947/15489315551_fd0756c571_c.jpg'},
-  SagradaFamilia:{
-    set:'set:72157648154325809',
-    EngName:'Church of the Holy Family',
-    EspName:'La Sagrada Familia',
-    src:'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'},
-  Torino:{
-    set:'set:72157648036849407',
-    EngName:'Torino',
-    EspName:'Tur&iacute;n'},
-  Toscany:{
-    set:'set:72157648036849407',
-    EngName:'Toscany',
-    EspName:'Toscana',
-    src:'https://c3.staticflickr.com/3/2945/15460043465_e534fe663e_c.jpg'}
-   }
-    /*Oceany:{
-    Properties:{
-    EspName:'Europa',
-    EngName:'Europe',
-    Color:'success'},*/
-  };
-      
-  $(document).ready(function(){
+		$(document).ready(function() {
 
-   //Dinamically create lists 
-   for(continent in CityList)
-   {
-     $('<div class="btn-group"><button type="button" class="btn btn-'+CityList[continent]['Properties']['Color']+' '+continent+'Button">'+CityList[continent]['Properties']['EngName']+'</button><button type="button" class="btn btn-'+CityList[continent]['Properties']['Color']+' dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu '+continent+'List" role="menu"></ul></div>').appendTo(".btn-toolbar");
-          var currentcontinent = CityList[continent];
-      for(city in currentcontinent) {
-      if (city!='Properties') {
-        $('<li><a data-name="'+city+'" href="#'+city+'">'+CityList[continent][city]['EngName']+'</a></li>').appendTo("."+continent+"List");
-        }
-     }
-    $('<li class="divider"></li>').appendTo("."+continent+"List");
-    $('<li><a data-name="'+continent+'" href="#'+continent+'">All</a></li>').appendTo("."+continent+"List");
-  
-   }
-   //Dinamically create thumbnails 
-   for(continent in CityList)
-   {
-      var data = '<div id="'+continent+'""><div class="container"><div class="row">';
-       
-      var currentcontinent = CityList[continent];
-       
-       for(city in currentcontinent) {
-	      if (city!='Properties') {
-                data += '<div class="col-md-4 col-xs-6 col-sm-6"><div class="thumbnail"><div class="caption"><a data-name="'+city+'" href="#'+city+'"> <img src="'+CityList[continent][city]['src']+'" /></a><h3 align="center">'+CityList[continent][city]['EngName']+'</h3></div></div></div>'
-              }
-       }
-       
-       data+='</div></div></div>';
-       $(data).appendTo('#Display');
-       $('#'+continent).hide();
-    }
-   
-  //Run an instance of the gallery to be displayed chosen by ID
-   function LoadSlide(id) {
-    
-   //Look for flickr set according to id
-   for(continent in CityList)
-   {
-    var currentcontinent = CityList[continent];
-    
-    for(city in currentcontinent) {
-        if(city==id)
-	{
-	flickrset = CityList[continent][city]['set'];
-	break;
-      }
-   }
-   }
+			//Dinamically create lists 
+			for (continent in CityList) {
+				$('<div class="btn-group"><button type="button" class="btn btn-' + CityList[continent]['Properties']['Color'] + ' ' + continent + 'Button">' + CityList[continent]['Properties']['EngName'] + '</button><button type="button" class="btn btn-' + CityList[continent]['Properties']['Color'] + ' dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul class="dropdown-menu ' + continent + 'List" role="menu"></ul></div>').appendTo(".btn-toolbar");
+				var currentcontinent = CityList[continent];
+				for (city in currentcontinent) {
+					if (city != 'Properties') {
+						$('<li><a data-name="' + city + '" href="#' + city + '">' + CityList[continent][city]['EngName'] + '</a></li>').appendTo("." + continent + "List");
+					}
+				}
+				$('<li class="divider"></li>').appendTo("." + continent + "List");
+				$('<li><a data-name="' + continent + '" href="#' + continent + '">All</a></li>').appendTo("." + continent + "List");
 
-    // Load the classic theme
-    Galleria.loadTheme('../javascript/galleria.classic.min.js');
+			}
+			//Dinamically create thumbnails 
+			for (continent in CityList) {
+				var data = '<div id="' + continent + '""><div class="container"><div class="row">';
 
-    // Initialize Galleria
-    Galleria.run('#Album', {
-        // search flickr for "galleria"
-	
-	height: 0.5625,//16:9
-        autoplay: 5000,//5 seconds between pictures
-        clicknext: true,//disables other links in pics but allows to pass the pictures with a click
-	flickr: flickrset,
+				var currentcontinent = CityList[continent];
 
-        flickrOptions: {
-            // sort by interestingness
-            sort: 'interestingness-desc'
-        }
-     });
-  }
-  
-    //Show continent album and hide the others
-    $('.btn-toolbar').on('click', '.AfricaButton', function() {
-        $("#Album").hide();
-        $("#Asia").slideUp("fast");
-        $("#America").slideUp("fast");
-	$("#Europe").slideUp("fast");
-        $("#Oceany").slideUp("fast");
-        $("#Africa").toggle("slow");
-	$('#showalbum').empty();
-    });
-    $('.btn-toolbar').on('click', '.AmericaButton', function() {
-        $("#Album").hide();
-        $("#Asia").slideUp("fast");
-        $("#Africa").slideUp("fast");
-	$("#Europe").slideUp("fast");
-        $("#Oceany").slideUp("fast");
-        $("#America").toggle("slow");
-	$('#showalbum').empty();
-	});
-    $('.btn-toolbar').on('click', '.AsiaButton', function() {
-        $("#Album").hide();
-        $("#Africa").slideUp("fast");
-        $("#America").slideUp("fast");
-	$("#Europe").slideUp("fast");
-        $("#Oceany").slideUp("fast");
-        $("#Asia").toggle("slow");
-	$('#showalbum').empty();
-    });
-    $('.btn-toolbar').on('click', '.EuropeButton', function() {
-        $("#Album").hide();
-        $("#Asia").slideUp("fast");
-        $("#Africa").slideUp("fast");
-        $("#America").slideUp("fast");
-        $("#Oceany").slideUp("fast");
-        $("#Europe").toggle("slow");
-        $('#showalbum').empty();
-    });
-    $('.btn-toolbar').on('click', '.OceanyButton', function() {
-        $("#Album").hide();
-	$("#Asia").slideUp("fast");
-        $("#Africa").slideUp("fast");
-	$("#America").slideUp("fast");
-	$("#Europe").slideUp("fast");
-        $("#Oceany").toggle("slow");
-	$('#showalbum').empty();
-    });
- 
-  function CopyAppend(id) {
-           $("#Africa").slideUp("fast");
-	   $("#America").slideUp("fast");
-	   $("#Asia").slideUp("fast");
-	   $("#Europe").slideUp("fast");
-           $("#Oceany").slideUp("fast");
-	   
-       LoadSlide(id);
-       
-       $("#Album").show();
+				for (city in currentcontinent) {
+					if (city != 'Properties') {
+						data += '<div class="col-md-4 col-xs-6 col-sm-6"><div class="thumbnail"><div class="caption"><a data-name="' + city + '" href="#' + city + '"> <img src="' + CityList[continent][city]['src'] + '" /></a><h3 align="center">' + CityList[continent][city]['EngName'] + '</h3></div></div></div>'
+					}
+				}
 
-       $('#showalbum').empty();
-       
-       var e = document.getElementById("#Album");
-       
-       var copy = $(e).clone();
-       copy.appendTo('#showalbum');
-  }
-  
-   //Choose album from dropdown menu
-   $(".dropdown-menu li a").click(function(){
-      CopyAppend($(this).attr("data-name"));
-   });
-   //Choose album from thumbnail
-   $(".caption a").click(function(){
-      CopyAppend($(this).attr("data-name"));
-   });
-});
+				data += '</div></div></div>';
+				$(data).appendTo('#Display');
+				$('#' + continent).hide();
+			}
 
-</script>  
+			//Run an instance of the gallery to be displayed chosen by ID
+			function LoadSlide(id) {
+
+				//Look for flickr set according to id
+				for (continent in CityList) {
+					var currentcontinent = CityList[continent];
+
+					for (city in currentcontinent) {
+						if (city == id) {
+							flickrset = CityList[continent][city]['set'];
+							break;
+						}
+					}
+				}
+
+				// Load the classic theme
+				Galleria.loadTheme('../javascript/galleria.classic.min.js');
+
+				// Initialize Galleria
+				Galleria.run('#Album', {
+					// search flickr for "galleria"
+
+					height: 0.5625, //16:9
+					autoplay: 5000, //5 seconds between pictures
+					clicknext: true, //disables other links in pics but allows to pass the pictures with a click
+					flickr: flickrset,
+
+					flickrOptions: {
+						// sort by interestingness
+						sort: 'interestingness-desc'
+					}
+				});
+			}
+
+			//Show continent album and hide the others
+			$('.btn-toolbar').on('click', '.AfricaButton', function() {
+				$("#Album").hide();
+				$("#Asia").slideUp("fast");
+				$("#America").slideUp("fast");
+				$("#Europe").slideUp("fast");
+				$("#Oceany").slideUp("fast");
+				$("#Africa").toggle("slow");
+				$('#showalbum').empty();
+			});
+			$('.btn-toolbar').on('click', '.AmericaButton', function() {
+				$("#Album").hide();
+				$("#Asia").slideUp("fast");
+				$("#Africa").slideUp("fast");
+				$("#Europe").slideUp("fast");
+				$("#Oceany").slideUp("fast");
+				$("#America").toggle("slow");
+				$('#showalbum').empty();
+			});
+			$('.btn-toolbar').on('click', '.AsiaButton', function() {
+				$("#Album").hide();
+				$("#Africa").slideUp("fast");
+				$("#America").slideUp("fast");
+				$("#Europe").slideUp("fast");
+				$("#Oceany").slideUp("fast");
+				$("#Asia").toggle("slow");
+				$('#showalbum').empty();
+			});
+			$('.btn-toolbar').on('click', '.EuropeButton', function() {
+				$("#Album").hide();
+				$("#Asia").slideUp("fast");
+				$("#Africa").slideUp("fast");
+				$("#America").slideUp("fast");
+				$("#Oceany").slideUp("fast");
+				$("#Europe").toggle("slow");
+				$('#showalbum').empty();
+			});
+			$('.btn-toolbar').on('click', '.OceanyButton', function() {
+				$("#Album").hide();
+				$("#Asia").slideUp("fast");
+				$("#Africa").slideUp("fast");
+				$("#America").slideUp("fast");
+				$("#Europe").slideUp("fast");
+				$("#Oceany").toggle("slow");
+				$('#showalbum').empty();
+			});
+
+			function CopyAppend(id) {
+				$("#Africa").slideUp("fast");
+				$("#America").slideUp("fast");
+				$("#Asia").slideUp("fast");
+				$("#Europe").slideUp("fast");
+				$("#Oceany").slideUp("fast");
+
+				LoadSlide(id);
+
+				$("#Album").show();
+
+				$('#showalbum').empty();
+
+				var e = document.getElementById("#Album");
+
+				var copy = $(e).clone();
+				copy.appendTo('#showalbum');
+			}
+
+			//Choose album from dropdown menu
+			$(".dropdown-menu li a").click(function() {
+				CopyAppend($(this).attr("data-name"));
+			});
+			//Choose album from thumbnail
+			$(".caption a").click(function() {
+				CopyAppend($(this).attr("data-name"));
+			});
+		});
+	</script>
 </head>
 
 <body>
 
-<div class="pictures">
-  <div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-          <li><a href="../index.html">Who is Jos&eacute; de Arcos</a></li>
-        </ul>
-        <ul class="pull-right">
-          <li><a href="Travels.html">Travels</a></li>
-          <li><a href="Work.html">Work</a></li>
-          <!--<li><a href="Hobbies.html">Hobbies</a></li>-->
-	  <li><a href="Contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  
-  <div class="jumbotron"></div>
-  
-  <div class="container" align="center">
-    <h2>Photo albums:</h2>
+	<div class="pictures">
+		<div class="nav">
+			<div class="container">
+				<ul class="pull-left">
+					<li><a href="../index.html">Who is Jos&eacute; de Arcos</a></li>
+				</ul>
+				<ul class="pull-right">
+					<li><a href="Travels.html">Travels</a></li>
+					<li><a href="Work.html">Work</a></li>
+					<!--<li><a href="Hobbies.html">Hobbies</a></li>-->
+					<li><a href="Contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</div>
 
-    <p> When I travel my Canon 60D and I are inseparable. These are some of the memories we captured together: </p>
-    <div class="row top-buffer">
-      <div class="span12">
-      <div class="btn-toolbar" role="toolbar" align="center">
-	<!-- All the code to load the buttons is run in javascript-->
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class='top-buffer'>
-    <div id="Display"></div>
-    <!-- All the code to load the thumbnails is run in javascript-->
-    <div id='Album'></div>
-       	<!-- All the code to load the albums is run in javascript-->
-    </div>
-</div>
-   <div align="center">
-      <div class="container">
-        <div id='showalbum'></div>
-      </div>
-   </div>
- 
+		<div class="jumbotron"></div>
+
+		<div class="container" align="center">
+			<h2>Photo albums:</h2>
+
+			<p> When I travel my Canon 60D and I are inseparable. These are some of the memories we captured together: </p>
+			<div class="row top-buffer">
+				<div class="span12">
+					<div class="btn-toolbar" role="toolbar" align="center">
+						<!-- All the code to load the buttons is run in javascript-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='top-buffer'>
+			<div id="Display"></div>
+			<!-- All the code to load the thumbnails is run in javascript-->
+			<div id='Album'></div>
+			<!-- All the code to load the albums is run in javascript-->
+		</div>
+	</div>
+	<div align="center">
+		<div class="container">
+			<div id='showalbum'></div>
+		</div>
+	</div>
+
 </body>
+
 </html>

@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-    
-  <meta charset='UTF-8'>
-  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
-  <link rel="stylesheet" href="./css/main.css" type="text/css" />
-  <link rel="shortcut icon" href="./Images/FlagIcons/ciacolon_icon.ico">
 
-  <title>Il Ciacolon</title>
-  
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+	<meta charset='UTF-8'>
+	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+	<link rel="stylesheet" href="./css/main.css" type="text/css" />
+	<link rel="shortcut icon" href="./Images/FlagIcons/ciacolon_icon.ico">
 
-  <!--Google Analytics-->
-<!--<script>
+	<title>Il Ciacolon</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+
+	<!--Google Analytics-->
+	<!--<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -26,146 +27,163 @@
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
 </script>-->
-<script>
-$( document ).ready(function() {
-    
-    
-    /* Video */
-    
-    /* Entry button */
-    
-    var name = document.getElementById('bienvenuti_message');
+	<script>
+		$(document).ready(function() {
 
-     /*Draw circle menu*/
 
-    var $items = $('.circle a');
-    var numitems = $items.length;
-    $items.each(function(index) {
-    $(this).css('left', 50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
-    $(this).css('top', 50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
-    });
-    
-    /*Open circle*/
+			/* Video */
 
-    var image = document.getElementById('logo');
-    var original_height = image.height;
+			/* Entry button */
 
-    var large={width: "auto",height: original_height};
-    var small={width: "auto",height: "350px"};
-    var countcircle=1;
-    $("#logo").css(large).on('click',function () { 
-        $(this).animate((countcircle==1)?small:large);
-        countcircle = 1-countcircle;
-    });
-    
-    /*Show/hide Enter button*/
-    
-    $('.menu-button').bind({
-        mouseenter: function(e) {
-    /*This shows the message Enter*/
-    name.innerHTML='Entra';
+			var name = document.getElementById('bienvenuti_message');
 
-     /*This moves the address and the phone to the sides*/
-    var center={left: "0%"};
-    var left={left:"-43%"};
-    var right={left:"55%"};
-    var count=1;
-    
-    if (count!=0) {
-        $('.phone_message').animate((count!=0)?left:center);
-        $('.address_message').animate((count!=0)?right:center);
-        count = 0;
-    }
-     },
-     mouseleave: function(e) {
-    /*This hides the message Enter*/
-    name.innerHTML='';
-    }
-    });
-        
-    /*Hide Enter message when circle menu is open*/
-    var number_click=0;
-    
-    $('.menu-button').on('click', function(event) {
-        event.preventDefault();
-        $(this).toggleClass('open');
-        $('.circle').toggleClass('open');
-        $(this).trigger("mouseleave");
-    
-        number_click++;
-    
-        if (number_click%2!=0) {
-            $(this).unbind("mouseenter mouseleave");
-        }
-        else
-        {
-            $(this).bind({mouseenter: function(e) {
-                 name.innerHTML='Entra';
-             },  mouseleave: function(e) {
-                 name.innerHTML='';
-             }
-            });
-        }
-    });
+			/*Draw circle menu*/
 
-$(function () { $("[data-toggle='tooltip']").tooltip(); });
+			var $items = $('.circle a');
+			var numitems = $items.length;
+			$items.each(function(index) {
+				$(this).css('left', 50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+				$(this).css('top', 50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+			});
 
-});
-</script>
+			/*Open circle*/
+
+			var image = document.getElementById('logo');
+			var original_height = image.height;
+
+			var large = {
+				width: "auto",
+				height: original_height
+			};
+			var small = {
+				width: "auto",
+				height: "350px"
+			};
+			var countcircle = 1;
+			$("#logo").css(large).on('click', function() {
+				$(this).animate((countcircle == 1) ? small : large);
+				countcircle = 1 - countcircle;
+			});
+
+			/*Show/hide Enter button*/
+
+			$('.menu-button').bind({
+				mouseenter: function(e) {
+					/*This shows the message Enter*/
+					name.innerHTML = 'Entra';
+
+					/*This moves the address and the phone to the sides*/
+					var center = {
+						left: "0%"
+					};
+					var left = {
+						left: "-43%"
+					};
+					var right = {
+						left: "55%"
+					};
+					var count = 1;
+
+					if (count != 0) {
+						$('.phone_message').animate((count != 0) ? left : center);
+						$('.address_message').animate((count != 0) ? right : center);
+						count = 0;
+					}
+				},
+				mouseleave: function(e) {
+					/*This hides the message Enter*/
+					name.innerHTML = '';
+				}
+			});
+
+			/*Hide Enter message when circle menu is open*/
+			var number_click = 0;
+
+			$('.menu-button').on('click', function(event) {
+				event.preventDefault();
+				$(this).toggleClass('open');
+				$('.circle').toggleClass('open');
+				$(this).trigger("mouseleave");
+
+				number_click++;
+
+				if (number_click % 2 != 0) {
+					$(this).unbind("mouseenter mouseleave");
+				} else {
+					$(this).bind({
+						mouseenter: function(e) {
+							name.innerHTML = 'Entra';
+						},
+						mouseleave: function(e) {
+							name.innerHTML = '';
+						}
+					});
+				}
+			});
+
+			$(function() {
+				$("[data-toggle='tooltip']").tooltip();
+			});
+
+		});
+	</script>
 
 </head>
 
-  <body>
+<body>
 
-    <div id="wrapper">
-	<div id="header-main"></div>
-        <div id="content-main">
-            
-            <div class="circular-menu">
-                <div class="circle">
-                    <ul id="nav" class="circular-list navbar-default">
-                         <li><a href="./it/Il_Nostro_Chef.html">Il Nostro Chef</a></li>
-                         <li><a href="./it/Menu.html">Men&uacute</a></li>
-                         <li><a href="./it/Galleria.html">Galleria</a></li>
-                         <li><a href="./it/Eventi_e_novita.html">Eventi e Novit&aacute</a></li>
-                         <li><a href="./it/La_Storia.html">La &nbspStoria</a></li>
-                         <li><a href="./it/Contatti.html">Contatti</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="menu-button">
-                <img id="logo" src="./Images/blu2.png";/>
-            </div>
+	<div id="wrapper">
+		<div id="header-main"></div>
+		<div id="content-main">
 
-            <div class = "text_placement">
-                 <p id ="bienvenuti_message"></p>
-            </div>
-            <div class = "info_placement">
-            <div class="container">
-             <div class="row">
-               <div class="col-sm-6">
-                <div class="address_message text-center">
-                  <img style="margin-top:3px" class="pull-right" src="./Images/FlagIcons/address-32.png"/>
-                     Viale XXV Aprile 11<br> 10133 Torino
-                 </div>
-                </div>
-             </div>
-            </div>
-                 <p class ="phone_message text-center"><img src="./Images/FlagIcons/telephone-16.png";/> 011 6611060<br><img src="./Images/FlagIcons/email-16.png";/> prenotazioni@ilciacolon.it</p> 
-            </div>
-            
-            <!--Video-->
-            <div class = "video">
-            <video muted autoplay id="bgvid" loop>
-            <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-            <source src="https://avvimeo-a.akamaihd.net/89257/036/73733480.mp4?token2=1442879573_4b3c3ba6f5d8699a8a1f588a8f8c1c2c&aksessionid=da7ca11ad86781d2" type="video/webm">
-            </video>
-            </div>
-            
-            
-        </div><!--Content-->
+			<div class="circular-menu">
+				<div class="circle">
+					<ul id="nav" class="circular-list navbar-default">
+						<li><a href="./it/Il_Nostro_Chef.html">Il Nostro Chef</a></li>
+						<li><a href="./it/Menu.html">Men&uacute</a></li>
+						<li><a href="./it/Galleria.html">Galleria</a></li>
+						<li><a href="./it/Eventi_e_novita.html">Eventi e Novit&aacute</a></li>
+						<li><a href="./it/La_Storia.html">La &nbspStoria</a></li>
+						<li><a href="./it/Contatti.html">Contatti</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="menu-button">
+				<img id="logo" src="./Images/blu2.png" ;/>
+			</div>
 
-        <div id="footer-main"></div>
-  </div>
+			<div class="text_placement">
+				<p id="bienvenuti_message"></p>
+			</div>
+			<div class="info_placement">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="address_message text-center">
+								<img style="margin-top:3px" class="pull-right" src="./Images/FlagIcons/address-32.png" /> Viale XXV Aprile 11
+								<br> 10133 Torino
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="phone_message text-center"><img src="./Images/FlagIcons/telephone-16.png" ;/> 011 6611060
+					<br><img src="./Images/FlagIcons/email-16.png" ;/> prenotazioni@ilciacolon.it</p>
+			</div>
+
+			<!--Video-->
+			<div class="video">
+				<video muted autoplay id="bgvid" loop>
+					<!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+					<source src="https://player.vimeo.com/video/53575464" type="video/webm">
+				</video>
+			</div>
+
+
+		</div>
+		<!--Content-->
+
+		<div id="footer-main"></div>
+	</div>
 </body>
+
 </html>
