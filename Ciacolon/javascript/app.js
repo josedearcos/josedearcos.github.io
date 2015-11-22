@@ -23,7 +23,7 @@ $(document).ready(function() {
 		comment.save(data, {
 			success:function() {
 				console.log("Successo");
-				alert("Grazie per la Vostra richiesta! Risponderemo il più presto possibile.");
+				alert("Grazie per la Vostra richiesta! Risponderemo il pi\372 presto possibile.");
 			},
 			error:function(e) {
 				console.dir(e);

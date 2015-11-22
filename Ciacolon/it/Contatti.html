@@ -40,7 +40,8 @@
 	<script src="../javascript/app.js"></script>
 	<!-- in this order, needs jquery-->
 	<script src="../javascript/jquery.motionCaptcha.0.2.js"></script>
-	<script src="http://maps.googleapis.com/maps/api/js"></script><!-- make a local copy!-->
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<!-- make a local copy!-->
 
 
 	<!--Google Analytics-->
@@ -208,7 +209,7 @@
 													<div class="help-block with-errors"></div>
 												</div>
 											</div>
-				
+
 											<div class="form-group">
 												<label class="control-label">Email</label>
 												<div class="controls">
@@ -226,48 +227,45 @@
 												<div class="controls">
 													<div class="input-group"> <span class="input-group-addon"><i
 				class="glyphicon glyphicon-pencil"></i></span>
-														<textarea id="msg" maxlength="300" name="msg" class="form-control " rows="4" cols="78" placeholder="Lasciaci un messaggio e ti risponderemo al piu'
+														<textarea id="msg" maxlength="300" name="msg" class="form-control " rows="4" cols="78" placeholder="Lasciaci un messaggio e ti risponderemo al pi&uacute;
 					presto"></textarea>
 													</div> <span class="help-block with-errors">Fino a 300 caratteri.</span>
 												</div>
 											</div>
-										</form>
-											<div id="mc">
-											<p align="center">Riproduci il disegno nel riquadro per inviare il messaggio:</p>
-											<p align="center">(<a onclick="window.location.reload()" href="#" title="Fai click per un
-		nuovo disegno">nuovo disegno</a>)
-											</p>
+										
+										<div id="mc">
+
+											<p>Riproduci il disegno nel riquadro per inviare il messaggio: (<a onclick="window.location.reload()" href="#" title="Fai click per un
+		nuovo disegno">Nuovo disegno</a>)</p>
 											<canvas id="mc-canvas"> Your browser doesn't support the canvas element - please visit in a modern browser. </canvas>
-											<input type="hidden" id="mc-action" value="" /> </div>
+											<input type="hidden" id="mc-action" value="" />
+										</div>
 										<div class="controls" style="margin-left: 35%;">
-
-											<input style="margin-left: 12%;" disabled="disabled" autocomplete="false" type="submit" value="Inviare">
-
+											<input style="margin-left: 12%;" disabled="disabled" type="submit" value="Inviare">
 										</div>
-										</div>
+								</form>
+									</div>
 									<div class="col-md-1"> </div>
 								</div>
-								<!--row-->
+								<!--inner row-->
 							</div>
+							<!--container-->
 						</div>
-
+						<!--first column-->
 						<div class="col-md-6">
-
 							<div id="googleMap" style="width:100%;height:380px;"></div>
 						</div>
-
+						<!--second column-->
 					</div>
-
+					<!--outer row-->
 				</div>
+				<!--container-->
 			</div>
+			<!--MainPage css-->
 		</div>
-		<!--MainPage-->
+		<!--content-->
 		<div id="footer"></div>
-
 	</div>
-	<!--Content-->
-	</div>
-	<!--Wrapper*-->
+	<!--wrapper-->
 </body>
-
 </html>
