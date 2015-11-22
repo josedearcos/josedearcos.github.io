@@ -89,90 +89,93 @@
 <body>
 
 	<div id="contact">
-		<div class="nav">
-			<div class="container">
-				<ul class="pull-left">
-					<li><a href="principal.html">&iquestQui&eacuten es Jos&eacute de Arcos?</a></li>
-				</ul>
+		<div id="header">
+			<div class="nav">
+				<div class="container">
+					<ul class="pull-left">
+						<li><a href="principal.html">&iquestQui&eacuten es Jos&eacute de Arcos?</a></li>
+					</ul>
 
-				<ul class="pull-right">
+					<ul class="pull-right">
 
-					<!--<li><a href="viajes.html">Viajes</a></li>-->
-					<li><a href="trabajo.html">Trabajo</a></li>
-					<!--<li><a href="fotos.html">Fotos</a></li>-->
-					<!--<li><a href="actividades.html">Actividades</a></li>-->
-				</ul>
+						<!--<li><a href="viajes.html">Viajes</a></li>-->
+						<li><a href="trabajo.html">Trabajo</a></li>
+						<!--<li><a href="fotos.html">Fotos</a></li>-->
+						<!--<li><a href="actividades.html">Actividades</a></li>-->
+					</ul>
+				</div>
+				<div class="jumbotron"></div>
 			</div>
 		</div>
+		<div id="content">
+			<div class="text-center">
+				<h2> &iquest;Quieres contactarme? <br> Completa el siguiente formulario:</h2>
+			</div>
+			<div class="container-fluid">
 
-		<div class="jumbotron"></div>
+				<div class="row">
 
-		<div class="text-center">
-			<h2> Cu&eacutentame algo</h2>
-		</div>
-		<div class="container-fluid">
-
-			<div class="row">
-
-				<div class="col-md-2">
-				</div>
-				<div class="col-md-8">
-					<form action="#" method="post" id="commentForm" data-toggle="validator" role="form">
-						<!--  <legend>Contact Form</legend>  -->
-						<div class="form-group">
-							<label class="control-label">&iquestC&oacutemo te llamas?</label>
-							<div class="controls">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input id="name" type="text" class="form-control" name="name" placeholder="Nombre">
+					<div class="col-md-2">
+					</div>
+					<div class="col-md-8">
+						<form action="#" method="post" id="commentForm" data-toggle="validator" role="form">
+							<!--  <legend>Contact Form</legend>  -->
+							<div class="form-group">
+								<label class="control-label">&iquestC&oacutemo te llamas?</label>
+								<div class="controls">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input id="name" type="text" class="form-control" name="name" placeholder="Nombre">
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="form-group">
-							<label class="control-label">Escribe tu e-mail para que pueda contestarte</label>
-							<div class="controls">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input type="email" class="form-control" id="email" name="email" placeholder="Email" data-error="Ese e-mail es inv&aacute;lido,&iexcl;no podr&eacute responderte!" required>
+							<div class="form-group">
+								<label class="control-label">Escribe tu e-mail para que pueda contestarte</label>
+								<div class="controls">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="email" class="form-control" id="email" name="email" placeholder="Email" data-error="Ese e-mail es inv&aacute;lido,&iexcl;no podr&eacute responderte!" required>
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
-								<div class="help-block with-errors"></div>
 							</div>
-						</div>
 
-						<div class="form-group ">
-							<label class="control-label">Mensaje</label>
-							<div class="controls">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-									<textarea id="msg" maxlength="300" name="msg" class="form-control " rows="4" cols="78" placeholder="Escribe tu mensaje aqu&iacute"></textarea>
+							<div class="form-group ">
+								<label class="control-label">Mensaje</label>
+								<div class="controls">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+										<textarea id="msg" maxlength="300" name="msg" class="form-control " rows="4" cols="78" placeholder="Escribe tu mensaje aqu&iacute"></textarea>
+									</div>
+									<span class="help-block with-errors">Hasta 300 car&aacute;cteres</span>
 								</div>
-								<span class="help-block with-errors">Hasta 300 car&aacute;cteres</span>
+
+								<div id="mc">
+									<p>Por favor, dibuja con el rat&oacute;n la figura que hay dentro la caja para enviar el mensaje: (<a onclick="window.location.reload()" href="#" title="Haz click para ver una nueva figura">nueva figura</a>)</p>
+									<canvas id="mc-canvas">
+										Tu navegador no soporta este captcha - por favor visita la p&aacute;gina desde un navegador moderno.
+									</canvas>
+									<input type="hidden" id="mc-action" value="" />
+								</div>
+
+							</div>
+							<div class="col-md-2">
 							</div>
 
-							<div id="mc">
-								<p>Por favor, dibuja con el rat&oacute;n la figura que hay dentro la caja para enviar el mensaje: (<a onclick="window.location.reload()" href="#" title="Haz click para ver una nueva figura">nueva figura</a>)</p>
-								<canvas id="mc-canvas">
-									Tu navegador no soporta este captcha - por favor visita la p&aacute;gina desde un navegador moderno.
-								</canvas>
-								<input type="hidden" id="mc-action" value="" />
+							<div class="controls" style="margin-left: 44%;">
+
+								<input disabled="disabled" type="submit" value="Enviar mensaje">
+
 							</div>
-
-						</div>
-						<div class="col-md-2">
-						</div>
-
-						<div class="controls" style="margin-left: 44%;">
-
-							<input disabled="disabled" type="submit" value="Enviar mensaje">
-
-						</div>
-					</form>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div id="footer"></div>
 	</div>
-
+	<!--contact-->
 </body>
 
 </html>

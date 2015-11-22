@@ -106,23 +106,13 @@
 	overflow-x: hidden;
 }
 
-#header-main {
-	width: 100%;
-	height: 40px;
-	position: fixed;
-	background: #090274;
-	color: white;
-}
-
 #header {
 	position: fixed;
 	width: 100%;
 	text-align: center;
-	font-size: 72px;
-	height: 80px;
-	background: white;
+	height: 150px;
+	background-color: white;
 	color: #fff;
-	font-family: 'PT Sans', sans-serif;
 	transition: all 0.4s ease;
 	margin: 0;
 	clear: both;
@@ -132,18 +122,26 @@
 
 #header-line {
 	position: fixed;
-	height: 80px;
+	height: 150px;
 	margin-left: 10%;
 	width: 80%;
 	border-bottom: 1px solid #090631;
 	z-index: 900;
 }
+#content-main {
+	height: 100%;
+	width: 100%;
+    padding-top: 300px;	/* Height of the header element */
+	padding-bottom: 80px;	/* Height of the footer element */
+	height: auto;
+}
 
 #content {
 	height: 100%;
 	width: 100%;
+    padding-top: 150px;	/* Height of the header element */
 	padding-bottom: 80px;	/* Height of the footer element */
-	height: 1000px;
+	height: auto;
     overflow: scroll;
 }
 
@@ -151,13 +149,15 @@
 	width: 100%;
 	height: 40px;
 	position: relative;
-	bottom: 0;
-	left: 0;
-	color: white;
     background-image: url("../Images/subatomic-whirlygig.png");
 }
 
 /*Navigator tab*/
+.nav {
+    position: fixed;
+	margin-top: 12px;
+	margin-bottom: 8px;
+}
 
 .nav a {
 	color: #5a5a5a;
@@ -175,16 +175,14 @@
 /*Main image*/
 
 .jumbotron {
+    width:120%;
 	background-image: url("../Images/subatomic-whirlygig.png");
 	height: auto;
 	background-size: cover;
 }
 
-.jumbotron .container {
-	position: relative;
-}
-
 .jumbotron h1 {
+	position: relative;
 	color: #fff;
 	font-size: 48px;
 	font: 400 100px/1.3 'Lato', Helvetica, sans-serif;
@@ -192,12 +190,12 @@
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-.jumbotron p {
-	font-size: 20px;
-	color: #fff;
-	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+.mini-jumbotron {
+    width:120%;
+	background-image: url("../Images/subatomic-whirlygig.png");
+	height: 20px;
+	background-size: cover;
 }
-
 
 /*Activities in the main page*/
 
@@ -412,11 +410,6 @@ label.valid {
 	color: green !important;
 }
 
-.contact .container {
-	border-bottom: 1px solid #dbdbdb;
-}
-
-
 /*Pictures*/
 .btn-toolbar{
   text-align: center;
@@ -508,12 +501,6 @@ label.valid {
 .flag.flag-it {
 	background-position: -50px -15px
 }
-
-.nav {
-	margin-top: 15px;
-	margin-bottom: 8px;
-}
-
 
 /*Zoom for map*/
 

@@ -1,90 +1,127 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-  <meta charset='UTF-8'>
-  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
-  <link rel="stylesheet" href="../css/main.css" type="text/css" />
-  <link rel="shortcut icon" href="../Images/FlagIcons/mainicon.ico">
+	<meta charset='UTF-8'>
+	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css" type="text/css" />
+	<link rel="shortcut icon" href="../Images/FlagIcons/mainicon.ico">
 
-  <title>Jos&eacute de Arcos</title>
-  
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+	<title>Jos&eacute de Arcos</title>
 
-  <!--Google Analytics-->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
 
-  ga('create', 'UA-55427691-1', 'auto');
-  ga('require', 'displayfeatures');
-  ga('require', 'linkid', 'linkid.js');
-  ga('send', 'pageview');
-</script>
-<script>
-$( document ).ready(function() {
-$(function () { $("[data-toggle='tooltip']").tooltip(); });
-});
-</script>
+	<!--Google Analytics-->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-55427691-1', 'auto');
+		ga('require', 'displayfeatures');
+		ga('require', 'linkid', 'linkid.js');
+		ga('send', 'pageview');
+	</script>
+	<script>
+		$(document).ready(function() {
+			$(function() {
+				$("[data-toggle='tooltip']").tooltip();
+			});
+
+			$(window).on('scroll', function() {
+				var scrollTop = $(window).scrollTop();
+				var Time = 100;
+				if (scrollTop > 0) {
+					$('#header').stop().animate({
+						height: "100px"
+					}, Time);
+					$('#content-main').stop().animate({
+						paddingTop: "200px"
+					}, Time);
+					$('.jumbotron').stop().animate({
+						height: "40px"
+					}, Time);
+					$('.jumbotron h1').stop().animate({
+						fontSize: "4em",
+						top: "-1em"
+					}, Time);
+				}
+			});
+		});
+	</script>
 </head>
 
-  <body>
+<body>
 
-  <div id="MainPage">
-    <div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-            <li><a href='../index.html'><img src="" class="flag flag-gb" title="" alt=""/> English</li>
-        </ul>
-        <ul class="pull-right">
-          <!--<li><a href="viajes.html">Viajes</a></li>-->
-	  <li><a href="trabajo.html">Trabajo</a></li>
-	  <!--<li><a href="fotos.html">Fotos</a></li>-->
-          <!--<li><a href="actividades.html">Actividades</a></li>-->
-	  <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="animate fadeInDown">Jos&eacute; de Arcos</h1>
-      </div>
-     </div>
-    
-  <!--     <div class="container">
+
+	<div id="wrapper">
+		<div id="header">
+			<div class="nav">
+				<div class="container">
+					<ul class="pull-left">
+						<li>
+							<a href='../index.html'><img style="margin-top:-0.5em"  src="" class="flag flag-gb" title="" alt="" /> English</li>
+					</ul>
+					<ul class="pull-right">
+						<!--<li><a href="viajes.html">Viajes</a></li>-->
+						<li><a href="trabajo.html">Trabajo</a></li>
+						<!--<li><a href="fotos.html">Fotos</a></li>-->
+						<!--<li><a href="actividades.html">Actividades</a></li>-->
+						<li><a href="contacto.html">Contacto</a></li>
+					</ul>
+				</div>
+				<div class="jumbotron">
+					<h1 style="margin-left:-1.25em">Jos&eacute; de Arcos</h1>
+				</div>
+			</div>
+			<!--nav-->
+		</div>
+		<!--header-main-->
+
+
+
+		<!--     <div class="container">
   <h2 id="shake">CSS Shake Animation</h2>
   <div class="showbox slideright">box 1</div>
   </div>//-->
-  <div class="container">
-  <iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AlE6Zw1gv7qfdC1YejNUV3gyUFN0RHRrMVBVaUNTNXc&font=AbrilFatface-Average&maptype=toner&lang=es&start_zoom_adjust=2&height=650' width='100%' height='650' frameborder='0'></iframe>  </div>
-    <div class="activities">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <h3><a href="trabajo.html#Ingenieria">Ingenier&iacute;a</a></h3>
-                <p>Cuando era peque&ntilde;o me preguntaba c&oacute;mo funcionaba un ordenador, un tel&eacute;fono o una televisi&oacute;n.
-		La ingenier&iacute;a de telecomunicaci&oacute;n respondi&oacute; a todas mis preguntas y me otorg&oacute; la habilidad de dise&ntilde;ar la electr&oacute;nica y el software de cualquier dispositivo.</p>
-              </div>
-              <div class="col-md-4">
-                <h3><a href="trabajo.html#Fisica">F&iacute;sica</a></h3>
-                <p>Desde el instituto estuve maravillado por la simplicidad y el poder de las leyes de la naturaleza.
-		Despu&eacute;s de terminar mi carrera en ingenier&iacute;a de telecomunicaci&oacuten decid&iacute;
-		realizar un doctorado en f&iacute;sica para aprender todo lo que pudiera sobre ello.</p>
-              </div>
-              <div class="col-md-4">
-                <h3><a href="fotos.html">Actividades</a></h3>
-                <p> Si tengo la oportunidad me encanta viajar con mi <abbr data-toggle="tooltip" data-html="true" title="C&aacute;mara r&eacute;flex digital <br> (Digital Single-Lens Reflex camera)">DSLR</abbr> en busca de la foto perfecta. En mi tiempo libre tambi&eacute;n me gusta jugar un par de partidas de ajedrez y estudiar otros idiomas. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-  <script src="./javascript/Slideshow.js"></script>
+		<div id="content-main">
+			<div class="container">
+				<iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AlE6Zw1gv7qfdC1YejNUV3gyUFN0RHRrMVBVaUNTNXc&font=AbrilFatface-Average&maptype=toner&lang=es&start_zoom_adjust=2&height=650' width='100%' height='650' frameborder='0'></iframe>
+			</div>
+			<div class="activities">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
+							<h3><a href="trabajo.html#Ingenieria">Ingenier&iacute;a</a></h3>
+							<p>Cuando era peque&ntilde;o me preguntaba c&oacute;mo funcionaba un ordenador, un tel&eacute;fono o una televisi&oacute;n. La ingenier&iacute;a de telecomunicaci&oacute;n respondi&oacute; a todas mis preguntas y me otorg&oacute; la habilidad de dise&ntilde;ar la electr&oacute;nica y el software de cualquier dispositivo.</p>
+						</div>
+						<div class="col-md-4">
+							<h3><a href="trabajo.html#Fisica">F&iacute;sica</a></h3>
+							<p>Desde el instituto estuve maravillado por la simplicidad y el poder de las leyes de la naturaleza. Despu&eacute;s de terminar mi carrera en ingenier&iacute;a de telecomunicaci&oacuten decid&iacute; realizar un doctorado en f&iacute;sica para aprender todo lo que pudiera sobre ello.</p>
+						</div>
+						<div class="col-md-4">
+							<h3><a href="fotos.html">Actividades</a></h3>
+							<p> Si tengo la oportunidad me encanta viajar con mi <abbr data-toggle="tooltip" data-html="true" title="C&aacute;mara r&eacute;flex digital <br> (Digital Single-Lens Reflex camera)">DSLR</abbr> en busca de la foto perfecta. En mi tiempo libre tambi&eacute;n me gusta jugar un par de partidas de ajedrez y estudiar otros idiomas. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Activities-->
+		</div>
+		<!--Main page css-->
+	</div>
+	<div id="footer"></div>
 </body>
+
 </html>
