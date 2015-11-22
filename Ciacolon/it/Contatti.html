@@ -1,219 +1,269 @@
-<!DOCTYPE html> <html> <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
-  <link rel="stylesheet" href="../css/main.css" type="text/css" /> <link
-  rel="stylesheet" href="../jquery.motionCaptcha.0.2.css" type="text/css" />
-  <link rel="shortcut icon" href="../Images/ciacolon_icon.ico">
-  
-  <title>Contatti</title>
-      
-  <script
-  src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-  <script src="../javascript/validator-min.js"></script> <script
-  src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script> <script
-  src="../javascript/app.js"></script> <!-- in this order, needs jquery-->
-  <script src="../javascript/jquery.motionCaptcha.0.2.js" ></script> <script
-  src="http://maps.googleapis.com/maps/api/js"></script>
+<!DOCTYPE html>
+<html>
 
- 
-  <!--Google Analytics-->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css" type="text/css" />
+	<link rel="stylesheet" href="../jquery.motionCaptcha.0.2.css" type="text/css" />
+	<link rel="shortcut icon" href="../Images/ciacolon_icon.ico">
 
-  ga('create', 'UA-55427691-1', 'auto'); ga('require', 'displayfeatures');
-  ga('require', 'linkid', 'linkid.js'); ga('send', 'pageview');
-</script>
+	<title>Contatti</title>
 
-  <!--Google Maps-->
-<script>
-  var myCenter=new google.maps.LatLng(45.033768, 7.685966);
-  
-  function initialize() { var mapProp = {
-    center:myCenter, zoom:15, mapTypeId:google.maps.MapTypeId.ROADMAP
-  }; var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-   
-  var image = new google.maps.MarkerImage(
-    "../Images/FlagIcons/map_pin_icon.png", new google.maps.Size(71, 71));
-  
-  var image = { url: '../Images/FlagIcons/map_pin_icon.png', scaledSize: new
-  google.maps.Size(72, 65)
-};
- 
-   
-  var marker=new google.maps.Marker({ position:myCenter, icon:image, map:map,
-  });
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+	<script src="../javascript/validator-min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+	<script src="../javascript/app.js"></script>
+	<!-- in this order, needs jquery-->
+	<script src="../javascript/jquery.motionCaptcha.0.2.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
 
-marker.setMap(map); } google.maps.event.addDomListener(window, 'load',
-initialize); </script>
 
-<style>
-/* MotionCAPTCHA canvas */
-#mc-canvas {
-    margin:0 auto 20px; padding:1px; display: block; border: 4px solid #433e45;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-	    border-radius: 4px;
-}
-/* Red border when invalid */
-#mc-canvas.mc-invalid {
-    border: 4px solid #aa4444;
-}
-/* Green border when valid */
-#mc-canvas.mc-valid {
-    border: 4px solid #44aa44;
-} </style>
+	<!--Google Analytics-->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-<!--Update captcha-->
+		ga('create', 'UA-55427691-1', 'auto');
+		ga('require', 'displayfeatures');
+		ga('require', 'linkid', 'linkid.js');
+		ga('send', 'pageview');
+	</script>
 
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-	    // Do the biznizz:
-	    $('#commentForm').motionCaptcha({
-		shapes: ['triangle', 'x', 'rectangle', 'circle', 'check',
-		'zigzag', 'arrow', 'delete', 'pigtail', 'star']
-	    });
+	<!--Google Maps-->
+	<script>
+		var myCenter = new google.maps.LatLng(45.033768, 7.685966);
 
-	});
-</script>
+		function initialize() {
+			var mapProp = {
+				center: myCenter,
+				zoom: 15,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-<!-- To avoid the user submiting the form pressing enter --> <script>
-$(document).ready(function() { $('input').keydown( function(e) {
-	var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0; if(key ==
-	13) {
-	    e.preventDefault(); var inputs =
-	    $(this).closest('form').find(':input:visible'); inputs.eq(
-	    inputs.index(this)+ 1 ).focus();
-	}
-    });
-}); </script>
+			var image = new google.maps.MarkerImage(
+				"../Images/FlagIcons/map_pin_icon.png", new google.maps.Size(71, 71));
 
-</head> <body>
-    <div id="wrapper">
-      <div id="header">
-	<div class="nav">
-	   <div class="container">
-	      <ul class="pull-left">
-		 <li><a href="../index.html"style="margin-left:-40px"><img
-		 src="../Images/il_ciacolon_logo2.jpg" style="margin-bottom:5px"
-		 height=70px></a></li>
-	      </ul> <ul class="pull-right">
-		 <li><a href="./Il_Nostro_Chef.html">Il Nostro Chef</a></li>
-		 <li><a href="./Menu.html">Men&uacute</a></li> <li><a
-		 href="./Galleria.html">Galleria</a></li> <li><a
-		 href="./La_Storia.html">La &nbspStoria</a></li> <li><a
-		 href="./Contatti.html">Contatti</a></li>
-	      </ul>
-	   </div> <!--container-->
-	 </div>
-       <div id="header-line"> </div> </div>
-       
-       <div id="content">
-	<div class="MainPage">
-	  
-	   <div class="container">
-	    <div class="row">
-	      <div class="col-md-2"></div>
-	      <div class="col-md-8">
-		<h1 align="center"> Contatti </h1>
+			var image = {
+				url: '../Images/FlagIcons/map_pin_icon.png',
+				scaledSize: new
+				google.maps.Size(72, 65)
+			};
 
-				<h4 align="center"> Ristorante "Il Ciacolon"</h4>
-		<h6 align="center"> Viale XXV Aprile 7</h6>
-		<h6 align="center"> 10133 Torino - Italia</h6>
 
-		<h6 align="center"> info@ilciacolon.it  |  Tel: (+39) 011 6610911  |  Fax: (+39) 011 6312853 </h6>
-				<p> <br></p>
-	      </div>
+			var marker = new google.maps.Marker({
+				position: myCenter,
+				icon: image,
+				map: map,
+			});
+
+			marker.setMap(map);
+		}
+		google.maps.event.addDomListener(window, 'load',
+			initialize);
+	</script>
+
+	<style>
+		/* MotionCAPTCHA canvas */
 		
-	   <div class="col-md-2"></div> </div>
-	  </div>
-	   
-           <div class="container">
-               <div class="row">
-                   <div class="col-md-6">
-	    
-	    <div class="container-fluid">
-	    <div class="row">
-	      <div class="col-md-1"> </div>
-	      <div class="col-md-10"> <form
-	      action="#" method="post" id="commentForm"
-      data-toggle="validator" role="form" >
-	<!-- <legend>Contact Form</legend> -->
-		<div class="form-group"> <label class="control-label">Nome</label>
-			<div class="controls">
-			    <div class="input-group">
-				 <span class="input-group-addon"><i
-				 class="glyphicon glyphicon-user"></i></span>
-					<input id="name" type="text"
-					class="form-control" name="name"
-					placeholder="Name">
+		#mc-canvas {
+			margin: 0 auto 20px;
+			padding: 1px;
+			display: block;
+			border: 4px solid #433e45;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+		}
+		/* Red border when invalid */
+		
+		#mc-canvas.mc-invalid {
+			border: 4px solid #aa4444;
+		}
+		/* Green border when valid */
+		
+		#mc-canvas.mc-valid {
+			border: 4px solid #44aa44;
+		}
+	</style>
+
+	<!--Update captcha-->
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			// Do the biznizz:
+			$('#commentForm').motionCaptcha({
+				shapes: ['triangle', 'x', 'rectangle',
+					'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star'
+				]
+			});
+
+		});
+	</script>
+
+	<!-- To avoid the user submiting the form pressing enter -->
+	<script>
+		$(document).ready(function() {
+			$('input').keydown(function(e) {
+				var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+				if (key == 13) {
+					e.preventDefault();
+					var inputs =
+						$(this).closest('form').find(':input:visible');
+					inputs.eq(
+						inputs.index(this) + 1).focus();
+				}
+			});
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div class="nav">
+				<div class="container">
+					<ul class="pull-left">
+						<li>
+							<a href="../index.html" style="margin-left:-40px"><img src="../Images/il_ciacolon_logo2.jpg" style="margin-bottom:5px" height=70px></a>
+						</li>
+					</ul>
+					<ul class="pull-right">
+						<li><a href="./Il_Nostro_Chef.html">Il Nostro Chef</a></li>
+						<li><a href="./Menu.html">Men&uacute</a></li>
+						<li><a href="./Galleria.html">Galleria</a></li>
+						<li><a href="./La_Storia.html">La &nbspStoria</a></li>
+						<li><a href="./Contatti.html">Contatti</a></li>
+					</ul>
+				</div>
+				<!--container-->
+			</div>
+			<div id="header-line"> </div>
+		</div>
+
+		<div id="content">
+			<div class="MainPage">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<h1 align="center"> Contatti </h1>
+
+							<h4 align="center"> Ristorante "Il Ciacolon"</h4>
+							<h6 align="center"> Viale XXV Aprile 7</h6>
+							<h6 align="center"> 10133
+		Torino - Italia</h6>
+
+							<h6 align="center"> info@ilciacolon.it | Tel: (+39) 011 6610911 | Fax:
+		(+39) 011 6312853 </h6>
+							<p>
+								<br>
+							</p>
+						</div>
+
+						<div class="col-md-2"></div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-1"> </div>
+									<div class="col-md-10">
+										<form action="#" method="post" id="commentForm" data-toggle="validator" role="form">
+											<!-- <legend>Contact Form</legend> -->
+											<div class="form-group">
+												<label class="control-label">Nome</label>
+												<div class="controls">
+													<div class="input-group">
+														<span class="input-group-addon"><i class="glyphicon
+				 glyphicon-user"></i></span>
+														<input id="name" type="text" class="form-control" name="name" placeholder="Name">
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="control-label">Email</label>
+												<div class="controls">
+													<div class="input-group"> <span class="input-group-addon"><i
+				class="glyphicon glyphicon-envelope"></i></span>
+														<input type="email" class="form-control" id="email" name="email" placeholder="Email" data-error="L'indirizzo
+					email sembra incorretto." required>
+													</div>
+													<div class="help-block with-errors"></div>
+												</div>
+											</div>
+
+											<div class="form-group ">
+												<label class="control-label">Messaggio</label>
+												<div class="controls">
+													<div class="input-group"> <span class="input-group-addon"><i
+				class="glyphicon glyphicon-pencil"></i></span>
+														<textarea id="msg" maxlength="300" name="msg" class="form-control " rows="4" cols="78" placeholder="Lasciaci un messaggio e ti risponderemo al piu'
+					presto"></textarea>
+													</div> <span class="help-block with-errors">Up to 300
+				characters</span>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="col-md-1"> </div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<div id="mc">
+											<p align="center">Riproduci il disegno nel riquadro per inviare il messaggio:</p>
+											<p align="center">(<a onclick="window.location.reload()" href="#" title="Fai click per un
+		nuovo disegno">nuovo disegno</a>)
+											</p>
+											<canvas id="mc-canvas"> Your browser doesn't support the canvas element - please visit in a modern browser. </canvas>
+											<input type="hidden" id="mc-action" value="" /> </div>
+										<div class="controls" style="margin-left: 35%;">
+
+											<input disabled="disabled" autocomplete="false" type="submit" value="Send Message">
+
+										</div>
+									</div>
+								</div>
+								<!--row-->
+							</div>
+						</div>
+
+						<div class="col-md-6">
+
+							<div id="googleMap" style="width:100%;height:380px;"></div>
+						</div>
+
+					</div>
+
 				</div>
 			</div>
 		</div>
-		
-		<div class="form-group"> <label class="control-label">Email</label>
-			<div class="controls">
-			    <div class="input-group">
-				<span class="input-group-addon"><i
-				class="glyphicon glyphicon-envelope"></i></span>
-					<input type="email" class="form-control"
-					id="email" name="email"
-					placeholder="Email" data-error="L'indirizzo email sembra incorretto." required>
-			    </div> <div class="help-block with-errors"></div>
-			</div>
-		</div>
-		
-		<div class="form-group "> <label
-		class="control-label">Messaggio</label>
-			<div class="controls">
-			    <div class="input-group">
-				<span class="input-group-addon"><i
-				class="glyphicon glyphicon-pencil"></i></span>
-					<textarea id="msg" maxlength="300"
-					name="msg" class="form-control "
-					rows="4" cols="78" placeholder="Lasciaci un messaggio e ti risponderemo al piu' presto"></textarea>
-			    </div> <span class="help-block with-errors">Up to
-			    300 characters</span>
-			</div>
-		</div>
-		</form> 
-	      </div>
-		<div class="col-md-1"> </div>
-	      </div>
+		<!--MainPage-->
+			<div id="footer"></div>
 
-    <div class="row">
-	      <div class="col-md-12">     
-	    <div id="mc"> <p align="center">Riproduci il disegno nel riquadro per inviare il messaggio:</p>
-	    <p align="center">(<a onclick="window.location.reload()" href="#" title="Fai click per un nuovo disegno">nuovo disegno</a>)
-</p> <canvas id="mc-canvas"> Your browser doesn't support the canvas
-element - please visit in a modern browser. </canvas> <input type="hidden"
-id="mc-action" value=""/> </div>
-	      <div class="controls" style="margin-left: 35%;">
-		  
-			<input disabled="disabled" autocomplete="false"
-			type="submit" value="Send Message">
-		
-	      </div>
-		</div>
-	    </div> <!--row-->
-            </div>
-	      </div>
-		
-	       <div class="col-md-6">
+	</div>
+	<!--Content-->
+	</div>
+	<!--Wrapper*-->
+</body>
 
-		<div id="googleMap" style="width:100%;height:380px;"></div>
-		</div>
-
-	       </div>
-	      
-           </div>
-	   </div>
-	</div><!--MainPage-->
-       </div><!--Content--> <div id="footer"></div>
-      </div><!--Wrapper*-->
-</body> </html>
+</html>
