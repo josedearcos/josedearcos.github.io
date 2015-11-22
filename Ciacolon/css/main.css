@@ -544,6 +544,10 @@ video {
 
 /* Info */
 
+a {
+    color: #7f7bb8;
+}
+
 .address_message {
 	color: #7f7bb8;
 	/* #090274*/

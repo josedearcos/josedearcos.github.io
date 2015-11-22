@@ -418,6 +418,9 @@ label.valid {
 
 
 /*Pictures*/
+.btn-toolbar{
+  text-align: center;
+}
 
 .pictures h2 {
 	font: 100 50px 'JennaSue', sans-serif;
