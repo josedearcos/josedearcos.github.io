@@ -38,26 +38,43 @@
 			$(function() {
 				$("[data-toggle='tooltip']").tooltip();
 			});
-
+			
 			$(window).on('scroll', function() {
-				var scrollTop = $(window).scrollTop();
-				var Time = 100;
-				if (scrollTop > 0) {
-					$('#header').stop().animate({
-						height: "100px"
-					}, Time);
-					$('#content-main').stop().animate({
-						paddingTop: "200px"
-					}, Time);
-					$('.jumbotron').stop().animate({
-						height: "40px"
-					}, Time);
-					$('.jumbotron h1').stop().animate({
-						fontSize: "4em",
-						top: "-1em"
-					}, Time);
-				}
-			});
+			var scrollTop = $(window).scrollTop();
+			var Time = 100;
+			var Delay = 100;
+			if (scrollTop > 0) {
+			  	$('#header').stop().animate({
+					height: "100px"
+				}, Time);
+				$('#content-main').stop().animate({
+					paddingTop: "200px"
+				}, Time);
+				$('.jumbotron').stop().animate({
+					height: "40px"
+				}, Time);
+				$('.jumbotron h1').stop().animate({
+					fontSize: "4em",
+					top: "-1em"
+				}, Time);
+			}
+			else
+			{
+			  	$('#header').stop().animate({
+					height: "150px"
+				}, Time+Delay);
+				$('#content-main').stop().animate({
+					paddingTop: "300px"
+				}, Time+Delay);
+				$('.jumbotron').stop().animate({
+					height: "250px"
+				}, Time+Delay);
+				$('.jumbotron h1').stop().animate({
+					fontSize: "7em",
+					top:"0%"
+				}, Time+Delay);
+			}
+		});
 		});
 	</script>
 </head>
