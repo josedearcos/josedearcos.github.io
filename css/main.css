@@ -154,6 +154,7 @@
 
 /*Navigator tab*/
 .nav {
+   width:100%;
     position: fixed;
 	margin-top: 12px;
 	margin-bottom: 8px;
@@ -175,7 +176,7 @@
 /*Main image*/
 
 .jumbotron {
-    width:120%;
+    width:100%;
 	background-image: url("../Images/subatomic-whirlygig.png");
 	height: auto;
 	background-size: cover;
