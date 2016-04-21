@@ -46,6 +46,10 @@
   display: inline;
 }
 
+#curriculum
+{
+	
+}
 /*Main image*/
 
 .jumbotron {
@@ -315,7 +319,7 @@ color: green !important;}
 	    font: 100 17px 'EB Garamond', Helvetica, sans-serif;
 }
 
-#coding .dl-horizontal dt
+#Projects .dl-horizontal dt
 {
      white-space: normal;
 }
