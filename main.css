@@ -33,6 +33,10 @@
 }
 
 /*Navigator tab*/
+.nav{
+	 margin-top:15px;
+	 margin-bottom:8px;
+}
 
 .nav a {
   color: #5a5a5a;
@@ -46,10 +50,19 @@
   display: inline;
 }
 
-#curriculum
+#curriculum 
 {
-	
+	height:500px;
+    background-color:#ddd;
+    position: fixed;
+    padding: 2em;
+    left: 50%;
+    top: 0%;
+    transform: translateX(-50%);
+	float: none;
+			display: inline-block;
 }
+
 /*Main image*/
 
 .jumbotron {
@@ -84,8 +97,7 @@
 }
 
 .activities h3 {
-  font: 100 45px 'JennaSue', 
-  100, sans-serif;
+  font: 100 45px 'JennaSue', sans-serif;
 }
 
 .activities p {
@@ -163,7 +175,7 @@
 .images img {
 
   /* Webkit for Chrome and Safari */
-  -webkit-transform: scale(1, 1); // This is the scale for the normal size of the image.
+  -webkit-transform: scale(1, 1); /* This is the scale for the normal size of the image.*/
   -webkit-transition-duration: 500ms;
   -webkit-transition-timing-function: ease-out;
  
@@ -181,7 +193,7 @@
 .images img:hover{
 
   /* Webkit for Chrome and Safari */
-  -webkit-transform: scale(1.2, 1.2); // This is the enlarged size scale of the image.
+  -webkit-transform: scale(1.2, 1.2); /* This is the enlarged size scale of the image.*/
   -webkit-transition-duration: 500ms;
   -webkit-transition-timing-function: ease-out;
  
@@ -336,10 +348,6 @@ color: green !important;}
 .flag.flag-gb {background-position: -25px -15px}
 .flag.flag-it {background-position: -50px -15px}
 
-.nav{
-	 margin-top:15px;
-	 margin-bottom:8px;
-}
 /*Zoom for map*/
 .grabbing { cursor: url(closedhand.cur), pointer !important; }
 #mapContainer #mapControls { position: absolute; left: 15px; top: 15px; width: 29px; }
