@@ -252,27 +252,11 @@
 
 .lista
 {
- margin-top:10px;
- font: 100 15px 'EB Garamond', Helvetica, sans-serif;
+	margin-top:10px;
+	font: 100 15px 'EB Garamond', Helvetica, sans-serif;
 }
 
-.work img:hover{
 
-  /* Webkit for Chrome and Safari */
-  -webkit-transform: scale(1.2, 1.2); // This is the enlarged size scale of the image.
-  -webkit-transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-out;
- 
-  /* Webkit for Mozila Firefox */
-  -moz-transform: scale(1.2, 1.2);
-  -moz-transition-duration: 500ms;
-  -moz-transition-timing-function: ease-out;
- 
-  /* Webkit for IE( Version: 11, 10 ) */
-  -ms-transform: scale(1.20, 1.20);
-  -ms-transition-duration: 500ms;
-  -ms-transition-timing-function: ease-out;
-}
 
 .work .container
 {
@@ -297,46 +281,51 @@ color: green !important;}
 
 /*Flags*/
 
+.showbox
+{
+  float: left;
+  margin: 4em 1em;
+  width: 100px;
+  height: 60px;
+  border: 2px solid green;
+  background-color: #fff;
+  line-height: 60px;
+  text-align: center;
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
 
-  .showbox {
-    float: left;
-    margin: 4em 1em;
-    width: 100px;
-    height: 60px;
-    border: 2px solid green;
-    background-color: #fff;
-    line-height: 60px;
-    text-align: center;
-    -webkit-transition: 1s ease-in-out;
-    -moz-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
-  }
-  
-  .showbox.slideright:hover {
-    -webkit-transform: translate(3em,0);
-    -moz-transform: translate(3em,0);
-    -o-transform: translate(3em,0);
-    -ms-transform: translate(3em,0);
-    transform: translate(3em,0);
-  }
+.showbox.slideright:hover
+{
+  -webkit-transform: translate(3em,0);
+  -moz-transform: translate(3em,0);
+  -o-transform: translate(3em,0);
+  -ms-transform: translate(3em,0);
+  transform: translate(3em,0);
+}
   
 .dl-horizontal dt 
 {
-	    font: 100 50px 'EB Garamond', Helvetica, sans-serif;
+	 font: 100 50px 'EB Garamond', Helvetica, sans-serif;
+	      white-space: normal;
+
 }
 
 .dl-horizontal dd 
 {
-	    font: 100 17px 'EB Garamond', Helvetica, sans-serif;
+	 font: 100 17px 'EB Garamond', Helvetica, sans-serif;
 }
 
 #Projects .dl-horizontal dt
 {
      white-space: normal;
 }
+
 /* CSS Sprite of flags for languages */
-.flag {
+.flag
+{
 	width: 25px;
 	height: 15px;
 	background:url(../Images/FlagIcons/flags.png) no-repeat

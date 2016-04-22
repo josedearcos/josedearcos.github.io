@@ -315,21 +315,9 @@
 				<div id='Projects' class="tab-pane fade" >
 					<h1 align="center">Projects & Skills</h1>
 					<div class="container">
-					<h2>Java</h2>
-					
-						<dl class="dl-horizontal">
-							<dt>Algorithms and simulations</dt>
-							<dd>Java was the first programming language I learnt. We had to work on a couple introductory projects:
-							we started developing the Dijkstra algorithm to solve the single-source shortest path problem,
-							also we created a sand-box simulation to analyize the population behavior for two antagonist objects
-							with opposite survival conditions such as rabbits and foxes.
-							</dd>
-						</dl>
-					</div>
-					<div class="container">
 					<h2>Arduino</h2>
 						<dl class="dl-horizontal">
-							<dt>Prototypes</dt>
+							<dt>Prototype design</dt>
 							<dd>As a teacher assistant I had the responsibility of designing a section to introduce Arduino systems.
 							I coded several tutorials, from controlling <abbr data-toggle="tooltip" title="Light-emitting diode">LEDs</abbr>,
 							to counters, music <abbr data-toggle="tooltip" title="Input/Output">I/O</abbr>, thermometers and <abbr data-toggle="tooltip"
@@ -338,8 +326,10 @@
 							The student evaluation was very satisfactory.
 								<br>
 								<br>
-								<div class="row">
-									<div class="col-md-6 col-xs-6 col-sm-6">
+								<details>
+							<summary>Instructions for the class</summary>
+							<div class="row">
+									<!--<div class="col-md-6 col-xs-6 col-sm-6">
 										<div class="hidden_element">
 										<div class="thumbnail">
 											<iframe class="framepdf" src="about:blank" data-src="http://prezi.com/embed/ltztrfwtgz5j/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" frameBorder="0" webkitAllowFullScreen mozAllowFullscreen allowfullscreen></iframe>
@@ -348,8 +338,9 @@
 											</div>
 										</div>
 										</div>
-									</div>
-									<div class="col-md-6 col-xs-6 col-sm-6">
+									</div>-->
+									<div class="col-md-1 col-xs-1 col-sm-1"></div>
+									<div class="col-md-10 col-xs-10 col-sm-10">
 										<div class="thumbnail">
 											<iframe class="framepdf" src="../PDFs/ArduinoClass.pdf#zoom=100&view=fitH" type="application/pdf">
 												<p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="../PDFs/ArduinoClass.pdf">click here to download the PDF file.</a></p>
@@ -359,7 +350,9 @@
 											</div>
 										</div>
 									</div>
+									<div class="col-md-1 col-xs-1 col-sm-1"></div>
 								</div>
+							</details>
 							</dd>
 						</dl>
 					</div>
@@ -373,19 +366,20 @@
 							in a covariance matrix &chi;<sup>2</sup> fitter. This fitter was designed and tested to measure precisely the third neutrino mixing angle (&theta;<sub>13</sub>).
 							<br>
 							<br>
-
-							<div class="row">
-							  <div class="col-md-3 col-xs-3 col-sm-3"></div>
+							<details>
+								<summary>Tutorial video showing GUI</summary>
+								<div class="row">
+								<div class="col-md-3 col-xs-3 col-sm-3"></div>
 
 								<div class="col-md-6 col-xs-6 col-sm-6">
 									<div class="thumbnail">
-										<iframe width="420" height="315" src="http://www.youtube.com/embed/VgzL56hEsXY?autoplay=1" allowfullscreen></iframe>
+										<iframe width="455" height="330" src="http://www.youtube.com/embed/VgzL56hEsXY?autoplay=1" allowfullscreen></iframe>
                                         <div class="caption">
 											<h3>Tutorial on how to use the GUI to load, generate and plot antineutrino spectra, covariance matrices and responce matrices.</h3>
 										</div>
 									</div>
 								</div>
-								 <div class="col-md-3 col-xs-3 col-sm-3"></div>
+								<div class="col-md-3 col-xs-3 col-sm-3"></div>
 
 								<!-- <div class="col-md-6 col-xs-6 col-sm-6">
 									<div class="thumbnail">
@@ -395,26 +389,27 @@
 										</div>
 									</div>
 								</div> -->
-							</div>
+								</div>
+							</details>
 						</dl>
 					<div class="container">
 						<dl class="dl-horizontal">
-							<dt>Interactive platform development</dt>
-							<dd>Using the Motorola ColdFire MCF5272 microprocontroller, we developed an interactive game using an array of LEDs
-							as a screen and a keyboard as input. The game, called Piano hero, consisted in a sucession of falling notes displayed in the LED array,
-							the player needed to press the corresponding keys timely, obtaining points according to his performance.
-							The synchronization of different events was the main key of the project. An interface guided the user to choose between the different songs and modes,
-							each song was played using a buzzer and at the end of the game the score could be accessed using an additional LCD screen. </dd>
+							<dt>Interactive system</dt>
+							<dd>Using the Motorola ColdFire MCF5272 microprocontroller, we developed an interactive game using an interface made with an array of LEDs 
+						    and a keyboard to input data. <br><br> The game displayed a sucession of falling notes in the LED array and
+							the player needed to press a set of keys trying to match the notes in a timely fashion, obtaining points according to his performance. A LCD interface allowed the user to choose between different songs and modes.<br><br>
+							Each song was played using a buzzer and at the end of the game the score was shown through the LCD screen.
+							The synchronization of different events was the main focus of the project. </dd>
 						</dl>
 					</div>
 					<h2>Matlab</h2>
 						<dl class="dl-horizontal">
-							<dt>MRI Motion Correction: </dt>
+							<dt>MRI Motion <br> Correction: </dt>
 							<dd>
 								<details>
 									<summary>Tracking data</summary>
-									<h2>Using tracking coils inside an MRI scanner allows us to obtain real time positional information of the sample. 
-									Inputting this data into a SVD based algorithm we can extract translational and rotational motion of a rigid body.
+									<h2>Using tracking coils inside an MRI scanner allows us to obtain real time positional information of the sample. <br><br>
+									Inputting this data into a SVD based algorithm we can extract translational and rotational motion of a rigid body. <br><br>
 									This information can then be used to correct the imaging process for motion distortion in real time with millimetric resolution and response time in the millisecond order.
 								   </h2>
 									<div class="row">
@@ -442,7 +437,7 @@
 							<dd>
 								<details>
 									<summary>Image processing algorithms</summary>
-									<h2>We developed several image processing algorithms used to segment different kind of images. We analyzed the performance of  threshold,
+									<h2>We developed several image processing algorithms used to segment different kind of images. <br><br> We analyzed the performance of threshold,
 									K-means clustering, region growing, region splitting/merging and labelling segmentations.</h2>
 									<div class="row">
 										<div class="col-md-3 col-sx-3 col-sm-3">
@@ -479,7 +474,7 @@
 							<dd>
 								<details>
 									<summary>Motion stimation</summary>
-									<h2>In this project we developed the Block Matching algorithm and studied how its parameters affect the correct estimation of motion.
+									<h2>In this project we developed the Block Matching algorithm and studied how its parameters affect the correct estimation of motion.<br><br>
 									This algorithm is very useful to compress video information by detecting one of the most common features of videos,
 									the very few differences between consecutive frames. It can also be applied in the analysis of object movements.</h2>
 									<div class="row">
@@ -492,14 +487,13 @@
 								</details>
 							</dd>
 						</dl>
-
 						<dl class="dl-horizontal">
-							<dt>Statistical Mechanics:</dt>
+							<dt>Statistical <br> Mechanics:</dt>
 							<dd>
 								<details>
 									<summary>Monte Carlo simulation</summary>
 									<h2>I developed my first Monte Carlo simulation to study the percolation properties (Neel temperature, average magnetization and energy)
-									from antiferromagnetic materials in a 2D lattice, following the simple but powerful Ising model, that resembles a stochastic system of
+									from antiferromagnetic materials in a 2D lattice. <br><br> Following the simple but powerful Ising model, that resembles a stochastic system of
 									cellular automata where the probability of a spin flip is a function of the number of neighbors in the spin up (or down) direction. </h2>
 									<div class="row">
 										<div class="col-md-offset-2 col-sm-offset-1 col-md-4 col-xs-6 col-sm-4">
@@ -517,8 +511,18 @@
 							</dd>
 						</dl>
 					</div>
-					<h2>HTML & JavaScript</h2>
 					<div class="container">
+					<h2>Java</h2>
+						<dl class="dl-horizontal">
+							<dt>Algorithms & <br> simulations</dt>
+							<dd>Java was the first programming language I learnt. <br><br> In my freshman year I had to work on a couple introductory projects, i.e.,
+							developing the Dijkstra algorithm to solve the single-source shortest path problem and building a sand-box simulation to analyize the population behavior for two antagonist animals
+							with opposite survival conditions such as rabbits and foxes.
+							</dd>
+						</dl>
+					</div>
+					<div class="container">
+					<h2>HTML & JavaScript</h2>
 						<dl class="dl-horizontal">
 							<dt>Personal website</dt>
 							<dd>I learnt HTML and JavaScript to be able to build this webpage from scratch. As an introduction to the language I used
@@ -540,24 +544,25 @@
 					<div class="Spain"></div>
 					<div class="container">
 						<dl class="dl-horizontal">
-							<dt>Spanish</dt>
+							<dt> Spanish <img src="" class="flag flag-es" />
+							</dt>
 							<dd>Mother tongue.</dd>
 						</dl>
 						<dl class="dl-horizontal">
-							<dt>English</dt>
-							<dd>Full professional proficiency: In 2010 I completed both TOEFL and GRE tests. After that I have been developing my work in English and living
-							in the United States for the last 5 years.</dd>
+							<dt> English <img src="" class="flag flag-gb" /><dt>
+							<dd>Full professional proficiency: In 2010 I completed both TOEFL and GRE tests. I have been developing my work in English and living
+							in the United States since then.</dd>
 						</dl>
 						<dl class="dl-horizontal">
-							<dt>Italian</dt>
+							<dt> Italian <img src="" class="flag flag-it" /> <dt>
 							<dd>Conversational.</dd>
 						</dl>
 						<dl class="dl-horizontal">
-							<dt>French</dt>
+							<dt> French <img src="" class="flag flag-fr" /> <dt>
 							<dd>Studied 4 years in high school. Basic skills.</dd>
 						</dl>
 						<dl class="dl-horizontal">
-							<dt>Chinese</dt>
+							<dt> Chinese <img src="" class="flag flag-cn" /> <dt>
 							<dd>Due to my trips to China I decided to study the language. I enjoy learning how to writing new symbols. Basic -survival- skills.</dd>
 						</dl>
 					</div>
