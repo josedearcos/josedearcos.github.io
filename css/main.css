@@ -191,13 +191,6 @@
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-.mini-jumbotron {
-    width:120%;
-	background-image: url("../Images/subatomic-whirlygig.png");
-	height: 20px;
-	background-size: cover;
-}
-
 /*Activities in the main page*/
 
 .activities {

@@ -40,9 +40,10 @@
 			});
 			
 			$(window).on('scroll', function() {
+
 			var scrollTop = $(window).scrollTop();
-			var Time = 100;
-			if (scrollTop > 5) {
+			var Time = 50;
+			if (scrollTop >= 5) {
 			  	$('#header').stop().animate({
 					height: "100px"
 				}, Time);
@@ -57,36 +58,37 @@
 					top: "-1em"
 				}, Time);
 			}
-			else
+			/* To make the jumbotron go back to its initial size
+			else 
 			{
 			  	$('#header').stop().animate({
 					height: "150px"
-				}, Time+100);
+				}, Time);
 				$('#content-main').stop().animate({
 					paddingTop: "300px"
-				}, Time+100);
+				}, Time);
 				$('.jumbotron').stop().animate({
 					height: "250px"
-				}, Time+100);
+				}, Time);
 				$('.jumbotron h1').stop().animate({
 					fontSize: "7em",
 					top:"0%"
-				}, Time+100);
+				}, Time);
 			}
-		});
+		*/
+			});
 		});
 	</script>
 </head>
 
 <body>
-
 	<div id="wrapper">
 		<div id="header">
 			<div class="nav">
 				<div class="container">
 					<ul class="pull-left">
 						<li>
-							<a href='./es/principal.html'><img style="margin-top:-0.5em" src="" class="flag flag-es" title="" alt="" /> Spanish
+							<a href='./es/principal.html'><img style="margin-top:-0.5em" src="" class="flag flag-es" title="" alt="" /> Espa&ntildeol
 							</a>
 						</li>
 					</ul>
@@ -119,7 +121,7 @@
 							<p>When I was a child I wondered how a computer, a phone or a television worked. Telecommunication Engineering gave me the answers to all my questions and provided me with valuable skills to design the electronics and software of any device.</p>
 						</div>
 						<div class="col-md-4">
-							<h3><a href="./en/Work.html#Physics">Physics</a></h3>
+							<h3><a href="./en/Work.html#DayaBay">Physics</a></h3>
 							<p>Since I was in high school I was amazed by the simplicity and power of the Laws of Nature. After finishing my degree in Telecommunication Engineering I decided to pursue a <abbr data-toggle="tooltip" title="Doctor of Philosophy">Ph.D.</abbr> in Physics to learn all I could about it.</p>
 						</div>
 						<div class="col-md-4">
