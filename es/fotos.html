@@ -277,7 +277,7 @@
     Galleria.run('#Album', {
         // search flickr for "galleria"
 	
-	height: 0.5625,//16:9
+	height: 0.42553191489 ,//16:9 = 0.5625
         autoplay: 5000,//5 seconds between pictures
         clicknext: true,//disables other links in pics but allows to pass the pictures with a click
 	flickr: flickrset,
@@ -367,52 +367,53 @@
 
 </script>  
 </head>
-
 <body>
-
-<div class="pictures">
-    <div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-			<li><a href="principal.html">&iquestQui&eacuten soy?</a></li>
-        </ul>
-
-        <ul class="pull-right">
-          
-          <li><a href="viajes.html">Viajes</a></li>
-          <li><a href="trabajo.html">Curriculum</a></li>
-          <!--<li><a href="actividades.html">Actividades</a></li>-->
-	  <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  
-  <div class="jumbotron"></div>
-  
-  <div class="container" align="center">
-    <h2>&Aacute;lbumes de fotos:</h2>
-
-    <p> Cuando viajo mi Canon 60D y yo somos inseparables. Estas son algunas de las memorias que capturamos juntos:</p>
-    <div class="row top-buffer">
-      <div class="span12">
-      <div class="btn-toolbar" role="toolbar" align="center">
-	<!-- All the code to load the buttons is run in javascript-->
-      </div>
-      </div>
-    </div>
+  <div id="wrapper">
+  <div id="header">
+	  <div class="nav">
+		  <div class="container">
+			  <ul class="pull-left">
+				  <li><a href="principal.html">&iquestQui&eacuten soy?</a></li>
+			  </ul>
+			  <ul class="pull-right">
+				  <!--<li><a href="Travels.html">Viajes</a></li>-->
+				  <!--<li><a href="Pictures.html">Fotos</a></li>-->
+				  <!--<li><a href="Hobbies.html">Hobbies</a></li>-->
+				  <li><a href="contacto.html">Contacto</a></li>
+			  </ul>
+		  </div>
+		  <div style="height:40px;" class="jumbotron">
+			<h1 style="font: 400 4em 'Lato', Helvetica, sans-serif; top:-1em;">Fotos</h1>
+		  </div>
+	  </div>
   </div>
-  <div class='top-buffer'>
-    <div id="Display"></div>
-    <!-- All the code to load the thumbnails is run in javascript-->
-    <div id='Album'></div>
-       	<!-- All the code to load the albums is run in javascript-->
-    </div>
-</div>
-   <div align="center">
-      <div class="container">
-        <div id='showalbum'></div>
-      </div>
+  <div style="height:100vh;" id="content">
+	<div class="pictures">
+	  <div class="container" align="center">
+		<h2>&Aacute;lbumes de fotos:</h2>
+
+		<p> Cuando viajo mi Canon 60D y yo somos inseparables. Estas son algunas de las memorias que capturamos juntos:</p>
+		<div class="row top-buffer">
+		  <div class="span12">
+			 <div style="position:relative; width:100%; margin-left: 62vh;" class="btn-toolbar" role="toolbar" align="center">
+			  <!-- All the code to load the buttons is run in javascript-->
+			</div>
+		  </div>
+	  </div>
+	  <div class='top-buffer'>
+	  <div id="Display"></div>
+	   <!-- All the code to load the thumbnails is run in javascript-->
+	  <div id='Album'></div>
+	  <!-- All the code to load the albums is run in javascript-->
+	  </div>
    </div>
- 
+   <div align="center">
+	<div class="container">
+	 <div id='showalbum'></div>
+	</div>
+   </div>
+  </div>
+  </div>
+  <div id="footer"></div>
 </body>
 </html>
