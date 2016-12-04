@@ -21,6 +21,43 @@
   ga('require', 'displayfeatures');
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
+  
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
 </script>
 
 </head>
@@ -63,8 +100,15 @@
 	      <h1 align="center"> Galleria </h1>
 	      <p align="justify">
 	   </div>
-	   <div class="col-md-2"></div>
-      </div>
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1" >
+	    <div class="container" style="margin-top:0.5em">
+	      <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Filciacolon&width=95&layout=button&action=like&size=small&show_faces=false&share=true&height=65&appId"
+	      width="95" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>				    
+	    </div>
+
+	  </div>
+	  </div>
     </div>
     
   <!--<div class ="calendar" align="center">
@@ -73,7 +117,182 @@
   </div>-->
   </div>
 </div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/sala.jpg" style="width:95%" onclick="openModal();currentSlide(1)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/antipasti.jpg" style="width:95%" onclick="openModal();currentSlide(2)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/bottiglie.jpg" style="width:95%" onclick="openModal();currentSlide(3)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4484.jpg" style="width:95%" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4516.jpg" style="width:95%" onclick="openModal();currentSlide(5)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4599.jpg" style="width:95%" onclick="openModal();currentSlide(6)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4612.jpg" style="width:95%" onclick="openModal();currentSlide(7)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4616.jpg" style="width:95%" onclick="openModal();currentSlide(8)" class="hover-shadow">
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4624.jpg" style="width:95%" onclick="openModal();currentSlide(9)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4677.jpg" style="width:95%" onclick="openModal();currentSlide(10)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4728.jpg" style="width:95%" onclick="openModal();currentSlide(11)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4583.jpg" style="width:95%" onclick="openModal();currentSlide(12)" class="hover-shadow">
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4500.jpg" style="width:95%" onclick="openModal();currentSlide(13)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4592.jpg" style="width:95%" onclick="openModal();currentSlide(14)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4549.jpg" style="width:95%" onclick="openModal();currentSlide(15)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4688.jpg" style="width:95%" onclick="openModal();currentSlide(16)" class="hover-shadow">
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4652.jpg" style="width:95%" onclick="openModal();currentSlide(17)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4656.jpg" style="width:95%" onclick="openModal();currentSlide(18)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4662.jpg" style="width:95%" onclick="openModal();currentSlide(19)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="../Images/Index_Imgs/resized_thmb/DSC4669.jpg" style="width:95%" onclick="openModal();currentSlide(20)" class="hover-shadow">
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+        <img src="../Images/Index_Imgs/resized_gallery/DSC4516.jpg">
+    </div>
+
+    <div class="mySlides">
+        <img src="../Images/Index_Imgs/resized_gallery/DSC4599.jpg">
+    </div>
+
+    <div class="mySlides">
+        <img src="../Images/Index_Imgs/resized_gallery/DSC4612.jpg">
+    </div>
+
+    <div class="mySlides">
+        <img src="../Images/Index_Imgs/resized_gallery/DSC4616.jpg">
+    </div>
+    
+    <div class="mySlides">
+        <img src="../Images/Index_Imgs/resized_gallery/DSC4624.jpg">
+    </div>
+
+    <div class="mySlides">
+        <img src="../Images/Index_Imgs/resized_gallery/DSC4677.jpg">
+    </div>
+
+    <div class="mySlides">
+        <img src="../Images/Index_Imgs/resized_gallery/DSC4728.jpg" >
+    </div>
+
+    <div class="mySlides">
+        <img src="../Images/Index_Imgs/resized_gallery/DSC4583.jpg" >
+    </div>
+    
+    <div class="mySlides">>
+     <img src="../Images/Index_Imgs/resized_gallery/DSC4500.jpg" >
+    </div>
+    
+    <div class="mySlides">
+     <img src="../Images/Index_Imgs/resized_gallery/DSC4592.jpg" >
+    </div>
+    
+    <div class="mySlides">
+     <img src="../Images/Index_Imgs/resized_gallery/DSC4549.jpg" >
+    </div>
+    
+    <div class="mySlides">
+     <img src="../Images/Index_Imgs/resized_gallery/DSC4688.jpg" >
+    </div> 
+
+    <div class="mySlides">
+     <img src="../Images/Index_Imgs/resized_gallery/DSC4652.jpg" >
+    </div>
+    
+    <div class="mySlides">
+     <img src="../Images/Index_Imgs/resized_gallery/DSC4656.jpg" >
+    </div>
+    
+    <div class="mySlides">
+     <img src="../Images/Index_Imgs/resized_gallery/DSC4662.jpg" >
+    </div>
+    
+    <div class="mySlides">
+     <img src="../Images/Index_Imgs/resized_gallery/DSC4669.jpg" >
+    </div> 
+    
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+    
+</div>
+</div>
+
 	<div id="footer"></div>
       </div>
 </body>
 </html>
+
+
+
+
+
