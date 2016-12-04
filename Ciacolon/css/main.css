@@ -438,8 +438,8 @@ label.valid {
 	font-weight: 100;
 	font-size: 1.5em;
 	/*color: #000000;*/
-	color: white;
-	text-shadow: -1px 0 #090274, 0 1px #090274, 1px 0 #090274, 0 -1px #090274;
+	color: #3c359f;
+	text-shadow: -0.5px 0 #3c359f, 0 0.5px #3c359f, 0.5px 0 #3c359f, 0 -0.5px #3c359f;
 	height: 30%;
 	width: 30%;
 	margin-left: -15%;
@@ -453,7 +453,9 @@ label.valid {
 }
 
 .circle a:hover {
-	color: blue;
+	color: white;
+	text-shadow: -0.75px 0 #3c359f, 0 0.75px #3c359f, 0.75px 0 #3c359f, 0 -0.75px #3c359f;
+
 }
 
 .menu-button {
@@ -845,4 +847,10 @@ img.hover-shadow {
 
 .nav li {
  display: inline;
+}
+
+.container-facebook {
+	position: fixed;
+	right: 10%;
+	margin-top: 0.5em;
 }
