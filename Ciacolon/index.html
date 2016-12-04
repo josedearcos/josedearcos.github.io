@@ -37,43 +37,40 @@
             var original_height = image.height;
 
             var large = {
-                width: "auto",
-                height: original_height
+                height: "80vh"
             };
             var small = {
-                width: "auto",
-                height: "350px"
+                height: "50vh"
             };
             var countcircle = 1;
+
             $("#logo").css(large).on('click', function() {
                 $(this).animate((countcircle == 1) ? small : large);
                 countcircle = 1 - countcircle;
             });
 
+			var counter = 1;
             /*Show/hide Enter button*/
-
             $('.menu-button').bind({
                 mouseenter: function(e) {
                     /*This shows the message Enter*/
                     name.innerHTML = 'Entra';
 
                     /*This moves the address and the phone to the sides*/
-                    var center = {
-                        left: "0%"
-                    };
                     var left = {
                         left: "-43%"
                     };
                     var right = {
                         left: "55%"
                     };
-                    var count = 1;
 
-                    if (count != 0) {
-                        $('.phone_message').animate((count != 0) ? left : center);
-                        $('.address_message').animate((count != 0) ? right : center);
-                        count = 0;
-                    }
+					if (counter == 1) {
+					 $('.phone_message').animate(left);
+                     $('.address_message').animate(right);
+					 counter = 0;
+					 }
+
+
                 },
                 mouseleave: function(e) {
                     /*This hides the message Enter*/
@@ -82,7 +79,7 @@
             });
 
             /*Hide Enter message when circle menu is open*/
-            var number_click = 0;
+            var number_click = 1;
 
             $('.menu-button').on('click', function(event) {
                 event.preventDefault();
@@ -90,20 +87,22 @@
                 $('.circle').toggleClass('open');
                 $(this).trigger("mouseleave");
 
-                number_click++;
-
-                if (number_click % 2 != 0) {
+                if (number_click == 1) {
                     $(this).unbind("mouseenter mouseleave");
                 } else {
                     $(this).bind({
                         mouseenter: function(e) {
-                            name.innerHTML = 'Entra';
+							if (countcircle ==1) {
+								name.innerHTML = 'Entra';
+                            }
                         },
                         mouseleave: function(e) {
                             name.innerHTML = '';
                         }
                     });
                 }
+				 number_click=0;
+
             });
 
             $(function() {

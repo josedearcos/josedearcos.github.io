@@ -556,7 +556,7 @@ a {
 	;
 	position: absolute;
 	text-align: right;
-	left: -50%;
+	left: -20vw;
 	-webkit-transition: all 2s ease;
 	-moz-transition: all 2s ease;
 	-o-transition: all 2s ease;
@@ -569,7 +569,7 @@ a {
 	;
 	position: absolute;
 	text-align: left;
-	left: -0%;
+	left: 1vw;
 	-webkit-transition: all 2s ease;
 	-moz-transition: all 2s ease;
 	-o-transition: all 2s ease;
@@ -697,15 +697,15 @@ p.info_menu {
 /* The Modal (background) */
 .modal {
   display: none;
-  position: fixed;
+  position: relative;
   z-index: 1;
-  padding-top: 100px;
   left: 17%;
   top: 0;
   width: 66%;
   height: 100%;
   overflow: auto;
   background-color: black;
+  
 }
 
 /* Modal Content */
@@ -716,6 +716,7 @@ p.info_menu {
   padding: 0;
   width: 88%;
   max-width: 1200px;
+  
 }
 
 /* The Close Button */
@@ -730,7 +731,7 @@ p.info_menu {
 
 .close:hover,
 .close:focus {
-  color: #999;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
@@ -799,12 +800,7 @@ p.info_menu {
 .active, .dot:hover {
   background-color: white;
 }
-.caption-container {
-  text-align: center;
-  background-color: black;
-  padding: 2px 16px;
-  color: white;
-}
+
 
 img.demo {
   opacity: 0.6;
@@ -854,4 +850,20 @@ img.hover-shadow {
 	position: fixed;
 	right: 10%;
 	margin-top: 0.5em;
+}
+.thefork-container a{
+background-color: white;
+color: #090274;
+border-color: #090274;
+font-size: 13px;
+font-weight: bold;
+}
+.thefork-container a:hover{
+background-color: #090274;
+opacity: 0.8;
+color: white;
+border-color: #090274;
+font-size: 13px;
+font-weight: bold;
+
 }

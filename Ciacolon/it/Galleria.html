@@ -6,7 +6,8 @@
     <meta charset='UTF-8'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css" type="text/css" />
-    <link rel="shortcut icon" href="./Images/ciacolon_icon.ico">
+    <link rel="shortcut icon" href="../Images/FlagIcons/ciacolon_icon.ico">
+
 
     <title>Galleria</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -14,10 +15,12 @@
     <script type="text/javascript">
         function openModal() {
             document.getElementById('myModal').style.display = "block";
+			document.getElementById('gallery-thumb').style.display = 'none';
         }
 
         function closeModal() {
             document.getElementById('myModal').style.display = "none";
+			document.getElementById('gallery-thumb').style.display = 'block';
         }
 
         var slideIndex = 1;
@@ -34,10 +37,7 @@
         function showSlides(n) {
             var i;
             var slides = document.getElementsByClassName("mySlides");
-            var dots =
-                document.getElementsByClassName("dot");
-            var captionText =
-                document.getElementById("caption");
+
             if (n > slides.length) {
                 slideIndex = 1
             }
@@ -47,12 +47,9 @@
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
+
             slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            captionText.innerHTML = dots[slideIndex - 1].alt;
+
         }
     </script>
 
@@ -65,7 +62,6 @@
                 <div class="container">
                     <ul class="pull-left">
                         <li>
-
                             <a href="../index.html" style="margin-left:-40px"><img src="../Images/il_ciacolon_logo2.jpg" style="margin-bottom:5px" height=70px>
                             </a>
                         </li>
@@ -103,8 +99,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+				<div id="gallery-thumb">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
@@ -115,7 +110,7 @@
                     <img src="../Images/Index_Imgs/resized_thmb/antipasti.jpg" style="width:95%" onclick="openModal();currentSlide(2)" class="hover-shadow">
                 </div>
                 <div class="column">
-                    <img src="../Images/Index_Imgs/resized_thmb/bottiglie.jpg" style="width:95%" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                    <img src="../Images/Index_Imgs/resized_thmb/bottiglie.png" style="width:95%" onclick="openModal();currentSlide(3)" class="hover-shadow">
                 </div>
                 <div class="column">
                     <img src="../Images/Index_Imgs/resized_thmb/DSC4484.jpg" style="width:95%" onclick="openModal();currentSlide(4)" class="hover-shadow">
@@ -195,86 +190,100 @@
             </div>
             <div class="col-md-2"></div>
         </div>
+		</div>
 
-        <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div id="myModal" class="modal"  >
             <div class="modal-content">
+	             <span class="close cursor" onclick="closeModal()">&times;</span>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4516.jpg">
-                </div>
-
-                <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4599.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/sala.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4612.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/antipasti.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4616.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/bottiglie.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4624.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4484.jpg" style="width:100%">
+                </div>
+		
+                <div class="mySlides">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4516.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4677.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4599.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4728.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4612.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4583.jpg">
-                </div>
-
-                <div class="mySlides">>
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4500.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4616.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4592.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4624.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4549.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4677.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4688.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4728.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4652.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4583.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4656.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4500.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4662.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4592.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                    <img src="../Images/Index_Imgs/resized_gallery/DSC4669.jpg">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4549.jpg" style="width:100%">
                 </div>
 
+                <div class="mySlides">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4688.jpg" style="width:100%">
+                </div>
 
+                <div class="mySlides">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4652.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4656.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4662.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <img src="../Images/Index_Imgs/resized_gallery/DSC4669.jpg" style="width:100%">
+                </div>
+				
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                <div class="caption-container">
-                    <p id="caption"></p>
-                </div>
 
             </div>
         </div>
+	    </div>
+        </div>
 
-        <div id="footer"></div>
+        <div id="footer" ></div>
     </div>
 </body>
 
