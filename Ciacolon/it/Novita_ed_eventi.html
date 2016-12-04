@@ -1,170 +1,150 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-  <meta charset='UTF-8'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
-  <link rel="stylesheet" href="../css/main.css" type="text/css" />
-  <link rel="shortcut icon" href="./Images/ciacolon_icon.ico">
+    <meta charset='UTF-8'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main.css" type="text/css" />
+    <link rel="shortcut icon" href="./Images/ciacolon_icon.ico">
 
-  <title>Eventi e Novit&aacute</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-  <!--Google Analytics-->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <title>Eventi e Novit&aacute;</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script>
+        /* Hover over image and show text */
+        $(document) ready(function() {
+            $(".pdf-thumb-box").hover(function() {
 
-  ga('create', 'UA-55427691-1', 'auto');
-  ga('require', 'displayfeatures');
-  ga('require', 'linkid', 'linkid.js');
-  ga('send', 'pageview');
-</script>
-<script> /* Hover over image and show text */
-   $(document)ready(function(){
-       $(".pdf-thumb-box").hover(function() {
+                var imgWidth = $(this).children("img").width();
+                var imgHeight = $(this).children("img").height();
+                var negImgWidth = imgWidth - imgWidth - imgWidth;
 
-       var imgWidth = $(this).children("img").width();
-       var imgHeight = $(this).children("img").height();
-       var negImgWidth = imgWidth - imgWidth - imgWidth;
+                $(this).children(".pdf-thumb-box-overlay").fadeTo(0, 0.8);
 
-       $(this).children(".pdf-thumb-box-overlay").fadeTo(0, 0.8);
-
-       $(this).css("width", (imgWidth)+"px");
-       $(this).css("height", (imgHeight)+"px");
+                $(this).css("width", (imgWidth) + "px");
+                $(this).css("height", (imgHeight) + "px");
 
 
-       $(this).children(".pdf-thumb-box-overlay").css("left", negImgWidth+"px");
-       $(this).children(".pdf-thumb-box-overlay").css("visibility", "visible");
+                $(this).children(".pdf-thumb-box-overlay").css("left", negImgWidth + "px");
+                $(this).children(".pdf-thumb-box-overlay").css("visibility", "visible");
 
-       $(this).children(".pdf-thumb-box-overlay").animate({"left": 0}, 250);
+                $(this).children(".pdf-thumb-box-overlay").animate({
+                    "left": 0
+                }, 250);
 
-   }, function() {
+            }, function() {
 
-       var imgWidth = $(this).children("img").width();
-       var imgHeight = $(this).children("img").height();
-       var negImgWidth = imgWidth - imgWidth - imgWidth;
+                var imgWidth = $(this).children("img").width();
+                var imgHeight = $(this).children("img").height();
+                var negImgWidth = imgWidth - imgWidth - imgWidth;
 
-       $(this).children(".pdf-thumb-box-overlay").animate({"left": negImgWidth}, 250);
+                $(this).children(".pdf-thumb-box-overlay").animate({
+                    "left": negImgWidth
+                }, 250);
 
-   });
-   });
-
-</script>
-<style>
-.fade {
-opacity: 0;
--webkit-transition: opacity .75s;
-  -moz-transition: opacity .75s;
-   -ms-transition: opacity .75s;
- -o-transition: opacity .75s;
-    transition: opacity .75s;
-}
-		
-		.nav-tabs > li,
-		.nav-pills > li {
-			float: none;
-			display: inline-block;
-		}
-		
-		.nav-tabs,
-		.nav-pills {
-			text-align: center;
-			background-color: white;
-		}
-		
-		.nav-tabs > li,
-		.btn-toolbar > li {
-			float: none;
-			display: inline-block;
-			background-color: white;
-
-		}
-		
-		.nav-tabs,
-		.btn-toolbar {
-			text-align: center;
-		} 
-</style>
+            });
+        });
+    </script>
+    <style>
+        .fade {
+            opacity: 0;
+            -webkit-transition: opacity .75s;
+            -moz-transition: opacity .75s;
+            -ms-transition: opacity .75s;
+            -o-transition: opacity .75s;
+            transition: opacity .75s;
+        }
+        .nav-tabs > li,
+        .nav-pills > li {
+            float: none;
+            display: inline-block;
+        }
+        .nav-tabs,
+        .nav-pills {
+            text-align: center;
+            background-color: white;
+        }
+        .nav-tabs > li,
+        .btn-toolbar > li {
+            float: none;
+            display: inline-block;
+            background-color: white;
+        }
+        .nav-tabs,
+        .btn-toolbar {
+            text-align: center;
+        }
+    </style>
 </head>
 
-  <body>
-    
-  <!--     <div class="container">
-  <h2 id="shake">CSS Shake Animation</h2>
-  <div class="showbox slideright">box 1</div>
-  </div>//-->
-  
-  
-      <div id="wrapper">
-       <div id="header">
-	<div class="nav">
-	 <div class="container">
-        <ul class="pull-left">
-          <li>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div class="nav">
+                <div class="container">
+                    <ul class="pull-left">
+                        <li>
 
-	    <a href="../index.html"style="margin-left:-40px"><img src="../Images/il_ciacolon_logo2.jpg" style="margin-bottom:5px" height=70px></a></li>
-        </ul>
-        <ul class="pull-right">
-	  <li><a href="./Il_Nostro_Chef.html">Il Nostro Chef</a></li>
-	  <li><a href="./Menu.html">Men&uacute</a></li>
-	  <li><a href="./Galleria.html">Galleria</a></li>
-	  <li><a href="./La_Storia.html">La &nbspStoria</a></li>
-	  <li><a href="./Contatti.html">Contatti</a></li>
-        </ul>
-	 </div>
-       </div>
-       <div id="header-line"> </div>
-       </div>
-       
-    <div id="content">
-     <div class="MainPage">
-       <div class="container">
-	  <div class="row">
-	    <div class="col-md-1"></div>
-	    <div class="col-md-10">
-	      <h1 align="center"> I nostri eventi</h1>
+                            <a href="../index.html" style="margin-left:-40px"><img src="../Images/il_ciacolon_logo2.jpg" style="margin-bottom:5px" height=70px>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="pull-right">
+                        <li><a href="./Il_Nostro_Chef.html">Il Nostro Chef</a>
+                        </li>
+                        <li><a href="./Menu.html">Men&uacute</a>
+                        </li>
+                        <li><a href="./Galleria.html">Galleria</a>
+                        </li>
+                        <li><a href="./La_Storia.html">La &nbspStoria</a>
+                        </li>
+                        <li><a href="./Contatti.html">Contatti</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="header-line"> </div>
+        </div>
+        <div id="content">
+            <div class="MainPage">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <h1 align="center"> I nostri eventi</h1>
 
-	   <div class="pill-wrapper">
-	   <ul style="position:relative;" class="nav nav-pills nav-stacked col-md-1" id="pills">
-					<li class="active"><a href="#Timeline" data-toggle="pill">Eventi</a></li>
-					<li><a href="#Calendar" data-toggle="pill">Calendario</a></li>
-	    </ul>
-	    <div class="tab-content " style="height: auto;">
-	    <div class="tab-pane active" id="Timeline">
-		<div class="event-slideshow">
-		<iframe style="margin-top:20px" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AovzHudzxH0GdFdSaVVBeTdmbnBnN19FZlRfQ2VmYnc&font=Bevan-PotanoSans&maptype=toner&lang=it&height=650' width='100%' height='650' frameborder='0'></iframe>
-		</div>
-	    </div>
-	    <div class="tab-pane" id="Calendar">
-	      <div class="calendar-container">
-	      <iframe src="https://calendar.google.com/calendar/embed?title=Gli%20event%20del%20Ciacolon&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=it&amp;bgcolor=%23ffffff&amp;src=5s0spk9f10s0ujtjo4mme5ua8k%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=America%2FNew_York" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-	      </div>
-	    </div>
-	    </div>
-	    </div>
-
-      </div>
-      <div class="col-md-1" >
-      </div>
-      <div class="container-facebook">
-		  <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Filciacolon&width=95&layout=button&action=like&size=small&show_faces=false&share=true&height=65&appId"
-	  width="95" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>				    
-
-      </div>
-      
-    </div>
-
-    
-  <!--<div class ="calendar" align="center">
-    <h3>Google Calendar</h3>
-    <iframe src="https://www.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=300&amp;wkst=2&amp;hl=it&amp;bgcolor=%23FFFFFF&amp;src=743o6vn0i0lchp4d28s7rgm5rs%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=Europe%2FRome" style=" border-width:0 " width="450" height="300" frameborder="0" scrolling="no"></iframe>  
-  </div>-->
-  </div>
-</div>
-	<div id="footer"></div>
-      </div>
+                            <div class="pill-wrapper">
+                                <ul style="position:relative;" class="nav nav-pills nav-stacked col-md-1" id="pills">
+                                    <li class="active"><a href="#Timeline" data-toggle="pill">Eventi</a>
+                                    </li>
+                                    <li><a href="#Calendar" data-toggle="pill">Calendario</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content " style="height: auto;">
+                                    <div class="tab-pane active" id="Timeline">
+                                        <div class="event-slideshow">
+                                            <iframe style="margin-top:20px" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AovzHudzxH0GdFdSaVVBeTdmbnBnN19FZlRfQ2VmYnc&font=Bevan-PotanoSans&maptype=toner&lang=it&height=650' width='100%' height='650' frameborder='0'></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="Calendar">
+                                        <div class="calendar-container">
+                                            <iframe src="https://calendar.google.com/calendar/embed?title=Gli%20event%20del%20Ciacolon&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=it&amp;bgcolor=%23ffffff&amp;src=5s0spk9f10s0ujtjo4mme5ua8k%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=America%2FNew_York" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="container-facebook">
+                            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Filciacolon&width=95&layout=button&action=like&size=small&show_faces=false&share=true&height=65&appId" width="95" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
 </body>
+
 </html>

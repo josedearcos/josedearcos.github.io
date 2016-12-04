@@ -396,9 +396,9 @@ label.valid {
 	/*middle of the screen*/
 	left: 50%;
 	/*middle of the screen*/
-	width: 600px;
+	width: 80vh;
 	/*size of the circle*/
-	height: 600px;
+	height: 80vh;
 	/*size of the circle*/
 	-webkit-transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
@@ -691,6 +691,7 @@ p.info_menu {
 .column {
   float: left;
   width: 25%;
+  margin-bottom: 0.7em;
 }
 
 /* The Modal (background) */
