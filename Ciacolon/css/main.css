@@ -847,7 +847,7 @@ img.hover-shadow {
 }
 
 .container-facebook {
-	position: fixed;
+	position: absolute;
 	right: 10%;
 	margin-top: 0.5em;
 }
