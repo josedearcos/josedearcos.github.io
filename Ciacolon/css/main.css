@@ -199,11 +199,11 @@ body {
 }
 
 .MainPage h2 {
-	font: 100 45px 'HomemadeApple',
+	font: 100 45px 'HomemadeApple';
 }
 
 .MainPage h3 {
-	font: 100 30px 'HomemadeApple',
+	font: 100 30px 'HomemadeApple';
 }
 
 .MainPage h4 {
@@ -221,7 +221,7 @@ body {
 }
 
 .MainPage p {
-	font: 100 18px 'Roboto Reg', /*font: 100 17px 'EB Garamond', Helvetica, sans-serif;*/
+	font: 100 18px 'Roboto Reg'; /*font: 100 17px 'EB Garamond', Helvetica, sans-serif;*/
 }
 
 .MainPage a {
