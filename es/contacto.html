@@ -68,21 +68,14 @@
 	<script>
     // Run on page load. To keep in memory the form's values
     window.onload = function() {
-
-        // If values are not blank, restore them to the fields
         var name = sessionStorage.getItem('name');
         if (name !== null) $('#name').val(name);
         var email = sessionStorage.getItem('email');
         if (email !== null) $('#email').val(email);
-
         var tel= sessionStorage.getItem('tel');
         if (tel!== null) $('#tel').val(tel);
-		console.log(tel);
-
         var msg= sessionStorage.getItem('msg');
         if (msg!== null) $('#msg').val(msg);
-				console.log(msg);
-
     }
 
     // Before refreshing the page, save the form data to sessionStorage
