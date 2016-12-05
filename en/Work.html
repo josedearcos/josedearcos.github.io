@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css" type="text/css" />
+	<link rel="shortcut icon" href="../Images/FlagIcons/workicon.ico">
+
+	<title>Work</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+	<!--Google Analytics-->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-55427691-1', 'auto');
+		ga('require', 'displayfeatures');
+		ga('require', 'linkid', 'linkid.js');
+		ga('send', 'pageview');
+	</script>
+	<script>
+		$(document).ready(function() {
+			$(function() {
+				$("[data-toggle='tooltip']").tooltip();
+			});
+		});
+		
+	$(".hidden_element").hover(function(){
+    // Find the iframes within our newly-visible element
+    $(this).find("iframe").prop("src", function(){
+        // Set their src attribute to the value of data-src
+        return $(this).data("src");
+    });
+});
+	</script>
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<div id="header">
+			<div class="nav">
+				<div class="container">
+					<ul class="pull-left">
+						<li><a href="../index.html">Who am I?</a></li>
+					</ul>
+					<ul class="pull-right">
+						<!--<li><a href="Travels.html">Travels</a></li>-->
+						<!--<li><a href="Pictures.html">Pictures</a></li>-->
+						<!--<li><a href="Hobbies.html">Hobbies</a></li>-->
+						<li><a href="Contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div style="height:40px;" class="jumbotron">
+					<h1 style="font: 400 4em 'Lato', Helvetica, sans-serif; top:-1em;">Curriculum vitae</h1>
+				</div>
+			</div>
+		</div>
+
+		<div style="height:100vh" id="content">
+			<div class="work">
+				<h1 align="center">Interest:</h1>
+					<div class="row">
+						<div class="col-md-2 col-sx-2 col-sm-2"></div>
+						<div class=" col-md-8 col-sx-8 col-sm-8">
+							<h3>I am looking for a job where I can learn something new every day.
+							So far I have been developing my work using C++, Matlab and ROOT, a framework used in experimental physics.<br>
+							I am interested in early stage projects where I can use prototyping tools and my background in electrical engineering.
+							I also enjoy signal processing and data analysis. Ideally looking for teamwork environments.</h3>
+						</div>
+						<div class="col-md-2 col-sx-2 col-sm-2"></div>
+					</div>
+					<div class="container" >
+					<h1 align="center"> My curriculum vitae at a glance:</h1>
+					<br>
+					<div class="row">
+						<div class="col-md-4 col-sx-4 col-sm-4"></div>
+						<div class=" col-md-6 col-sx-6 col-sm-6">
+					<ul style="position:relative; width:120%; margin-left: -15%;" class="nav nav-pills">
+					  <li class="active"><a data-toggle="pill" href="#Studies">Education</a></li>
+					  <li><a data-toggle="pill" href="#Experience">Experience</a></li>
+					  <li><a data-toggle="pill" href="#Publications">Publications</a></li>
+					  <li><a data-toggle="pill" href="#Projects">Projects & Skills</a></li>
+					  <li><a data-toggle="pill" href="#Languages">Languages</a></li>
+					</ul>
+						</div>
+						<div class="col-md-4 col-sx-4 col-sm-4"></div>
+					</div>
+					</div>
+					
+			<div class="tab-content">
+				<div id='Studies' class="tab-pane fade in active">
+					<h1 align="center">Education</h1>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2>2011 - 2015</h2>
+							</div>
+							<div class="col-md-4 col-sx-4 col-sm-4">
+								<h2> Doctor of Philosophy in Physics</h2>
+							</div>
+							<div class="col-md-6 col-sx-6 col-sm-6">
+								<h3> I developed my research in the <a title='Wikipedia article about the Daya Bay experiment' href='http://en.wikipedia.org/wiki/Daya_Bay_Reactor_Neutrino_Experiment'>Daya Bay reactor neutrino experiment</a>,
+	      a multinational particle physics project studying neutrinos, the lightest and most abundant known matter particles in the universe.</h3>
+								<div class=sumario>
+									<details>
+										<summary>More info</summary>
+										<h3>Despite their mesmerizing amount, neutrino low interaction rates with matter make them hard to detect and study,
+	      and the number of unresolved questions involving neutrinos make this field one of the most exciting to work at the moment.
+	       </h3>
+										<h3>In the Daya Bay experiment I developed my work simulating the detector response to the interaction of an antineutrino with a proton
+										(Inverse Beta Decay), which releases a positron and neutron in a short time window.
+										This pair of particles can be detected by the detectors' photomultiplier tubes after the positrion annihilates with an electron
+										(producing a pair of 5.11 MeV gamma rays) and the neutron is captured on gadolinium or hydrogen nuclei
+										(releasing gamma rays with total energy ~8 MeV or 2.2 MeV respectively). If both signals happen to be inside a specific time
+										window we can determine that an antineutrino has been measured. Nevertheless, there are some
+										background sources that produce similar signals in our experiment. By modeling and measuring their activity we can subtract
+										them from the main antineutrino signal.
+										</h3>
+										<h3>The relevance of my work resides on the posibility of finding the neutrino oscillation parameters &theta;<sub>13</sub>
+										and &Delta;m<sub>ee</sub> by designing a shape fit for the mentioned hydrogen signal,
+										providing an independent measurement to the main analysis based on gadollinium capture with a similar amount of events and,
+										thus, this work has the potential of doubling the statistics of our current measurement. </h3>
+									</details>
+								</div>
+							</div>
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2>2010 - 2011</h2>
+							</div>
+							<div class="col-md-4 col-sx-4 col-sm-4">
+								<h2 id='Physics'> Master of Science in Physics</h2>
+							</div>
+							<div class="col-md-6 col-sx-6 col-sm-6">
+								<h3> I was selected to participate in a merit-based double degree Master's program with a 50% tuition scholarship at <a title='Illinois Institute of Technology website' href='http://www.iit.edu'>Illinois Institue of Technology</a>.</h3>
+								<div class=sumario>
+
+									<details>
+										<summary>Physics courses</summary>
+										<div class="lista">
+											<ul>
+												<li>Analytical Dynamics</li>
+												<li>Quantum Theory I & II</li>
+												<li>Statistical Mechanics</li>
+												<li>Electromagnetic Theory</li>
+												<li>Methods of Theoretical Physics I</li>
+												<li>Physics of the Solid State I</li>
+												<li>Introduction to Synchrotron Radiation</li>
+												<li>Particle Physics I & II</li>
+												<li>Computer Vision and Image Processing</li>
+											</ul>
+										</div>
+									</details>
+								</div>
+							</div>
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2>2006 - 2011</h2>
+							</div>
+							<div class="col-md-4 col-sx-4 col-sm-4">
+								<h2 id='Engineering'> Telecommunication Engineering <br>(<abbr data-toggle="tooltip" title="Bachelor of Science">B.Sc.</abbr> + <abbr data-toggle="tooltip" title="Master of Science">M.Sc.</abbr>) </h2>
+							</div>
+							<div class="col-md-6 col-sx-6 col-sm-6">
+								<h3> At <a title="UPM Wikipedia article"href='http://en.wikipedia.org/wiki/Technical_University_of_Madrid'>Technical University of Madrid</a> I completed an <abbr data-toggle="tooltip" title='Accreditation Board for Engineering and Technology'>ABET</abbr> accredited degree in <a title="Link to complete curriculum with further information about courses" href='http://www4.etsit.upm.es/plan1994/otros_cursos/asignaturas/asignaturas0910/eindice_asig_3.htm'>Telecommunication Engineering</a>, a field of study that encompasses: </h3>
+								<div class=sumario>
+									<details>
+										<summary>Electrical Engineering </summary>
+										<div class="lista">
+											<ul>
+												<li>Analog electronics circuits</li>
+												<li>Digital electronic circuits</li>
+												<li>Circuit analysis & design</li>
+												<li>Digital electronic systems</li>
+												<li>Digital electronic systems lab.</li>
+												<li>Electronic circuits laboratory</li>
+												<li>Electrical measurement lab.</li>
+												<li>Design of electronic circuits & systems</li>
+												<li>Communication electronics</li>
+												<li>Electronic communication lab.</li>
+												<li>Technologies of electronics manufacturing</li>
+												<li>Micro-electronics</li>
+												<li>Microwaves</li>
+												<li>Radiation & propagation</li>
+												<li>Optical communications</li>
+												<li>Switching</li>
+											</ul>
+										</div>
+									</details>
+									<details>
+										<summary>Computer Science</summary>
+										<div class="lista">
+											<ul>
+												<li>Computer programming</li>
+												<li>Computer programming lab.</li>
+												<li>Computer architecture</li>
+												<li>Computer technology</li>
+												<li>Computer networks</li>
+												<li>Communication networks & services I & II</li>
+												<li>Systems programming lab.</li>
+											</ul>
+										</div>
+									</details>
+									<details>
+										<summary>Signal Processing</summary>
+										<div class="lista">
+											<ul>
+												<li>Random signals</li>
+												<li>Linear systems</li>
+												<li>Theory of communication</li>
+												<li>Digital communication</li>
+												<li>Data communication</li>
+												<li>Transmission systems</li>
+												<li>Communication & signals lab.</li>
+												<li>Digital signal processing</li>
+												<li>Digital signal processing lab.</li>
+											</ul>
+										</div>
+									</details>
+									</details>
+								</div>
+							</div>
+						</div>
+					<br>
+					</div>
+				</div>
+				<div id="Publications" class="tab-pane fade">
+					<h1  align="center" >Publications</h1>
+						<div class="container">
+							<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2 align="right">April 2016</h2>
+							</div>
+							<div class="col-md-7 col-sx-7 col-sm-7">
+								<h2>New measurement of &theta;<sub>13</sub> via neutron capture on hydrogen at Daya Bay</h2>
+							</div>
+							<div class="col-md-3 col-sx-3 col-sm-3">
+								<h2>The Daya Bay Collaboration, <a href="http://journals.aps.org/prd/abstract/10.1103/PhysRevD.93.072011">Phys. Rev. D 93, 072011</a></h2>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2 align="right">February 2016</h2>
+							</div>
+							<div class="col-md-7 col-sx-7 col-sm-7">
+								<h2>Measurement of the Reactor Antineutrino Flux and Spectrum at Daya Bay</h2>
+							</div>
+							<div class="col-md-3 col-sx-3 col-sm-3">
+								<h2>The Daya Bay Collaboration, <a href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061801">Phys. Rev. Lett. 116, 061801</a></h2>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2 align="right">September 2015</h2>
+							</div>
+							<div class="col-md-7 col-sx-7 col-sm-7">
+								<h2>A new measurement of antineutrino oscillation with the full detector configuration at Daya Bay</div>
+							<div class="col-md-3 col-sx-3 col-sm-3">
+								<h2>The Daya Bay Collaboration, <a href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.115.111802">Phys. Rev. Lett. 115, 111802</a></h2>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2 align="right">October 2014</h2>
+							</div>
+							<div class="col-md-7 col-sx-7 col-sm-7">
+								<h2>Search for a Light Sterile Neutrino at Daya Bay</h2>
+							</div>
+							<div class="col-md-3 col-sx-3 col-sm-3">
+								<h2>The Daya Bay Collaboration, <a href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.113.141802">Phys. Rev. Lett. 113, 141802</a></h2>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2 align="right">October 2014</h2>
+							</div>
+							<div class="col-md-7 col-sx-7 col-sm-7">
+								<h2>Independent Measurement of &theta;<sub>13</sub> via Neutron Capture on Hydrogen at Daya Bay</h2>
+							</div>
+							<div class="col-md-3 col-sx-3 col-sm-3">
+								<h2>The Daya Bay Collaboration, <a href="http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.071101">Phys. Rev. D 90, 071101</a></h2>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2 align="right">February 2014</h2>
+							</div>
+							<div class="col-md-7 col-sx-7 col-sm-7">
+								<h2>Spectral measurement of electron antineutrino oscillation amplitude and frequency at Daya Bay </h2>
+							</div>
+							<div class="col-md-3 col-sx-3 col-sm-3">
+								<h2>The Daya Bay Collaboration, <a href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.112.061801">Phys. Rev. Lett. 112, 061801</a></h2>
+							</div>
+							</div>
+						</div>
+				</div>
+				<div id="Experience" class="tab-pane fade">
+					<h1  align="center" >Experience</h1>
+               
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2 col-sx-2 col-sm-2">
+							<h2>2015 - 2016</h2>
+						</div>
+						<div class="col-md-2 col-sx-2 col-sm-2">
+							<h2>Postdoctoral Fellow at Harvard Medical School and Brigham and Women's Hospital</h2>
+						</div>
+						<div class="col-md-8 col-sx-8 col-sm-8">
+							<p> Currently I am working with Dr. Ehud Schmidt developing prospective motion-correction techniques for intracavity imaging using an array of tracking coils.
+								These techniques can be applied in medical interventions such as brachytherapy or cardiac ablation procedures giving doctors real time feedback of the catheter position.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-sx-4 col-sm-4"></div>
+						<div class="col-md-4 col-sx-4 col-sm-4">
+							<div class="thumbnail">
+								<img src='../Images/amigohome.jpg' style="min-height:250px;height:250px;">
+								<div class="caption">
+									<h3>AMIGO suite</h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sx-4 col-sm-4"></div>
+
+						<!--<div class="col-md-4 col-sx-4 col-sm-4">
+							<div class="thumbnail">
+								<img src='../Images/dayabayhall.jpg' style="min-height:250px;height:250px;">
+								<div class="caption">
+									<h3>Tracking coils</h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sx-4 col-sm-4">
+							<div class="thumbnail">
+								<img src='../Images/dayabay.jpg' style="min-height:250px;height:250px;">
+								<div class="caption">
+									<h3>Motion Correction</h3>
+								</div>
+							</div>
+						</div>-->
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2>2011 - 2015</h2>
+							</div>
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2 id="DayaBay">Researcher at the Daya Bay experiment</h2>
+							</div>
+							<div class="col-md-8 col-sx-8 col-sm-8">
+								<p> The collaboration is a multionational effort including research institutions from China, the United States, Taiwan, Russia, and the Czech Republic.</p>
+					<p>The experimental site is situated near a 17.4 GW<sub>th</sub> nuclear power plant in the south of China, which produces ~10<sup>20</sup> neutrinos per second.</p>
+					<p>A set of 8 antineutrino detectors has been placed to measure the neutrino spectrum distributed equally among the near and far halls.</p>
+					<p>By calculating the relative electron antineutrino spectrum rates (far/near) we can determine the oscillation amplitude in the electron anti-neutrino spectrum
+					(&theta;<sub>13</sub>) using both <a href="http://arxiv.org/abs/1203.1669"> gadolinium</a> and <a href="http://arxiv.org/abs/1406.6468"> hydrogen</a> signals.</p>
+					<p>Furthermore, with our current understanding of the detector response we can even calculate the oscillation effects using spectral shape information,
+					which makes the experiment <a href="http://arxiv.org/abs/1505.03456">sensitive to &Delta;m<sub>ee</sub></a>.</p>
+					<p>Additional physics goals have been achieved by excluding the parameter-space for a theoretical <a href="http://arxiv.org/abs/1407.7259">sterile neutrino</a>,
+					 and providing a new measurement of <a href="http://arxiv.org/abs/1508.04233">reactor antineutrino spectrum</a> using Daya Bay data.</p>
+					</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-4 col-sx-4 col-sm-4">
+							<div class="thumbnail">
+								<img src='../Images/dayabaysite.jpg' style="min-height:250px;height:250px;">
+								<div class="caption">
+									<h3>Daya Bay experimental site</h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sx-4 col-sm-4">
+							<div class="thumbnail">
+								<img src='../Images/dayabayhall.jpg' style="min-height:250px;height:250px;">
+								<div class="caption">
+									<h3> Daya Bay experimental hall pool</h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sx-4 col-sm-4">
+							<div class="thumbnail">
+								<img src='../Images/dayabay.jpg' style="min-height:250px;height:250px;">
+								<div class="caption">
+									<h3>Inside a Daya Bay detector</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div id='Projects' class="tab-pane fade" >
+					<h1 align="center">Projects & Skills</h1>
+					<div class="container">
+					<h2><b>Arduino</b></h2>
+						<dl class="dl-horizontal">
+							<dt>Prototype design</dt>
+							<dd>As a teacher assistant I had the responsibility of designing a section to introduce Arduino systems.
+							I coded several tutorials, from controlling <abbr data-toggle="tooltip" title="Light-emitting diode">LEDs</abbr>,
+							to counters, music <abbr data-toggle="tooltip" title="Input/Output">I/O</abbr>, thermometers and <abbr data-toggle="tooltip"
+							title="Electromagnetic field">EMF</abbr> detectors (antennas). <br><br>The synchronization of different events was explored by building a traffic
+							light with <abbr data-toggle="tooltip" title="Binary-coded decimal">BCD</abbr> counters, LEDs and bell ringing controlled with an Arduino.
+							The student evaluation was very satisfactory.
+								<br>
+								<br>
+								<details>
+							<summary>Instructions for the class</summary>
+							<div class="row">
+									<!--<div class="col-md-6 col-xs-6 col-sm-6">
+										<div class="hidden_element">
+										<div class="thumbnail">
+											<iframe class="framepdf" src="about:blank" data-src="http://prezi.com/embed/ltztrfwtgz5j/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" frameBorder="0" webkitAllowFullScreen mozAllowFullscreen allowfullscreen></iframe>
+											<div class="caption">
+												<h3>Prezi presentation for the first class</h3>
+											</div>
+										</div>
+										</div>
+									</div>-->
+									<div class="col-md-1 col-xs-1 col-sm-1"></div>
+									<div class="col-md-10 col-xs-10 col-sm-10">
+										<div class="thumbnail">
+											<iframe class="framepdf" src="../PDFs/ArduinoClass.pdf#zoom=100&view=fitH" type="application/pdf">
+												<p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="../PDFs/ArduinoClass.pdf">click here to download the PDF file.</a></p>
+											</iframe>
+											<div class="caption">
+												<h3>PDF Instructions for the class</h3>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-1 col-xs-1 col-sm-1"></div>
+								</div>
+							</details>
+							</dd>
+						</dl>
+					</div>
+					<div class="container">
+					<h2><b>C/C++</b></h2>
+						<dl class="dl-horizontal">
+							<dt>Ph.D. Thesis</dt>
+							<dd>I developed my Ph.D as Dr. Christopher White's research assistant. <br><br> This dissertation focuses on the analysis of gadolonium
+							and hydrogen neutron capture signals, the development of a toy Monte Carlo simulation to predict the electron antineutrino energy spectrum
+							from both signals and also applied to generate systematic, background and statistical covariance matrices that account for the uncertainties
+							in a covariance matrix &chi;<sup>2</sup> fitter.<br><br> This fitter was designed and tested to measure precisely the third neutrino mixing angle (&theta;<sub>13</sub>).
+							<br>
+							<br>
+							<details>
+								<summary>Tutorial video on how to use the fitter</summary>
+								<div class="row">
+								<div class="col-md-3 col-xs-3 col-sm-3"></div>
+
+								<div class="col-md-6 col-xs-6 col-sm-6">
+									<div class="thumbnail">
+										<iframe width="455" height="330" src="http://www.youtube.com/embed/VgzL56hEsXY?autoplay=1" allowfullscreen></iframe>
+                                        <div class="caption">
+											<h3>Tutorial on how to use the GUI to load, generate and plot antineutrino spectra, covariance matrices and responce matrices.</h3>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3 col-xs-3 col-sm-3"></div>
+
+								<!-- <div class="col-md-6 col-xs-6 col-sm-6">
+									<div class="thumbnail">
+										<iframe width="420" height="315" src="http://www.youtube.com/embed/VgzL56hEsXY?autoplay=1" allowfullscreen></iframe>
+										<div class="caption">
+											<h3>Tutorial on how to use the GUI to run the fitter and plot the &chi;<sup>2</sup> distributions.</h3>
+										</div>
+									</div>
+								</div> -->
+								</div>
+							</details>
+						</dl>
+					<div class="container">
+						<dl class="dl-horizontal">
+							<dt>Interactive system</dt>
+							<dd>Using the Motorola ColdFire MCF5272 microprocontroller, we developed an interactive game using an interface made with an array of LEDs 
+						    and a keyboard to input data. <br><br> The game displayed a sucession of falling notes in the LED array and
+							the player needed to press a set of keys trying to match the notes in a timely fashion, obtaining points according to his performance. A LCD interface allowed the user to choose between different songs and modes.<br><br>
+							Each song was played using a buzzer and at the end of the game the score was shown through the LCD screen.
+							The synchronization of different events was the main focus of the project. </dd>
+						</dl>
+					</div>
+					<h2><b>Matlab</b></h2>
+						<dl class="dl-horizontal">
+							<dt>MRI Motion <br> Correction: </dt>
+							<dd>
+								<details>
+									<summary>Tracking data</summary>
+									<h2>Using tracking coils inside an MRI scanner allows us to obtain real time positional information of the sample. <br><br>
+									Inputting this data into a SVD based algorithm we can extract translational and rotational motion of a rigid body. <br><br>
+									This information can then be used to correct the imaging process for motion distortion in real time with millimetric resolution and response time in the millisecond order.
+								   </h2>
+									<!--<div class="row">
+										<div class="col-md-3 col-sx-3 col-sm-3">
+											<div class="thumbnail">
+												<img title="Tracking Data" src='../Images/ImageSegmentation2.jpg'>
+											</div>
+										</div>
+										<div class="col-md-3 col-sx-3 col-sm-3">
+											<div class="thumbnail">
+												<img title="Filtering" src='../Images/ImageSegmentation4.jpg'>
+											</div>
+										</div>
+										<div class="col-md-3 col-sx-3 col-sm-3">
+											<div class="thumbnail">
+												<img title="SVD output" src='../Images/ImageSegmentation.jpg'>
+											</div>
+										</div>
+									</div>-->
+								</details>
+							</dd>
+						</dl>
+						<dl class="dl-horizontal">
+							<dt>Computer Vision: </dt>
+							<dd>
+								<details>
+									<summary>Image processing algorithms</summary>
+									<h2>We developed several image processing algorithms used to segment different kind of images. <br><br> We analyzed the performance of threshold,
+									K-means clustering, region growing, region splitting/merging and labelling segmentations.</h2>
+									<div class="row">
+										<div class="col-md-3 col-sx-3 col-sm-3">
+											<div class="thumbnail">
+												<img title="Blood cells threshold segmentation" src='../Images/ImageSegmentation2.jpg'>
+											</div>
+										</div>
+										<div class="col-md-3 col-sx-3 col-sm-3">
+											<div class="thumbnail">
+												<img title="Nuts and bolts threshold segmentation" src='../Images/ImageSegmentation4.jpg'>
+											</div>
+										</div>
+										<div class="col-md-3 col-sx-3 col-sm-3">
+											<div class="thumbnail">
+												<img title="Splash threshold segmentation" src='../Images/ImageSegmentation.jpg'>
+											</div>
+										</div>
+										<div class="col-md-3 col-sx-3 col-sm-3">
+											<div class="thumbnail">
+												<img title="Tumor threshold segmentation" src='../Images/ImageSegmentation3.jpg'>
+											</div>
+										</div>
+										<div class="col-md-12 col-sx-12 col-sm-12">
+											<div class="thumbnail">
+												<img title="K-means clustering segmentation" src='../Images/Clustering.png'>
+											</div>
+										</div>
+									</div>
+								</details>
+							</dd>
+						</dl>
+						<dl class="dl-horizontal">
+							<dt>Computer Vision: </dt>
+							<dd>
+								<details>
+									<summary>Motion stimation</summary>
+									<h2>In this project we developed the Block Matching algorithm and studied how its parameters affect the correct estimation of motion.<br><br>
+									This algorithm is very useful to compress video information by detecting one of the most common features of videos,
+									the very few differences between consecutive frames. It can also be applied in the analysis of object movements.</h2>
+									<div class="row">
+										<div class="col-md-offset-1 col-md-10 col-sx-10 col-sm-10">
+											<div class="thumbnail">
+												<img title="Motion detection" src='../Images/Motion.png'>
+											</div>
+										</div>
+									</div>
+								</details>
+							</dd>
+						</dl>
+						<dl class="dl-horizontal">
+							<dt>Statistical <br> Mechanics:</dt>
+							<dd>
+								<details>
+									<summary>Monte Carlo simulation</summary>
+									<h2>I developed my first Monte Carlo simulation to study the percolation properties (Neel temperature, average magnetization and energy)
+									from antiferromagnetic materials in a 2D lattice. <br><br> Following the simple but powerful Ising model, that resembles a stochastic system of
+									cellular automata where the probability of a spin flip is a function of the number of neighbors in the spin up (or down) direction. </h2>
+									<div class="row">
+										<div class="col-md-offset-2 col-sm-offset-1 col-md-4 col-xs-6 col-sm-4">
+											<div class="thumbnail">
+												<img title="Evolution of an antiferromagnetic 2D system in time" src='../Images/Evolution.png'>
+											</div>
+										</div>
+										<div class="col-md-4 col-xs-6 col-sm-4">
+											<div class="thumbnail">
+												<img title="Percolation detected" src='../Images/Percolation.png'>
+											</div>
+										</div>
+									</div>
+								</details>
+							</dd>
+						</dl>
+					</div>
+					<div class="container">
+					<h2><b>Java</b></h2>
+						<dl class="dl-horizontal">
+							<dt>Algorithms & <br> simulations</dt>
+							<dd>Java was the first programming language I learnt. <br><br> In my freshman year I had to work on a couple introductory projects, i.e.,
+							developing the Dijkstra algorithm to solve the single-source shortest path problem and building a sand-box simulation to analyize the population behavior for two antagonist animals
+							with opposite survival conditions such as rabbits and foxes.
+							</dd>
+						</dl>
+					</div>
+					<div class="container">
+					<h2><b>HTML & JavaScript</b></h2>
+						<dl class="dl-horizontal">
+							<dt>Personal website</dt>
+							<dd>I learnt HTML and JavaScript to be able to build this webpage from scratch. As an introduction to the language I used
+							<a href='http://www.codecademy.com/'>Codecademy</a> and I kept learning by myself according to my needs:
+								<blockquote>
+									<p>"You learn to code by coding."</p>
+									<footer>My first programming teacher</footer>
+								</blockquote>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div id="Languages" class="tab-pane fade" >
+					<h1 align="center">Languages</h1>
+					<div class="container">
+
+					<p> Learning languages is one of my favorite activities, I use online resources such as <a href='https://www.duolingo.com/Jose_de_Arcos'>duolingo</a> to master the basics.</p>
+					<p> In order of proficiency I can speak:</p>
+					<div class="container">
+						<dl class="dl-horizontal">
+							<dt> Spanish <img class="flag flag-es" />
+							</dt>
+							<dd>Mother tongue.</dd>
+						</dl>
+						<dl class="dl-horizontal">
+							<dt> English <img class="flag flag-gb" /><dt>
+							<dd>Full professional proficiency: In 2010 I completed both TOEFL and GRE tests. I have been developing my work in English and living
+							in the United States since then.</dd>
+						</dl>
+						<dl class="dl-horizontal">
+							<dt> Italian <img class="flag flag-it" /> <dt>
+							<dd>Conversational.</dd>
+						</dl>
+						<dl class="dl-horizontal">
+							<dt> French <img class="flag flag-fr" /> <dt>
+							<dd> I studied it for 4 years. Basic skills.</dd>
+						</dl>
+						<dl class="dl-horizontal">
+							<dt> Chinese <img class="flag flag-cn" /> <dt>
+							<dd>Due to my trips to China I decided to study the language. I particularly enjoy learning how to write new symbols. Basic skills.</dd>
+						</dl>
+					</div>
+					</div>
+				</div>
+			</div>
+			
+			</div><!--work-->
+		</div><!--content-->
+		<div id="footer"></div>
+</body>
+
+</html>

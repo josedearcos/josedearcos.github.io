@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main.css" type="text/css" />
+    <link rel="shortcut icon" href="./Images/ciacolon_icon.ico">
+
+    <title>Eventi e Novit&aacute</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script>
+        /* Hover over image and show text */
+        $(document) ready(function() {
+            $(".pdf-thumb-box").hover(function() {
+
+                var imgWidth = $(this).children("img").width();
+                var imgHeight = $(this).children("img").height();
+                var negImgWidth = imgWidth - imgWidth - imgWidth;
+
+                $(this).children(".pdf-thumb-box-overlay").fadeTo(0, 0.8);
+
+                $(this).css("width", (imgWidth) + "px");
+                $(this).css("height", (imgHeight) + "px");
+
+
+                $(this).children(".pdf-thumb-box-overlay").css("left", negImgWidth + "px");
+                $(this).children(".pdf-thumb-box-overlay").css("visibility", "visible");
+
+                $(this).children(".pdf-thumb-box-overlay").animate({
+                    "left": 0
+                }, 250);
+
+            }, function() {
+
+                var imgWidth = $(this).children("img").width();
+                var imgHeight = $(this).children("img").height();
+                var negImgWidth = imgWidth - imgWidth - imgWidth;
+
+                $(this).children(".pdf-thumb-box-overlay").animate({
+                    "left": negImgWidth
+                }, 250);
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div class="nav">
+                <div class="container">
+                    <ul class="pull-left">
+                        <li>
+                            <a href="../index.html" style="margin-left:-40px"><img src="../Images/il_ciacolon_logo2.jpg" style="margin-bottom:5px" height=70px>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="pull-right">
+                        <li><a href="./Il_Nostro_Chef.html">Il Nostro Chef</a>
+                        </li>
+                        <li><a href="./Menu.html">Men&uacute</a>
+                        </li>
+                        <li><a href="./Galleria.html">Galleria</a>
+                        </li>
+                        <li><a href="./La_Storia.html">La &nbspStoria</a>
+                        </li>
+                        <li><a href="./Contatti.html">Contatti</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="header-line"> </div>
+        </div>
+
+        <div id="content">
+            <div class="MainPage">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <h1 align="center"> I nostri eventi</h1>
+                            <p align="justify">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <div class="event-slideshow">
+                        <iframe style="margin-top:20px" src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AovzHudzxH0GdFdSaVVBeTdmbnBnN19FZlRfQ2VmYnc&font=Bevan-PotanoSans&maptype=toner&lang=it&height=650' width='100%' height='650' frameborder='0'></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>

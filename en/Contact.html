@@ -67,6 +67,28 @@
 		});
 	</script>
 
+	<script>
+    // Run on page load
+    window.onload = function() {
+        var name = sessionStorage.getItem('name');
+        if (name !== null) $('#name').val(name);
+        var email = sessionStorage.getItem('email');
+        if (email !== null) $('#email').val(email);
+        var tel= sessionStorage.getItem('tel');
+        if (tel!== null) $('#tel').val(tel);
+        var msg= sessionStorage.getItem('msg');
+        if (msg!== null) $('#msg').val(msg);
+    }
+
+    // Before refreshing the page, save the form data to sessionStorage
+    window.onbeforeunload = function() {
+        sessionStorage.setItem("name", $('#name').val());
+        sessionStorage.setItem("email", $('#email').val());
+        sessionStorage.setItem("tel", $('#tel').val());
+        sessionStorage.setItem("msg", $('#msg').val());
+    }
+	</script>
+	
 	<!--Google Analytics-->
 	<script>
 		(function(i, s, o, g, r, a, m) {

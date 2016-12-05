@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/main.css" type="text/css" />
+    <link rel="shortcut icon" href="./Images/FlagIcons/ciacolon_icon.ico">
+
+    <title>Il Ciacolon</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script type="text/javascript" defer>
+        $(document).ready(function() {
+
+            /* Video */
+
+            /* Entry button */
+
+            var name = document.getElementById('bienvenuti_message');
+
+            /*Draw circle menu*/
+
+            var $items = $('.circle a');
+            var numitems = $items.length;
+            $items.each(function(index) {
+                $(this).css('left', 50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+                $(this).css('top', 50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+            });
+
+            /*Open circle*/
+
+            var image = document.getElementById('logo');
+            var original_height = image.height;
+
+            var large = {
+                height: "80vh"
+            };
+            var small = {
+                height: "50vh"
+            };
+            var countcircle = 1;
+
+            $("#logo").css(large).on('click', function() {
+                $(this).animate((countcircle == 1) ? small : large);
+                countcircle = 1 - countcircle;
+            });
+
+			var counter = 1;
+            /*Show/hide Enter button*/
+            $('.menu-button').bind({
+                mouseenter: function(e) {
+                    /*This shows the message Enter*/
+                    name.innerHTML = 'Entra';
+
+                    /*This moves the address and the phone to the sides*/
+                    var left = {
+                        left: "-43%"
+                    };
+                    var right = {
+                        left: "55%"
+                    };
+
+					if (counter == 1) {
+					 $('.phone_message').animate(left);
+                     $('.address_message').animate(right);
+					 counter = 0;
+					 }
+
+
+                },
+                mouseleave: function(e) {
+                    /*This hides the message Enter*/
+                    name.innerHTML = '';
+                }
+            });
+
+            /*Hide Enter message when circle menu is open*/
+            var number_click = 1;
+
+            $('.menu-button').on('click', function(event) {
+                event.preventDefault();
+                $(this).toggleClass('open');
+                $('.circle').toggleClass('open');
+                $(this).trigger("mouseleave");
+
+                if (number_click == 1) {
+                    $(this).unbind("mouseenter mouseleave");
+                } else {
+                    $(this).bind({
+                        mouseenter: function(e) {
+							if (countcircle ==1) {
+								name.innerHTML = 'Entra';
+                            }
+                        },
+                        mouseleave: function(e) {
+                            name.innerHTML = '';
+                        }
+                    });
+                }
+				 number_click=0;
+
+            });
+
+            $(function() {
+                $("[data-toggle='tooltip']").tooltip();
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="header-main"></div>
+        <div id="content-main">
+
+            <div class="circular-menu">
+                <div class="circle">
+                    <ul id="nav" class="circular-list navbar-default">
+                        <li><a href="./it/Il_Nostro_Chef.html">Il Nostro Chef</a>
+                        </li>
+                        <li><a href="./it/Menu.html">Men&uacute</a>
+                        </li>
+                        <li><a href="./it/Galleria.html">Galleria</a>
+                        </li>
+                        <li><a href="./it/Novita_ed_eventi.html">Eventi e Novit&aacute</a>
+                        </li>
+                        <li><a href="./it/La_Storia.html">La &nbspStoria</a>
+                        </li>
+                        <li><a href="./it/Contatti.html">Contatti</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu-button">
+                <img id="logo" src="./Images/blu2.png"/>
+            </div>
+
+            <div class="text_placement">
+                <p id="bienvenuti_message"></p>
+            </div>
+            <div class="info_placement">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="address_message text-center">
+                                <img style="margin-top:3px" class="pull-right" src="./Images/FlagIcons/address-32.png" /> <a href="./it/Contatti.html">Viale XXV Aprile 11
+								<br> 10133 Torino</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="phone_message text-center"><img src="./Images/FlagIcons/telephone-16.png"/> (+39) 011 6610911
+                    <br><img src="./Images/FlagIcons/email-16.png"/> <a href="./it/Contatti.html">prenotazioni@ilciacolon.it</a>
+                </p>
+            </div>
+        </div>
+        <!--Content-->
+        <div id="footer-main"></div>
+    </div>
+</body>
+
+</html>
