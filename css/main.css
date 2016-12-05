@@ -1,40 +1,33 @@
+/* Fonts */
+
 * {
 	font-family: 'Lato', Geneva, sans-serif;
 }
-
-
-/*
-@font-face {
-	font-family: 'ankecallig';
-	src: url('../fonts/ankecallig-fg.ttf');
-	src: local('ankecallig'), local('ankecallig'), url('../fonts/ankecallig-fg.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'ChatMoss';
-	src: url('../fonts/ChatMoss.ttf');
-	src: local('ChatMoss'), local('ChatMoss'), url('../fonts/ChatMoss.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'JH2TRIAL';
-	src: url('../fonts/JH2TRIAL.ttf');
-	src: local('JH2TRIAL'), local('JH2TRIAL'), url('../fonts/JH2TRIAL.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'TalkingToTheMoon';
-	src: url('../fonts/TalkingToTheMoon.ttf');
-	src: local('TalkingToTheMoon'), local('TalkingToTheMoon'), url('../fonts/TalkingToTheMoon.ttf') format('truetype');
-}
-
-*/
 
 @font-face {
 	font-family: 'JennaSue';
 	src: url('../fonts/JennaSue-Regular.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'HomemadeApple';
+	src: url('../fonts/HomemadeApple.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Adobe Song';
+	src: url('../fonts/Adobe_Song_Std_L.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto Reg';
+	src: url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto Bold';
+	src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
 
 /*For mobile and tablets*/
 
@@ -96,7 +89,24 @@
 }
 
 
-/* Structure of the webpage */
+/*Ciacolon style*/
+
+.Ciacolon_Style {}
+
+.Ciacolon_Style p {}
+
+.Ciacolon_Style h1 {}
+
+
+/* Webpage wrapper */
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
 
 #wrapper {
 	min-height: 100%;
@@ -106,13 +116,23 @@
 	overflow-x: hidden;
 }
 
+#header-main {
+	width: 100%;
+	height: 40px;
+	position: fixed;
+	background: #090274;
+	color: white;
+}
+
 #header {
 	position: fixed;
 	width: 100%;
 	text-align: center;
-	height: 150px;
-	background-color: white;
+	font-size: 72px;
+	height: 80px;
+	background: white;
 	color: #fff;
+	font-family: 'PT Sans', sans-serif;
 	transition: all 0.4s ease;
 	margin: 0;
 	clear: both;
@@ -122,49 +142,110 @@
 
 #header-line {
 	position: fixed;
-	height: 150px;
+	height: 80px;
 	margin-left: 10%;
 	width: 80%;
 	border-bottom: 1px solid #090631;
 	z-index: 900;
 }
+
 #content-main {
-	height: 100%;
-	width: 100%;
-    padding-top: 300px;	/* Height of the header element */
-	padding-bottom: 80px;	/* Height of the footer element */
 	height: auto;
+	width: 100%;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	/* Height of the footer element */
 }
 
 #content {
-	height:100%;
-	width: 100%;
-    padding-top: 150px;	/* Height of the header element */
-	padding-bottom: 80px;	/* Height of the footer element */
 	height: auto;
-    overflow: scroll;
+	width: 100%;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	/* Height of the footer element */
 }
 
 #footer {
 	width: 100%;
 	height: 40px;
-	position: relative;
-    background-image: url("../Images/subatomic-whirlygig.png");
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #090274;
+	color: white;
 }
 
+#footer-main {
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #090274;
+	color: white;
+}
+
+
+/*CSS Style for most of the webpage*/
+
+.MainPage {
+	background-color: white;
+	font-family: 'HomemadeApple';
+}
+
+.MainPage h1 {
+	font: 100 60px 'HomemadeApple';
+	color: #090274;
+}
+
+.MainPage h2 {
+	font: 100 45px 'HomemadeApple',
+}
+
+.MainPage h3 {
+	font: 100 30px 'HomemadeApple',
+}
+
+.MainPage h4 {
+	font: 100 18px 'Roboto Bold';
+	color: #090274;
+}
+
+.MainPage h5 {
+	font: 100 14px 'Roboto Reg';
+	color: #090274;
+}
+
+.MainPage h6 {
+	font: 100 14px 'Roboto Reg';
+}
+
+.MainPage p {
+	font: 100 18px 'Roboto Reg', /*font: 100 17px 'EB Garamond', Helvetica, sans-serif;*/
+}
+
+.MainPage a {
+	font: 100 18px 'Roboto Reg';
+}
+
+
 /*Navigator tab*/
+
 .nav {
-   width:100%;
-    position: fixed;
-	margin-top: 12px;
-	margin-bottom: 8px;
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	z-index: 999;
+}
+
+.nav ul {
+	margin: -30px 60px;
 }
 
 .nav a {
-	color: #5a5a5a;
-	font-size: 11px;
-	font-weight: bold;
-	padding: 14px 10px;
+	color: #090274;
+	font-size: 13.5px;
+	font-weight: 500;
 	text-transform: uppercase;
 }
 
@@ -173,17 +254,20 @@
 }
 
 
-/*Main image*/
+/*Banner*/
 
 .jumbotron {
-    width:100%;
-	background-image: url("../Images/subatomic-whirlygig.png");
-	height: auto;
+	background-image: url("../Images/Il_Ciacolon_Banner.png");
+	height: 400px;
+	width: auto;
 	background-size: cover;
 }
 
-.jumbotron h1 {
+.jumbotron .container {
 	position: relative;
+}
+
+.jumbotron h1 {
 	color: #fff;
 	font-size: 48px;
 	font: 400 100px/1.3 'Lato', Helvetica, sans-serif;
@@ -191,205 +275,10 @@
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-/*Activities in the main page*/
-
-.activities {
-	background-color: #f7f7f7;
-	border-bottom: 1px solid #dbdbdb;
-}
-
-.activities h3 {
-	font: 100 45px 'JennaSue', 100, sans-serif;
-}
-
-.activities p {
-	font: 100 17px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.activities a {
-	color: black;
-	font: 100 45px 'JennaSue', sans-serif;
-}
-
-
-/*Travel Map*/
-
-.TravelTitle h2 {
-	font: 400 60px 'JennaSue', sans-serif;
-}
-
-#ShowMap {
-	width: 100%;
-	text-align: center;
-	height: 580px;
-}
-
-#ShowMap h1 {
-	text-align: center;
-	font: 400 1px 'JennaSue', sans-serif;
-}
-
-#map {
-	display: inline-block;
-}
-
-#ShowMap h2 {
-	margin-top: -20px;
-	/*To center the text*/
-	font: 100 50px 'JennaSue', sans-serif;
-}
-
-#ShowMap p {
-	font: 100 20px 'EB Garamond', Helvetica, sans-serif;
-}
-
-#ShowMap h3 {
-	font: 100 50px 'JennaSue', sans-serif;
-}
-
-
-/*Travels page*/
-
-.ShowCities {
-	margin-bottom: 13px;
-    min-height: 700px;
-    overflow: scroll;
-}
-
-.ShowCities h1 {
-	font: 400 45px 'JennaSue', sans-serif;
-}
-
-.ShowCities h2 {
-	font: 100 35px 'JennaSue', sans-serif;
-}
-
-.ShowCities h3 {
-	font: 100 50px 'JennaSue', sans-serif;
-}
-
-.ShowCities p {
-	font: 100 18px 'EB Garamond', Helvetica, sans-serif
-	/*font: 100 20px 'Goudy Bookletter 1911', Helvetica, sans-serif;*/
-}
-
-.ShowCities li {
-	font: 100 15px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.ShowCities a {
-	font: 100 18px 'EB Garamond', Helvetica, sans-serif
-}
-
-.ShowTravels {
-	margin-bottom: 13px;
-}
-
-.ShowTravels h1 {
-	font: 400 45px 'JennaSue', sans-serif;
-}
-
-.ShowTravels h2 {
-	font: 100 35px 'JennaSue', sans-serif;
-}
-
-.ShowTravels h3 {
-	font: 100 50px 'JennaSue', sans-serif;
-}
-
-.ShowTravels p {
-	font: 100 18px 'EB Garamond', Helvetica, sans-serif
-	/*font: 100 20px 'Goudy Bookletter 1911', Helvetica, sans-serif;*/
-}
-
-.ShowTravels li {
-	font: 100 15px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.ShowTravels a {
-	font: 100 18px 'EB Garamond', Helvetica, sans-serif
-}
-
-@media(min-width:980px),
-(min-width:1200px) {
-	/*Only show hover zoom in large devices (it doesn't work well with touch devices)*/
-	.TravelThumbnail:hover {
-		/* Webkit for Chrome and Safari */
-		-webkit-transform: scale(1.2, 1.2); // This is the enlarged size scale of the image.
-		-webkit-transition-duration: 500ms;
-		-webkit-transition-timing-function: ease-out;
-		/* Webkit for Mozila Firefox */
-		-moz-transform: scale(1.2, 1.2);
-		-moz-transition-duration: 500ms;
-		-moz-transition-timing-function: ease-out;
-		/* Webkit for IE( Version: 11, 10 ) */
-		-ms-transform: scale(1.20, 1.20);
-		-ms-transition-duration: 500ms;
-		-ms-transition-timing-function: ease-out;
-	}
-}
-
-
-/*Work page*/
-
-.work {
-	margin-bottom: 13px;
-}
-
-.work .container {
-	border-bottom: 1px solid #dbdbdb;
-}
-
-.work h1 {
-	font: 100 45px 'JennaSue', sans-serif;
-}
-
-.work h2 {
-	font: 300 17px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.work h3 {
-	font: 100 17px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.work p {
-	margin: 1em;
-	font: 100 18px 'EB Garamond', Helvetica, sans-serif
-	/*font: 100 20px 'Goudy Bookletter 1911', Helvetica, sans-serif;*/
-}
-
-.work li {
-	font: 100 15px 'EB Garamond', Helvetica, sans-serif;
-}
-
-
-/*Extensible list in work page*/
-
-.sumario {
-	font: 100 17px 'EB Garamond', Helvetica, sans-serif;
-}
-
-.lista {
-	margin-top: 10px;
-	font: 100 15px 'EB Garamond', Helvetica, sans-serif;
-}
-
-@media(min-width:980px),
-(min-width:1200px) {
-	.work img:hover {
-		/* Webkit for Chrome and Safari */
-		-webkit-transform: scale(1.2, 1.2); // This is the enlarged size scale of the image.
-		-webkit-transition-duration: 500ms;
-		-webkit-transition-timing-function: ease-out;
-		/* Webkit for Mozila Firefox */
-		-moz-transform: scale(1.2, 1.2);
-		-moz-transition-duration: 500ms;
-		-moz-transition-timing-function: ease-out;
-		/* Webkit for IE( Version: 11, 10 ) */
-		-ms-transform: scale(1.20, 1.20);
-		-ms-transition-duration: 500ms;
-		-ms-transition-timing-function: ease-out;
-	}
+.jumbotron p {
+	font-size: 20px;
+	color: #fff;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 
@@ -404,10 +293,12 @@ label.valid {
 	color: green !important;
 }
 
-/*Pictures*/
-.btn-toolbar{
-  text-align: center;
+.contact .container {
+	border-bottom: 1px solid #dbdbdb;
 }
+
+
+/*Pictures*/
 
 .pictures h2 {
 	font: 100 50px 'JennaSue', sans-serif;
@@ -496,29 +387,483 @@ label.valid {
 	background-position: -50px -15px
 }
 
-/*Zoom for map*/
 
-.grabbing {
-	cursor: url(closedhand.cur), pointer !important;
+/*Circular menu*/
+
+.circular-menu {
+	position: absolute;
+	top: 50%;
+	/*middle of the screen*/
+	left: 50%;
+	/*middle of the screen*/
+	width: 82vh;
+	/*size of the circle*/
+	height: 82vh;
+	/*size of the circle*/
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	z-index: 0;
 }
 
-#mapContainer #mapControls {
+.circle {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	transform: scale(0);
+	-webkit-transition: all 0.4s ease-out;
+	-moz-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
+}
+
+.circular-list {
+	list-style: none;
+}
+
+.open.circle {
+	opacity: 1;
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	transform: scale(1.3);
+	z-index: 20;
+}
+
+.circle a {
+	position: absolute;
+	z-index: 25;
+	font-family: 'HomemadeApple';
+	font-weight: 100;
+	font-size: 1.5em;
+	/*color: #000000;*/
+	color: #3c359f;
+	text-shadow: -0.5px 0 #3c359f, 0 0.5px #3c359f, 0.5px 0 #3c359f, 0 -0.5px #3c359f;
+	height: 30%;
+	width: 30%;
+	margin-left: -15%;
+	/* to center the image horizontally*/
+	margin-top: -3.5%;
+	/*to center the image vertically*/
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+	/*takes out the underline when hovering*/
+}
+
+.circle a:hover {
+	color: white;
+	text-shadow: -0.75px 0 #3c359f, 0 0.75px #3c359f, 0.75px 0 #3c359f, 0 -0.75px #3c359f;
+
+}
+
+.menu-button {
+	top: 50%;
+	left: 50%;
+	font-family: 'HomemadeApple';
+	font-weight: 100;
+	font-size: 1.5em;
+	-webkit-transition: all 0.4s ease-out;
+	-moz-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-decoration: none;
+	border-radius: 50%;
+	z-index: 15;
+	position: absolute;
+}
+
+#logo {
+	position: absolute;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	height: auto;
+	width: auto;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+#chef {
+	border: 1px solid #000;
+}
+
+.open.menu-button {}
+
+.text_placement {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+}
+
+.info_placement {
+	position: absolute;
+	top: 85%;
+	width: 100%;
+	left: 50%;
+}
+
+
+/* Entry button */
+
+#bienvenuti_message {
+	font-family: 'HomemadeApple';
+	font-weight: 100;
+	font-size: 2em;
 	position: relative;
-	left: 80px;
-	top: -229px;
-	width: 29px;
+	color: white;
+	text-shadow: -1px 0 #090274, 0 1px #090274, 1px 0 #090274, 0 -1px #090274;
+	top: 30%;
+	width: 289px;
+	left: -40px;
+	opacity: 1;
+	-webkit-transition: all 0.4s ease-out;
+	-moz-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
 }
 
-#mapContainer #mapControls #up {
-	background: url(../Images/iconUp.png) no-repeat center top;
-	display: block;
-	height: 26px;
-	width: 29px;
+
+/* Video */
+
+video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+	transition: 1s opacity;
 }
 
-#mapContainer #mapControls #down {
-	background: url(../Images/iconDown.png) no-repeat center top;
-	display: block;
-	height: 27px;
-	width: 29px;
+
+/* Info */
+
+a {
+    color: #7f7bb8;
+}
+
+.address_message {
+	color: #7f7bb8;
+	/* #090274*/
+	;
+	position: absolute;
+	text-align: right;
+	left: -20vw;
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-o-transition: all 2s ease;
+	transition: all 2s ease;
+}
+
+.phone_message {
+	color: #7f7bb8;
+	/* #090274*/
+	;
+	position: absolute;
+	text-align: left;
+	left: 1vw;
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-o-transition: all 2s ease;
+	transition: all 2s ease;
+}
+
+
+/* Calendar */
+
+.calendar {
+	position: static;
+	right: 10px;
+}
+
+.event-slideshow {
+	position: static;
+}
+
+/* Menu Option title */
+
+.MenuOption {
+	position: relative;
+	width: 100%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	margin: 0 0 0 -250px;
+}
+p.menu_option_name {
+	font-family: HomemadeApple;
+	color: #090274;
+	font-size: 40px;
+	margin: 0 0 0.75em 0;
+}
+
+/* Food menu */
+
+.Menu {
+	position: relative;
+	width: 100%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	margin: 0 0 0 -250px;
+	border: 1px solid #000;
+}
+
+p.menu_name {
+	font-family: HomemadeApple;
+	font-size: 28px;
+	margin: 0.25em 0 0.25em 0;
+}
+
+p.prezzo {
+	margin-top: -0.5em;
+	font-size: 20px;
+}
+p.carta {
+	margin-top: 0em;
+	font-size: 20px;
+}
+
+p.info_menu {
+	margin-top: 1em;
+	margin-bottom: 2em;
+	font-size: 15px;
+}
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+
+}
+
+/*#myCarousel {
+	position: relative;
+}*/
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 1;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+/*   display: inline-block;*/
+  max-width: auto;
+  
+}
+
+.carousel-inner>.item {
+	
+	 -webkit-transition: 0.9s ease-in-out left;
+	 -moz-transition: 0.9s ease-in-out left;
+	 -o-transition: 0.9s ease-in-out left;
+	 transition: 0.9s ease-in-out left;
+}
+.carousel img {
+/*  display: inline-block;*/
+  height: auto;
+  max-width:auto;
+  
+}
+
+/* Animated Gallery ---------------------*/
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  margin-bottom: 0.7em;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: relative;
+  z-index: 1;
+  left: 17%;
+  top: 0;
+  width: 66%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 88%;
+  max-width: 1200px;
+  
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+  
+}
+
+.mySlides img {
+/*  display: inline-block;*/
+  height: auto;
+  width: 90vh;
+
+  
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: white;
+}
+
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.pill-wrapper{
+ width: 100%;
+ background-color: white;
+}
+
+.nav {
+ width: 100%;
+ height: 60px;
+ position: fixed;
+ z-index: 999;
+}
+
+.nav ul {
+ margin: -30px 60px;
+}
+
+.nav a {
+ color: #090274;
+ font-size: 13.5px;
+ font-weight: 500;
+ text-transform: uppercase;
+}
+
+.nav li {
+ display: inline;
+}
+
+.container-facebook {
+	position: absolute;
+	right: 10%;
+	margin-top: 0.5em;
+}
+.thefork-container a{
+background-color: white;
+color: #090274;
+border-color: #090274;
+font-size: 13px;
+font-weight: bold;
+}
+.thefork-container a:hover{
+background-color: #090274;
+opacity: 0.8;
+color: white;
+border-color: #090274;
+font-size: 13px;
+font-weight: bold;
+
 }

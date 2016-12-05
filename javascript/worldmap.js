@@ -660,17 +660,6 @@
 			img: 'Porto',
 			url: '#Porto',
 			tripyear: 2007,
-		},
-		46:
-		{
-		  	city: 'Orlando',
-			country: 'USA',
-			lat: 28.4158,
-			lng: -81.2989,
-			color: 'yellow',
-			img: 'Orlando',
-			url: '#Orlando',
-			tripyear: 2015,
 		}
 	}
 	

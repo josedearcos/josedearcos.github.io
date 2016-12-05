@@ -1,8 +1,8 @@
 /* global $,document,console,Parse */
 $(document).ready(function() {
 	
-	var parseAPPID = "dH2ujoC8Jx75CslZjfF1dh20uGNwFaFojkv7vAzJ";
-	var parseJSID = "hbj3kOAWKPg1tpaRQhNQqWzGypoxrOOdyEcAanlE";
+	var parseAPPID = "8DlGT98UNSD2wbvHTWJF2JciEH9CHialHd7PqoI2";
+	var parseJSID = "3GX4YyFY290e07i3gBaflFiTjvX6vJiuW7X3PPJ4";
 	
 	Parse.initialize(parseAPPID, parseJSID);
 	var CommentObject = Parse.Object.extend("CommentObject");
