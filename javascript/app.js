@@ -17,13 +17,13 @@ $(document).ready(function() {
 		var data = {};
 		data.name = $("#name").val();
 		data.email = $("#email").val();
-		data.tel = $("#tel").val();
 		data.msg = $("#msg").val();
+
 		var comment = new CommentObject();
 		comment.save(data, {
 			success:function() {
-				console.log("Successo");
-				alert("Grazie per la Vostra richiesta! Risponderemo il pi\372 presto possibile.");
+				console.log("Success");
+				alert("Thanks for contacting me! I will get back to you as soon as possible.");
 			},
 			error:function(e) {
 				console.dir(e);
