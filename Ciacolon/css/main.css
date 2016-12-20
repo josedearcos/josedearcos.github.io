@@ -207,19 +207,16 @@ body {
 .MainPage h2 {
 	font: 100 45px 'HomemadeApple';
 	font-size: 6vh;
-
 }
 
 .MainPage h3 {
 	font: 100 30px 'HomemadeApple';
 	font-size: 5vh;
-
 }
 
 .MainPage h4 {
 	font: 100 18px 'Roboto Bold';
 	font-size: 3vmin;
-
 	color: #090274;
 }
 
@@ -605,8 +602,9 @@ a {
 	height: auto;
 	top: 50%;
 	left: 50%;
-	margin: 0 0 0 -250px;
+	margin: 0 0 0 -50%;
 }
+
 p.menu_option_name {
 	font-family: HomemadeApple;
 	color: #090274;
@@ -620,11 +618,10 @@ p.menu_option_name {
 
 .Menu {
 	position: relative;
-	width: 100%;
+	width: 90%;
+	margin-left: 5%;
 	height: auto;
 	top: 50%;
-	left: 50%;
-	margin: 0 0 0 -250px;
 	border: 1px solid #000;
 }
 
@@ -662,14 +659,11 @@ p.info_menu {
 	font-size: 2.7vmin;
 }
 
-
-
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
 /* Carousel base class */
 .carousel {
-
 }
 
 /*#myCarousel {
@@ -684,11 +678,9 @@ p.info_menu {
 .carousel .item {
 /*   display: inline-block;*/
   max-width: none;
-  
 }
 
 .carousel-inner>.item {
-	
 	 -webkit-transition: 0.9s ease-in-out left;
 	 -moz-transition: 0.9s ease-in-out left;
 	 -o-transition: 0.9s ease-in-out left;
@@ -729,7 +721,6 @@ p.info_menu {
   height: 100%;
   overflow: auto;
   background-color: black;
-  
 }
 
 /* Modal Content */
@@ -740,7 +731,6 @@ p.info_menu {
   padding: 0;
   width: 88%;
   max-width: 1200px;
-  
 }
 
 /* The Close Button */
@@ -751,7 +741,6 @@ p.info_menu {
   right: 25px;
   font-size: 35px;
   font-size: 3.0vw;
-
   font-weight: bold;
 }
 
@@ -764,15 +753,12 @@ p.info_menu {
 
 .mySlides {
   display: none;
-  
 }
 
 .mySlides img {
 /*  display: inline-block;*/
   height: 80vh;
   width: auto;
-
-  
 }
 /* Next & previous buttons */
 .prev,
@@ -831,7 +817,6 @@ p.info_menu {
   background-color: white;
 }
 
-
 img.demo {
   opacity: 0.6;
 }
@@ -854,6 +839,15 @@ img.hover-shadow {
  background-color: white;
 }
 
+#ciaco-logo{
+	 margin: -3.5vh 80%;
+
+}
+
+#ciaco-nav{
+	 margin: 0 10%;
+}
+
 .nav {
  width: 100%;
  height: 60px;
@@ -863,14 +857,6 @@ img.hover-shadow {
  z-index: 999;
 }
 
-#ciaco-logo{
-
-	 margin: -3.5vh 10%;
-}
-
-#ciaco-nav{
-	margin-left:50%;
-}
 .nav ul {
  position: fixed;
 }
