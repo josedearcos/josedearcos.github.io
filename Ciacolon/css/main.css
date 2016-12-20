@@ -118,7 +118,7 @@ body {
 
 #header-main {
 	width: 100%;
-	height: 40px;
+	height: 3vmin;
 	position: fixed;
 	background: #090274;
 	color: white;
@@ -129,7 +129,10 @@ body {
 	width: 100%;
 	text-align: center;
 	font-size: 72px;
+	font-size: 9vh;
 	height: 80px;
+	height: 11vmin;
+
 	background: white;
 	color: #fff;
 	font-family: 'PT Sans', sans-serif;
@@ -143,6 +146,8 @@ body {
 #header-line {
 	position: fixed;
 	height: 80px;
+	height: 10vh;
+
 	margin-left: 10%;
 	width: 80%;
 	border-bottom: 1px solid #090631;
@@ -152,8 +157,8 @@ body {
 #content-main {
 	height: auto;
 	width: 100%;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 3vmin;
+	padding-bottom: 3vmin;
 	/* Height of the footer element */
 }
 
@@ -167,7 +172,7 @@ body {
 
 #footer {
 	width: 100%;
-	height: 40px;
+	height: 4vmin;/*For every page, except for index.html*/
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -177,7 +182,7 @@ body {
 
 #footer-main {
 	width: 100%;
-	height: 40px;
+	height: 3vmin;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -196,36 +201,49 @@ body {
 .MainPage h1 {
 	font: 100 60px 'HomemadeApple';
 	color: #090274;
+	font-size: 7.5vh;
 }
 
 .MainPage h2 {
 	font: 100 45px 'HomemadeApple';
+	font-size: 6vh;
+
 }
 
 .MainPage h3 {
 	font: 100 30px 'HomemadeApple';
+	font-size: 5vh;
+
 }
 
 .MainPage h4 {
 	font: 100 18px 'Roboto Bold';
+	font-size: 3vmin;
+
 	color: #090274;
 }
 
 .MainPage h5 {
 	font: 100 14px 'Roboto Reg';
+	font-size: 2.8vmin;
 	color: #090274;
 }
 
 .MainPage h6 {
 	font: 100 14px 'Roboto Reg';
+	font-size: 2.8vmin;
 }
 
 .MainPage p {
 	font: 100 18px 'Roboto Reg'; /*font: 100 17px 'EB Garamond', Helvetica, sans-serif;*/
+	font-size: 3vmin;
+
 }
 
 .MainPage a {
 	font: 100 18px 'Roboto Reg';
+	font-size: 3vmin;
+
 }
 
 
@@ -234,17 +252,22 @@ body {
 .nav {
 	width: 100%;
 	height: 60px;
+	height: 8.9vh;
 	position: fixed;
 	z-index: 999;
 }
 
 .nav ul {
 	margin: -30px 60px;
+	margin: -3vh 6vh;
+
 }
 
 .nav a {
 	color: #090274;
 	font-size: 13.5px;
+	font-size: 1vmin;
+
 	font-weight: 500;
 	text-transform: uppercase;
 }
@@ -270,6 +293,8 @@ body {
 .jumbotron h1 {
 	color: #fff;
 	font-size: 48px;
+	font-size: 5.9vw;
+
 	font: 400 100px/1.3 'Lato', Helvetica, sans-serif;
 	font-weight: bold;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -277,6 +302,8 @@ body {
 
 .jumbotron p {
 	font-size: 20px;
+	font-size: 2vmin;
+
 	color: #fff;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
@@ -296,30 +323,6 @@ label.valid {
 .contact .container {
 	border-bottom: 1px solid #dbdbdb;
 }
-
-
-/*Pictures*/
-
-.pictures h2 {
-	font: 100 50px 'JennaSue', sans-serif;
-}
-
-.pictures h3 {
-	font: 100 40px 'JennaSue', sans-serif;
-}
-
-#showalbum {
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
-
-.top-buffer {
-	margin-top: 40px;
-}
-
-
-/*Others*/
-
 
 /*Flags*/
 
@@ -437,6 +440,8 @@ label.valid {
 	font-family: 'HomemadeApple';
 	font-weight: 100;
 	font-size: 1.5em;
+	font-size: 3.0vh;
+
 	/*color: #000000;*/
 	color: #3c359f;
 	text-shadow: -0.5px 0 #3c359f, 0 0.5px #3c359f, 0.5px 0 #3c359f, 0 -0.5px #3c359f;
@@ -464,6 +469,8 @@ label.valid {
 	font-family: 'HomemadeApple';
 	font-weight: 100;
 	font-size: 1.5em;
+    font-size: 2vmin;
+
 	-webkit-transition: all 0.4s ease-out;
 	-moz-transition: all 0.4s ease-out;
 	transition: all 0.4s ease-out;
@@ -514,6 +521,8 @@ label.valid {
 	font-family: 'HomemadeApple';
 	font-weight: 100;
 	font-size: 2em;
+	font-size: 4vh;
+
 	position: relative;
 	color: white;
 	text-shadow: -1px 0 #090274, 0 1px #090274, 1px 0 #090274, 0 -1px #090274;
@@ -602,6 +611,8 @@ p.menu_option_name {
 	font-family: HomemadeApple;
 	color: #090274;
 	font-size: 40px;
+    font-size: 4vh;
+
 	margin: 0 0 0.75em 0;
 }
 
@@ -620,22 +631,35 @@ p.menu_option_name {
 p.menu_name {
 	font-family: HomemadeApple;
 	font-size: 28px;
-	margin: 0.25em 0 0.25em 0;
+	font-size: 4vh;
+
+	margin: 1.5em 0 0.5em 0;
+}
+
+p.menu_formule_name {
+	font-family: HomemadeApple;
+	font-size: 28px;
+	font-size: 4vh;
+	margin: 1em 0 0.5em 0;
 }
 
 p.prezzo {
 	margin-top: -0.5em;
 	font-size: 20px;
+	font-size: 3vh;
+
 }
 p.carta {
 	margin-top: 0em;
 	font-size: 20px;
+	font-size: 3vh;
 }
 
 p.info_menu {
 	margin-top: 1em;
 	margin-bottom: 2em;
 	font-size: 15px;
+	font-size: 2.7vmin;
 }
 
 
@@ -659,7 +683,7 @@ p.info_menu {
 /* Declare heights because of positioning of img element */
 .carousel .item {
 /*   display: inline-block;*/
-  max-width: auto;
+  max-width: none;
   
 }
 
@@ -673,7 +697,7 @@ p.info_menu {
 .carousel img {
 /*  display: inline-block;*/
   height: auto;
-  max-width:auto;
+  max-width: none;
   
 }
 
@@ -726,6 +750,8 @@ p.info_menu {
   top: 10px;
   right: 25px;
   font-size: 35px;
+  font-size: 3.0vw;
+
   font-weight: bold;
 }
 
@@ -760,6 +786,8 @@ p.info_menu {
   color: white;
   font-weight: bold;
   font-size: 20px;
+  font-size: 2vmin;
+
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -782,6 +810,8 @@ p.info_menu {
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
+  font-size: 1vmin;
+
   padding: 8px 12px;
   position: absolute;
   top: 0;
@@ -827,17 +857,23 @@ img.hover-shadow {
 .nav {
  width: 100%;
  height: 60px;
+ height: 9vh;
+ min-height:60px;
  position: fixed;
  z-index: 999;
 }
 
 .nav ul {
  margin: -30px 60px;
+ margin: -4vmin 9vh;
+
 }
 
 .nav a {
  color: #090274;
  font-size: 13.5px;
+ font-size: 1.5vh;
+ min-height: 1vmin;
  font-weight: 500;
  text-transform: uppercase;
 }
@@ -856,6 +892,8 @@ background-color: white;
 color: #090274;
 border-color: #090274;
 font-size: 13px;
+font-size: 1vmin;
+
 font-weight: bold;
 }
 .thefork-container a:hover{
@@ -864,6 +902,8 @@ opacity: 0.8;
 color: white;
 border-color: #090274;
 font-size: 13px;
+font-size: 1vmin;
+
 font-weight: bold;
 
 }
