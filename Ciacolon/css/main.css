@@ -863,10 +863,16 @@ img.hover-shadow {
  z-index: 999;
 }
 
-.nav ul {
- margin: -30px 60px;
- margin: -4vmin 9vh;
+#ciaco-logo{
 
+	 margin: -3.5vh 10%;
+}
+
+#ciaco-nav{
+	margin-left:50%;
+}
+.nav ul {
+ position: fixed;
 }
 
 .nav a {
@@ -876,6 +882,7 @@ img.hover-shadow {
  min-height: 1vmin;
  font-weight: 500;
  text-transform: uppercase;
+ 
 }
 
 .nav li {
