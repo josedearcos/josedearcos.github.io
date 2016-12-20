@@ -611,7 +611,7 @@ p.menu_option_name {
 	font-size: 40px;
     font-size: 4vh;
 
-	margin: 0 0 0.75em 0;
+	margin: 2vmin 0 1vmin 0;
 }
 
 /* Food menu */
@@ -737,6 +737,7 @@ p.info_menu {
 .close {
   color: white;
   position: absolute;
+  opacity: 100;
   top: 10px;
   right: 25px;
   font-size: 35px;
@@ -752,13 +753,15 @@ p.info_menu {
 }
 
 .mySlides {
-  display: none;
+  width:100%;
+  display:none;
 }
 
 .mySlides img {
 /*  display: inline-block;*/
-  height: 80vh;
+  height: 50vw;
   width: auto;
+  max-width:100%;
 }
 /* Next & previous buttons */
 .prev,
@@ -878,25 +881,24 @@ img.hover-shadow {
 .container-facebook {
 	position: absolute;
 	right: 10%;
-	margin-top: 0.5em;
+	margin-top: 3vh;
+}
+
+.thefork-container
+{
+	font-size: 13px;
+	font-size: 2.5vmin;
+	font-weight: bold;
 }
 .thefork-container a{
-background-color: white;
-color: #090274;
-border-color: #090274;
-font-size: 13px;
-font-size: 1vmin;
-
-font-weight: bold;
+	background-color: white;
+	color: #090274;
+	border-color: #090274;
+	margin-top:1vmin;
 }
 .thefork-container a:hover{
-background-color: #090274;
-opacity: 0.8;
-color: white;
-border-color: #090274;
-font-size: 13px;
-font-size: 1vmin;
-
-font-weight: bold;
-
+	background-color: #090274;
+	color: white;
+	border-color: #090274;
+	opacity: 0.8;
 }
