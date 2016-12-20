@@ -129,9 +129,9 @@ body {
 	width: 100%;
 	text-align: center;
 	font-size: 72px;
-	font-size: 9vh;
+	/*font-size: 9vh;*/
 	height: 80px;
-	height: 11vmin;
+	/*height: 11vmin;*/
 
 	background: white;
 	color: #fff;
@@ -146,7 +146,7 @@ body {
 #header-line {
 	position: fixed;
 	height: 80px;
-	height: 10vh;
+	/*height: 10vh;*/
 
 	margin-left: 10%;
 	width: 80%;
@@ -201,7 +201,7 @@ body {
 .MainPage h1 {
 	font: 100 60px 'HomemadeApple';
 	color: #090274;
-	font-size: 7.5vh;
+	font-size: 6vw;
 }
 
 .MainPage h2 {
@@ -249,21 +249,21 @@ body {
 .nav {
 	width: 100%;
 	height: 60px;
-	height: 8.9vh;
+	/*height: 8.9vh;*/
 	position: fixed;
 	z-index: 999;
 }
 
 .nav ul {
 	margin: -30px 60px;
-	margin: -3vh 6vh;
+	/*margin: -3vh 6vh;*/
 
 }
 
 .nav a {
 	color: #090274;
 	font-size: 13.5px;
-	font-size: 1vmin;
+	/*font-size: 1vmin;*/
 
 	font-weight: 500;
 	text-transform: uppercase;
@@ -710,6 +710,11 @@ p.info_menu {
   margin-bottom: 0.7em;
 }
 
+#gallery-thumb img
+{
+	width:95%;
+}
+
 /* The Modal (background) */
 .modal {
   display: none;
@@ -846,32 +851,39 @@ img.hover-shadow {
 	 margin: -3.5vh 80%;
 }
 
+#ciaco-logo img
+{
+	margin-bottom:-40px;/*To center*/
+	/*margin-bottom:1vmin;*/
+	height:70px;
+	/*height:8.9vh;*/
+}
+
 #ciaco-nav{
-	 margin: 0 10%;
+	 margin: -3px 8%;
+}
+
+#ciaco-nav>li>a{
+	 font-size:0.2em;
 }
 
 .nav {
  width: 100%;
  height: 60px;
- height: 9vh;
+ margin-top:-30px;/*to center*/
+
+ /*height: 9vh;*/
  min-height:60px;
  position: fixed;
  z-index: 999;
+
 }
 
 .nav ul {
  position: fixed;
 }
 
-.nav a {
- color: #090274;
- font-size: 13.5px;
- font-size: 1.5vh;
- min-height: 1vmin;
- font-weight: 500;
- text-transform: uppercase;
- 
-}
+
 
 .nav li {
  display: inline;
