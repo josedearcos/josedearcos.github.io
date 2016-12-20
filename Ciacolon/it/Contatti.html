@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- You can use open graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
@@ -13,102 +14,12 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css" type="text/css" />
-    <link rel="stylesheet" href="../css/jquery.motionCaptcha.0.2.css" type="text/css" />
+    <link rel="stylesheet" href="../jquery.motionCaptcha.0.2.css" type="text/css" />
     <link rel="shortcut icon" href="../Images/FlagIcons/ciacolon_icon.ico">
 
     <title>Contatti</title>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-    <script src="../javascript/validator-min.js"></script>
-	<script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script><!-- for parsing the email -->
-	<script src="../javascript/app.js"></script><!-- for parsing the email -->
-    <!-- in this order, needs jquery-->
-    <script src="../javascript/jquery.motionCaptcha.0.2.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC8fPLLbvl7koZn-KwzMBBVzc75i3xBivM"></script>
-    <!-- make a local copy!-->
-    <script>
-        var myCenter = new google.maps.LatLng(45.033768, 7.685966);
-
-        function initialize() {
-            var mapProp = {
-                center: myCenter,
-                zoom: 15,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
-            var image = new google.maps.MarkerImage(
-                "../Images/FlagIcons/map_pin_icon.png", new google.maps.Size(71, 71));
-
-            var image = {
-                url: '../Images/FlagIcons/map_pin_icon.png',
-                scaledSize: new
-                google.maps.Size(72, 65)
-            };
-
-            var marker = new google.maps.Marker({
-                position: myCenter,
-                icon: image,
-                map: map,
-            });
-
-            marker.setMap(map);
-        }
-        google.maps.event.addDomListener(window, 'load',
-            initialize);
-    </script>
-    <!--Update captcha-->
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            // Do the biznizz:
-            $('#commentForm').motionCaptcha({
-                shapes: ['triangle', 'x', 'rectangle',
-                    'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star'
-                ]
-            });
-
-        });
-    </script>
-    <!-- To avoid the user submiting the form pressing enter -->
-    <script>
-        $(document).ready(function() {
-            $('input').keydown(function(e) {
-                var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
-                if (key == 13) {
-                    e.preventDefault();
-                    var inputs =
-                        $(this).closest('form').find(':input:visible');
-                    inputs.eq(
-                        inputs.index(this) + 1).focus();
-                }
-            });
-        });
-    </script>
 	
-	<script>
-    // Run on page load
-    window.onload = function() {
-        var name = sessionStorage.getItem('name');
-        if (name !== null) $('#name').val(name);
-        var email = sessionStorage.getItem('email');
-        if (email !== null) $('#email').val(email);
-        var tel= sessionStorage.getItem('tel');
-        if (tel!== null) $('#tel').val(tel);
-        var msg= sessionStorage.getItem('msg');
-        if (msg!== null) $('#msg').val(msg);
-    }
-
-    // Before refreshing the page, save the form data to sessionStorage
-    window.onbeforeunload = function() {
-        sessionStorage.setItem("name", $('#name').val());
-        sessionStorage.setItem("email", $('#email').val());
-        sessionStorage.setItem("tel", $('#tel').val());
-        sessionStorage.setItem("msg", $('#msg').val());
-    }
-	</script>
-	
-	    <style>
+	<style>
         /* MotionCAPTCHA canvas */
         #mc-canvas {
             margin: 0 auto 20px;
@@ -203,7 +114,8 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form action="https://formspree.io/jf.dearcos@gmail.com" method="POST" id="commentForm" data-toggle="validator" role="form">
+                                        <form action="#" method="post" id="commentForm" data-toggle="validator" role="form">
+                                            <!-- <legend>Contact Form</legend> -->
                                             <div class="form-group">
                                                 <label class="control-label">Nome</label>
                                                 <div class="controls">
@@ -280,6 +192,97 @@
         <div id="footer"></div>
     </div>
     <!--wrapper-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script src="../javascript/validator-min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script><!-- for parsing the email -->
+	<script src="../javascript/app.js"></script><!-- for parsing the email -->
+    <!-- in this order, needs jquery-->
+    <script src="../javascript/jquery.motionCaptcha.0.2.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC8fPLLbvl7koZn-KwzMBBVzc75i3xBivM"></script>
+    <!-- make a local copy!-->
+    <script>
+        var myCenter = new google.maps.LatLng(45.033768, 7.685966);
+
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var image = new google.maps.MarkerImage(
+                "../Images/FlagIcons/map_pin_icon.png", new google.maps.Size(71, 71));
+
+            var image = {
+                url: '../Images/FlagIcons/map_pin_icon.png',
+                scaledSize: new
+                google.maps.Size(72, 65)
+            };
+
+            var marker = new google.maps.Marker({
+                position: myCenter,
+                icon: image,
+                map: map,
+            });
+
+            marker.setMap(map);
+        }
+        google.maps.event.addDomListener(window, 'load',
+            initialize);
+    </script>
+    <!--Update captcha-->
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            // Do the biznizz:
+            $('#commentForm').motionCaptcha({
+                shapes: ['triangle', 'x', 'rectangle',
+                    'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star'
+                ]
+            });
+
+        });
+    </script>
+    <!-- To avoid the user submiting the form pressing enter -->
+    <script>
+        $(document).ready(function() {
+            $('input').keydown(function(e) {
+                var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+                if (key == 13) {
+                    e.preventDefault();
+                    var inputs =
+                        $(this).closest('form').find(':input:visible');
+                    inputs.eq(
+                        inputs.index(this) + 1).focus();
+                }
+            });
+        });
+    </script>
+	
+	<script>
+    // Run on page load
+    window.onload = function() {
+        var name = sessionStorage.getItem('name');
+        if (name !== null) $('#name').val(name);
+        var email = sessionStorage.getItem('email');
+        if (email !== null) $('#email').val(email);
+        var tel= sessionStorage.getItem('tel');
+        if (tel!== null) $('#tel').val(tel);
+        var msg= sessionStorage.getItem('msg');
+        if (msg!== null) $('#msg').val(msg);
+    }
+
+    // Before refreshing the page, save the form data to sessionStorage
+    window.onbeforeunload = function() {
+        sessionStorage.setItem("name", $('#name').val());
+        sessionStorage.setItem("email", $('#email').val());
+        sessionStorage.setItem("tel", $('#tel').val());
+        sessionStorage.setItem("msg", $('#msg').val());
+    }
+</script>
+	
 </body>
 
 </html>

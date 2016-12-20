@@ -3,49 +3,13 @@
 <html>
 
 <head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta charset='UTF-8'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css" type="text/css" />
     <link rel="shortcut icon" href="./Images/ciacolon_icon.ico">
 
     <title>Eventi e Novit&aacute</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-    <script>
-        /* Hover over image and show text */
-        $(document) ready(function() {
-            $(".pdf-thumb-box").hover(function() {
-
-                var imgWidth = $(this).children("img").width();
-                var imgHeight = $(this).children("img").height();
-                var negImgWidth = imgWidth - imgWidth - imgWidth;
-
-                $(this).children(".pdf-thumb-box-overlay").fadeTo(0, 0.8);
-
-                $(this).css("width", (imgWidth) + "px");
-                $(this).css("height", (imgHeight) + "px");
-
-
-                $(this).children(".pdf-thumb-box-overlay").css("left", negImgWidth + "px");
-                $(this).children(".pdf-thumb-box-overlay").css("visibility", "visible");
-
-                $(this).children(".pdf-thumb-box-overlay").animate({
-                    "left": 0
-                }, 250);
-
-            }, function() {
-
-                var imgWidth = $(this).children("img").width();
-                var imgHeight = $(this).children("img").height();
-                var negImgWidth = imgWidth - imgWidth - imgWidth;
-
-                $(this).children(".pdf-thumb-box-overlay").animate({
-                    "left": negImgWidth
-                }, 250);
-
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -96,6 +60,44 @@
         </div>
         <div id="footer"></div>
     </div>
+    
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script>
+        /* Hover over image and show text */
+        $(document).ready(function() {
+            $(".pdf-thumb-box").hover(function() {
+
+                var imgWidth = $(this).children("img").width();
+                var imgHeight = $(this).children("img").height();
+                var negImgWidth = imgWidth - imgWidth - imgWidth;
+
+                $(this).children(".pdf-thumb-box-overlay").fadeTo(0, 0.8);
+
+                $(this).css("width", (imgWidth) + "px");
+                $(this).css("height", (imgHeight) + "px");
+
+
+                $(this).children(".pdf-thumb-box-overlay").css("left", negImgWidth + "px");
+                $(this).children(".pdf-thumb-box-overlay").css("visibility", "visible");
+
+                $(this).children(".pdf-thumb-box-overlay").animate({
+                    "left": 0
+                }, 250);
+
+            }, function() {
+
+                var imgWidth = $(this).children("img").width();
+                var imgHeight = $(this).children("img").height();
+                var negImgWidth = imgWidth - imgWidth - imgWidth;
+
+                $(this).children(".pdf-thumb-box-overlay").animate({
+                    "left": negImgWidth
+                }, 250);
+
+            });
+        });
+    </script>
 </body>
 
 </html>

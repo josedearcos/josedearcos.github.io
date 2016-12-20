@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta charset='UTF-8'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css" type="text/css" />
@@ -11,41 +12,6 @@
     <title>Eventi e Novit&aacute;</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-    <script>
-        /* Hover over image and show text */
-        $(document) ready(function() {
-            $(".pdf-thumb-box").hover(function() {
-
-                var imgWidth = $(this).children("img").width();
-                var imgHeight = $(this).children("img").height();
-                var negImgWidth = imgWidth - imgWidth - imgWidth;
-
-                $(this).children(".pdf-thumb-box-overlay").fadeTo(0, 0.8);
-
-                $(this).css("width", (imgWidth) + "px");
-                $(this).css("height", (imgHeight) + "px");
-
-
-                $(this).children(".pdf-thumb-box-overlay").css("left", negImgWidth + "px");
-                $(this).children(".pdf-thumb-box-overlay").css("visibility", "visible");
-
-                $(this).children(".pdf-thumb-box-overlay").animate({
-                    "left": 0
-                }, 250);
-
-            }, function() {
-
-                var imgWidth = $(this).children("img").width();
-                var imgHeight = $(this).children("img").height();
-                var negImgWidth = imgWidth - imgWidth - imgWidth;
-
-                $(this).children(".pdf-thumb-box-overlay").animate({
-                    "left": negImgWidth
-                }, 250);
-
-            });
-        });
-    </script>
     <style>
         .fade {
             opacity: 0;
@@ -85,7 +51,6 @@
                 <div class="container">
                     <ul class="pull-left">
                         <li>
-
                             <a href="../index.html" style="margin-left:-40px"><img src="../Images/il_ciacolon_logo2.jpg" style="margin-bottom:5px" height=70px>
                             </a>
                         </li>
@@ -113,11 +78,10 @@
                         <div class="col-md-1"></div>
                         <div class="col-md-10">
                             <h1 align="center"> I nostri eventi</h1>
-
                             <div class="pill-wrapper">
-                                <ul style="position:relative;" class="nav nav-pills nav-stacked col-md-1" id="pills">
+                                <ul style="position:relative; z-index: auto;" class="nav nav-pills nav-stacked col-md-1" id="pills">
                                     <li class="active"><a href="#Timeline" data-toggle="pill">Eventi</a>
-                                    </li>
+                                    </li
                                     <li><a href="#Calendar" data-toggle="pill">Calendario</a>
                                     </li>
                                 </ul>
