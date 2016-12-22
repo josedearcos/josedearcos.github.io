@@ -201,7 +201,7 @@ body {
 .MainPage h1 {
 	font: 100 60px 'HomemadeApple';
 	color: #090274;
-	font-size: 6vw;
+	font-size: 5vw;
 }
 
 .MainPage h2 {
@@ -233,7 +233,7 @@ body {
 
 .MainPage p {
 	font: 100 18px 'Roboto Reg'; /*font: 100 17px 'EB Garamond', Helvetica, sans-serif;*/
-	font-size: 3vmin;
+	font-size: 2.6vmin;
 
 }
 
@@ -436,7 +436,7 @@ label.valid {
 	z-index: 25;
 	font-family: 'HomemadeApple';
 	font-weight: 100;
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
 	font-size: 3.0vh;
 
 	/*color: #000000;*/
@@ -848,7 +848,7 @@ img.hover-shadow {
 }
 
 #ciaco-logo{
-	 margin: -3.5vh 7%;
+	 margin: -3.5vh 8%;
 }
 
 #ciaco-logo img
@@ -860,7 +860,7 @@ img.hover-shadow {
 }
 
 #ciaco-nav{
-	 margin: -3px 22%;
+	 margin: 3vh 30%;
 }
 
 #ciaco-nav>li>a{
