@@ -77,16 +77,16 @@
             /*Draw circle menu*/
 			var radius = 35;
 			
-			if (window.height>window.width)
+			if (screen.height>screen.width)
 			{
-				var radius = 10;		
+				var radius = 20;		
             }
 		
             var $items = $('.circle a');
             var numitems = $items.length;
             $items.each(function(index) {
-                $(this).css('left', 50 - radius * Math.cos(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
-                $(this).css('top', 50 + radius * Math.sin(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+                $(this).css('left', 50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+                $(this).css('top', 50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
             });
 
             /*Open circle*/

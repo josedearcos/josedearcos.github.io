@@ -4,10 +4,6 @@
 	font-family: 'Lato', Geneva, sans-serif;
 }
 
-@font-face {
-	font-family: 'JennaSue';
-	src: url('../fonts/JennaSue-Regular.ttf') format('truetype');
-}
 
 @font-face {
 	font-family: 'HomemadeApple';
@@ -87,16 +83,6 @@
 		height: 400px;
 	}
 }
-
-
-/*Ciacolon style*/
-
-.Ciacolon_Style {}
-
-.Ciacolon_Style p {}
-
-.Ciacolon_Style h1 {}
-
 
 /* Webpage wrapper */
 
@@ -897,16 +883,12 @@ img.hover-shadow {
 	margin-top: 3vh;
 }
 
-.thefork-container
-{
-	font-size: 1.5vmin;
-	font-weight: bold;
-}
 .thefork-container a{
 	background-color: white;
 	color: #090274;
 	border-color: #090274;
 	margin-top:1vmin;
+	font-size: 2vmin;
 }
 .thefork-container a:hover{
 	background-color: #090274;
