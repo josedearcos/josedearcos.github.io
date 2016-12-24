@@ -10,7 +10,7 @@
 
     <title>La Storia</title>
     
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
     <script type="text/javascript">
         function openModal() {
@@ -36,7 +36,7 @@
 
         function showSlides(n) {
             var i;
-            var slides = document.getElementsByClassName("mySlides");
+            var slides = document.getElementsByClassName("mySlides-story");
 
             if (n > slides.length) {
                 slideIndex = 1
@@ -67,11 +67,11 @@
                     <ul id="ciaco-nav">
 					    <li><a href="./Menu.html">Men&uacute;</a>
                         </li>
-                        <li><a href="./Novita_ed_eventi.html">Eventi e novit&aacute;</a>
+                        <li><a href="./Novita_ed_eventi.html">Eventi</a>
                         </li>
                         <li><a href="./La_Storia.html">La &nbsp;Storia</a>
                         </li>
-						 <li><a href="./Il_Nostro_Chef.html">Il Nostro Chef</a>
+						 <li><a href="./Il_Nostro_Chef.html">I Nostri Chef</a>
                         </li>
                         <li><a href="./Galleria.html">Galleria</a>
                         </li>
@@ -87,7 +87,6 @@
                     <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Filciacolon&width=95&layout=button&action=like&size=small&show_faces=false&share=true&height=65&appId" width="95" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
             </div>
              <div class="MainPage">
-                <div class="container">
                     <div class="row">
                         <div class="col-md-2 col-sx-2 col-sm-2"></div>
                         <div class="col-md-8 col-sx-8 col-sm-8">
@@ -104,19 +103,18 @@
                         </div>
                         <div class="col-md-2 col-sx-2 col-sm-2"></div>
                     </div>
-                </div>
          <div id="gallery-thumb">
-        <div class="row">
+        <div class="row" style="margin-top:4vmin">
             <div class="col-md-2 col-sx-2 col-sm-2"></div>
             <div class="col-md-8 col-sx-8 col-sm-8">
-                <div class="column">
+                <div class="column-story">
                     <img src="../Images/Story_images/thmb/fumetto.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
                 </div>
-                <div class="column">
+                <div class="column-story">
                     <img src="../Images/Story_images/thmb/img3.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
                 </div>
-                <div class="column">
-                    <img src="../Images/Story_images/thmb/la_storia_fittipaldi.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                <div class="column-story">
+                    <img src="../Images/Story_images/thmb/la_storia_fittipaldi.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
                 </div>
             </div>
             <div class="col-md-2 col-sx-2 col-sm-2"></div>
@@ -124,13 +122,13 @@
         <div class="row">
             <div class="col-md-2 col-sx-2 col-sm-2"></div>
             <div class="col-md-8 col-sx-8 col-sm-8">
-                <div class="column">
+                <div class="column-story">
                     <img src="../Images/Story_images/thmb/gioco_oca.jpg"  onclick="openModal();currentSlide(4)" class="hover-shadow">
                 </div>
-                <div class="column">
+                <div class="column-story">
                     <img src="../Images/Story_images/thmb/lastoria2.jpg"  onclick="openModal();currentSlide(5)" class="hover-shadow">
                 </div>
-                <div class="column">
+                <div class="column-story">
                     <img src="../Images/Story_images/thmb/img1.jpg"  onclick="openModal();currentSlide(6)" class="hover-shadow">
                 </div>
             </div>
@@ -139,13 +137,13 @@
         <div class="row">
             <div class="col-md-2 col-sx-2 col-sm-2"></div>
             <div class="col-md-8 col-sx-8 col-sm-8">
-                <div class="column">
+                <div class="column-story">
                     <img src="../Images/Story_images/thmb/lastoria_sgarbi.jpg"  onclick="openModal();currentSlide(7)" class="hover-shadow">
                 </div>
-                <div class="column">
+                <div class="column-story">
                     <img src="../Images/Story_images/thmb/img2.jpg"  onclick="openModal();currentSlide(8)" class="hover-shadow">
                 </div>
-                <div class="column">
+                <div class="column-story">
                     <img src="../Images/Story_images/thmb/lastoria1.jpg"  onclick="openModal();currentSlide(9)" class="hover-shadow">
                 </div>
             </div>
@@ -154,49 +152,49 @@
         
 	</div>
 
-        <div id="myModal" class="modal">
+       <!-- <div id="myModal" class="modal">
             <div class="modal-content">
 	             <span class="close cursor" onclick="closeModal()">&times;</span>
 
-                <div class="mySlides">
+                <div class="mySlides-story">
                     <img src="../Images/Story_images/thmb/fumetto.jpg" >
                 </div>
 
-                <div class="mySlides">
+                <div class="mySlides-story">
                     <img src="../Images/Story_images/thmb/img3.jpg" >
                 </div>
 
-                <div class="mySlides">
-                    <img src="../Images/Story_images/thmb/la_storia_fittipaldi.png" >
+                <div class="mySlides-story">
+                    <img src="../Images/Story_images/thmb/la_storia_fittipaldi.jpg" >
                 </div>
 
-                <div class="mySlides">
+                <div class="mySlides-story">
                     <img src="../Images/Story_images/thmb/gioco_oca.jpg" >
                 </div>
 		
-                <div class="mySlides">
+                <div class="mySlides-story">
                     <img src="../Images/Story_images/thmb/lastoria2.jpg" >
                 </div>
 
-                <div class="mySlides">
+                <div class="mySlides-story">
                     <img src="../Images/Story_images/thmb/img1.jpg" >
                 </div>
 
-                <div class="mySlides">
+                <div class="mySlides-story">
                     <img src="../Images/Story_images/thmb/lastoria_sgarbi.jpg" >
                 </div>
 
-                <div class="mySlides">
+                <div class="mySlides-story">
                     <img src="../Images/Story_images/thmb/img2.jpg" >
                 </div>
                 
-                <div class="mySlides">
+                <div class="mySlides-story">
                     <img src="../Images/Story_images/thmb/lastoria1.jpg" >
                 </div>
 				
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-        </div>
+        </div> -->
         
             </div>
         </div>
