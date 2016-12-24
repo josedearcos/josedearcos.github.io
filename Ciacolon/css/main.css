@@ -723,7 +723,7 @@ p.info_menu {
   left: 17%;
   top: 0;
   width: 66%;
-  height: 100%;
+  height: auto;
   overflow: auto;
   background-color: black;
 }
@@ -736,6 +736,7 @@ p.info_menu {
   padding: 0;
   width: 88%;
   max-width: 1200px;
+  height: auto;
 }
 
 /* The Close Button */
@@ -760,11 +761,12 @@ p.info_menu {
 .mySlides {
   width:100%;
   display:none;
+  height: auto;
 }
 
 .mySlides img {
 /*  display: inline-block;*/
-  height: 50vw;
+  height: auto;
   width: auto;
   max-width:100%;
 }
@@ -860,7 +862,7 @@ img.hover-shadow {
 }
 
 #ciaco-nav{
-	 margin: 3vh 30%;
+	 margin: 1vh 20%;
 }
 
 #ciaco-nav>li>a{
@@ -897,8 +899,7 @@ img.hover-shadow {
 
 .thefork-container
 {
-	font-size: 13px;
-	font-size: 2.5vmin;
+	font-size: 1.5vmin;
 	font-weight: bold;
 }
 .thefork-container a{
@@ -913,3 +914,4 @@ img.hover-shadow {
 	border-color: #090274;
 	opacity: 0.8;
 }
+
