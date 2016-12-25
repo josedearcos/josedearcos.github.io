@@ -593,7 +593,7 @@ p.menu_option_name {
 	font-family: HomemadeApple;
 	color: #090274;
 
-	font-size:calc(30px + 1vw);
+	font-size:calc(20px + 1.5vw);
 
 	margin: 2vmin 0 1vmin 0;
 }
@@ -895,6 +895,13 @@ img.hover-shadow {
 	position: absolute;
 	left: 10%;
 	margin-top: 1vh;
+}
+
+.facebook-button{
+	width:150px;
+	height:65px;
+	border:none;
+	overflow:hidden;
 }
 
 .thefork-container a{
