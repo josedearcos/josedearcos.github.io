@@ -611,16 +611,15 @@ p.menu_option_name {
 
 p.menu_name {
 	font-family: HomemadeApple;
-	font-size: 28px;
-	font-size: 4vh;
+	font-size:calc(12px + 1vw);
 
 	margin: 1.5em 0 0.5em 0;
 }
 
 p.menu_formule_name {
 	font-family: HomemadeApple;
-	font-size: 28px;
-	font-size: 4vh;
+	font-size:calc(12px + 1vw);
+
 	margin: 1em 0 0.5em 0;
 }
 
@@ -853,7 +852,7 @@ img.hover-shadow {
 }
 
 #ciaco-logo{
-	 margin: -3.5vh 8%;
+	 margin: -3.5vh 7%;
 }
 
 #ciaco-logo img
@@ -865,13 +864,15 @@ img.hover-shadow {
 }
 
 #ciaco-nav{
-	 margin: 1vh 15%;
+	 margin: 1vh 18%;
 	 width:100%;
 }
 
 #ciaco-nav>li>a{
 	 /*font-size:0.2em;*/
-	 	 font-size:1vw;
+		 
+	font-size:calc(0.1em + 0.5vw);
+
 
 }
 
