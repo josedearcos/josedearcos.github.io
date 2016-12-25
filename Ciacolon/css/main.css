@@ -219,8 +219,8 @@ body {
 
 .MainPage p {
 	font: 100 18px 'Roboto Reg'; /*font: 100 17px 'EB Garamond', Helvetica, sans-serif;*/
-	font-size: 2.6vmin;
-
+	
+	font-size:calc(12px + 0.5vw);
 }
 
 .MainPage a {
@@ -592,8 +592,8 @@ a {
 p.menu_option_name {
 	font-family: HomemadeApple;
 	color: #090274;
-	font-size: 40px;
-    font-size: 4vh;
+
+	font-size:calc(30px + 1vw);
 
 	margin: 2vmin 0 1vmin 0;
 }
@@ -625,21 +625,14 @@ p.menu_formule_name {
 
 p.prezzo {
 	margin-top: -0.5em;
-	font-size: 20px;
-	font-size: 3vh;
-
-}
-p.carta {
-	margin-top: 0em;
-	font-size: 20px;
-	font-size: 3vh;
+	font-size:calc(8px + 1vw);
 }
 
 p.info_menu {
 	margin-top: 1em;
 	margin-bottom: 2em;
-	font-size: 15px;
-	font-size: 2.7vmin;
+
+	font-size:calc(12px + 0.5vw);
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -852,7 +845,7 @@ img.hover-shadow {
 }
 
 #ciaco-logo{
-	 margin: -3.5vh 7%;
+	 margin: -25px 7%;
 }
 
 #ciaco-logo img
@@ -900,8 +893,8 @@ img.hover-shadow {
 
 .container-facebook {
 	position: absolute;
-	right: 10%;
-	margin-top: 3vh;
+	left: 10%;
+	margin-top: 1vh;
 }
 
 .thefork-container a{
