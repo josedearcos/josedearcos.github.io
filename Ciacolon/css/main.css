@@ -857,16 +857,14 @@ img.hover-shadow {
 }
 
 #ciaco-nav{
-	 margin: 1vh 18%;
-	 width:100%;
+	 margin-top: 1vh;
+	 margin-left: 30%;
+	 width:80%;
 }
 
 #ciaco-nav>li>a{
 	 /*font-size:0.2em;*/
-		 
 	font-size:calc(0.1em + 0.5vw);
-
-
 }
 
 .nav {
@@ -878,14 +876,11 @@ img.hover-shadow {
  min-height:60px;
  position: fixed;
  z-index: 999;
-
 }
 
 .nav ul {
  position: fixed;
 }
-
-
 
 .nav li {
  display: inline;
