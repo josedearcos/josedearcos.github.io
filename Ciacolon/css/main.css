@@ -168,9 +168,11 @@ body {
 
 #footer p{
 	color: #C0C0C0;
-	margin-left:85%;
+	margin-left:83vw;
 	margin-top:1vmin;
-	font-size: 0.75em;
+	font-size:calc(4px + 0.5vw);
+		display:none;
+
 }
 
 #footer-main {
@@ -183,10 +185,11 @@ body {
 }
 
 #footer-main p{
+	display:none;
 	color: #C0C0C0;
-	margin-left:88%;
+	margin-left:83vw;
 	margin-top:0.75vmin;
-	font-size: 0.75em;
+	font-size:calc(4px + 0.5vw);
 }
 
 
