@@ -417,7 +417,7 @@ label.valid {
 
 .circle a {
 	position: absolute;
-	z-index: 25;
+	z-index: 40;
 	font-family: 'HomemadeApple';
 	font-weight: 100;
 	/*font-size: 1.5em;*/
@@ -436,11 +436,13 @@ label.valid {
 	text-align: center;
 	text-decoration: none;
 	/*takes out the underline when hovering*/
+	
 }
 
 .circle a:hover {
 	color: white;
 	text-shadow: -0.75px 0 #3c359f, 0 0.75px #3c359f, 0.75px 0 #3c359f, 0 -0.75px #3c359f;
+	z-index: 40;
 
 }
 
@@ -498,7 +500,7 @@ label.valid {
 
 /* Entry button */
 
-#bienvenuti_message {
+#benvenuti_message {
 	font-family: 'HomemadeApple';
 	font-weight: 100;
 	font-size: 2em;
@@ -506,7 +508,7 @@ label.valid {
 
 	position: relative;
 	color: white;
-	text-shadow: -1px 0 #090274, 0 1px #090274, 1px 0 #090274, 0 -1px #090274;
+	text-shadow: -1.3px 0 #090274, 0 1.3px #090274, 1.3px 0 #090274, 0 -1.3px #090274;
 	top: 30%;
 	width: 289px;
 	left: -40px;
@@ -858,7 +860,7 @@ img.hover-shadow {
 
 #ciaco-nav{
 	 margin-top: 1vh;
-	 margin-left: 30%;
+	 margin-left: 28%;
 	 width:80%;
 }
 

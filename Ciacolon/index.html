@@ -40,7 +40,7 @@
             </div>
 
             <div class="text_placement">
-                <p id="bienvenuti_message"></p>
+                <p id="benvenuti_message"></p>
             </div>
             <div class="info_placement">
                 <div class="container">
@@ -63,31 +63,12 @@
     </div>
 	
 	
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
-    <script type="text/javascript" defer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script defer>
         $(document).ready(function() {
 
-            /* Video */
-
-            /* Entry button */
-
-            var name = document.getElementById('bienvenuti_message');
-
-            /*Draw circle menu*/
-			var radius = 35;
-			
-			if (screen.height>screen.width)
-			{
-				var radius = 20;		
-            }
-		
-            var $items = $('.circle a');
-            var numitems = $items.length;
-            $items.each(function(index) {
-                $(this).css('left', 50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
-                $(this).css('top', 50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
-            });
+            var name = document.getElementById('benvenuti_message');		
 
             /*Open circle*/
 
@@ -96,26 +77,46 @@
 
 				if (window.height>window.width)
 				{
+					var radius = 20;
+
 					var large =
 					{
-						height: "60vw"
+						height: "60vw",
+
 					};
 					var small =
 					{
-						height: "35vw"
+						height: "35vw",
 					};
+					
+
                 }
 				else{
+
+					var radius = 37;
+
 					var large =
 					{
-						height: "80vh"
+						height: "40vw",
+
 				    };
 					var small =
 					{
-						height: "50vh"
+						height: "25vw",
 					};
+					
 				}
 				
+			/*Draw circle menu*/
+
+            var $items = $('.circle a');
+            var numitems = $items.length;
+			
+            $items.each(function(index) {
+                $(this).css('left', 50 - radius * Math.cos(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+                $(this).css('top', 50 + radius * Math.sin(-0.5 * Math.PI - 2 * (1 / numitems) * index * Math.PI).toFixed(4) + '%');
+            });
+			
             var countcircle = 1;
 
             $("#logo").css(large).on('click', function() {
