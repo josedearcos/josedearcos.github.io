@@ -52,6 +52,26 @@
 
         }
     </script>
+	
+	<script>
+	 // DOM ready
+	 $(function() {
+
+      // Create default option "Go to..."
+      $("<option />", {
+         "selected": "selected",
+         "value"   : "",
+         "text"    : "Vai a..."
+      }).appendTo("#ciaco-nav select");
+
+	   // To make dropdown actually work
+	   // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+      $("#ciaco-nav select").change(function() {
+        window.location = $(this).find("option:selected").val();
+      });
+
+	 });
+	</script>
 
 </head>
 
@@ -65,20 +85,25 @@
                             </a>
                         </li>
                     </ul>
-                    <ul id="ciaco-nav">
-			<li><a href="./Menu.html">Men&uacute;</a>
-                        </li>
-                        <li><a href="./Novita_ed_eventi.html">Eventi</a>
-                        </li>
-                        <li><a href="./La_Storia.html">La Storia</a>
-                        </li>
-			<li><a href="./Il_Nostro_Chef.html">I Nostri Chef</a>
-                        </li>
-                        <li><a href="./Galleria.html">Galleria</a>
-                        </li>
-			<li><a href="./Contatti.html">Contatti</a>
-                        </li>
-                    </ul>
+					<ul id="ciaco-nav">
+						<ul class="menu">
+							<li><a href="./Menu.html">Men&uacute;</a></li>
+							<li><a href="./Novita_ed_eventi.html">Eventi</a></li>
+							<li><a href="./La_Storia.html">La Storia</a></li>
+							<li><a href="./Il_Nostro_Chef.html">I Nostri Chef</a></li>
+							<li><a href="./Galleria.html">Galleria</a></li>
+							<li><a href="./Contatti.html">Contatti</a></li>
+						</ul>
+						
+						<select> 
+							<option value="./Menu.html">Men&uacute;</option> 
+							<option value="./Novita_ed_eventi.html">Eventi</option> 
+							<option value="./La_Storia.html">La Storia</option> 
+							<option value="./Il_Nostro_Chef.html">I Nostri Chef</option> 
+							<option value="./Galleria.html">Galleria</option>
+							<option value="./Contatti.html">Contatti</option> 
+						</select> 
+					</ul>
             </div>
             <div id="header-line"> </div>
         </div>
