@@ -880,7 +880,7 @@ img.hover-shadow {
 
 #ciaco-nav{
 	 margin-top: 7vh;
-	 margin-left: 26vw;
+	 margin-left: 25vw;
 	 width:80%;
 }
 
@@ -951,8 +951,8 @@ img.hover-shadow {
 @media all and (max-width : 960px) {
 	#ciaco-nav{
 		margin-top: 0;
-		margin-right: 0;
-		width:110%;
+
+		width:100%;
 	}
 	#ciaco-nav ul {display:none;}
 	#ciaco-nav select{
@@ -965,6 +965,12 @@ img.hover-shadow {
 	/*margin-bottom:1vmin;*/
 	height:calc(3em + 0.5vw);
 	/*height:8.9vh;*/
+	margin-left: calc(-1em + 0.5vw);
 	}
-}
+	
+	.MainPage h1 {
+	font: 100 60px 'HomemadeApple';
+	color: #090274;
+	font-size: 7vw;
+	}
 
