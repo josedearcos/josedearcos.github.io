@@ -130,6 +130,17 @@
                     /*This shows the message Enter*/
                     name.innerHTML = 'Entra';
 
+					if (window.height>window.width)
+				{
+                    /*This moves the address and the phone to the sides*/
+                    var left = {
+                        left: "-10vw"
+                    };
+                    var right = {
+                        left: "10vw"
+                    };
+                }
+				else{
                     /*This moves the address and the phone to the sides*/
                     var left = {
                         left: "-46vw"
@@ -137,6 +148,10 @@
                     var right = {
                         left: "25vw"
                     };
+					
+				}
+				
+
 
 		    if (counter == 1) {
 			$('.phone_message').animate(left);
