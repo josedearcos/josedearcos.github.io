@@ -591,6 +591,11 @@ a {
 	right: 10px;
 }
 
+.calendar-container{
+	width: 100%;
+	height: auto;	
+}
+
 .event-slideshow {
 	position: static;
 }
@@ -939,6 +944,8 @@ img.hover-shadow {
 	opacity: 0.8;
 }
 
+
+
 /* Media Queries
 --------------------------------------------- */
 @media all and (max-width : 960px) {
@@ -950,6 +957,14 @@ img.hover-shadow {
 	#ciaco-nav ul {display:none;}
 	#ciaco-nav select{
 		display:inline-block;
+	}
+	
+	#ciaco-logo img
+	{
+	margin-bottom:-60px;/*To center*/
+	/*margin-bottom:1vmin;*/
+	height:calc(3em + 0.5vw);
+	/*height:8.9vh;*/
 	}
 }
 
