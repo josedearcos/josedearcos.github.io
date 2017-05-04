@@ -671,6 +671,50 @@
 			img: 'Orlando',
 			url: '#Orlando',
 			tripyear: 2015,
+		},
+		47:
+		{
+		  	city: 'Bangkok',
+			country: 'Thailand',
+			lat: 13.736717,
+			lng: 100.523186,
+			color: 'yellow',
+			img: 'Bangkok',
+			url: '#Bangkok',
+			tripyear: 2016,
+		},
+		48:
+		{
+		  	city: 'Krabi',
+			country: 'Thailand',
+			lat: 8.0725700,
+			lng: 98.9105200,
+			color: 'yellow',
+			img: 'Krabi',
+			url: '#Krabi',
+			tripyear: 2016,
+		},
+		49:
+		{
+		  	city: 'Honolulu',
+			country: 'USA',
+			lat: 21.315603,
+			lng: -157.858093,
+			color: 'yellow',
+			img: 'Honolulu',
+			url: '#Honolulu',
+			tripyear: 2017,
+		},
+		50:
+		{
+		  	city: 'Kauai',
+			country: 'USA',
+			lat: 22.108543,
+			lng: -159.496765,
+			color: 'yellow',
+			img: 'Lihue',
+			url: '#Lihue',
+			tripyear: 2017,
 		}
 	}
 	

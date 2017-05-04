@@ -38,186 +38,254 @@
 <script type="text/javascript" language="javascript">
   
   //Use hashtable to simplify code:
-  var CityList = {
-  /*Africa:{
-    Properties:{
-    EspName:'*Aacute;frica',
-    EngName:'Africa',
-    Color:'inverse'}
-  }*/
-  America: {
-    Properties:{
-    EspName:'Am&eacute;rica',
-    EngName:'America',
-    Color:'danger'},
-  Boston:{
-    set:'set:72157648356380100',
-    EngName:'Boston',
-    EspName:'Boston'},
-  Cancun:{
-    set:'set:72157648352949017',
-    EngName:'Canc&uacute;n',
-    EspName:'Canc&uacute;n',
-    src:"https://c2.staticflickr.com/6/5601/14917884344_6f8dfb0a26_c.jpg"
-  },
-  Chicago:{
-    set:'set:72157648187015148',
-    EngName:'Chicago',
-    EspName:'Chicago'
-    },
-  NewYork:{
-    set:'set:72157631115040372',
-    EngName:'New York',
-    EspName:'Nueva York',
-    src:"https://c1.staticflickr.com/9/8437/7803154838_32b662c75d_c.jpg"
-    },
-  NotreDame:{
-    set:'set:72157648501440386',
-    EngName:'Notre Dame',
-    EspName:'Notre Dame',
-    src:"https://c2.staticflickr.com/4/3932/15299806359_9de693a4e9_c.jpg"},
-  SanFrancisco:{
-    set:'set:72157648501440386',
-    EngName:'San Francisco',
-    EspName:'San Francisco',
-    src:"https://c4.staticflickr.com/4/3943/15298140838_932ee9b312_c.jpg"}},
-  Asia: {
-    Properties:{
-    EspName:'Asia',
-    EngName:'Asia',
-    Color:'warning'},
-  BeijingAutumn:{
-    set:'set:72157648041305797',
-    EngName:'Beijing Autumn',
-    EspName:'Beijing en oto&ntilde;o',
-    src:"https://c4.staticflickr.com/4/3931/15274221018_40ebb73a0a_c.jpg"
-    },
-  BeijingWinter:{
-    set:'set:72157648179151297',
-    EngName:'Beijing Winter',
-    EspName:'Beijing en invierno',
-    src:"https://c4.staticflickr.com/8/7543/15464917499_c8ece47751_c.jpg"},
-  Borneo:{
-    set:'set:72157646499916844',
-    EngName:'Borneo island',
-    EspName:'Isla de Borneo',
-    src: "https://c2.staticflickr.com/6/5611/15375449220_b60e843510_c.jpg"},
-  DayaBay:{
-    set:'set:72157648163759678',
-    EngName:'Daya Bay experimental site',
-    EspName:'Experimento Daya Bay',
-   src: "https://c4.staticflickr.com/4/3944/15300090429_d4858d838d_c.jpg"},
-  Dali:{
-    set:'set:72157648760413576',
-    EngName:'Dali',
-    EspName:'Dali',
-   src: "https://c2.staticflickr.com/6/5606/15534597276_f0b3b9facd_c.jpg"},
-  Guilin:{
-    set:'set:72157648138798399',
-    EngName:'Guilin',
-    EspName:'Guilin',
-    src: "https://c4.staticflickr.com/4/3954/15480155821_90d8fc38d2_c.jpg"},
-  KualaLumpur:{
-    set:'set:72157648136632998',
-    EngName:'Kuala Lumpur',
-    EspName:'Kuala Lumpur',
-    src:"https://c4.staticflickr.com/4/3928/15294264647_3f2352d331_c.jpg"},
-  KunMing:{
-    set:'set:72157648822806375',
-    EngName:'Kungming',
-    EspName:'Kungming',
-    src: "https://c2.staticflickr.com/6/5603/15533739716_8fba12555a_c.jpg"},
-  Lijiang:{
-    set:'set:72157648812529412',
-    EngName:'Lijiang',
-    EspName:'Lijiang',
-    src: "https://c2.staticflickr.com/6/5610/15534051376_438f60f680_c.jpg"},
-  Shanghai:{
-    set:'set:72157648437630032',
-    EngName:'Shanghai',
-    EspName:'Shanghai',
-    src: "https://c4.staticflickr.com/4/3929/15455259271_3bba96bd0b_c.jpg"},
-  Singapore:{
-    set:'set:72157648129916047',
-    EngName:'Singapore',
-    EspName:'Singapore',
-    src: "https://c4.staticflickr.com/8/7535/15651263305_af9cca8eb8_c.jpg"},
-  Yangshuo:{
-    set:'set:72157648143258160',
-    EngName:'Yangshuo',
-    EspName:'Yangshuo',
-    src: "https://c4.staticflickr.com/4/3927/15480701841_cfcc95e86a_c.jpg"
-    }},
-  Europe: {
-    Properties:{
-    EspName:'Europa',
-    EngName:'Europe',
-    Color:'primary'},
-  AmalfiCoast:{
-    set:'set:72157648428193897',
-    EngName:'Amalfi Coast',
-    EspName:'Costa Amalfitana',
-    src:'https://c4.staticflickr.com/4/3940/15567401435_843c8d7774_c.jpg'},
-  BalticCruise:{
-    set:'set:72157648566796075',
-    EngName:'Baltic Cruise',
-    EspName:'Crucero por el B&aacute;ltico',
-    src:'https://c1.staticflickr.com/3/2945/15461460666_b58fc2ac8f_c.jpg'},
-  Dublin:{
-    set:'set:72157648356380100',
-    EspName:'Dubl&iacute;n',
-    EngName:'Dublin',
-    src:'http://c2.staticflickr.com/4/3936/15513844096_80a14ee4ec_c.jpg'},
-  Herrera:{
-    set:'set:72157648581125502',
-    EngName:'Herrera de Alc&aacute;ntara',
-    EspName:'Herrera de Alc&aacute;ntara',
-    src:'https://c2.staticflickr.com/4/3946/15305540608_849864b3e7_c.jpg'},
-  London2012:{
-    set:'set:72157648598779175',
-    EspName:'Londres 2012',
-    EngName:'London 2012',
-    src:'https://c4.staticflickr.com/4/3956/15596029205_114412ff2b_c.jpg'},
-  London2013:{
-    set:'set:72157648598779175',
-    EspName:'Londres 2013',
-    EngName:'London 2013',
-    src:'https://c2.staticflickr.com/6/5601/15305573457_5653d6bfb2_c.jpg'},
-  Madrid:{
-    set:'set:72157648356380100',
-    EspName:'Madrid',
-    EngName:'Madrid'},
-  Monasteriodepiedra:{
-    set:'set:72157648358378998',
-    EspName:'Monasterio de piedra',
-    EngName:'The Stone Monastery',
-    src:'https://c4.staticflickr.com/4/3936/15351697320_0e9274b9bf_c.jpg'},
-  Nerja:{
-    set:'set:72157648176087737',
-    EspName:'Nerja',
-    EngName:'Nerja',
-    src:'https://c3.staticflickr.com/3/2947/15489315551_fd0756c571_c.jpg'},
-  SagradaFamilia:{
-    set:'set:72157648154325809',
-    EngName:'Church of the Holy Family',
-    EspName:'La Sagrada Familia',
-    src:'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'},
-  Torino:{
-    set:'set:72157648036849407',
-    EngName:'Torino',
-    EspName:'Tur&iacute;n'},
-  Toscany:{
-    set:'set:72157648036849407',
-    EngName:'Toscany',
-    EspName:'Toscana',
-    src:'https://c3.staticflickr.com/3/2945/15460043465_e534fe663e_c.jpg'}
-   }
-    /*Oceany:{
-    Properties:{
-    EspName:'Europa',
-    EngName:'Europe',
-    Color:'success'},*/
-  };
+		var CityList = {
+			/*Africa:{
+			  Properties:{
+			  EspName:'*Aacute;frica',
+			  EngName:'Africa',
+			  Color:'inverse'}
+			}*/
+			America: {
+				Properties: {
+					EspName: 'Am&eacute;rica',
+					EngName: 'America',
+					Color: 'danger'
+				},
+				Boston: {
+					set: 'set:72157648356380100',
+					EngName: 'Boston',
+					EspName: 'Boston'
+				},
+				Cancun: {
+					set: 'set:72157648352949017',
+					EngName: 'Canc&uacute;n',
+					EspName: 'Canc&uacute;n',
+					src: "https://c2.staticflickr.com/6/5601/14917884344_6f8dfb0a26_c.jpg"
+				},
+				Chicago: {
+					set: 'set:72157648187015148',
+					EngName: 'Chicago',
+					EspName: 'Chicago',
+					
+				},
+				DominicanRepublic: {
+					set: '',
+					EngName: 'Dominican Republic',
+					EspName: 'Rep&uacute;blica Dominicana',
+				
+				},
+				NewYork: {
+					set: 'set:72157631115040372',
+					EngName: 'New York',
+					EspName: 'Nueva York',
+					src: "https://c1.staticflickr.com/9/8437/7803154838_32b662c75d_c.jpg"
+				},
+				NotreDame: {
+					set: 'set:72157648501440386',
+					EngName: 'Notre Dame',
+					EspName: 'Notre Dame',
+					src: "https://c2.staticflickr.com/4/3932/15299806359_9de693a4e9_c.jpg"
+				},
+				PuertoRico: {
+					set: 'set:72157648187015148',
+					EngName: 'Puerto Rico',
+					EspName: 'Puerto Rico',
+					
+				},
+				SanFrancisco: {
+					set: 'set:72157648501440386',
+					EngName: 'San Francisco',
+					EspName: 'San Francisco',
+					src: "https://c4.staticflickr.com/4/3943/15298140838_932ee9b312_c.jpg"
+				}
+			},
+			Asia: {
+				Properties: {
+					EspName: 'Asia',
+					EngName: 'Asia',
+					Color: 'warning'
+				},
+				BeijingAutumn: {
+					set: 'set:72157648041305797',
+					EngName: 'Beijing Autumn',
+					EspName: 'Beijing en oto&ntilde;o',
+					src: "https://c4.staticflickr.com/4/3931/15274221018_40ebb73a0a_c.jpg"
+				},
+				BeijingWinter: {
+					set: 'set:72157648179151297',
+					EngName: 'Beijing Winter',
+					EspName: 'Beijing en invierno',
+					src: "https://c4.staticflickr.com/8/7543/15464917499_c8ece47751_c.jpg"
+				},
+				Borneo: {
+					set: 'set:72157646499916844',
+					EngName: 'Borneo island',
+					EspName: 'Isla de Borneo',
+					src: "https://c2.staticflickr.com/6/5611/15375449220_b60e843510_c.jpg"
+				},
+				DayaBay: {
+					set: 'set:72157648163759678',
+					EngName: 'Daya Bay experimental site',
+					EspName: 'Experimento Daya Bay',
+					src: "https://c4.staticflickr.com/4/3944/15300090429_d4858d838d_c.jpg"
+				},
+				Dali: {
+					set: 'set:72157648760413576',
+					EngName: 'Dali',
+					EspName: 'Dali',
+					src: "https://c2.staticflickr.com/6/5606/15534597276_f0b3b9facd_c.jpg"
+				},
+				Dubai: {
+					set: 'set:72157668862271934',
+					EngName: 'Dubai',
+					EspName: 'Dubai',
+					src: "https://c2.staticflickr.com/6/5606/15534597276_f0b3b9facd_c.jpg"
+				},
+				Guilin: {
+					set: 'set:72157648138798399',
+					EngName: 'Guilin',
+					EspName: 'Guilin',
+					src: "https://c4.staticflickr.com/4/3954/15480155821_90d8fc38d2_c.jpg"
+				},
+				KualaLumpur: {
+					set: 'set:72157648136632998',
+					EngName: 'Kuala Lumpur',
+					EspName: 'Kuala Lumpur',
+					src: "https://c4.staticflickr.com/4/3928/15294264647_3f2352d331_c.jpg"
+				},
+				KunMing: {
+					set: 'set:72157648822806375',
+					EngName: 'Kungming',
+					EspName: 'Kungming',
+					src: "https://c2.staticflickr.com/6/5603/15533739716_8fba12555a_c.jpg"
+				},
+				Lijiang: {
+					set: 'set:72157648812529412',
+					EngName: 'Lijiang',
+					EspName: 'Lijiang',
+					src: "https://c2.staticflickr.com/6/5610/15534051376_438f60f680_c.jpg"
+				},
+				Shanghai: {
+					set: 'set:72157648437630032',
+					EngName: 'Shanghai',
+					EspName: 'Shanghai',
+					src: "https://c4.staticflickr.com/4/3929/15455259271_3bba96bd0b_c.jpg"
+				},
+				Singapore: {
+					set: 'set:72157648129916047',
+					EngName: 'Singapore',
+					EspName: 'Singapore',
+					src: "https://c4.staticflickr.com/8/7535/15651263305_af9cca8eb8_c.jpg"
+				},
+				Thailand: {
+					set: 'set:72157671051908431',
+					EngName: 'Thailand',
+					EspName: 'Tailandia',
+					src: "https://c4.staticflickr.com/8/7535/15651263305_af9cca8eb8_c.jpg"
+				},
+				Yangshuo: {
+					set: 'set:72157648143258160',
+					EngName: 'Yangshuo',
+					EspName: 'Yangshuo',
+					src: "https://c4.staticflickr.com/4/3927/15480701841_cfcc95e86a_c.jpg"
+				}
+			},
+			Europe: {
+				Properties: {
+					EspName: 'Europa',
+					EngName: 'Europe',
+					Color: 'primary'
+				},
+				AmalfiCoast: {
+					set: 'set:72157648428193897',
+					EngName: 'Amalfi Coast',
+					EspName: 'Costa Amalfitana',
+					src: 'https://c4.staticflickr.com/4/3940/15567401435_843c8d7774_c.jpg'
+				},
+				BalticCruise: {
+					set: 'set:72157648566796075',
+					EngName: 'Baltic Cruise',
+					EspName: 'Crucero por el B&aacute;ltico',
+					src: 'https://c1.staticflickr.com/3/2945/15461460666_b58fc2ac8f_c.jpg'
+				},
+				Barcelona: {
+					set: 'set:72157648154325809',
+					EngName: 'Barcelona',
+					EspName: 'Barcelona',
+					src: 'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'
+				},
+				Dublin: {
+					set: 'set:72157648356380100',
+					EspName: 'Dubl&iacute;n',
+					EngName: 'Dublin',
+					src: 'http://c2.staticflickr.com/4/3936/15513844096_80a14ee4ec_c.jpg'
+				},
+				Herrera: {
+					set: 'set:72157648581125502',
+					EngName: 'Herrera de Alc&aacute;ntara',
+					EspName: 'Herrera de Alc&aacute;ntara',
+					src: 'https://c2.staticflickr.com/4/3946/15305540608_849864b3e7_c.jpg'
+				},
+				London2012: {
+					set: 'set:72157648598779175',
+					EspName: 'Londres 2012',
+					EngName: 'London 2012',
+					src: 'https://c4.staticflickr.com/4/3956/15596029205_114412ff2b_c.jpg'
+				},
+				London2013: {
+					set: 'set:72157648598779175',
+					EspName: 'Londres 2013',
+					EngName: 'London 2013',
+					src: 'https://c2.staticflickr.com/6/5601/15305573457_5653d6bfb2_c.jpg'
+				},
+				Madrid: {
+					set: 'set:72157648356380100',
+					EspName: 'Madrid',
+					EngName: 'Madrid'
+				},
+				Monasteriodepiedra: {
+					set: 'set:72157648358378998',
+					EspName: 'Monasterio de piedra',
+					EngName: 'The Stone Monastery',
+					src: 'https://c4.staticflickr.com/4/3936/15351697320_0e9274b9bf_c.jpg'
+				},
+				Nerja: {
+					set: 'set:72157648176087737',
+					EspName: 'Nerja',
+					EngName: 'Nerja',
+					src: 'https://c3.staticflickr.com/3/2947/15489315551_fd0756c571_c.jpg'
+				},
+				SagradaFamilia: {
+					set: 'set:72157648154325809',
+					EngName: 'Church of the Holy Family',
+					EspName: 'La Sagrada Familia',
+					src: 'https://c4.staticflickr.com/4/3933/15483482781_858dcb5564_c.jpg'
+				},
+				Torino: {
+					set: 'set:72157648036849407',
+					EngName: 'Torino',
+					EspName: 'Tur&iacute;n'
+				},
+				Toscany: {
+					set: 'set:72157648036849407',
+					EngName: 'Toscany',
+					EspName: 'Toscana',
+					src: 'https://c3.staticflickr.com/3/2945/15460043465_e534fe663e_c.jpg'
+				}
+			},
+			Oceany:{
+			Properties:{
+			EspName:'Oceania',
+			EngName:'Oceany',
+			Color:'success'},
+			Hawaii: {
+					set: '',
+					EngName: 'Hawai\'i',
+					EspName: 'Hawai\'i',
+					
+				},
+			}
+		};
       
   $(document).ready(function(){
 
@@ -395,7 +463,7 @@
 		<p> Cuando viajo mi Canon 60D y yo somos inseparables. Estas son algunas de las memorias que capturamos juntos:</p>
 		<div class="row top-buffer">
 		  <div class="span12">
-			 <div style="position:relative; width:100%; margin-left: 62vh;" class="btn-toolbar" role="toolbar" align="center">
+			 <div style="position:relative; width:100%; margin-left: 30%;" class="btn-toolbar" role="toolbar" align="center">
 			  <!-- All the code to load the buttons is run in javascript-->
 			</div>
 		  </div>
