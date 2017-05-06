@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../css/main.css" type="text/css" />
 	<link rel="stylesheet" href="../jquery.motionCaptcha.0.2.css" type="text/css" />
 	<link rel="shortcut icon" href="../Images/FlagIcons/contacticon.ico">
-	<style>
+<!--	<style>
 		/* MotionCAPTCHA canvas */
 		
 		#mc-canvas {
@@ -29,7 +29,7 @@
 		#mc-canvas.mc-valid {
 			border: 4px solid #44aa44;
 		}
-	</style>
+	</style>-->
 
 
 	<title>Jos&eacute de Arcos</title>
@@ -42,7 +42,7 @@
 	<!-- in this order, needs jquery-->
 	<script src="../javascript/jquery.motionCaptcha.0.2.js"></script>
 	<!--Update captcha-->
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			// Do the biznizz:
 			$('#commentForm').motionCaptcha({
@@ -50,9 +50,10 @@
 			});
 
 		});
-	</script>
+	</script>-->
 	<!-- To avoid the user submiting the form pressing enter -->
-	<script>
+	
+	<!--<script>
 		$(document).ready(function() {
 			$('input').keydown(function(e) {
 				var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
@@ -64,7 +65,7 @@
 			});
 		});
 	</script>
-
+	-->
 	<script>
     // Run on page load. To keep in memory the form's values
     window.onload = function() {
@@ -143,7 +144,7 @@
 					<div class="col-md-2">
 					</div>
 					<div class="col-md-8">
-						<form action="#" method="post" id="commentForm" data-toggle="validator" role="form">
+						<form action="https://www.enformed.io/m668986m" method="POST" id="commentForm" data-toggle="validator" role="form">
 							<!--  <legend>Contact Form</legend>  -->
 							<div class="form-group">
 								<label class="control-label">&iquestC&oacutemo te llamas?</label>
@@ -151,10 +152,14 @@
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input id="name" type="text" class="form-control" name="name" placeholder="Nombre">
+										<input type="hidden" name="*redirect" value="http://josedearcos.com/es/gracias.html" />
+										<input type="hidden" name="*subject" value="Nuevo mensaje de www.JosedeArcos.com" />
+										<input type="hidden" name="*formname" value="JosedeArcos" />
+										<input type="hidden" name="*reply" value="email" />
+										<input type="hidden" name="*honeypot" />
 									</div>
 								</div>
 							</div>
-
 							<div class="form-group">
 								<label class="control-label">Escribe tu e-mail para que pueda contestarte</label>
 								<div class="controls">
