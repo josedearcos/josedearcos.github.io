@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../css/main.css" type="text/css" />
 	<link rel="shortcut icon" href="../Images/FlagIcons/workicon.ico">
 
-	<title>Trabajo</title>
+	<title>Work</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
 	<!--Google Analytics-->
@@ -36,21 +36,31 @@
 				$("[data-toggle='tooltip']").tooltip();
 			});
 		});
+		
+	$(".hidden_element").hover(function(){
+    // Find the iframes within our newly-visible element
+    $(this).find("iframe").prop("src", function(){
+        // Set their src attribute to the value of data-src
+        return $(this).data("src");
+    });
+});
 	</script>
 </head>
+
 <body>
-		<div id="wrapper">
+
+	<div id="wrapper">
 		<div id="header">
 			<div class="nav">
 				<div class="container">
 					<ul class="pull-left">
-						<li><a href="principal.html">&iquestQui&eacuten soy?</a></li>
+						<li><a href="../index.html">Who am I?</a></li>
 					</ul>
 					<ul class="pull-right">
-						<!--<li><a href="Travels.html">Viajes</a></li>-->
-						<!--<li><a href="Pictures.html">Fotos</a></li>-->
+						<!--<li><a href="Travels.html">Travels</a></li>-->
+						<!--<li><a href="Pictures.html">Pictures</a></li>-->
 						<!--<li><a href="Hobbies.html">Hobbies</a></li>-->
-					    <li><a href="contacto.html">Contacto</a></li>
+						<li><a href="Contact.html">Contact</a></li>
 					</ul>
 				</div>
 				<div style="height:40px;" class="jumbotron">
@@ -61,29 +71,29 @@
 
 		<div style="height:100vh" id="content">
 			<div class="work">
-				<h1 align="center">Interes&eacutes:</h1>
+				<h1 align="center">Intereses:</h1>
 					<div class="row">
 						<div class="col-md-2 col-sx-2 col-sm-2"></div>
-						<div class=" col-md-8 col-sx-8 col-sm-8">
-  <h3>Busco un trabajo donde pueda aprender algo nuevo cada d&iacute;a.
-  Hasta ahora he estado desarrollando mi c&oacutedigo usando C++, Matlab y ROOT, un framework usado en f&iacute;sica experimental.</h3>
-  <h3>Estoy interesado en proyectos en fase inicial donde pueda usar herramientas de prototipado y mis conocimientos en ingenier&iacute;a el&eacute;ctrica.
-  Tambi&eacute;n me gusta el procesado de se&ntilde;ales y el an&aacute;lisis de datos. Idealmente busco un ambiente de trabajo en grupo. </h3>
-				</div>
+						<div class=" col-md-8 col-sx-8 col-sm-8" style ="text-align:center">
+							<h3>Me gusta trabajar en un lugar donde pueda aprender algo nuevo cada d&iacute;a. Idealmente en un ambiente de trabajo en grupo.</h3>
+							<h3>Estoy interesado en proyectos en fase inicial donde pueda usar herramientas de prototipado y mis conocimientos en ingenier&iacute;a el&eacute;ctrica.
+							Tambi&eacute;n me gusta el procesado de se&ntilde;ales y el an&aacute;lisis de datos.</h3>
+							<h3>Hasta ahora he desarrollado mi c&oacutedigo usando C++, Matlab y ROOT, un framework usado en f&iacute;sica de part&iacute.</h3>
+						</div>
 						<div class="col-md-2 col-sx-2 col-sm-2"></div>
 					</div>
 					<div class="container" >
-					<h1 align="center"> Mi curriculum vitae de un vistazo:</h1>
+					<h1 align="center"> My curriculum vitae at a glance:</h1>
 					<br>
 					<div class="row">
 						<div class="col-md-4 col-sx-4 col-sm-4"></div>
 						<div class=" col-md-6 col-sx-6 col-sm-6">
 					<ul style="position:relative; width:120%; margin-left: -15%;" class="nav nav-pills">
-					  <li class="active"><a data-toggle="pill" href="#Studies">Educaci&oacuten</a></li>
-					  <li><a data-toggle="pill" href="#Experience">Experiencia</a></li>
-					  <li><a data-toggle="pill" href="#Publications">Publicaciones</a></li>
-					  <li><a data-toggle="pill" href="#Projects">Proyectos</a></li>
-					  <li><a data-toggle="pill" href="#Languages">Idiomas</a></li>
+					  <li class="active"><a data-toggle="pill" href="#Studies">Education</a></li>
+					  <li><a data-toggle="pill" href="#Experience">Experience</a></li>
+					  <li><a data-toggle="pill" href="#Publications">Publications</a></li>
+					  <li><a data-toggle="pill" href="#Projects">Projects & Skills</a></li>
+					  <li><a data-toggle="pill" href="#Languages">Languages</a></li>
 					</ul>
 						</div>
 						<div class="col-md-4 col-sx-4 col-sm-4"></div>
@@ -92,14 +102,14 @@
 					
 			<div class="tab-content">
 				<div id='Studies' class="tab-pane fade in active">
-					<h1 align="center">Educaci&oacuten</h1>
+					<h1 align="center">Education</h1>
 					<div class="container">
 						<div class="row">
 							<div class="col-md-2 col-sx-2 col-sm-2">
 								<h2>2011 - 2015</h2>
 							</div>
 							<div class="col-md-4 col-sx-4 col-sm-4">
-								<h2> Doctorado en F&iacutesica de Part&iacuteculas</h2>
+								<h2> Doctor of Philosophy in Physics</h2>
 							</div>
 							<div class="col-md-6 col-sx-6 col-sm-6">
 								<h3> I developed my research in the <a title='Wikipedia article about the Daya Bay experiment' href='http://en.wikipedia.org/wiki/Daya_Bay_Reactor_Neutrino_Experiment'>Daya Bay reactor neutrino experiment</a>,
@@ -130,7 +140,7 @@
 								<h2>2010 - 2011</h2>
 							</div>
 							<div class="col-md-4 col-sx-4 col-sm-4">
-								<h2 id='Physics'> Maestr&iacutea en F&iacutesica</h2>
+								<h2 id='Physics'> Master of Science in Physics</h2>
 							</div>
 							<div class="col-md-6 col-sx-6 col-sm-6">
 								<h3> I was selected to participate in a merit-based double degree Master's program with a 50% tuition scholarship at <a title='Illinois Institute of Technology website' href='http://www.iit.edu'>Illinois Institue of Technology</a>.</h3>
@@ -158,7 +168,7 @@
 								<h2>2006 - 2011</h2>
 							</div>
 							<div class="col-md-4 col-sx-4 col-sm-4">
-								<h2 id='Engineering'> Ingenier&iacutea de Telecomunicaci&oacuten <br>(Plan 94) </h2>
+								<h2 id='Engineering'> Telecommunication Engineering <br>(<abbr data-toggle="tooltip" title="Bachelor of Science">B.Sc.</abbr> + <abbr data-toggle="tooltip" title="Master of Science">M.Sc.</abbr>) </h2>
 							</div>
 							<div class="col-md-6 col-sx-6 col-sm-6">
 								<h3> At <a title="UPM Wikipedia article"href='http://en.wikipedia.org/wiki/Technical_University_of_Madrid'>Technical University of Madrid</a> I completed an <abbr data-toggle="tooltip" title='Accreditation Board for Engineering and Technology'>ABET</abbr> accredited degree in <a title="Link to complete curriculum with further information about courses" href='http://www4.etsit.upm.es/plan1994/otros_cursos/asignaturas/asignaturas0910/eindice_asig_3.htm'>Telecommunication Engineering</a>, a field of study that encompasses: </h3>
@@ -226,6 +236,32 @@
 				<div id="Publications" class="tab-pane fade">
 					<h1  align="center" >Publications</h1>
 						<div class="container">
+							<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2 align="right">May 2017</h2>
+							</div>
+							<div class="col-md-7 col-sx-7 col-sm-7">
+								<h2>Prospective clinical implementation of a novel MR-tracking device for real- time HDR brachytherapy catheter positioning</h2>
+							</div>
+							<div class="col-md-3 col-sx-3 col-sm-3">
+								<h2>de Arcos J et al. <br>
+												
+								Submitted to <a href="http://www.journals.elsevier.com/international-journal-of-radiation-oncology-biology-physics/">IJROBP</a></h2>
+							</div>
+							</div>
+							
+							<div class="row">
+							<div class="col-md-2 col-sx-2 col-sm-2">
+								<h2 align="right">April 2017</h2>
+							</div>
+							<div class="col-md-7 col-sx-7 col-sm-7">
+								<h2>Measurement of electron antineutrino oscillation based on 1230 days of operation of the Daya Bay experiment</h2>
+							</div>
+							<div class="col-md-3 col-sx-3 col-sm-3">
+								<h2>The Daya Bay Collaboration, <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.95.072006">Phys. Rev. D 95, 072006</a></h2>
+							</div>
+							</div>
+							
 							<div class="row">
 							<div class="col-md-2 col-sx-2 col-sm-2">
 								<h2 align="right">April 2016</h2>
@@ -299,7 +335,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-2 col-sx-2 col-sm-2">
-							<h2>2015 - 2016</h2>
+							<h2>2015 - 2017</h2>
 						</div>
 						<div class="col-md-2 col-sx-2 col-sm-2">
 							<h2>Postdoctoral Fellow at Harvard Medical School and Brigham and Women's Hospital</h2>
@@ -435,24 +471,30 @@
 					</div>
 					<div class="container">
 					<h2><b>C/C++</b></h2>
+					
+						<dl class="dl-horizontal">
+							<dt> Siemens IDEA <br>Pulse sequence<br>development</dt>
+							<dd> An MRI sequence is a number of radiofrequency pulses and gradients that result in a set of images with particular appearance. I have expertise developing MRI sequences in the Siemens IDEA framework; in particular I have worked on tracking and motion correction sequences in VB17, VB19 and VD13 IDEA versions. </dd>
+						</dl>
+						
 						<dl class="dl-horizontal">
 							<dt>Ph.D. Thesis</dt>
-							<dd>I developed my Ph.D as Dr. Christopher White's research assistant. <br><br> This dissertation focuses on the analysis of gadolonium
-							and hydrogen neutron capture signals, the development of a toy Monte Carlo simulation to predict the electron antineutrino energy spectrum
-							from both signals and also applied to generate systematic, background and statistical covariance matrices that account for the uncertainties
-							in a covariance matrix &chi;<sup>2</sup> fitter.<br><br> This fitter was designed and tested to measure precisely the third neutrino mixing angle (&theta;<sub>13</sub>).
+							<dd>Part of my dissertation consisted on the development of a C++ toy Monte Carlo simulation to predict the electron antineutrino energy spectrum
+							from gadollinium and hydrogen neutron capture signals.
+							<br><br>The simulation was also used to generate systematic, background and statistical covariance matrices that account for the uncertainties
+							in a covariance matrix &chi;<sup>2</sup> fitter, which was designed and tested to measure precisely the third neutrino mixing angle (&theta;<sub>13</sub>).
 							<br>
 							<br>
 							<details>
-								<summary>Tutorial video on how to use the fitter</summary>
+								<summary>Click here to see a video tutorial on how to run the Monte Carlo software using a custom-made Qt GUI:</summary>
 								<div class="row">
 								<div class="col-md-3 col-xs-3 col-sm-3"></div>
 
 								<div class="col-md-6 col-xs-6 col-sm-6">
 									<div class="thumbnail">
-										<iframe width="455" height="330" src="http://www.youtube.com/embed/VgzL56hEsXY?autoplay=1" allowfullscreen></iframe>
-                                        <div class="caption">
-											<h3>Tutorial on how to use the GUI to load, generate and plot antineutrino spectra, covariance matrices and responce matrices.</h3>
+                                        <iframe width="455" height="330" src="https://www.youtube.com/embed/VgzL56hEsXY" frameborder="0" allowfullscreen></iframe>
+										<div class="caption">
+											<h3>Tutorial on how to use the GUI to load, generate and plot antineutrino spectra, covariance matrices and response matrices.</h3>
 										</div>
 									</div>
 								</div>
@@ -468,17 +510,20 @@
 								</div> -->
 								</div>
 							</details>
+							</dd>
 						</dl>
-					<div class="container">
+				
 						<dl class="dl-horizontal">
-							<dt>Interactive system</dt>
-							<dd>Using the Motorola ColdFire MCF5272 microprocontroller, we developed an interactive game using an interface made with an array of LEDs 
-						    and a keyboard to input data. <br><br> The game displayed a sucession of falling notes in the LED array and
-							the player needed to press a set of keys trying to match the notes in a timely fashion, obtaining points according to his performance. A LCD interface allowed the user to choose between different songs and modes.<br><br>
-							Each song was played using a buzzer and at the end of the game the score was shown through the LCD screen.
-							The synchronization of different events was the main focus of the project. </dd>
+							<dt>Interactive game</dt>
+							<dd>Using the Motorola ColdFire MCF5272 microprocontroller, we developed an interactive application using an interface consisting of an array of LEDs 
+						    and a keyboard to input data. <br><br> The application displayed a sucession of falling notes in the LED array, the goal of the player was to press a set of keys trying to match the notes in a timely fashion,
+							obtaining points according to his performance. <br><br>A menu was displayed on an LCD interface allowing to choose between different songs and modes.
+							Each note was played using a buzzer and at the end of the song the score was shown through the LCD screen.
+							The synchronization of different events was the main challenge of the project. </dd>
 						</dl>
 					</div>
+						
+					<div class="container">
 					<h2><b>Matlab</b></h2>
 						<dl class="dl-horizontal">
 							<dt>MRI Motion <br> Correction: </dt>
@@ -489,7 +534,8 @@
 									Inputting this data into a SVD based algorithm we can extract translational and rotational motion of a rigid body. <br><br>
 									This information can then be used to correct the imaging process for motion distortion in real time with millimetric resolution and response time in the millisecond order.
 								   </h2>
-									<div class="row">
+									
+										<iframe src='https://onedrive.live.com/embed?cid=C3EB7B703FE7FCEB&resid=C3EB7B703FE7FCEB%21136&authkey=ACHyMWWrV6T_w0k&em=2&wdAr=1.7777777777777777' width='962px' height='565px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>									<!--<div class="row">
 										<div class="col-md-3 col-sx-3 col-sm-3">
 											<div class="thumbnail">
 												<img title="Tracking Data" src='../Images/ImageSegmentation2.jpg'>
@@ -505,7 +551,7 @@
 												<img title="SVD output" src='../Images/ImageSegmentation.jpg'>
 											</div>
 										</div>
-									</div>
+									</div>-->
 								</details>
 							</dd>
 						</dl>
@@ -550,7 +596,7 @@
 							<dt>Computer Vision: </dt>
 							<dd>
 								<details>
-									<summary>Motion stimation</summary>
+									<summary>Motion estimation</summary>
 									<h2>In this project we developed the Block Matching algorithm and studied how its parameters affect the correct estimation of motion.<br><br>
 									This algorithm is very useful to compress video information by detecting one of the most common features of videos,
 									the very few differences between consecutive frames. It can also be applied in the analysis of object movements.</h2>
@@ -609,36 +655,39 @@
 									<footer>My first programming teacher</footer>
 								</blockquote>
 							</dd>
+							<dt>Il Ciacolon <br> Restaurant Website</dt>
+							<dd> Designed and managed <a href="http://ilciacolon.it">Il Ciacolon</a> restaurant site</dd> 
 						</dl>
 					</div>
 				</div>
 				<div id="Languages" class="tab-pane fade" >
-					<h1 align="center">Idiomas</h1>
+					<h1 align="center">Languages</h1>
 					<div class="container">
 
-					<p> Aprender idiomas es una de mis actividades favoritas. Uso plataformas online como <a href='https://www.duolingo.com/Jose_de_Arcos'>duolingo</a> para estudiar las bases.</p>
-					<p> En order de competencia, puedo hablar:</p>
+					<p> Learning languages is one of my favorite activities, I use online resources such as <a href='https://www.duolingo.com/Jose_de_Arcos'>duolingo</a> to master the basics.</p>
+					<p> In order of proficiency I can speak:</p>
 					<div class="container">
 						<dl class="dl-horizontal">
-							<dt> Espa&ntildeol <img class="flag flag-es" />
+							<dt> Spanish <img class="flag flag-es" />
 							</dt>
-							<dd> Lengua materna.</dd>
+							<dd>Mother tongue.</dd>
 						</dl>
 						<dl class="dl-horizontal">
-							<dt> Ingl&eacutes <img class="flag flag-gb" /><dt>
-							<dd> Competencia profesional plena. En 2010 complet&eacute los test TOEFL y GRE.  Desde entonces he vivido en Estados Unidos, desarrollado todo mi trabajo en ingl&eacutes, incluyendo presentaciones en p&uacuteblico en conferencias cient&iacuteficas.</dd>
+							<dt> English <img class="flag flag-gb" /><dt>
+							<dd>Full professional proficiency: In 2010 I completed both TOEFL and GRE tests. I have been developing my work in English and living
+							in the United States since then.</dd>
 						</dl>
 						<dl class="dl-horizontal">
-							<dt> Italiano <img class="flag flag-it" /> <dt>
-							<dd> Competencia conversacional.</dd>
+							<dt> Italian <img class="flag flag-it" /> <dt>
+							<dd>Conversational.</dd>
 						</dl>
 						<dl class="dl-horizontal">
-							<dt> Franc&eacutes <img class="flag flag-fr" /> <dt>
-							<dd> Lo estudi&eacute durante 4 a&ntildeos. Usuario b&aacutesico.</dd>
+							<dt> French <img class="flag flag-fr" /> <dt>
+							<dd> I studied it for 4 years. Basic skills.</dd>
 						</dl>
 						<dl class="dl-horizontal">
-							<dt> Chino <img class="flag flag-cn" /> <dt>
-							<dd> Debido a mis viajes a China decid&iacute estudiar el idioma. En particular disfruto aprendiendo a escribir nuevos s&iacutembolos. Usuario b&aacutesico.</dd>
+							<dt> Chinese <img class="flag flag-cn" /> <dt>
+							<dd>Due to my trips to China I decided to study the language. I particularly enjoy learning how to write new symbols. Basic skills.</dd>
 						</dl>
 					</div>
 					</div>
