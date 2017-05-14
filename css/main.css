@@ -315,7 +315,7 @@
 	/*Only show hover zoom in large devices (it doesn't work well with touch devices)*/
 	.TravelThumbnail:hover {
 		/* Webkit for Chrome and Safari */
-		-webkit-transform: scale(1.2, 1.2); // This is the enlarged size scale of the image.
+		-webkit-transform: scale(1.2, 1.2);
 		-webkit-transition-duration: 500ms;
 		-webkit-transition-timing-function: ease-out;
 		/* Webkit for Mozila Firefox */
