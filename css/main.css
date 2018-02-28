@@ -332,6 +332,9 @@
 
 /*Work page*/
 
+.caption{
+	text-align:center;
+}
 .work {
 	margin-bottom: 13px;
 }
