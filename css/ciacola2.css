@@ -1,0 +1,181 @@
+/*style for parallax images*/
+body, html {
+height: 100%;
+margin: 0;
+font: 400 15px/1.8 "Lato", sans-serif;
+color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5{
+position: relative;
+opacity: 1;
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+/*Background images*/
+.bgimg-1 {
+background-image: url("../Images/proposal.png");
+min-height: 100%;
+height: 20vh;
+}
+
+.bgimg-2 {
+background-image: url("../Images/Cortanze.jpg");
+min-height: 600px;
+height: 20vh;
+}
+
+.bgimg-3 {
+background-image: url("../Images/Torino.jpg");
+min-height: 400px;
+height: 20vh;
+}
+
+.bgimg-4 {
+background-image: url("../Images/cappuccini3.jpg");
+min-height: 400px;
+height: 20vh;
+}
+
+
+.bgimg-5 {
+background-image: url("../Images/Together.jpg");
+min-height: 400px;
+height: 20vh;
+}
+.caption {
+position: absolute;
+left: 0;
+top: 50%;
+width: 100%;
+text-align: center;
+color: #000;
+}
+
+.caption span.border {
+background-color: #111;
+color: #fff;
+padding: 18px;
+font-size: 25px;
+letter-spacing: 10px;
+}
+
+p {
+font-size:18px;	
+}
+
+h3 {
+letter-spacing: 5px;
+text-transform: uppercase;
+font: 20px "Lato", sans-serif;
+color: #111;
+}
+
+#header {
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	font-size: 72px;
+	/*font-size: 9vh;*/
+	height: 90px;
+	/*height: 11vmin;*/
+
+	background: #fff;
+	opacity: 0.9;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
+	transition: all 0.4s ease;
+	margin: 0;
+	clear: both;
+	top: 0;
+	z-index: 900;
+}
+
+#ciaco-logo
+{
+	left: calc(50% - 135px);/*To center*/
+	margin-top:0.2em;
+}
+
+#ciaco-logo img
+{
+	height:70px;
+}
+
+.nav {
+	width: 100%;
+	height: 60px;
+	margin-top:-30px;/*to center*/
+   
+	/*height: 9vh;*/
+	min-height:60px;
+	position: fixed;
+	z-index: 999;
+}
+.nav span {
+	color: black;
+}
+.nav ul {
+	position: fixed;
+}
+
+.nav li {
+ 	display: inline;
+}
+
+.container-facebook {
+	position: absolute;
+	margin-top: 20px;
+	left: calc(50% - 50px);
+	height: 30px;
+}
+
+.facebook-buttons{
+
+	border:none;
+	overflow:hidden;
+}
+
+.tipi_img
+{
+	min-width:80vw;
+	width:60%;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media  all and (max-device-width: 960px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+      background-attachment: scroll;
+  }
+  .tipi_img{
+	width:80%;
+  }
+  
+	#ciaco-logo
+	{
+		left: calc(50% - 138px);/*To center*/
+		margin-top:0.2em;
+	}
+}
+
+.link_color {
+    color: #ffffff;
+}
+
+#footer_address{
+	text-align:center;
+	margin-top:20px;
+	margin-left: 10px;
+	font-size: 1em;
+}
+
+#footer_contacts{
+	text-align:center;
+	margin-top: 10px;
+	margin-right: 10px;
+	font-size: 1em;
+	color:white;
+}
