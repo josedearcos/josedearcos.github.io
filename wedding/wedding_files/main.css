@@ -324,8 +324,9 @@ footer p a:hover {
 #language-switcher-it {
     position: absolute;
     top: 65px;
-    left: 50%;
-    margin-left: 600px;
+    right: 50%;
+    margin-left:600px;
+    margin-left: calc(100%-100px);
     text-align: center;
     vertical-align: middle;
     padding-top: 25px;
@@ -349,6 +350,7 @@ footer p a:hover {
     top: 60px;
     left: 50%;
     margin-left: 450px;
+    margin-left: calc(100%-250px);
     text-align: center;
     vertical-align: middle;
     padding-top: 25px;
@@ -600,7 +602,7 @@ margin-top:220px;
 
 .moment p.right {
     /*right: 50px;*/
-    right: 60px;
+    right: 6%;
 }
 
 .moment p.left {
