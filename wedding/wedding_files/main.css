@@ -385,7 +385,7 @@ footer p a:hover {
     width: 609px;
     height: 940px;
     background: url('../img/balloon.png') no-repeat center top;
-    z-index: 100;
+    z-index: 99;
 }
 
 header {
@@ -508,7 +508,6 @@ html.no-touch nav ul li:hover {
     width: 90%;
     margin-left: 5%;
     margin-right: -5%;
-
     height: 675px;
     font-size: 1.3em;
 }
@@ -518,12 +517,11 @@ html.no-touch nav ul li:hover {
 }
 
 .moment.last {
-    margin-bottom: -400px;
-    z-index:1;
+    margin-bottom: -300px;
     position: relative;
     margin-left: 100px;
     font-size: 1em;
-
+    z-index:100;
 }
 
 .form_center{
