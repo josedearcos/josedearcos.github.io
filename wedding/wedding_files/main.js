@@ -109,7 +109,7 @@ $(document).ready(function() {
 
   var CLOUDS = [
     {top: "400", offset: "-450px", css_class: "cloud-1", delay: .8},
-    {top: "500", offset: "320px", css_class: "cloud-3", delay: 1.2},
+    {top: "500", offset: "10%", css_class: "cloud-3", delay: 1.2},
     {top: "900", offset: "-320px", css_class: "cloud-2", delay: .2},
     {top: "1500", offset: "280px", css_class: "cloud-2", delay: .8},
     {top: "2250", offset: "-380px", css_class: "cloud-4", delay: 1.2},
