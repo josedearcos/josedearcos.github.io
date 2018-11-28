@@ -29,6 +29,7 @@ body {
     font-size: 1em;
 }
 
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
@@ -328,8 +329,8 @@ footer p a:hover {
 #language-switcher-it {
     position: absolute;
     top: 65px;
-    left: 50%;
-    margin-left: 600px;
+    margin-left: 83%;
+    left:0;
     text-align: center;
     vertical-align: middle;
     padding-top: 25px;
@@ -339,7 +340,7 @@ footer p a:hover {
 
 #language-switcher-it a, #language-switcher-it a:visited, #language-switcher-it a:active {
     color: #A3A5A5;
-    font-size: 0.8em;
+    font-size: 1em;
     text-decoration: none;
     padding: 0 10px;
 }
@@ -351,8 +352,8 @@ footer p a:hover {
 #language-switcher-es {
     position: absolute;
     top: 60px;
-    left: 50%;
-    margin-left: 450px;
+    margin-left: 75%;
+    left:0;
     text-align: center;
     vertical-align: middle;
     padding-top: 25px;
@@ -361,7 +362,7 @@ footer p a:hover {
 
 #language-switcher-es a, #language-switcher-es a:visited, #language-switcher-es a:active {
     color: #A3A5A5;
-    font-size: 0.8em;
+    font-size: 1em;
     text-decoration: none;
     padding: 0 10px;
 }
@@ -523,9 +524,9 @@ html.no-touch nav ul li:hover {
 
 .moment {
     position: relative;
-    width: 1550px;
-    margin-left: 100px;
-    margin-right: 100px;
+    width: 960px;
+    margin-left: 5%;
+    margin-right: 5%;
     height: 750px;
     font-size: 1.3em;
 }
@@ -555,7 +556,7 @@ html.no-touch nav ul li:hover {
 }
 .moment p {
     position: absolute;
-    width: 350px;
+    width: 250px;
     top: 20%;
     z-index: 10;
     color: #666666;
@@ -563,7 +564,7 @@ html.no-touch nav ul li:hover {
 
 #message
 {
-margin-top:220px;
+    margin-top:220px;
 }
 .moment p.scroll-hint {
     color: #FAFDFC;
@@ -604,7 +605,7 @@ margin-top:220px;
 
 .moment p.right {
     /*right: 50px;*/
-    right: 60px;
+    right: -50%;
 }
 
 .moment p.left {
@@ -657,8 +658,8 @@ margin-top:220px;
 #bird {
     width: 48px;
     height: 32px;
+    margin-left:auto;
     background: url('../img/bird.png');
-    margin-left: 1300px;
     -webkit-box-reflect: left;
 }
 
