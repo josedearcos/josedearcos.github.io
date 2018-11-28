@@ -301,7 +301,7 @@ body {
 footer {
     position: relative;
     height: 378px;
-    margin-top: -230px;
+    margin-top: 22px;
     background: url('../img/ground.png') center no-repeat;
     z-index: 0;
 }
@@ -554,6 +554,7 @@ html.no-touch nav ul li:hover {
     /*margin-left:100px;*/
     width:500px;
 }
+
 .moment p {
     position: absolute;
     width: 250px;
