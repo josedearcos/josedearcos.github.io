@@ -114,7 +114,7 @@ $(document).ready(function() {
     {top: "1500", offset: "280px", css_class: "cloud-2", delay: .8},
     {top: "2250", offset: "-380px", css_class: "cloud-4", delay: 1.2},
     {top: "2950", offset: "-380px", css_class: "cloud-1", delay: .8},
-    {top: "3750", offset: "380px", css_class: "cloud-6", delay: .7},
+    {top: "3750", offset: "25%", css_class: "cloud-6", delay: .7},
     {top: "4050", offset: "-380px", css_class: "cloud-5", delay: 1.2},
   ];
 
