@@ -524,7 +524,7 @@ html.no-touch nav ul li:hover {
 
 .moment {
     position: relative;
-    width: 960px;
+    width: 100%;
     margin-left: 5%;
     margin-right: 5%;
     height: 750px;
@@ -605,7 +605,7 @@ html.no-touch nav ul li:hover {
 
 .moment p.right {
     /*right: 50px;*/
-    right: -50%;
+    right: 10%;
 }
 
 .moment p.left {
@@ -656,9 +656,11 @@ html.no-touch nav ul li:hover {
 }
 
 #bird {
+    position:absolute;
     width: 48px;
     height: 32px;
-    margin-left:auto;
+    margin-left: auto;
+    right:-50%;
     background: url('../img/bird.png');
     -webkit-box-reflect: left;
 }
