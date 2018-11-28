@@ -27,6 +27,7 @@ body {
     font-weight: normal;
     font-style: normal;
     font-size: 1em;
+    width:100%;
 }
 
 
@@ -502,26 +503,6 @@ html.no-touch nav ul li:hover {
     background-position: 0px -18px;
 }
 
-#the-cake {
-    width: 147px;
-    height: 169px;
-    background: url('../img/cake.png') no-repeat;
-    position: absolute;
-    left: 50%;
-    bottom: 60px;
-    margin-left: -350px;
-}
-
-#party {
-    width: 209px;
-    height: 80px;
-    background: url('../img/party.png') no-repeat;
-    position: absolute;
-    left: 50%;
-    bottom: 80px;
-    margin-left: 120px;
-}
-
 .moment {
     position: relative;
     width: 100%;
@@ -663,70 +644,11 @@ html.no-touch nav ul li:hover {
     -webkit-box-reflect: left;
 }
 
-.dark-cloud {
-    position: absolute;
-    z-index: 300;
-}
-
-.dark-cloud-1 {
-    width: 342px;
-    height: 132px;
-    background: url('../img/dark_cloud1.png') no-repeat;
-    top: 50px;
-    left: -100px;
-    z-index: 10;
-}
-
-.dark-cloud-2 {
-    width: 560px;
-    height: 195px;
-    background: url('../img/dark_cloud2.png') no-repeat;
-    left: 250px;
-    top: 50px;
-    opacity: 0.95;
-}
-
-.dark-cloud-3 {
-    top: -40px;
-    right: 0px;
-    width: 372px;
-    height: 127px;
-    background: url('../img/dark_cloud3.png') no-repeat;
-    z-index: 10;
-
-}
-
 #button-send {
     margin-left:100px;
     text-align:center;
     background-color: #71C0BE;
     color:white;
-}
-
-.slide-in-right {
-	-webkit-animation: slide-in-right 1s ease-out reverse both;
-	        animation: slide-in-right 1s ease-out reverse both;
-}
-
-.slide-in-left {
-	-webkit-animation: slide-in-right 1s ease-out both;
-	        animation: slide-in-right 1s ease-out both;
-}
-
-.left-door{
-    position: relative;
-    background: url('../img/iron_gate.jpg') no-repeat;
-    width: 50%;
-    height:100%;
-    left:-50%;
-}
-
-.right-door{
-    position: relative;
-    background: url('../img/iron_gate.jpg') no-repeat;
-    left:50%;
-    width:50%;
-    height:100%;
 }
 
 .clouding {
@@ -781,39 +703,9 @@ html.no-touch nav ul li:hover {
     background-size: 48px 32px;
   }
 
-  #the-cake {
-    background-image: url('../img/cake@2x.png');
-    background-size: 147px 169px;
-  }
-
   .cloud {
     background-image: url('../img/clouds@2x.png');
     background-size: 308px 446px;
-  }
-
-  .dark-cloud-1 {
-    background-image: url('../img/dark_cloud1@2x.png');
-    background-size: 342px 132px;
-  }
-
-  .dark-cloud-2 {
-    background-image: url('../img/dark_cloud2@2x.png');
-    background-size: 560px 195px;
-  }
-
-  .dark-cloud-3 {
-    background-image: url('../img/dark_cloud3@2x.png');
-    background-size: 373px 127px;
-  }
-
-  #lovers {
-    background-image: url('../img/fall@2x.png');
-    background-size: 336px 280px;
-  }
-
-  .lightning {
-    background-image: url('../img/flash@2x.png');
-    background-size: 52px 248px;
   }
 
   footer {
@@ -824,26 +716,6 @@ html.no-touch nav ul li:hover {
   nav ul li {
     background-image: url('../img/hearts@2x.png');
     background-size: 20px 36px;
-  }
-
-  #house-island {
-    background-image: url('../img/house@2x.png');
-    background-size: 326px 269px;
-  }
-
-  #the-meeting {
-    background-image: url('../img/meeting@2x.png');
-    background-size: 647px 141px;
-  }
-
-  #party {
-    background-image: url('../img/party@2x.png');
-    background-size: 209px 80px;
-  }
-
-  #proposal-island {
-    background-image: url('../img/proposal@2x.png');
-    background-size: 338px 323px;
   }
 
   header {
