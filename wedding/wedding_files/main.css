@@ -660,7 +660,7 @@ html.no-touch nav ul li:hover {
     width: 48px;
     height: 32px;
     margin-left: auto;
-    right:-50%;
+    right:15%;
     background: url('../img/bird.png');
     -webkit-box-reflect: left;
 }
