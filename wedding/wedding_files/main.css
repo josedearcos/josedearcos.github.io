@@ -527,7 +527,7 @@ html.no-touch nav ul li:hover {
     width: 100%;
     margin-left: 5%;
     margin-right: 5%;
-    height: 750px;
+    height: 675px;
     font-size: 1.3em;
 }
 
@@ -539,19 +539,16 @@ html.no-touch nav ul li:hover {
     margin-bottom: -400px;
     z-index:1;
     position: relative;
-    /*margin-left: 1400px;*/
     margin-left: 100px;
     font-size: 1em;
 
 }
 
 .form_center{
-    /*margin-left:100px;*/
     width:300px;
 }
 
 #form_center{
-    /*margin-left:100px;*/
     width:500px;
 }
 
