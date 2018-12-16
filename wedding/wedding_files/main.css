@@ -303,7 +303,7 @@ footer {
     position: relative;
     height: 378px;
     margin-top: 22px;
-    background: url('../img/mountains.png') center no-repeat;
+    background: url('../img/ground.png') center no-repeat;
     z-index: 0;
 }
 
@@ -708,7 +708,7 @@ html.no-touch nav ul li:hover {
   }
 
   footer {
-    background-image: url('../img/mountains@2x.png');
+    background-image: url('../img/ground@2x.png');
     background-size: 3028px 378px;
   }
 
