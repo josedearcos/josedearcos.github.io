@@ -388,6 +388,10 @@ footer p a:hover {
     z-index: 99;
 }
 
+#balloon:hover {
+    background: url('../img/balloon_salute@2x.png') no-repeat center top;
+}
+
 header {
     top: 110px;
     position: relative;
