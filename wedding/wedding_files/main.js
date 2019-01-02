@@ -1,4 +1,6 @@
+
 $(document).ready(function() {
+
   var RAISE_THRESHOLD = 950;
   var DESCENT_THRESHOLD = 240;
   var HIDDEN_HEIGHT_AT_ARRIVAL = 190;
@@ -66,16 +68,26 @@ $(document).ready(function() {
     if (atArrival && isArriving) {
       atArrival = false;
       $balloon.removeClass('soaring').addClass('rocking');
-      $balloon.animate({"margin-top": marginTopFlying + 'px'}, 1000);
+        const IS_MOBILE = $(window).width() <= 640;
+
+        if(IS_MOBILE)
+        {
+            $balloon.animate({"margin-top": 900 + 'px'}, 1000);
+        }
+        else
+        {
+            $balloon.animate({"margin-top": marginTopFlying + 'px'}, 1000);
+        }
+
       setTimeout(function() {
         $balloon.removeClass('rocking').addClass('soaring');
       }, 2000);
     } else if (!atArrival && isReturningToArrivalPoint) {
       atArrival = true;
-      $balloon.animate({"margin-top": marginTopArrival + 'px'}, 1000);
+      $balloon.animate({"margin-top": marginTopFlying + 'px'}, 1000);
     } else if (!atDeparture && isDeparturing) {
       atDeparture = true;
-      $balloon.animate({"margin-top" : marginTopDeparture + 'px'}, 1000);
+      $balloon.animate({"margin-top" : marginTopFlying + 'px'}, 1000);
     } else if (atDeparture && isLeavingDeparturePoint) {
       atDeparture = false;
       $("#balloon").animate({"margin-top": marginTopFlying + 'px'}, 1000);

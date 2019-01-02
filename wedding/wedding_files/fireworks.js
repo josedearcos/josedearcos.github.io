@@ -1,24 +1,19 @@
-// This is a prime example of what starts out as a simple project
-// and snowballs way beyond its intended size. It's a little clunky
-// reading/working on this single file, but here it is anyways :)
-
 'use strict';
 console.clear();
-
 
 const IS_MOBILE = window.innerWidth <= 640;
 const IS_DESKTOP = window.innerWidth > 800;
 const IS_HEADER = IS_DESKTOP && window.innerHeight < 300;
 // Detect high end devices. This will be a moving target.
 const IS_HIGH_END_DEVICE = (() => {
-    const hwConcurrency = navigator.hardwareConcurrency;
-    if (!hwConcurrency) {
-        return false;
-    }
-    // Large screens indicate a full size computer, which often have hyper threading these days.
-    // So a quad core desktop machine has 8 cores. We'll place a higher min threshold there.
-    const minCount = window.innerWidth <= 1024 ? 4 : 8;
-    return hwConcurrency >= minCount;
+const hwConcurrency = navigator.hardwareConcurrency;
+if (!hwConcurrency) {
+return false;
+}
+// Large screens indicate a full size computer, which often have hyper threading these days.
+// So a quad core desktop machine has 8 cores. We'll place a higher min threshold there.
+const minCount = window.innerWidth <= 1024 ? 4 : 8;
+return hwConcurrency >= minCount;
 })();
 // Prevent canvases from getting too large on ridiculous screen sizes.
 // 8K - can restrict this if needed
@@ -70,8 +65,8 @@ const PI_HALF = Math.PI * 0.5;
 const trailsStage = new Stage('trails-canvas');
 const mainStage = new Stage('main-canvas');
 const stages = [
-    trailsStage,
-    mainStage
+trailsStage,
+mainStage
 ];
 
 
@@ -101,119 +96,118 @@ function toggleFullscreen() {
 // Sync fullscreen changes with store. An event listener is necessary because the user can
 // toggle fullscreen mode directly through the browser, and we want to react to that.
 fscreen.addEventListener('fullscreenchange', () => {
-    store.setState({ fullscreen: isFullscreen() });
-});
+ store.setState({ fullscreen: isFullscreen() });
+ });
 
 
 
 
-// Simple state container; the source of truth.
-const store = {
-    _listeners: new Set(),
-    _dispatch(prevState) {
-        this._listeners.forEach(listener => listener(this.state, prevState))
-    },
+ // Simple state container; the source of truth.
+ const store = {
+     _listeners: new Set(),
+     _dispatch(prevState) {
+         this._listeners.forEach(listener => listener(this.state, prevState))
+     },
 
-    state: {
-        // will be unpaused in init()
-        paused: true,
-        soundEnabled: false,
-        menuOpen: false,
-        openHelpTopic: null,
-        fullscreen: isFullscreen(),
-        // Note that config values used for <select>s must be strings, unless manually converting values to strings
-        // at render time, and parsing on change.
-        config: {
-            quality: String(IS_HIGH_END_DEVICE ? QUALITY_HIGH : QUALITY_NORMAL), // will be mirrored to a global variable named `quality` in `configDidUpdate`, for perf.
-            shell: 'Random',
-            size: IS_DESKTOP
-                ? '3' // Desktop default
-                : IS_HEADER
-                    ? '1.2' // Profile header default (doesn't need to be an int)
-                    : '2', // Mobile default
-            autoLaunch: true,
-            finale: false,
-            skyLighting: SKY_LIGHT_NORMAL + '',
-            hideControls: IS_HEADER,
-            longExposure: false,
-            scaleFactor: getDefaultScaleFactor()
-        }
-    },
+     state: {
+         // will be unpaused in init()
+         paused: true,
+         soundEnabled: false,
+         menuOpen: false,
+         openHelpTopic: null,
+         fullscreen: isFullscreen(),
+         // Note that config values used for <select>s must be strings, unless manually converting values to strings
+         // at render time, and parsing on change.
+         config: {
+             quality: String(IS_HIGH_END_DEVICE ? QUALITY_HIGH : QUALITY_NORMAL), // will be mirrored to a global variable named `quality` in `configDidUpdate`, for perf.
+             shell: 'Random',
+             size: IS_DESKTOP
+             ? '3' // Desktop default
+             : IS_HEADER
+             ? '1.2' // Profile header default (doesn't need to be an int)
+             : '2', // Mobile default
+             autoLaunch: true,
+             finale: false,
+             skyLighting: SKY_LIGHT_NORMAL + '',
+             longExposure: false,
+             scaleFactor: getDefaultScaleFactor()
+         }
+     },
 
-    setState(nextState) {
-        const prevState = this.state;
-        this.state = Object.assign({}, this.state, nextState);
-        this._dispatch(prevState);
-        this.persist();
-    },
+     setState(nextState) {
+         const prevState = this.state;
+         this.state = Object.assign({}, this.state, nextState);
+         this._dispatch(prevState);
+         this.persist();
+     },
 
-    subscribe(listener) {
-        this._listeners.add(listener);
-        return () => this._listeners.remove(listener);
-    },
+     subscribe(listener) {
+         this._listeners.add(listener);
+         return () => this._listeners.remove(listener);
+     },
 
-    // Load / persist select state to localStorage
-    // Mutates state because `store.load()` should only be called once immediately after store is created, before any subscriptions.
-    load() {
-        const serializedData = localStorage.getItem('cm_fireworks_data');
-        if (serializedData) {
-            const {
-                schemaVersion,
-                data
-            } = JSON.parse(serializedData);
+     // Load / persist select state to localStorage
+     // Mutates state because `store.load()` should only be called once immediately after store is created, before any subscriptions.
+     load() {
+         const serializedData = localStorage.getItem('cm_fireworks_data');
+         if (serializedData) {
+             const {
+                 schemaVersion,
+                 data
+             } = JSON.parse(serializedData);
 
-            const config = this.state.config;
-            switch(schemaVersion) {
-                case '1.1':
-                    config.quality = data.quality;
-                    config.size = data.size;
-                    config.skyLighting = data.skyLighting;
-                    break;
-                case '1.2':
-                    config.quality = data.quality;
-                    config.size = data.size;
-                    config.skyLighting = data.skyLighting;
-                    config.scaleFactor = data.scaleFactor;
-                    break;
-                default:
-                    throw new Error('version switch should be exhaustive');
-            }
-            console.log(`Loaded config (schema version ${schemaVersion})`);
-        }
-        // Deprecated data format. Checked with care (it's not namespaced).
-        else if (localStorage.getItem('schemaVersion') === '1') {
-            let size;
-            // Attempt to parse data, ignoring if there is an error.
-            try {
-                const sizeRaw = localStorage.getItem('configSize');
-                size = typeof sizeRaw === 'string' && JSON.parse(sizeRaw);
-            }
-            catch(e) {
-                console.log('Recovered from error parsing saved config:');
-                console.error(e);
-                return;
-            }
-            // Only restore validated values
-            const sizeInt = parseInt(size, 10);
-            if (sizeInt >= 0 && sizeInt <= 4) {
-                this.state.config.size = String(sizeInt);
-            }
-        }
-    },
+             const config = this.state.config;
+             switch(schemaVersion) {
+                 case '1.1':
+                 config.quality = data.quality;
+                 config.size = data.size;
+                 config.skyLighting = data.skyLighting;
+                 break;
+                 case '1.2':
+                 config.quality = data.quality;
+                 config.size = data.size;
+                 config.skyLighting = data.skyLighting;
+                 config.scaleFactor = data.scaleFactor;
+                 break;
+                 default:
+                 throw new Error('version switch should be exhaustive');
+             }
+             console.log(`Loaded config (schema version ${schemaVersion})`);
+         }
+         // Deprecated data format. Checked with care (it's not namespaced).
+         else if (localStorage.getItem('schemaVersion') === '1') {
+             let size;
+             // Attempt to parse data, ignoring if there is an error.
+             try {
+                 const sizeRaw = localStorage.getItem('configSize');
+                 size = typeof sizeRaw === 'string' && JSON.parse(sizeRaw);
+             }
+             catch(e) {
+                 console.log('Recovered from error parsing saved config:');
+                 console.error(e);
+                 return;
+             }
+             // Only restore validated values
+             const sizeInt = parseInt(size, 10);
+             if (sizeInt >= 0 && sizeInt <= 4) {
+                 this.state.config.size = String(sizeInt);
+             }
+         }
+     },
 
-    persist() {
-        const config = this.state.config;
-        localStorage.setItem('cm_fireworks_data', JSON.stringify({
-            schemaVersion: '1.2',
-            data: {
-                quality: config.quality,
-                size: config.size,
-                skyLighting: config.skyLighting,
-                scaleFactor: config.scaleFactor
-            }
-        }));
-    }
-};
+     persist() {
+         const config = this.state.config;
+         localStorage.setItem('cm_fireworks_data', JSON.stringify({
+          schemaVersion: '1.2',
+          data: {
+          quality: config.quality,
+          size: config.size,
+          skyLighting: config.skyLighting,
+          scaleFactor: config.scaleFactor
+          }
+          }));
+     }
+ };
 
 
 if (!IS_HEADER) {
@@ -237,13 +231,6 @@ function togglePause(toggle) {
     }
 }
 
-function toggleSound(toggle) {
-    if (typeof toggle === 'boolean') {
-        store.setState({ soundEnabled: toggle });
-    } else {
-        store.setState({ soundEnabled: !store.state.soundEnabled });
-    }
-}
 
 function toggleMenu(toggle) {
     if (typeof toggle === 'boolean') {
@@ -256,10 +243,10 @@ function toggleMenu(toggle) {
 function updateConfig(nextConfig) {
     nextConfig = nextConfig || getConfigFromDOM();
     store.setState({
-        config: Object.assign({}, store.state.config, nextConfig)
-    });
+                   config: Object.assign({}, store.state.config, nextConfig)
+                   });
 
-    configDidUpdate();
+                   configDidUpdate();
 }
 
 // Map config to various properties & apply side effects
@@ -284,8 +271,6 @@ function configDidUpdate() {
 const isRunning = (state=store.state) => !state.paused && !state.menuOpen;
 // Whether user has enabled sound.
 const soundEnabledSelector = (state=store.state) => state.soundEnabled;
-// Whether any sounds are allowed, taking into account multiple factors.
-const canPlaySoundSelector = (state=store.state) => isRunning(state) && soundEnabledSelector(state);
 // Convert quality to number.
 const qualitySelector = () => +store.state.config.quality;
 const shellNameSelector = () => store.state.config.shell;
@@ -295,52 +280,6 @@ const finaleSelector = () => store.state.config.finale;
 const skyLightingSelector = () => +store.state.config.skyLighting;
 const scaleFactorSelector = () => store.state.config.scaleFactor;
 
-
-
-// Help Content
-const helpContent = {
-    shellType: {
-        header: 'Shell Type',
-        body: 'The type of firework that will be launched. Select "Random" for a nice assortment!'
-    },
-    shellSize: {
-        header: 'Shell Size',
-        body: 'The size of the fireworks. Modeled after real firework shell sizes, larger shells have bigger bursts with more stars, and sometimes more complex effects. However, larger shells also require more processing power and may cause lag.'
-    },
-    quality: {
-        header: 'Quality',
-        body: 'Overall graphics quality. If the animation is not running smoothly, try lowering the quality. High quality greatly increases the amount of sparks rendered and may cause lag.'
-    },
-    skyLighting: {
-        header: 'Sky Lighting',
-        body: 'Illuminates the background as fireworks explode. If the background looks too bright on your screen, try setting it to "Dim" or "None".'
-    },
-    scaleFactor: {
-        header: 'Scale',
-        body: 'Allows scaling the size of all fireworks, essentially moving you closer or farther away. For larger shell sizes, it can be convenient to decrease the scale a bit, especially on phones or tablets.'
-    },
-    autoLaunch: {
-        header: 'Auto Fire',
-        body: 'Launches sequences of fireworks automatically. Sit back and enjoy the show, or disable to have full control.'
-    },
-    finaleMode: {
-        header: 'Finale Mode',
-        body: 'Launches intense bursts of fireworks. May cause lag. Requires "Auto Fire" to be enabled.'
-    },
-    hideControls: {
-        header: 'Hide Controls',
-        body: 'Hides the translucent controls along the top of the screen. Useful for screenshots, or just a more seamless experience. While hidden, you can still tap the top-right corner to re-open this menu.'
-    },
-    fullscreen: {
-        header: 'Fullscreen',
-        body: 'Toggles fullscreen mode.'
-    },
-    longExposure: {
-        header: 'Open Shutter',
-        body: 'Experimental effect that preserves long streaks of light, similar to leaving a camera shutter open.'
-    }
-};
-
 const nodeKeyToHelpKey = {
     shellTypeLabel: 'shellType',
     shellSizeLabel: 'shellSize',
@@ -348,24 +287,16 @@ const nodeKeyToHelpKey = {
     skyLightingLabel: 'skyLighting',
     scaleFactorLabel: 'scaleFactor',
     autoLaunchLabel: 'autoLaunch',
-    finaleModeLabel: 'finaleMode',
-    hideControlsLabel: 'hideControls',
     fullscreenLabel: 'fullscreen',
     longExposureLabel: 'longExposure'
 };
-
 
 // Render app UI / keep in sync with state
 const appNodes = {
     stageContainer: '.stage-container',
     canvasContainer: '.canvas-container',
-    controls: '.controls',
     menu: '.menu',
     menuInnerWrap: '.menu__inner-wrap',
-    pauseBtn: '.pause-btn',
-    pauseBtnSVG: '.pause-btn use',
-    soundBtn: '.sound-btn',
-    soundBtnSVG: '.sound-btn use',
     shellType: '.shell-type',
     shellTypeLabel: '.shell-type-label',
     shellSize: '.shell-size',
@@ -378,86 +309,41 @@ const appNodes = {
     scaleFactorLabel: '.scaleFactor-label',
     autoLaunch: '.auto-launch',
     autoLaunchLabel: '.auto-launch-label',
-    finaleModeFormOption: '.form-option--finale-mode',
-    finaleMode: '.finale-mode',
-    finaleModeLabel: '.finale-mode-label',
-    hideControls: '.hide-controls',
-    hideControlsLabel: '.hide-controls-label',
     fullscreenFormOption: '.form-option--fullscreen',
     fullscreen: '.fullscreen',
     fullscreenLabel: '.fullscreen-label',
     longExposure: '.long-exposure',
     longExposureLabel: '.long-exposure-label',
-
-    // Help UI
-    helpModal: '.help-modal',
-    helpModalOverlay: '.help-modal__overlay',
-    helpModalHeader: '.help-modal__header',
-    helpModalBody: '.help-modal__body',
-    helpModalCloseBtn: '.help-modal__close-btn'
 };
 
 // Convert appNodes selectors to dom nodes
 Object.keys(appNodes).forEach(key => {
-    appNodes[key] = document.querySelector(appNodes[key]);
-});
+  appNodes[key] = document.querySelector(appNodes[key]);
+  });
 
-// Remove fullscreen control if not supported.
-if (!fullscreenEnabled()) {
-    appNodes.fullscreenFormOption.classList.add('remove');
-}
+  // Remove fullscreen control if not supported.
+  if (!fullscreenEnabled()) {
+      appNodes.fullscreenFormOption.classList.add('remove');
+  }
 
 // First render is called in init()
 function renderApp(state) {
-    const pauseBtnIcon = `#icon-${state.paused ? 'play' : 'pause'}`;
-    const soundBtnIcon = `#icon-sound-${soundEnabledSelector() ? 'on' : 'off'}`;
-    appNodes.pauseBtnSVG.setAttribute('href', pauseBtnIcon);
-    appNodes.pauseBtnSVG.setAttribute('xlink:href', pauseBtnIcon);
-    appNodes.soundBtnSVG.setAttribute('href', soundBtnIcon);
-    appNodes.soundBtnSVG.setAttribute('xlink:href', soundBtnIcon);
-    appNodes.controls.classList.toggle('hide', state.menuOpen || state.config.hideControls);
     appNodes.canvasContainer.classList.toggle('blur', state.menuOpen);
-    appNodes.menu.classList.toggle('hide', !state.menuOpen);
-    appNodes.finaleModeFormOption.style.opacity = state.config.autoLaunch ? 1 : 0.32;
-
     appNodes.quality.value = state.config.quality;
     appNodes.shellType.value = state.config.shell;
     appNodes.shellSize.value = state.config.size;
     appNodes.autoLaunch.checked = state.config.autoLaunch;
-    appNodes.finaleMode.checked = state.config.finale;
     appNodes.skyLighting.value = state.config.skyLighting;
-    appNodes.hideControls.checked = state.config.hideControls;
     appNodes.fullscreen.checked = state.fullscreen;
     appNodes.longExposure.checked = state.config.longExposure;
     appNodes.scaleFactor.value = state.config.scaleFactor.toFixed(2);
 
     appNodes.menuInnerWrap.style.opacity = state.openHelpTopic ? 0.12 : 1;
     appNodes.helpModal.classList.toggle('active', !!state.openHelpTopic);
-    if (state.openHelpTopic) {
-        const { header, body } = helpContent[state.openHelpTopic];
-        appNodes.helpModalHeader.textContent = header;
-        appNodes.helpModalBody.textContent = body;
-    }
+
 }
 
 store.subscribe(renderApp);
-
-// Perform side effects on state changes
-function handleStateChange(state, prevState) {
-    const canPlaySound = canPlaySoundSelector(state);
-    const canPlaySoundPrev = canPlaySoundSelector(prevState);
-
-    if (canPlaySound !== canPlaySoundPrev) {
-        if (canPlaySound) {
-            soundManager.resumeAll();
-        } else {
-            soundManager.pauseAll();
-        }
-    }
-}
-
-store.subscribe(handleStateChange);
-
 
 function getConfigFromDOM() {
     return {
@@ -465,10 +351,8 @@ function getConfigFromDOM() {
         shell: appNodes.shellType.value,
         size: appNodes.shellSize.value,
         autoLaunch: appNodes.autoLaunch.checked,
-        finale: appNodes.finaleMode.checked,
         skyLighting: appNodes.skyLighting.value,
         longExposure: appNodes.longExposure.checked,
-        hideControls: appNodes.hideControls.checked,
         // Store value as number.
         scaleFactor: parseFloat(appNodes.scaleFactor.value)
     };
@@ -479,33 +363,14 @@ appNodes.quality.addEventListener('input', updateConfigNoEvent);
 appNodes.shellType.addEventListener('input', updateConfigNoEvent);
 appNodes.shellSize.addEventListener('input', updateConfigNoEvent);
 appNodes.autoLaunch.addEventListener('click', () => setTimeout(updateConfig, 0));
-appNodes.finaleMode.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.skyLighting.addEventListener('input', updateConfigNoEvent);
 appNodes.longExposure.addEventListener('click', () => setTimeout(updateConfig, 0));
-appNodes.hideControls.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.fullscreen.addEventListener('click', () => setTimeout(toggleFullscreen, 0));
 // Changing scaleFactor requires triggering resize handling code as well.
 appNodes.scaleFactor.addEventListener('input', () => {
-    updateConfig();
-    handleResize();
+updateConfig();
+handleResize();
 });
-
-Object.keys(nodeKeyToHelpKey).forEach(nodeKey => {
-    const helpKey = nodeKeyToHelpKey[nodeKey];
-    appNodes[nodeKey].addEventListener('click', () => {
-        store.setState({ openHelpTopic: helpKey });
-    });
-});
-
-appNodes.helpModalCloseBtn.addEventListener('click', () => {
-    store.setState({ openHelpTopic: null });
-});
-
-appNodes.helpModalOverlay.addEventListener('click', () => {
-    store.setState({ openHelpTopic: null });
-});
-
-
 
 // Constant derivations
 const COLOR_NAMES = Object.keys(COLOR);
@@ -514,22 +379,22 @@ const COLOR_CODES = COLOR_NAMES.map(colorName => COLOR[colorName]);
 const COLOR_CODES_W_INVIS = [...COLOR_CODES, INVISIBLE];
 // Map of color codes to their index in the array. Useful for quickly determining if a color has already been updated in a loop.
 const COLOR_CODE_INDEXES = COLOR_CODES_W_INVIS.reduce((obj, code, i) => {
-    obj[code] = i;
-    return obj;
+obj[code] = i;
+return obj;
 }, {});
 // Tuples is a map keys by color codes (hex) with values of { r, g, b } tuples (still just objects).
 const COLOR_TUPLES = {};
 COLOR_CODES.forEach(hex => {
-    COLOR_TUPLES[hex] = {
-        r: parseInt(hex.substr(1, 2), 16),
-        g: parseInt(hex.substr(3, 2), 16),
-        b: parseInt(hex.substr(5, 2), 16),
-    };
+COLOR_TUPLES[hex] = {
+r: parseInt(hex.substr(1, 2), 16),
+g: parseInt(hex.substr(3, 2), 16),
+b: parseInt(hex.substr(5, 2), 16),
+};
 });
 
 // Get a random color.
 function randomColorSimple() {
-    return COLOR_CODES[Math.random() * COLOR_CODES.length | 0];
+ return COLOR_CODES[Math.random() * COLOR_CODES.length | 0];
 }
 
 // Get a random color, with some customization options available.
@@ -596,7 +461,6 @@ const crysanthemumShell = (size=1) => {
         streamers
     };
 };
-
 
 const ghostShell = (size=1) => {
     // Extend crysanthemum shell
@@ -687,54 +551,54 @@ const crossetteShell = (size=1) => {
 };
 
 const floralShell = (size=1) => ({
-    shellSize: size,
-    spreadSize: 300 + size * 120,
-    starDensity: 0.12,
-    starLife: 500 + size * 50,
-    starLifeVariation: 0.5,
-    color: Math.random() < 0.65 ? 'random' : (Math.random() < 0.15 ? randomColor() : [randomColor(), randomColor({ notSame: true })]),
-    floral: true
-});
+ shellSize: size,
+ spreadSize: 300 + size * 120,
+ starDensity: 0.12,
+ starLife: 500 + size * 50,
+ starLifeVariation: 0.5,
+ color: Math.random() < 0.65 ? 'random' : (Math.random() < 0.15 ? randomColor() : [randomColor(), randomColor({ notSame: true })]),
+ floral: true
+ });
 
-const fallingLeavesShell = (size=1) => ({
-    shellSize: size,
-    color: INVISIBLE,
-    spreadSize: 300 + size * 120,
-    starDensity: 0.12,
-    starLife: 500 + size * 50,
-    starLifeVariation: 0.5,
-    glitter: 'medium',
-    glitterColor: COLOR.Gold,
-    fallingLeaves: true
-});
+ const fallingLeavesShell = (size=1) => ({
+ shellSize: size,
+ color: INVISIBLE,
+ spreadSize: 300 + size * 120,
+ starDensity: 0.12,
+ starLife: 500 + size * 50,
+ starLifeVariation: 0.5,
+ glitter: 'medium',
+ glitterColor: COLOR.Gold,
+ fallingLeaves: true
+ });
 
-const willowShell = (size=1) => ({
-    shellSize: size,
-    spreadSize: 300 + size * 100,
-    starDensity: 0.6,
-    starLife: 3000 + size * 300,
-    glitter: 'willow',
-    glitterColor: COLOR.Gold,
-    color: INVISIBLE
-});
+ const willowShell = (size=1) => ({
+  shellSize: size,
+  spreadSize: 300 + size * 100,
+  starDensity: 0.6,
+  starLife: 3000 + size * 300,
+  glitter: 'willow',
+  glitterColor: COLOR.Gold,
+  color: INVISIBLE
+  });
 
-const crackleShell = (size=1) => {
-    // favor gold
-    const color = Math.random() < 0.75 ? COLOR.Gold : randomColor();
-    return {
-        shellSize: size,
-        spreadSize: 380 + size * 75,
-        starDensity: isLowQuality ? 0.65 : 1,
-        starLife: 600 + size * 100,
-        starLifeVariation: 0.32,
-        glitter: 'light',
-        glitterColor: COLOR.Gold,
-        color,
-        crackle: true,
-        pistil: Math.random() < 0.65,
-        pistilColor: makePistilColor(color)
-    };
-};
+  const crackleShell = (size=1) => {
+      // favor gold
+      const color = Math.random() < 0.75 ? COLOR.Gold : randomColor();
+      return {
+          shellSize: size,
+          spreadSize: 380 + size * 75,
+          starDensity: isLowQuality ? 0.65 : 1,
+          starLife: 600 + size * 100,
+          starLifeVariation: 0.32,
+          glitter: 'light',
+          glitterColor: COLOR.Gold,
+          color,
+          crackle: true,
+          pistil: Math.random() < 0.65,
+          pistilColor: makePistilColor(color)
+      };
+  };
 
 const horsetailShell = (size=1) => {
     const color = randomColor();
@@ -817,32 +681,32 @@ function init() {
     appNodes.shellSize.innerHTML = options;
 
     setOptionsForSelect(appNodes.quality, [
-        { label: 'Low', value: QUALITY_LOW },
-        { label: 'Normal', value: QUALITY_NORMAL },
-        { label: 'High', value: QUALITY_HIGH }
-    ]);
+   { label: 'Low', value: QUALITY_LOW },
+   { label: 'Normal', value: QUALITY_NORMAL },
+   { label: 'High', value: QUALITY_HIGH }
+   ]);
 
-    setOptionsForSelect(appNodes.skyLighting, [
-        { label: 'None', value: SKY_LIGHT_NONE },
-        { label: 'Dim', value: SKY_LIGHT_DIM },
-        { label: 'Normal', value: SKY_LIGHT_NORMAL }
-    ]);
+   setOptionsForSelect(appNodes.skyLighting, [
+  { label: 'None', value: SKY_LIGHT_NONE },
+  { label: 'Dim', value: SKY_LIGHT_DIM },
+  { label: 'Normal', value: SKY_LIGHT_NORMAL }
+  ]);
 
-    // 0.9 is mobile default
-    setOptionsForSelect(
-        appNodes.scaleFactor,
-        [0.5, 0.62, 0.75, 0.9, 1.0, 1.5, 2.0]
-        .map(value => ({ value: value.toFixed(2), label: `${value*100}%` }))
-    );
+  // 0.9 is mobile default
+  setOptionsForSelect(
+  appNodes.scaleFactor,
+  [0.5, 0.62, 0.75, 0.9, 1.0, 1.5, 2.0]
+  .map(value => ({ value: value.toFixed(2), label: `${value*100}%` }))
+  );
 
-    // Begin simulation
-    togglePause(false);
+  // Begin simulation
+  togglePause(false);
 
-    // initial render
-    renderApp(store.state);
+  // initial render
+  renderApp(store.state);
 
-    // Apply initial config
-    configDidUpdate();
+  // Apply initial config
+  configDidUpdate();
 }
 
 
@@ -886,9 +750,9 @@ function launchShellFromConfig(event) {
     const h = mainStage.height;
 
     shell.launch(
-        event ? event.x / w : getRandomShellPositionH(),
-        event ? 1 - event.y / h : getRandomShellPositionV()
-    );
+     event ? event.x / w : getRandomShellPositionH(),
+     event ? 1 - event.y / h : getRandomShellPositionV()
+     );
 }
 
 
@@ -928,15 +792,15 @@ function seqTwoRandom() {
     const rightOffset = Math.random() * 0.2 - 0.1;
     shell1.launch(0.3 + leftOffset, size1.height);
     setTimeout(() => {
-        shell2.launch(0.7 + rightOffset, size2.height);
-    }, 100);
+               shell2.launch(0.7 + rightOffset, size2.height);
+               }, 100);
 
-    let extraDelay = Math.max(shell1.starLife, shell2.starLife);
-    if (shell1.fallingLeaves || shell2.fallingLeaves) {
-        extraDelay = 4600;
-    }
+               let extraDelay = Math.max(shell1.starLife, shell2.starLife);
+               if (shell1.fallingLeaves || shell2.fallingLeaves) {
+                   extraDelay = 4600;
+               }
 
-    return 900 + Math.random() * 600 + extraDelay;
+               return 900 + Math.random() * 600 + extraDelay;
 }
 
 function seqTriple() {
@@ -952,18 +816,18 @@ function seqTriple() {
     const rightDelay = 1000 + Math.random() * 400;
 
     setTimeout(() => {
-        const offset = Math.random() * 0.08 - 0.04;
-        const shell2 = new Shell(shellType(smallSize));
-        shell2.launch(0.2 + offset, 0.1);
-    }, leftDelay);
+               const offset = Math.random() * 0.08 - 0.04;
+               const shell2 = new Shell(shellType(smallSize));
+               shell2.launch(0.2 + offset, 0.1);
+               }, leftDelay);
 
-    setTimeout(() => {
-        const offset = Math.random() * 0.08 - 0.04;
-        const shell3 = new Shell(shellType(smallSize));
-        shell3.launch(0.8 + offset, 0.1);
-    }, rightDelay);
+               setTimeout(() => {
+                          const offset = Math.random() * 0.08 - 0.04;
+                          const shell3 = new Shell(shellType(smallSize));
+                          shell3.launch(0.8 + offset, 0.1);
+                          }, rightDelay);
 
-    return 4000;
+                          return 4000;
 }
 
 function seqPyramid() {
@@ -976,8 +840,8 @@ function seqPyramid() {
     function launchShell(x, useSpecial) {
         const isRandom = shellNameSelector() === 'Random';
         let shellType = isRandom
-            ? useSpecial ? randomSpecialShell : randomMainShell
-            : shellTypes[shellNameSelector()];
+        ? useSpecial ? randomSpecialShell : randomMainShell
+        : shellTypes[shellNameSelector()];
         const shell = new Shell(shellType(useSpecial ? largeSize : smallSize));
         const height = x <= 0.5 ? x / 0.5 : (1 - x) / 0.5;
         shell.launch(x, useSpecial ? 0.75 : height * 0.42);
@@ -988,17 +852,17 @@ function seqPyramid() {
     while(count <= barrageCountHalf) {
         if (count === barrageCountHalf) {
             setTimeout(() => {
-                launchShell(0.5, true);
-            }, delay);
+                       launchShell(0.5, true);
+                       }, delay);
         } else {
             const offset = count / barrageCountHalf * 0.5;
             const delayOffset = Math.random() * 30 + 30;
             setTimeout(() => {
-                launchShell(offset, false);
-            }, delay);
-            setTimeout(() => {
-                launchShell(1 - offset, false);
-            }, delay + delayOffset);
+                       launchShell(offset, false);
+                       }, delay);
+                       setTimeout(() => {
+                                  launchShell(1 - offset, false);
+                                  }, delay + delayOffset);
         }
 
         count++;
@@ -1020,8 +884,8 @@ function seqSmallBarrage() {
     function launchShell(x, useSpecial) {
         const isRandom = shellNameSelector() === 'Random';
         let shellType = isRandom
-            ? useSpecial ? randomSpecialShell : randomMainShell
-            : shellTypes[shellNameSelector()];
+        ? useSpecial ? randomSpecialShell : randomMainShell
+        : shellTypes[shellNameSelector()];
         const shell = new Shell(shellType(shellSize));
         const height = (Math.cos(x*5*Math.PI + PI_HALF) + 1) / 2;
         shell.launch(x, height * 0.75);
@@ -1039,12 +903,12 @@ function seqSmallBarrage() {
             const delayOffset = Math.random() * 30 + 30;
             const useSpecial = count === specialIndex;
             setTimeout(() => {
-                launchShell(0.5 + offset, useSpecial);
-            }, delay);
-            setTimeout(() => {
-                launchShell(0.5 - offset, useSpecial);
-            }, delay + delayOffset);
-            count += 2;
+                       launchShell(0.5 + offset, useSpecial);
+                       }, delay);
+                       setTimeout(() => {
+                                  launchShell(0.5 - offset, useSpecial);
+                                  }, delay + delayOffset);
+                                  count += 2;
         }
         delay += 200;
     }
@@ -1056,63 +920,62 @@ seqSmallBarrage.lastCalled = Date.now();
 
 
 const sequences = [
-    seqRandomShell,
-    seqTwoRandom,
-    seqTriple,
-    seqPyramid,
-    seqSmallBarrage
-];
+   seqRandomShell,
+   seqTwoRandom,
+   seqTriple,
+   seqPyramid,
+   seqSmallBarrage
+   ];
 
 
-let isFirstSeq = true;
-const finaleCount = 32;
-let currentFinaleCount = 0;
-function startSequence() {
-    if (isFirstSeq) {
-        isFirstSeq = false;
-        if (IS_HEADER) {
-            return seqTwoRandom();
-        }
-        else {
-            const shell = new Shell(crysanthemumShell(shellSizeSelector()));
-            shell.launch(0.5, 0.5);
-            return 2400;
-        }
-    }
+   let isFirstSeq = true;
+   const finaleCount = 32;
+   let currentFinaleCount = 0;
+   function startSequence() {
+       if (isFirstSeq) {
+           isFirstSeq = false;
+           if (IS_HEADER) {
+               return seqTwoRandom();
+           }
+           else {
+               const shell = new Shell(crysanthemumShell(shellSizeSelector()));
+               shell.launch(0.5, 0.5);
+               return 2400;
+           }
+       }
 
-    if (finaleSelector()) {
-        seqRandomFastShell();
-        if (currentFinaleCount < finaleCount) {
-            currentFinaleCount++;
-            return 170;
-        }
-        else {
-            currentFinaleCount = 0;
-            return 6000;
-        }
-    }
+       if (finaleSelector()) {
+           seqRandomFastShell();
+           if (currentFinaleCount < finaleCount) {
+               currentFinaleCount++;
+               return 170;
+           }
+           else {
+               currentFinaleCount = 0;
+               return 6000;
+           }
+       }
 
-    const rand = Math.random();
+       const rand = Math.random();
 
-    if (rand < 0.08 && Date.now() - seqSmallBarrage.lastCalled > seqSmallBarrage.cooldown) {
-        return seqSmallBarrage();
-    }
+       if (rand < 0.08 && Date.now() - seqSmallBarrage.lastCalled > seqSmallBarrage.cooldown) {
+           return seqSmallBarrage();
+       }
 
-    if (rand < 0.1) {
-        return seqPyramid();
-    }
+       if (rand < 0.1) {
+           return seqPyramid();
+       }
 
-    if (rand < 0.6 && !IS_HEADER) {
-        return seqRandomShell();
-    }
-    else if (rand < 0.8) {
-        return seqTwoRandom();
-    }
-    else if (rand < 1) {
-        return seqTriple();
-    }
-}
-
+       if (rand < 0.6 && !IS_HEADER) {
+           return seqRandomShell();
+       }
+       else if (rand < 0.8) {
+           return seqTwoRandom();
+       }
+       else if (rand < 1) {
+           return seqTriple();
+       }
+   }
 
 let activePointerCount = 0;
 let isUpdatingSpeed = false;
@@ -1120,21 +983,6 @@ let isUpdatingSpeed = false;
 function handlePointerStart(event) {
     activePointerCount++;
     const btnSize = 50;
-
-    if (event.y < btnSize) {
-        if (event.x < btnSize) {
-            togglePause();
-            return;
-        }
-        if (event.x > mainStage.width/2 - btnSize/2 && event.x < mainStage.width/2 + btnSize/2) {
-            toggleSound();
-            return;
-        }
-        if (event.x > mainStage.width - btnSize) {
-            toggleMenu();
-            return;
-        }
-    }
 
     if (!isRunning()) return;
 
@@ -1159,25 +1007,9 @@ function handlePointerMove(event) {
     }
 }
 
-function handleKeydown(event) {
-    // P
-    if (event.keyCode === 80) {
-        togglePause();
-    }
-    // O
-    else if (event.keyCode === 79) {
-        toggleMenu();
-    }
-    // Esc
-    else if (event.keyCode === 27) {
-        toggleMenu(false);
-    }
-}
-
 mainStage.addEventListener('pointerstart', handlePointerStart);
 mainStage.addEventListener('pointerend', handlePointerEnd);
 mainStage.addEventListener('pointermove', handlePointerMove);
-window.addEventListener('keydown', handleKeydown);
 
 
 // Account for window resize and custom scale changes.
@@ -1230,7 +1062,7 @@ function updateGlobals(timeStep, lag) {
 
     // Always try to fade out speed bar
     if (!isUpdatingSpeed) {
-    speedBarOpacity -= lag / 30; // half a second
+        speedBarOpacity -= lag / 30; // half a second
         if (speedBarOpacity < 0) {
             speedBarOpacity = 0;
         }
@@ -1261,101 +1093,101 @@ function update(frameTime, lag) {
     const sparkDrag = 1 - (1 - Spark.airDrag) * speed;
     const gAcc = timeStep / 1000 * GRAVITY;
     COLOR_CODES_W_INVIS.forEach(color => {
-        // Stars
-        const stars = Star.active[color];
-        for (let i=stars.length-1; i>=0; i=i-1) {
-            const star = stars[i];
-            // Only update each star once per frame. Since color can change, it's possible a star could update twice without this, leading to a "jump".
-            if (star.updateFrame === currentFrame) {
-                continue;
-            }
-            star.updateFrame = currentFrame;
+                                // Stars
+                                const stars = Star.active[color];
+                                for (let i=stars.length-1; i>=0; i=i-1) {
+                                const star = stars[i];
+                                // Only update each star once per frame. Since color can change, it's possible a star could update twice without this, leading to a "jump".
+                                if (star.updateFrame === currentFrame) {
+                                continue;
+                                }
+                                star.updateFrame = currentFrame;
 
-            star.life -= timeStep;
-            if (star.life <= 0) {
-                stars.splice(i, 1);
-                Star.returnInstance(star);
-            } else {
-                const burnRate = Math.pow(star.life / star.fullLife, 0.5);
-                const burnRateInverse = 1 - burnRate;
+                                star.life -= timeStep;
+                                if (star.life <= 0) {
+                                stars.splice(i, 1);
+                                Star.returnInstance(star);
+                                } else {
+                                const burnRate = Math.pow(star.life / star.fullLife, 0.5);
+                                const burnRateInverse = 1 - burnRate;
 
-                star.prevX = star.x;
-                star.prevY = star.y;
-                star.x += star.speedX * speed;
-                star.y += star.speedY * speed;
-                // Apply air drag if star isn't "heavy". The heavy property is used for the shell comets.
-                if (!star.heavy) {
-                    star.speedX *= starDrag;
-                    star.speedY *= starDrag;
-                }
-                else {
-                    star.speedX *= starDragHeavy;
-                    star.speedY *= starDragHeavy;
-                }
-                star.speedY += gAcc;
+                                star.prevX = star.x;
+                                star.prevY = star.y;
+                                star.x += star.speedX * speed;
+                                star.y += star.speedY * speed;
+                                // Apply air drag if star isn't "heavy". The heavy property is used for the shell comets.
+                                if (!star.heavy) {
+                                star.speedX *= starDrag;
+                                star.speedY *= starDrag;
+                                }
+                                else {
+                                star.speedX *= starDragHeavy;
+                                star.speedY *= starDragHeavy;
+                                }
+                                star.speedY += gAcc;
 
-                if (star.spinRadius) {
-                    star.spinAngle += star.spinSpeed * speed;
-                    star.x += Math.sin(star.spinAngle) * star.spinRadius * speed;
-                    star.y += Math.cos(star.spinAngle) * star.spinRadius * speed;
-                }
+                                if (star.spinRadius) {
+                                star.spinAngle += star.spinSpeed * speed;
+                                star.x += Math.sin(star.spinAngle) * star.spinRadius * speed;
+                                star.y += Math.cos(star.spinAngle) * star.spinRadius * speed;
+                                }
 
-                if (star.sparkFreq) {
-                    star.sparkTimer -= timeStep;
-                    while (star.sparkTimer < 0) {
-                        star.sparkTimer += star.sparkFreq * 0.75 + star.sparkFreq * burnRateInverse * 4;
-                        Spark.add(
-                            star.x,
-                            star.y,
-                            star.sparkColor,
-                            Math.random() * PI_2,
-                            Math.random() * star.sparkSpeed * burnRate,
-                            star.sparkLife * 0.8 + Math.random() * star.sparkLifeVariation * star.sparkLife
-                        );
-                    }
-                }
+                                if (star.sparkFreq) {
+                                star.sparkTimer -= timeStep;
+                                while (star.sparkTimer < 0) {
+                                star.sparkTimer += star.sparkFreq * 0.75 + star.sparkFreq * burnRateInverse * 4;
+                                Spark.add(
+                                          star.x,
+                                          star.y,
+                                          star.sparkColor,
+                                          Math.random() * PI_2,
+                                          Math.random() * star.sparkSpeed * burnRate,
+                                          star.sparkLife * 0.8 + Math.random() * star.sparkLifeVariation * star.sparkLife
+                                          );
+                                }
+                                }
 
-                // Handle star transitions
-                if (star.life < star.transitionTime) {
-                    if (star.secondColor && !star.colorChanged) {
-                        star.colorChanged = true;
-                        star.color = star.secondColor;
-                        stars.splice(i, 1);
-                        Star.active[star.secondColor].push(star);
-                        if (star.secondColor === INVISIBLE) {
-                            star.sparkFreq = 0;
-                        }
-                    }
+                                // Handle star transitions
+                                if (star.life < star.transitionTime) {
+                                if (star.secondColor && !star.colorChanged) {
+                                star.colorChanged = true;
+                                star.color = star.secondColor;
+                                stars.splice(i, 1);
+                                Star.active[star.secondColor].push(star);
+                                if (star.secondColor === INVISIBLE) {
+                                star.sparkFreq = 0;
+                                }
+                                }
 
-                    if (star.strobe) {
-                        // Strobes in the following pattern: on:off:off:on:off:off in increments of `strobeFreq` ms.
-                        star.visible = Math.floor(star.life / star.strobeFreq) % 3 === 0;
-                    }
-                }
-            }
-        }
+                                if (star.strobe) {
+                                // Strobes in the following pattern: on:off:off:on:off:off in increments of `strobeFreq` ms.
+                                star.visible = Math.floor(star.life / star.strobeFreq) % 3 === 0;
+                                }
+                                }
+                                }
+                                }
 
-        // Sparks
-        const sparks = Spark.active[color];
-        for (let i=sparks.length-1; i>=0; i=i-1) {
-            const spark = sparks[i];
-            spark.life -= timeStep;
-            if (spark.life <= 0) {
-                sparks.splice(i, 1);
-                Spark.returnInstance(spark);
-            } else {
-                spark.prevX = spark.x;
-                spark.prevY = spark.y;
-                spark.x += spark.speedX * speed;
-                spark.y += spark.speedY * speed;
-                spark.speedX *= sparkDrag;
-                spark.speedY *= sparkDrag;
-                spark.speedY += gAcc;
-            }
-        }
-    });
+                                // Sparks
+                                const sparks = Spark.active[color];
+                                for (let i=sparks.length-1; i>=0; i=i-1) {
+                                const spark = sparks[i];
+                                spark.life -= timeStep;
+                                if (spark.life <= 0) {
+                                sparks.splice(i, 1);
+                                Spark.returnInstance(spark);
+                                } else {
+                                spark.prevX = spark.x;
+                                spark.prevY = spark.y;
+                                spark.x += spark.speedX * speed;
+                                spark.y += spark.speedY * speed;
+                                spark.speedX *= sparkDrag;
+                                spark.speedY *= sparkDrag;
+                                spark.speedY += gAcc;
+                                }
+                                }
+                                });
 
-    render(speed);
+                                render(speed);
 }
 
 function render(speed) {
@@ -1404,51 +1236,51 @@ function render(speed) {
     trailsCtx.lineWidth = Star.drawWidth;
     trailsCtx.lineCap = isLowQuality ? 'square' : 'round';
     mainCtx.strokeStyle = '#fff';
-  mainCtx.lineWidth = 1;
+    mainCtx.lineWidth = 1;
     mainCtx.beginPath();
     COLOR_CODES.forEach(color => {
-        const stars = Star.active[color];
-        trailsCtx.strokeStyle = color;
-        trailsCtx.beginPath();
-        stars.forEach(star => {
-            if (star.visible) {
-                trailsCtx.moveTo(star.x, star.y);
-                trailsCtx.lineTo(star.prevX, star.prevY);
-                mainCtx.moveTo(star.x, star.y);
-                mainCtx.lineTo(star.x - star.speedX * 1.6, star.y - star.speedY * 1.6);
-            }
-        });
-        trailsCtx.stroke();
-    });
-    mainCtx.stroke();
+                        const stars = Star.active[color];
+                        trailsCtx.strokeStyle = color;
+                        trailsCtx.beginPath();
+                        stars.forEach(star => {
+                                      if (star.visible) {
+                                      trailsCtx.moveTo(star.x, star.y);
+                                      trailsCtx.lineTo(star.prevX, star.prevY);
+                                      mainCtx.moveTo(star.x, star.y);
+                                      mainCtx.lineTo(star.x - star.speedX * 1.6, star.y - star.speedY * 1.6);
+                                      }
+                                      });
+                        trailsCtx.stroke();
+                        });
+                        mainCtx.stroke();
 
-    // Draw sparks
-    trailsCtx.lineWidth = Spark.drawWidth;
-    trailsCtx.lineCap = 'butt';
-    COLOR_CODES.forEach(color => {
-        const sparks = Spark.active[color];
-        trailsCtx.strokeStyle = color;
-        trailsCtx.beginPath();
-        sparks.forEach(spark => {
-            trailsCtx.moveTo(spark.x, spark.y);
-            trailsCtx.lineTo(spark.prevX, spark.prevY);
-        });
-        trailsCtx.stroke();
-    });
-
-
-    // Render speed bar if visible
-    if (speedBarOpacity) {
-        const speedBarHeight = 6;
-        mainCtx.globalAlpha = speedBarOpacity;
-        mainCtx.fillStyle = COLOR.Blue;
-        mainCtx.fillRect(0, height - speedBarHeight, width * simSpeed, speedBarHeight);
-        mainCtx.globalAlpha = 1;
-    }
+                        // Draw sparks
+                        trailsCtx.lineWidth = Spark.drawWidth;
+                        trailsCtx.lineCap = 'butt';
+                        COLOR_CODES.forEach(color => {
+                                            const sparks = Spark.active[color];
+                                            trailsCtx.strokeStyle = color;
+                                            trailsCtx.beginPath();
+                                            sparks.forEach(spark => {
+                                                           trailsCtx.moveTo(spark.x, spark.y);
+                                                           trailsCtx.lineTo(spark.prevX, spark.prevY);
+                                                           });
+                                            trailsCtx.stroke();
+                                            });
 
 
-    trailsCtx.setTransform(1, 0, 0, 1, 0, 0);
-    mainCtx.setTransform(1, 0, 0, 1, 0, 0);
+                                            // Render speed bar if visible
+                                            if (speedBarOpacity) {
+                                                const speedBarHeight = 6;
+                                                mainCtx.globalAlpha = speedBarOpacity;
+                                                mainCtx.fillStyle = COLOR.Blue;
+                                                mainCtx.fillRect(0, height - speedBarHeight, width * simSpeed, speedBarHeight);
+                                                mainCtx.globalAlpha = 1;
+                                            }
+
+
+                                            trailsCtx.setTransform(1, 0, 0, 1, 0, 0);
+                                            mainCtx.setTransform(1, 0, 0, 1, 0, 0);
 }
 
 
@@ -1469,31 +1301,30 @@ function colorSky(speed) {
     // Add each known color to sky, multiplied by particle count of that color. This will put RGB values wildly out of bounds, but we'll scale them back later.
     // Also add up total star count.
     COLOR_CODES.forEach(color => {
-        const tuple = COLOR_TUPLES[color];
-        const count =  Star.active[color].length;
-        totalStarCount += count;
-        targetSkyColor.r += tuple.r * count;
-        targetSkyColor.g += tuple.g * count;
-        targetSkyColor.b += tuple.b * count;
-    });
+                        const tuple = COLOR_TUPLES[color];
+                        const count =  Star.active[color].length;
+                        totalStarCount += count;
+                        targetSkyColor.r += tuple.r * count;
+                        targetSkyColor.g += tuple.g * count;
+                        targetSkyColor.b += tuple.b * count;
+                        });
 
-    // Clamp intensity at 1.0, and map to a custom non-linear curve. This allows few stars to perceivably light up the sky, while more stars continue to increase the brightness but at a lesser rate. This is more inline with humans' non-linear brightness perception.
-    const intensity = Math.pow(Math.min(1, totalStarCount / maxStarCount), 0.3);
-    // Figure out which color component has the highest value, so we can scale them without affecting the ratios.
-    // Prevent 0 from being used, so we don't divide by zero in the next step.
-    const maxColorComponent = Math.max(1, targetSkyColor.r, targetSkyColor.g, targetSkyColor.b);
-    // Scale all color components to a max of `maxSkySaturation`, and apply intensity.
-    targetSkyColor.r = targetSkyColor.r / maxColorComponent * maxSkySaturation * intensity;
-    targetSkyColor.g = targetSkyColor.g / maxColorComponent * maxSkySaturation * intensity;
-    targetSkyColor.b = targetSkyColor.b / maxColorComponent * maxSkySaturation * intensity;
+                        // Clamp intensity at 1.0, and map to a custom non-linear curve. This allows few stars to perceivably light up the sky, while more stars continue to increase the brightness but at a lesser rate. This is more inline with humans' non-linear brightness perception.
+                        const intensity = Math.pow(Math.min(1, totalStarCount / maxStarCount), 0.3);
+                        // Figure out which color component has the highest value, so we can scale them without affecting the ratios.
+                        // Prevent 0 from being used, so we don't divide by zero in the next step.
+                        const maxColorComponent = Math.max(1, targetSkyColor.r, targetSkyColor.g, targetSkyColor.b);
+                        // Scale all color components to a max of `maxSkySaturation`, and apply intensity.
+                        targetSkyColor.r = targetSkyColor.r / maxColorComponent * maxSkySaturation * intensity;
+                        targetSkyColor.g = targetSkyColor.g / maxColorComponent * maxSkySaturation * intensity;
+                        targetSkyColor.b = targetSkyColor.b / maxColorComponent * maxSkySaturation * intensity;
 
-    // Animate changes to color to smooth out transitions.
-    const colorChange = 10;
-    currentSkyColor.r += (targetSkyColor.r - currentSkyColor.r) / colorChange * speed;
-    currentSkyColor.g += (targetSkyColor.g - currentSkyColor.g) / colorChange * speed;
-    currentSkyColor.b += (targetSkyColor.b - currentSkyColor.b) / colorChange * speed;
+                        // Animate changes to color to smooth out transitions.
+                        const colorChange = 10;
+                        currentSkyColor.r += (targetSkyColor.r - currentSkyColor.r) / colorChange * speed;
+                        currentSkyColor.g += (targetSkyColor.g - currentSkyColor.g) / colorChange * speed;
+                        currentSkyColor.b += (targetSkyColor.b - currentSkyColor.b) / colorChange * speed;
 
-    appNodes.canvasContainer.style.backgroundColor = `rgb(${currentSkyColor.r | 0}, ${currentSkyColor.g | 0}, ${currentSkyColor.b | 0})`;
 }
 
 mainStage.addEventListener('ticker', update);
@@ -1553,9 +1384,6 @@ function createBurst(count, particleFactory, startAngle=0, arcLength=PI_2) {
     }
 }
 
-
-
-
 // Various star effects.
 // These are designed to be attached to a star's `onDeath` event.
 
@@ -1563,79 +1391,75 @@ function createBurst(count, particleFactory, startAngle=0, arcLength=PI_2) {
 function crossetteEffect(star) {
     const startAngle = Math.random() * PI_HALF;
     createParticleArc(startAngle, PI_2, 4, 0.5, (angle) => {
-        Star.add(
-            star.x,
-            star.y,
-            star.color,
-            angle,
-            Math.random() * 0.6 + 0.75,
-            600
-        );
-    });
+                      Star.add(
+                               star.x,
+                               star.y,
+                               star.color,
+                               angle,
+                               Math.random() * 0.6 + 0.75,
+                               600
+                               );
+                      });
 }
 
 // Flower is like a mini shell
 function floralEffect(star) {
     const count = 12 + 6 * quality;
     createBurst(count, (angle, speedMult) => {
-        Star.add(
-            star.x,
-            star.y,
-            star.color,
-            angle,
-            speedMult * 2.4,
-            1000 + Math.random() * 300,
-            star.speedX,
-            star.speedY
-        );
-    });
-    // Queue burst flash render
-    BurstFlash.add(star.x, star.y, 46);
-    soundManager.playSound('burstSmall');
+                Star.add(
+                         star.x,
+                         star.y,
+                         star.color,
+                         angle,
+                         speedMult * 2.4,
+                         1000 + Math.random() * 300,
+                         star.speedX,
+                         star.speedY
+                         );
+                });
+                // Queue burst flash render
+                BurstFlash.add(star.x, star.y, 46);
 }
 
 // Floral burst with willow stars
 function fallingLeavesEffect(star) {
     createBurst(7, (angle, speedMult) => {
-        const newStar = Star.add(
-            star.x,
-            star.y,
-            INVISIBLE,
-            angle,
-            speedMult * 2.4,
-            2400 + Math.random() * 600,
-            star.speedX,
-            star.speedY
-        );
+                const newStar = Star.add(
+                                         star.x,
+                                         star.y,
+                                         INVISIBLE,
+                                         angle,
+                                         speedMult * 2.4,
+                                         2400 + Math.random() * 600,
+                                         star.speedX,
+                                         star.speedY
+                                         );
 
-        newStar.sparkColor = COLOR.Gold;
-        newStar.sparkFreq = 144 / quality;
-        newStar.sparkSpeed = 0.28;
-        newStar.sparkLife = 750;
-        newStar.sparkLifeVariation = 3.2;
-    });
-    // Queue burst flash render
-    BurstFlash.add(star.x, star.y, 46);
-    soundManager.playSound('burstSmall');
+                newStar.sparkColor = COLOR.Gold;
+                newStar.sparkFreq = 144 / quality;
+                newStar.sparkSpeed = 0.28;
+                newStar.sparkLife = 750;
+                newStar.sparkLifeVariation = 3.2;
+                });
+                // Queue burst flash render
+                BurstFlash.add(star.x, star.y, 46);
 }
 
 // Crackle pops into a small cloud of golden sparks.
 function crackleEffect(star) {
     const count = isHighQuality ? 32 : 16;
     createParticleArc(0, PI_2, count, 1.8, (angle) => {
-        Spark.add(
-            star.x,
-            star.y,
-            COLOR.Gold,
-            angle,
-            // apply near cubic falloff to speed (places more particles towards outside)
-            Math.pow(Math.random(), 0.45) * 2.4,
-            300 + Math.random() * 200
-        );
-    });
+      Spark.add(
+                star.x,
+                star.y,
+                COLOR.Gold,
+                angle,
+                // apply near cubic falloff to speed (places more particles towards outside)
+                Math.pow(Math.random(), 0.45) * 2.4,
+                300 + Math.random() * 200
+                );
+      });
 }
-
-
 
 /**
  * Shell can be constructed with options:
@@ -1691,13 +1515,13 @@ class Shell {
         const launchVelocity = Math.pow(launchDistance * 0.04, 0.64);
 
         const comet = this.comet = Star.add(
-            launchX,
-            launchY,
-            typeof this.color === 'string' && this.color !== 'random' ? this.color : COLOR.White,
-            Math.PI,
-            launchVelocity * (this.horsetail ? 1.2 : 1),
-            // Hang time is derived linearly from Vi; exact number came from testing
-            launchVelocity * (this.horsetail ? 100 : 400)
+        launchX,
+        launchY,
+        typeof this.color === 'string' && this.color !== 'random' ? this.color : COLOR.White,
+        Math.PI,
+        launchVelocity * (this.horsetail ? 1.2 : 1),
+        // Hang time is derived linearly from Vi; exact number came from testing
+        launchVelocity * (this.horsetail ? 100 : 400)
         );
 
         // making comet "heavy" limits air drag
@@ -1725,8 +1549,6 @@ class Shell {
         }
 
         comet.onDeath = comet => this.burst(comet.x, comet.y);
-
-        soundManager.playSound('lift');
     }
 
     burst(x, y) {
@@ -1736,20 +1558,11 @@ class Shell {
         let color, onDeath, sparkFreq, sparkSpeed, sparkLife;
         let sparkLifeVariation = 0.25;
         // Some death effects, like crackle, play a sound, but should only be played once.
-        let playedDeathSound = false;
 
         if (this.crossette) onDeath = (star) => {
-            if (!playedDeathSound) {
-                soundManager.playSound('crackleSmall');
-                playedDeathSound = true;
-            }
             crossetteEffect(star);
         }
         if (this.crackle) onDeath = (star) => {
-            if (!playedDeathSound) {
-                soundManager.playSound('crackle');
-                playedDeathSound = true;
-            }
             crackleEffect(star);
         }
         if (this.floral) onDeath = floralEffect;
@@ -1804,43 +1617,43 @@ class Shell {
             const standardInitialSpeed = this.spreadSize / 1800;
 
             const star = Star.add(
-                x,
-                y,
-                color || randomColor(),
-                angle,
-                speedMult * speed,
-                // add minor variation to star life
-                this.starLife + Math.random() * this.starLife * this.starLifeVariation,
-                this.horsetail ? this.comet && this.comet.speedX : 0,
-                this.horsetail ? this.comet && this.comet.speedY : -standardInitialSpeed
-            );
+              x,
+              y,
+              color || randomColor(),
+              angle,
+              speedMult * speed,
+              // add minor variation to star life
+              this.starLife + Math.random() * this.starLife * this.starLifeVariation,
+              this.horsetail ? this.comet && this.comet.speedX : 0,
+              this.horsetail ? this.comet && this.comet.speedY : -standardInitialSpeed
+              );
 
-            if (this.secondColor) {
-                star.transitionTime = this.starLife * (Math.random() * 0.05 + 0.32);
-                star.secondColor = this.secondColor;
-            }
+              if (this.secondColor) {
+                  star.transitionTime = this.starLife * (Math.random() * 0.05 + 0.32);
+                  star.secondColor = this.secondColor;
+              }
 
-            if (this.strobe) {
-                star.transitionTime = this.starLife * (Math.random() * 0.08 + 0.46);
-                star.strobe = true;
-                // How many milliseconds between switch of strobe state "tick". Note that the strobe pattern
-                // is on:off:off, so this is the "on" duration, while the "off" duration is twice as long.
-                star.strobeFreq = Math.random() * 20 + 40;
-                if (this.strobeColor) {
-                    star.secondColor = this.strobeColor;
-                }
-            }
+              if (this.strobe) {
+                  star.transitionTime = this.starLife * (Math.random() * 0.08 + 0.46);
+                  star.strobe = true;
+                  // How many milliseconds between switch of strobe state "tick". Note that the strobe pattern
+                  // is on:off:off, so this is the "on" duration, while the "off" duration is twice as long.
+                  star.strobeFreq = Math.random() * 20 + 40;
+                  if (this.strobeColor) {
+                      star.secondColor = this.strobeColor;
+                  }
+              }
 
-            star.onDeath = onDeath;
+              star.onDeath = onDeath;
 
-            if (this.glitter) {
-                star.sparkFreq = sparkFreq;
-                star.sparkSpeed = sparkSpeed;
-                star.sparkLife = sparkLife;
-                star.sparkLifeVariation = sparkLifeVariation;
-                star.sparkColor = this.glitterColor;
-                star.sparkTimer = Math.random() * star.sparkFreq;
-            }
+              if (this.glitter) {
+                  star.sparkFreq = sparkFreq;
+                  star.sparkSpeed = sparkSpeed;
+                  star.sparkLife = sparkLife;
+                  star.sparkLifeVariation = sparkLifeVariation;
+                  star.sparkColor = this.glitterColor;
+                  star.sparkTimer = Math.random() * star.sparkFreq;
+              }
         };
 
 
@@ -1857,32 +1670,32 @@ class Shell {
                 const ringSquash = Math.pow(Math.random(), 2) * 0.85 + 0.15;;
 
                 createParticleArc(0, PI_2, this.starCount, 0, angle => {
-                    // Create a ring, squashed horizontally
-                    const initSpeedX = Math.sin(angle) * speed * ringSquash;
-                    const initSpeedY = Math.cos(angle) * speed;
-                    // Rotate ring
-                    const newSpeed = MyMath.pointDist(0, 0, initSpeedX, initSpeedY);
-                    const newAngle = MyMath.pointAngle(0, 0, initSpeedX, initSpeedY) + ringStartAngle;
-                    const star = Star.add(
-                        x,
-                        y,
-                        color,
-                        newAngle,
-                        // apply near cubic falloff to speed (places more particles towards outside)
-                        newSpeed,//speed,
-                        // add minor variation to star life
-                        this.starLife + Math.random() * this.starLife * this.starLifeVariation
-                    );
+                  // Create a ring, squashed horizontally
+                  const initSpeedX = Math.sin(angle) * speed * ringSquash;
+                  const initSpeedY = Math.cos(angle) * speed;
+                  // Rotate ring
+                  const newSpeed = MyMath.pointDist(0, 0, initSpeedX, initSpeedY);
+                  const newAngle = MyMath.pointAngle(0, 0, initSpeedX, initSpeedY) + ringStartAngle;
+                  const star = Star.add(
+                                        x,
+                                        y,
+                                        color,
+                                        newAngle,
+                                        // apply near cubic falloff to speed (places more particles towards outside)
+                                        newSpeed,//speed,
+                                        // add minor variation to star life
+                                        this.starLife + Math.random() * this.starLife * this.starLifeVariation
+                                        );
 
-                    if (this.glitter) {
-                        star.sparkFreq = sparkFreq;
-                        star.sparkSpeed = sparkSpeed;
-                        star.sparkLife = sparkLife;
-                        star.sparkLifeVariation = sparkLifeVariation;
-                        star.sparkColor = this.glitterColor;
-                        star.sparkTimer = Math.random() * star.sparkFreq;
-                    }
-                });
+                  if (this.glitter) {
+                  star.sparkFreq = sparkFreq;
+                  star.sparkSpeed = sparkSpeed;
+                  star.sparkLife = sparkLife;
+                  star.sparkLifeVariation = sparkLifeVariation;
+                  star.sparkColor = this.glitterColor;
+                  star.sparkTimer = Math.random() * star.sparkFreq;
+                  }
+                  });
             }
             // Normal burst
             else {
@@ -1912,27 +1725,27 @@ class Shell {
 
         if (this.pistil) {
             const innerShell = new Shell({
-                spreadSize: this.spreadSize * 0.5,
-                starLife: this.starLife * 0.6,
-                starLifeVariation: this.starLifeVariation,
-                starDensity: 1.4,
-                color: this.pistilColor,
-                glitter: 'light',
-                glitterColor: this.pistilColor === COLOR.Gold ? COLOR.Gold : COLOR.White
-            });
-            innerShell.burst(x, y);
+             spreadSize: this.spreadSize * 0.5,
+             starLife: this.starLife * 0.6,
+             starLifeVariation: this.starLifeVariation,
+             starDensity: 1.4,
+             color: this.pistilColor,
+             glitter: 'light',
+             glitterColor: this.pistilColor === COLOR.Gold ? COLOR.Gold : COLOR.White
+             });
+             innerShell.burst(x, y);
         }
 
         if (this.streamers) {
             const innerShell = new Shell({
-                spreadSize: this.spreadSize * 0.9,
-                starLife: this.starLife * 0.8,
-                starLifeVariation: this.starLifeVariation,
-                starCount: Math.floor(Math.max(6, this.spreadSize / 45)),
-                color: COLOR.White,
-                glitter: 'streamer'
-            });
-            innerShell.burst(x, y);
+             spreadSize: this.spreadSize * 0.9,
+             starLife: this.starLife * 0.8,
+             starLifeVariation: this.starLifeVariation,
+             starCount: Math.floor(Math.max(6, this.spreadSize / 45)),
+             color: COLOR.White,
+             glitter: 'streamer'
+             });
+             innerShell.burst(x, y);
         }
 
         // Queue burst flash render
@@ -1950,12 +1763,9 @@ class Shell {
             const maxDiff = 2;
             const sizeDifferenceFromMaxSize = Math.min(maxDiff, shellSizeSelector() - this.shellSize);
             const soundScale = (1 - sizeDifferenceFromMaxSize / maxDiff) * 0.3 + 0.7;
-            soundManager.playSound('burst', soundScale);
         }
     }
 }
-
-
 
 const BurstFlash = {
     active: [],
@@ -1988,9 +1798,9 @@ const BurstFlash = {
 function createParticleCollection() {
     const collection = {};
     COLOR_CODES_W_INVIS.forEach(color => {
-        collection[color] = [];
-    });
-    return collection;
+                                collection[color] = [];
+                                });
+                                return collection;
 }
 
 
@@ -2085,8 +1895,8 @@ const Spark = {
         return instance;
     },
 
-    // Public method for cleaning up and returning an instance back to the pool.
-    returnInstance(instance) {
+        // Public method for cleaning up and returning an instance back to the pool.
+        returnInstance(instance) {
         // Add back to the pool.
         this._pool.push(instance);
     }
@@ -2094,199 +1904,3 @@ const Spark = {
 
 
 
-const soundManager = {
-    baseURL: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/',
-    ctx: new (window.AudioContext || window.webkitAudioContext),
-    sources: {
-        lift: {
-            volume: 1,
-            playbackRateMin: 0.85,
-            playbackRateMax: 0.95,
-            fileNames: [
-                'lift1.mp3',
-                'lift2.mp3',
-                'lift3.mp3'
-            ]
-        },
-        burst: {
-            volume: 1,
-            playbackRateMin: 0.8,
-            playbackRateMax: 0.9,
-            fileNames: [
-                'burst1.mp3',
-                'burst2.mp3'
-            ]
-        },
-        burstSmall: {
-            volume: 0.25,
-            playbackRateMin: 0.8,
-            playbackRateMax: 1,
-            fileNames: [
-                'burst-sm-1.mp3',
-                'burst-sm-2.mp3'
-            ]
-        },
-        crackle: {
-            volume: 0.2,
-            playbackRateMin: 1,
-            playbackRateMax: 1,
-            fileNames: ['crackle1.mp3']
-        },
-        crackleSmall: {
-            volume: 0.3,
-            playbackRateMin: 1,
-            playbackRateMax: 1,
-            fileNames: ['crackle-sm-1.mp3']
-        }
-    },
-
-    preload() {
-        const allFilePromises = [];
-
-        function checkStatus(response) {
-            if (response.status >= 200 && response.status < 300) {
-                return response;
-            }
-            const customError = new Error(response.statusText);
-            customError.response = response;
-            throw customError;
-        }
-
-        const types = Object.keys(this.sources);
-        types.forEach(type => {
-            const source = this.sources[type];
-            const { fileNames } = source;
-            const filePromises = [];
-            fileNames.forEach(fileName => {
-                const fileURL = this.baseURL + fileName;
-                // Promise will resolve with decoded audio buffer.
-                const promise = fetch(fileURL)
-                    .then(checkStatus)
-                    .then(response => response.arrayBuffer())
-                    .then(data => new Promise(resolve => {
-                        this.ctx.decodeAudioData(data, resolve);
-                    }));
-
-                filePromises.push(promise);
-                allFilePromises.push(promise);
-            });
-
-            Promise.all(filePromises)
-                .then(buffers => {
-                    source.buffers = buffers;
-                });
-        });
-
-        return Promise.all(allFilePromises);
-    },
-
-    pauseAll() {
-        this.ctx.suspend();
-    },
-
-    resumeAll() {
-        // Play a sound with no volume for iOS. This 'unlocks' the audio context when the user first enables sound.
-        this.playSound('lift', 0);
-        // Chrome mobile requires interaction before starting audio context.
-        // The sound toggle button is triggered on 'touchstart', which doesn't seem to count as a full
-        // interaction to Chrome. I guess it needs a click? At any rate if the first thing the user does
-        // is enable audio, it doesn't work. Using a setTimeout allows the first interaction to be registered.
-        // Perhaps a better solution is to track whether the user has interacted, and if not but they try enabling
-        // sound, show a tooltip that they should tap again to enable sound.
-        setTimeout(() => {
-            this.ctx.resume();
-        }, 250);
-    },
-
-    // Private property used to throttle small burst sounds.
-    _lastSmallBurstTime: 0,
-
-    /**
-     * Play a sound of `type`. Will randomly pick a file associated with type, and play it at the specified volume
-     * and play speed, with a bit of random variance in play speed. This is all based on `sources` config.
-     *
-     * @param  {string} type - The type of sound to play.
-     * @param  {?number} scale=1 - Value between 0 and 1 (values outside range will be clamped). Scales less than one
-     *                             descrease volume and increase playback speed. This is because large explosions are
-     *                             louder, deeper, and reverberate longer than small explosions.
-     *                             Note that a scale of 0 will mute the sound.
-     */
-    playSound(type, scale=1) {
-        // Ensure `scale` is within valid range.
-        scale = MyMath.clamp(scale, 0, 1);
-
-        // Disallow starting new sounds if sound is disabled, app is running in slow motion, or paused.
-        // Slow motion check has some wiggle room in case user doesn't finish dragging the speed bar
-        // *all* the way back.
-        if (!canPlaySoundSelector() || simSpeed < 0.95) {
-            return;
-        }
-
-        // Throttle small bursts, since floral/falling leaves shells have a lot of them.
-        if (type === 'burstSmall') {
-            const now = Date.now();
-            if (now - this._lastSmallBurstTime < 20) {
-                return;
-            }
-            this._lastSmallBurstTime = now;
-        }
-
-        const source = this.sources[type];
-
-        if (!source) {
-            throw new Error(`Sound of type "${type}" doesn't exist.`);
-        }
-
-        const initialVolume = source.volume;
-        const initialPlaybackRate = MyMath.random(
-            source.playbackRateMin,
-            source.playbackRateMax
-        );
-
-        // Volume descreases with scale.
-        const scaledVolume = initialVolume * scale;
-        // Playback rate increases with scale. For this, we map the scale of 0-1 to a scale of 2-1.
-        // So at a scale of 1, sound plays normally, but as scale approaches 0 speed approaches double.
-        const scaledPlaybackRate = initialPlaybackRate * (2 - scale);
-
-        const gainNode = this.ctx.createGain();
-        gainNode.gain.value = scaledVolume;
-
-        const buffer = MyMath.randomChoice(source.buffers);
-        const bufferSource = this.ctx.createBufferSource();
-        bufferSource.playbackRate.value = scaledPlaybackRate;
-        bufferSource.buffer = buffer;
-        bufferSource.connect(gainNode);
-        gainNode.connect(this.ctx.destination);
-        bufferSource.start(0);
-    }
-};
-
-
-
-
-// Kick things off.
-
-function setLoadingStatus(status) {
-    document.querySelector('.loading-init__status').textContent = status;
-}
-
-// CodePen profile header doesn't need audio, just initialize.
-if (IS_HEADER) {
-    init();
-} else {
-    // Allow status to render, then preload assets and start app.
-    setLoadingStatus('');
-    setTimeout(() => {
-        soundManager.preload()
-        .then(
-            init,
-            reason => {
-                // Codepen preview doesn't like to load the audio, so just init to fix the preview for now.
-                init();
-                // setLoadingStatus('Error Loading Audio');
-                return Promise.reject(reason);
-            }
-        );
-    }, 0);
-}

@@ -293,7 +293,7 @@ body {
 
     background: -ms-linear-gradient(top,  #a7d3db 0%,#cfddc9 88%,#e2e3ce 94%,#fceabd 100%); /* IE10+ */
 
-    background: linear-gradient(to bottom,  #a7d3db 0%,#cfddc9 88%,#e2e3ce 94%,#fceabd 100%); /* W3C */
+   background: linear-gradient(to bottom,  #a7d3db 0%,#FFEFBA 50%, #002751 75%,#002751 100%); /* W3C */
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7d3db', endColorstr='#fceabd',GradientType=0 ); /* IE6-8 */
 
@@ -301,19 +301,18 @@ body {
 
 footer {
     position: relative;
-    height: 378px;
-    margin-top: 22px;
+    left: 0;
+    width:100%;
+    height:calc(23vh);
     background: url('../img/ground.png') center no-repeat;
+    background-size: 100%;
     z-index: 0;
 }
-
-
 
 footer p {
     position: absolute;
     left: 50%;
     margin-left: 350px;
-    bottom: 15px;
     color: #677435;
     font-size: 0.8em
 }
@@ -335,7 +334,7 @@ footer p a:hover {
     text-align: center;
     vertical-align: middle;
     padding-top: 25px;
-    height: 32px;
+    height: 60px;
     z-index:1;
 }
 
@@ -358,7 +357,7 @@ footer p a:hover {
     text-align: center;
     vertical-align: middle;
     padding-top: 25px;
-    height: 32px;
+    height: 60px;
 }
 
 #language-switcher-es a, #language-switcher-es a:visited, #language-switcher-es a:active {
@@ -372,7 +371,6 @@ footer p a:hover {
     color: #83CFCB;
 }
 
-
 .sticky-wrapper {
     position: relative;
 }
@@ -384,12 +382,21 @@ footer p a:hover {
     margin-top: -190px;
     width: 609px;
     height: 940px;
-    background: url('../img/balloon.png') no-repeat center top;
+    background: url('../img/balloon@2x_tests_ballon_eyesclosed.png') no-repeat center top;
     z-index: 99;
+    background-size: 609px 940px;
 }
 
 #balloon:hover {
-    background: url('../img/balloon_salute@2x.png') no-repeat center top;
+    position: fixed;
+    left: 50%;
+    margin-left: -304px;
+    margin-top: -190px;
+    width: 609px;
+    height: 940px;
+    background: url('../img/balloon@2x_tests_baloon_smilng.png') no-repeat center top;
+    z-index: 99;
+    background-size: 609px 940px;
 }
 
 header {
@@ -440,7 +447,7 @@ header .year {
 }
 
 header .bride {
-    left: 360px;
+    left: 350px;
     -webkit-transform: rotate(353deg);
     -moz-transform: rotate(353deg);
     -o-transform: rotate(353deg);
@@ -449,7 +456,7 @@ header .bride {
 }
 
 header .groom {
-    right: 0%;
+    right: -10px;
     margin-right: 330px;
     -webkit-transform: rotate(7deg);
     -moz-transform: rotate(7deg);
@@ -697,7 +704,7 @@ html.no-touch nav ul li:hover {
   }
 
   #balloon {
-    background-image: url('../img/balloon@2x.png');
+    background-image: url('../img/balloon@2x_tests_ballon_eyesclosed.png');
     background-size: 609px 940px;
   }
 
@@ -713,7 +720,7 @@ html.no-touch nav ul li:hover {
 
   footer {
     background-image: url('../img/ground@2x.png');
-    background-size: 3028px 378px;
+    background-size: 100%;
   }
 
   nav ul li {
@@ -787,6 +794,22 @@ html.no-touch nav ul li:hover {
     overflow: visible;
     position: static;
     width: auto;
+}
+#zone-eventi p
+{
+    color:white;
+}
+#zone-eventi p
+{
+    color:white;
+}
+#zone-hotels p
+{
+    color:white;
+}
+#zone-form
+{
+    color:white;
 }
 
 /*
@@ -916,3 +939,4 @@ html.no-touch nav ul li:hover {
         page-break-after: avoid;
     }
 }
+
