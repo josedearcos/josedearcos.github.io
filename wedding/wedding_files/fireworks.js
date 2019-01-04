@@ -339,7 +339,6 @@ function renderApp(state) {
     appNodes.scaleFactor.value = state.config.scaleFactor.toFixed(2);
 
     appNodes.menuInnerWrap.style.opacity = state.openHelpTopic ? 0.12 : 1;
-    appNodes.helpModal.classList.toggle('active', !!state.openHelpTopic);
 
 }
 

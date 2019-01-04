@@ -523,26 +523,6 @@ html.no-touch nav ul li:hover {
     font-size: 1.3em;
 }
 
-.moment.first {
-    margin-top: 250px;
-}
-
-.moment.last {
-    margin-bottom: -300px;
-    position: relative;
-    margin-left: 100px;
-    font-size: 1em;
-    z-index:100;
-}
-
-.form_center{
-    width:300px;
-}
-
-#form_center{
-    width:500px;
-}
-
 .moment p {
     position: absolute;
     width: 250px;
@@ -551,10 +531,6 @@ html.no-touch nav ul li:hover {
     color: #666666;
 }
 
-#message
-{
-    margin-top:220px;
-}
 .moment p.scroll-hint {
     color: #FAFDFC;
     font-family: "Sreda", "Georgia", "Times New Roman", serif;
@@ -572,6 +548,7 @@ html.no-touch nav ul li:hover {
     margin-top:0px;
     margin-bottom:0px;
 }
+
 .moment p strong {
     font-family: "Sreda", "Georgia", "Times New Roman", serif;
     margin-top: 150px;
@@ -599,6 +576,32 @@ html.no-touch nav ul li:hover {
 
 .moment p.left {
 }
+
+.moment.first {
+    margin-top: 250px;
+}
+
+.moment.last {
+    position: relative;
+    margin-left: 100px;
+    font-size: 1em;
+    z-index:100;
+}
+
+.form_center{
+    width:300px;
+}
+
+#form_center{
+    width:500px;
+}
+
+
+#message
+{
+    margin-top:220px;
+}
+
 
 .cloud {
     left: 50%;
@@ -795,10 +798,7 @@ html.no-touch nav ul li:hover {
     position: static;
     width: auto;
 }
-#zone-eventi p
-{
-    color:white;
-}
+
 #zone-eventi p
 {
     color:white;
@@ -811,6 +811,7 @@ html.no-touch nav ul li:hover {
 {
     color:white;
 }
+
 
 /*
  * Hide visually and from screenreaders, but maintain layout

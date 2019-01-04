@@ -8,7 +8,6 @@ $(document).ready(function() {
   var atArrival = $(window).scrollTop() < 30;
   var atDeparture = $(document).height() - $(window).scrollTop() - $(window).height() < 30;
   var lastScrollTop = 0;
-  var activeZone = null;
   var $balloon = $("#balloon");
 
   var CLOUDS = [
@@ -28,11 +27,11 @@ $(document).ready(function() {
 
     $.each(CLOUDS, function(index, cloud) {
       var $cloud = $("<div>").addClass("clouding").
-                              addClass(cloud.css_class).
-                              addClass("cloud").
-                              attr('id', 'cloud-' + index).
-                              css("top", cloud.top + 'px').
-                              css("margin-left", cloud.offset);
+      addClass(cloud.css_class).
+      addClass("cloud").
+      attr('id', 'cloud-' + index).
+      css("top", cloud.top + 'px').
+      css("margin-left", cloud.offset);
       $("body").append($cloud);
 
       $(window).scroll(function() {
@@ -72,7 +71,7 @@ $(document).ready(function() {
 
         if(IS_MOBILE)
         {
-            $balloon.animate({"margin-top": 900 + 'px'}, 1000);
+            $balloon.animate({"margin-top": 940 + 'px'}, 1000);
         }
         else
         {
