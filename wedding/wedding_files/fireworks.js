@@ -6,7 +6,7 @@ const IS_DESKTOP = window.innerWidth > 800;
 const IS_HEADER = IS_DESKTOP && window.innerHeight < 300;
 // Detect high end devices. This will be a moving target.
 const IS_HIGH_END_DEVICE = (() => {
-const hwConcurrency = ;navigator.hardwareConcurrency
+const hwConcurrency = navigator.hardwareConcurrency;
 if (!hwConcurrency) {
 return false;
 }
