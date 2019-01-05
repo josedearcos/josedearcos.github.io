@@ -382,7 +382,7 @@ footer p a:hover {
     margin-top: -190px;
     width: 609px;
     height: 940px;
-    background: url('../img/balloon@2x_tests_ballon_eyesclosed.png') no-repeat center top;
+    background: url('../img/balloon_default@2x.png') no-repeat center top;
     z-index: 99;
     background-size: 609px 940px;
 }
@@ -394,7 +394,7 @@ footer p a:hover {
     margin-top: -190px;
     width: 609px;
     height: 940px;
-    background: url('../img/balloon@2x_tests_baloon_smilng.png') no-repeat center top;
+    background: url('../img/balloon_smiling@2x.png') no-repeat center top;
     z-index: 99;
     background-size: 609px 940px;
 }
@@ -711,7 +711,7 @@ html.no-touch nav ul li:hover {
   }
 
   #balloon {
-    background-image: url('../img/balloon@2x_tests_ballon_eyesclosed.png');
+    background-image: url('../img/balloon_default@2x.png');
     background-size: 609px 940px;
   }
 
