@@ -293,7 +293,7 @@ body {
 
     background: -ms-linear-gradient(top,  #a7d3db 0%,#cfddc9 88%,#e2e3ce 94%,#fceabd 100%); /* IE10+ */
 
-   background: linear-gradient(to bottom,  #a7d3db 0%,#FFEFBA 50%, #002751 75%,#002751 100%); /* W3C */
+   background: linear-gradient(to bottom, deepskyblue 0%, #a7d3db 50%, lightskyblue 66%, #002751 80%); /* W3C */
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7d3db', endColorstr='#fceabd',GradientType=0 ); /* IE6-8 */
 
@@ -447,7 +447,7 @@ header .year {
 }
 
 header .bride {
-    left: 350px;
+    left: 385px;
     -webkit-transform: rotate(353deg);
     -moz-transform: rotate(353deg);
     -o-transform: rotate(353deg);
@@ -456,8 +456,8 @@ header .bride {
 }
 
 header .groom {
-    right: -10px;
-    margin-right: 330px;
+    right: 0px;
+    margin-right: 400px;
     -webkit-transform: rotate(7deg);
     -moz-transform: rotate(7deg);
     -o-transform: rotate(7deg);
@@ -528,7 +528,7 @@ html.no-touch nav ul li:hover {
     width: 250px;
     top: 20%;
     z-index: 10;
-    color: #666666;
+    color: white;
 }
 
 .moment p.scroll-hint {
@@ -557,7 +557,7 @@ html.no-touch nav ul li:hover {
     line-height: 1em;
     font-weight: 300;
     display: block;
-    color: #F26A47;
+    color: #d81b27;
 }
 
 .moment h2 strong {
@@ -586,6 +586,10 @@ html.no-touch nav ul li:hover {
     margin-left: 100px;
     font-size: 1em;
     z-index:100;
+}
+
+.moment.last strong{
+    color: #d81b27;
 }
 
 .form_center{
@@ -799,10 +803,7 @@ html.no-touch nav ul li:hover {
     width: auto;
 }
 
-#zone-eventi p
-{
-    color:white;
-}
+
 #zone-hotels p
 {
     color:white;
