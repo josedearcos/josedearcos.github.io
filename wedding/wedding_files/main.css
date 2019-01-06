@@ -557,7 +557,7 @@ html.no-touch nav ul li:hover {
     line-height: 1em;
     font-weight: 300;
     display: block;
-    color: #d81b27;
+    color: #f28119;
 }
 
 .moment h2 strong {
@@ -589,7 +589,7 @@ html.no-touch nav ul li:hover {
 }
 
 .moment.last strong{
-    color: #d81b27;
+    color: #f28119;
 }
 
 .form_center{
