@@ -42,10 +42,6 @@ const QUALITY_LOW = 1;
 const QUALITY_NORMAL = 2;
 const QUALITY_HIGH = 3;
 
-const SKY_LIGHT_NONE = 0;
-const SKY_LIGHT_DIM = 1;
-const SKY_LIGHT_NORMAL = 2;
-
 const COLOR = {
     Red: '#ff0043',
     Green: '#14fc56',
@@ -128,7 +124,6 @@ fscreen.addEventListener('fullscreenchange', () => {
              : '2', // Mobile default
              autoLaunch: true,
              finale: false,
-             skyLighting: SKY_LIGHT_NORMAL + '',
              longExposure: false,
              scaleFactor: getDefaultScaleFactor()
          }
@@ -161,12 +156,10 @@ fscreen.addEventListener('fullscreenchange', () => {
                  case '1.1':
                  config.quality = data.quality;
                  config.size = data.size;
-                 config.skyLighting = data.skyLighting;
                  break;
                  case '1.2':
                  config.quality = data.quality;
                  config.size = data.size;
-                 config.skyLighting = data.skyLighting;
                  config.scaleFactor = data.scaleFactor;
                  break;
                  default:
@@ -202,7 +195,6 @@ fscreen.addEventListener('fullscreenchange', () => {
           data: {
           quality: config.quality,
           size: config.size,
-          skyLighting: config.skyLighting,
           scaleFactor: config.scaleFactor
           }
           }));
@@ -258,10 +250,6 @@ function configDidUpdate() {
     isNormalQuality = quality === QUALITY_NORMAL;
     isHighQuality = quality === QUALITY_HIGH;
 
-    if (skyLightingSelector() === SKY_LIGHT_NONE) {
-        appNodes.canvasContainer.style.backgroundColor = '#000';
-    }
-
     Spark.drawWidth = quality === QUALITY_HIGH ? 0.75 : 1;
 }
 
@@ -277,14 +265,12 @@ const shellNameSelector = () => store.state.config.shell;
 // Convert shell size to number.
 const shellSizeSelector = () => +store.state.config.size;
 const finaleSelector = () => store.state.config.finale;
-const skyLightingSelector = () => +store.state.config.skyLighting;
 const scaleFactorSelector = () => store.state.config.scaleFactor;
 
 const nodeKeyToHelpKey = {
     shellTypeLabel: 'shellType',
     shellSizeLabel: 'shellSize',
     qualityLabel: 'quality',
-    skyLightingLabel: 'skyLighting',
     scaleFactorLabel: 'scaleFactor',
     autoLaunchLabel: 'autoLaunch',
     fullscreenLabel: 'fullscreen',
@@ -303,8 +289,6 @@ const appNodes = {
     shellSizeLabel: '.shell-size-label',
     quality: '.quality-ui',
     qualityLabel: '.quality-ui-label',
-    skyLighting: '.sky-lighting',
-    skyLightingLabel: '.sky-lighting-label',
     scaleFactor: '.scaleFactor',
     scaleFactorLabel: '.scaleFactor-label',
     autoLaunch: '.auto-launch',
@@ -333,13 +317,10 @@ function renderApp(state) {
     appNodes.shellType.value = state.config.shell;
     appNodes.shellSize.value = state.config.size;
     appNodes.autoLaunch.checked = state.config.autoLaunch;
-    appNodes.skyLighting.value = state.config.skyLighting;
     appNodes.fullscreen.checked = state.fullscreen;
     appNodes.longExposure.checked = state.config.longExposure;
     appNodes.scaleFactor.value = state.config.scaleFactor.toFixed(2);
-
     appNodes.menuInnerWrap.style.opacity = state.openHelpTopic ? 0.12 : 1;
-
 }
 
 store.subscribe(renderApp);
@@ -350,7 +331,6 @@ function getConfigFromDOM() {
         shell: appNodes.shellType.value,
         size: appNodes.shellSize.value,
         autoLaunch: appNodes.autoLaunch.checked,
-        skyLighting: appNodes.skyLighting.value,
         longExposure: appNodes.longExposure.checked,
         // Store value as number.
         scaleFactor: parseFloat(appNodes.scaleFactor.value)
@@ -362,7 +342,6 @@ appNodes.quality.addEventListener('input', updateConfigNoEvent);
 appNodes.shellType.addEventListener('input', updateConfigNoEvent);
 appNodes.shellSize.addEventListener('input', updateConfigNoEvent);
 appNodes.autoLaunch.addEventListener('click', () => setTimeout(updateConfig, 0));
-appNodes.skyLighting.addEventListener('input', updateConfigNoEvent);
 appNodes.longExposure.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.fullscreen.addEventListener('click', () => setTimeout(toggleFullscreen, 0));
 // Changing scaleFactor requires triggering resize handling code as well.
@@ -684,12 +663,6 @@ function init() {
    { label: 'Normal', value: QUALITY_NORMAL },
    { label: 'High', value: QUALITY_HIGH }
    ]);
-
-   setOptionsForSelect(appNodes.skyLighting, [
-  { label: 'None', value: SKY_LIGHT_NONE },
-  { label: 'Dim', value: SKY_LIGHT_DIM },
-  { label: 'Normal', value: SKY_LIGHT_NORMAL }
-  ]);
 
   // 0.9 is mobile default
   setOptionsForSelect(
@@ -1196,10 +1169,6 @@ function render(speed) {
     const trailsCtx = trailsStage.ctx;
     const mainCtx = mainStage.ctx;
 
-    if (skyLightingSelector() !== SKY_LIGHT_NONE) {
-        colorSky(speed);
-    }
-
     // Account for high DPI screens, and custom scale factor.
     const scaleFactor = scaleFactorSelector();
     trailsCtx.scale(dpr * scaleFactor, dpr * scaleFactor);
@@ -1282,52 +1251,7 @@ function render(speed) {
                                             mainCtx.setTransform(1, 0, 0, 1, 0, 0);
 }
 
-
-// Draw colored overlay based on combined brightness of stars (light up the sky!)
-// Note: this is applied to the canvas container's background-color, so it's behind the particles
-const currentSkyColor = { r: 0, g: 0, b: 0 };
-const targetSkyColor = { r: 0, g: 0, b: 0 };
-function colorSky(speed) {
-    // The maximum r, g, or b value that will be used (255 would represent no maximum)
-    const maxSkySaturation = skyLightingSelector() * 15;
-    // How many stars are required in total to reach maximum sky brightness
-    const maxStarCount = 500;
-    let totalStarCount = 0;
-    // Initialize sky as black
-    targetSkyColor.r = 0;
-    targetSkyColor.g = 0;
-    targetSkyColor.b = 0;
-    // Add each known color to sky, multiplied by particle count of that color. This will put RGB values wildly out of bounds, but we'll scale them back later.
-    // Also add up total star count.
-    COLOR_CODES.forEach(color => {
-                        const tuple = COLOR_TUPLES[color];
-                        const count =  Star.active[color].length;
-                        totalStarCount += count;
-                        targetSkyColor.r += tuple.r * count;
-                        targetSkyColor.g += tuple.g * count;
-                        targetSkyColor.b += tuple.b * count;
-                        });
-
-                        // Clamp intensity at 1.0, and map to a custom non-linear curve. This allows few stars to perceivably light up the sky, while more stars continue to increase the brightness but at a lesser rate. This is more inline with humans' non-linear brightness perception.
-                        const intensity = Math.pow(Math.min(1, totalStarCount / maxStarCount), 0.3);
-                        // Figure out which color component has the highest value, so we can scale them without affecting the ratios.
-                        // Prevent 0 from being used, so we don't divide by zero in the next step.
-                        const maxColorComponent = Math.max(1, targetSkyColor.r, targetSkyColor.g, targetSkyColor.b);
-                        // Scale all color components to a max of `maxSkySaturation`, and apply intensity.
-                        targetSkyColor.r = targetSkyColor.r / maxColorComponent * maxSkySaturation * intensity;
-                        targetSkyColor.g = targetSkyColor.g / maxColorComponent * maxSkySaturation * intensity;
-                        targetSkyColor.b = targetSkyColor.b / maxColorComponent * maxSkySaturation * intensity;
-
-                        // Animate changes to color to smooth out transitions.
-                        const colorChange = 10;
-                        currentSkyColor.r += (targetSkyColor.r - currentSkyColor.r) / colorChange * speed;
-                        currentSkyColor.g += (targetSkyColor.g - currentSkyColor.g) / colorChange * speed;
-                        currentSkyColor.b += (targetSkyColor.b - currentSkyColor.b) / colorChange * speed;
-
-}
-
 mainStage.addEventListener('ticker', update);
-
 
 // Helper used to semi-randomly spread particles over an arc
 // Values are flexible - `start` and `arcLength` can be negative, and `randomness` is simply a multiplier for random addition.
