@@ -80,7 +80,7 @@ $(document).ready(function() {
 
       setTimeout(function() {
         $balloon.removeClass('rocking').addClass('soaring');
-      }, 2000);
+      }, 1000);
     } else if (!atArrival && isReturningToArrivalPoint) {
       atArrival = true;
       $balloon.animate({"margin-top": marginTopFlying + 'px'}, 1000);
