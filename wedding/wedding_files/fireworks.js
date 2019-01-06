@@ -12,7 +12,7 @@ return false;
 }
 // Large screens indicate a full size computer, which often have hyper threading these days.
 // So a quad core desktop machine has 8 cores. We'll place a higher min threshold there.
-const minCount = window.innerWidth <= 1024 ? 1 : 1;
+const minCount = window.innerWidth <= 1024 ? 4 : 8;
 return hwConcurrency >= minCount;
 })();
 // Prevent canvases from getting too large on ridiculous screen sizes.
