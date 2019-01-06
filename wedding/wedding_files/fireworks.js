@@ -22,12 +22,6 @@ const MAX_HEIGHT = 4320;
 const GRAVITY = 0.9; // Acceleration in px/s
 let simSpeed = 1;
 
-function getDefaultScaleFactor() {
-    if (IS_MOBILE) return 0.9;
-    if (IS_HEADER) return 0.75;
-    return 1;
-}
-
 // Width/height values that take scale into account.
 // USE THESE FOR DRAWING POSITIONS
 let stageW, stageH;
@@ -89,7 +83,6 @@ mainStage
              : '2', // Mobile default
              autoLaunch: true,
              longExposure: false,
-             scaleFactor: getDefaultScaleFactor()
          }
      },
 
@@ -124,7 +117,6 @@ mainStage
                  case '1.2':
                  config.quality = data.quality;
                  config.size = data.size;
-                 config.scaleFactor = data.scaleFactor;
                  break;
                  default:
                  throw new Error('version switch should be exhaustive');
@@ -159,7 +151,6 @@ mainStage
           data: {
           quality: config.quality,
           size: config.size,
-          scaleFactor: config.scaleFactor
           }
           }));
      }
@@ -217,13 +208,11 @@ const qualitySelector = () => +store.state.config.quality;
 const shellNameSelector = () => store.state.config.shell;
 // Convert shell size to number.
 const shellSizeSelector = () => +store.state.config.size;
-const scaleFactorSelector = () => store.state.config.scaleFactor;
 
 const nodeKeyToHelpKey = {
     shellTypeLabel: 'shellType',
     shellSizeLabel: 'shellSize',
     qualityLabel: 'quality',
-    scaleFactorLabel: 'scaleFactor',
     autoLaunchLabel: 'autoLaunch',
     longExposureLabel: 'longExposure'
 };
@@ -240,8 +229,6 @@ const appNodes = {
     shellSizeLabel: '.shell-size-label',
     quality: '.quality-ui',
     qualityLabel: '.quality-ui-label',
-    scaleFactor: '.scaleFactor',
-    scaleFactorLabel: '.scaleFactor-label',
     autoLaunch: '.auto-launch',
     autoLaunchLabel: '.auto-launch-label',
     longExposure: '.long-exposure',
@@ -261,7 +248,6 @@ function renderApp(state) {
     appNodes.shellSize.value = state.config.size;
     appNodes.autoLaunch.checked = state.config.autoLaunch;
     appNodes.longExposure.checked = state.config.longExposure;
-    appNodes.scaleFactor.value = state.config.scaleFactor.toFixed(2);
     appNodes.menuInnerWrap.style.opacity = state.openHelpTopic ? 0.12 : 1;
 }
 
@@ -275,7 +261,6 @@ function getConfigFromDOM() {
         autoLaunch: appNodes.autoLaunch.checked,
         longExposure: appNodes.longExposure.checked,
         // Store value as number.
-        scaleFactor: parseFloat(appNodes.scaleFactor.value)
     };
 };
 
@@ -285,11 +270,6 @@ appNodes.shellType.addEventListener('input', updateConfigNoEvent);
 appNodes.shellSize.addEventListener('input', updateConfigNoEvent);
 appNodes.autoLaunch.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.longExposure.addEventListener('click', () => setTimeout(updateConfig, 0));
-// Changing scaleFactor requires triggering resize handling code as well.
-appNodes.scaleFactor.addEventListener('input', () => {
-updateConfig();
-handleResize();
-});
 
 // Constant derivations
 const COLOR_NAMES = Object.keys(COLOR);
@@ -605,13 +585,6 @@ function init() {
    { label: 'High', value: QUALITY_HIGH }
    ]);
 
-  // 0.9 is mobile default
-  setOptionsForSelect(
-  appNodes.scaleFactor,
-  [0.5, 0.62, 0.75, 0.9, 1.0, 1.5, 2.0]
-  .map(value => ({ value: value.toFixed(2), label: `${value*100}%` }))
-  );
-
   // Begin simulation
   togglePause(false);
 
@@ -922,9 +895,8 @@ function handleResize() {
     appNodes.stageContainer.style.height = containerH + 'px';
     stages.forEach(stage => stage.resize(containerW, containerH));
     // Account for scale
-    const scaleFactor = scaleFactorSelector();
-    stageW = containerW / scaleFactor;
-    stageH = containerH / scaleFactor;
+    stageW = containerW ;
+    stageH = containerH ;
 }
 
 // Compute initial dimensions
@@ -1096,9 +1068,8 @@ function render(speed) {
     const mainCtx = mainStage.ctx;
 
     // Account for high DPI screens, and custom scale factor.
-    const scaleFactor = scaleFactorSelector();
-    trailsCtx.scale(dpr * scaleFactor, dpr * scaleFactor);
-    mainCtx.scale(dpr * scaleFactor, dpr * scaleFactor);
+    trailsCtx.scale(dpr , dpr );
+    mainCtx.scale(dpr , dpr );
 
     trailsCtx.globalCompositeOperation = 'source-over';
     trailsCtx.fillStyle = `rgba(0, 0, 0, ${store.state.config.longExposure ? 0.0025 : 0.175 * speed})`;
@@ -1611,7 +1582,6 @@ class Shell {
             // look at the difference in size and map it to a range known to sound good.
             const maxDiff = 2;
             const sizeDifferenceFromMaxSize = Math.min(maxDiff, shellSizeSelector() - this.shellSize);
-            const soundScale = (1 - sizeDifferenceFromMaxSize / maxDiff) * 0.3 + 0.7;
         }
     }
 }
