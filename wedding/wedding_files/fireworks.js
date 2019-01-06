@@ -65,39 +65,6 @@ trailsStage,
 mainStage
 ];
 
-
-
-// Fullscreen helpers, using Fscreen for prefixes.
-function fullscreenEnabled() {
-    return fscreen.fullscreenEnabled;
-}
-
-// Note that fullscreen state is synced to store, and the store should be the source
-// of truth for whether the app is in fullscreen mode or not.
-function isFullscreen() {
-    return !!fscreen.fullscreenElement;
-}
-
-// Attempt to toggle fullscreen mode.
-function toggleFullscreen() {
-    if (fullscreenEnabled()) {
-        if (isFullscreen()) {
-            fscreen.exitFullscreen();
-        } else {
-            fscreen.requestFullscreen(document.documentElement);
-        }
-    }
-}
-
-// Sync fullscreen changes with store. An event listener is necessary because the user can
-// toggle fullscreen mode directly through the browser, and we want to react to that.
-fscreen.addEventListener('fullscreenchange', () => {
- store.setState({ fullscreen: isFullscreen() });
- });
-
-
-
-
  // Simple state container; the source of truth.
  const store = {
      _listeners: new Set(),
@@ -108,14 +75,12 @@ fscreen.addEventListener('fullscreenchange', () => {
      state: {
          // will be unpaused in init()
          paused: true,
-         soundEnabled: false,
          menuOpen: false,
          openHelpTopic: null,
-         fullscreen: isFullscreen(),
          // Note that config values used for <select>s must be strings, unless manually converting values to strings
          // at render time, and parsing on change.
          config: {
-             quality: String(IS_HIGH_END_DEVICE ? QUALITY_HIGH : QUALITY_NORMAL), // will be mirrored to a global variable named `quality` in `configDidUpdate`, for perf.
+         quality: String(IS_HIGH_END_DEVICE ? QUALITY_HIGH : QUALITY_LOW), // will be mirrored to a global variable named `quality` in `configDidUpdate`, for perf.
              shell: 'Random',
              size: IS_DESKTOP
              ? '3' // Desktop default
@@ -123,7 +88,6 @@ fscreen.addEventListener('fullscreenchange', () => {
              ? '1.2' // Profile header default (doesn't need to be an int)
              : '2', // Mobile default
              autoLaunch: true,
-             finale: false,
              longExposure: false,
              scaleFactor: getDefaultScaleFactor()
          }
@@ -223,21 +187,11 @@ function togglePause(toggle) {
     }
 }
 
-
-function toggleMenu(toggle) {
-    if (typeof toggle === 'boolean') {
-        store.setState({ menuOpen: toggle });
-    } else {
-        store.setState({ menuOpen: !store.state.menuOpen });
-    }
-}
-
 function updateConfig(nextConfig) {
     nextConfig = nextConfig || getConfigFromDOM();
     store.setState({
                    config: Object.assign({}, store.state.config, nextConfig)
                    });
-
                    configDidUpdate();
 }
 
@@ -258,13 +212,11 @@ function configDidUpdate() {
 
 const isRunning = (state=store.state) => !state.paused && !state.menuOpen;
 // Whether user has enabled sound.
-const soundEnabledSelector = (state=store.state) => state.soundEnabled;
 // Convert quality to number.
 const qualitySelector = () => +store.state.config.quality;
 const shellNameSelector = () => store.state.config.shell;
 // Convert shell size to number.
 const shellSizeSelector = () => +store.state.config.size;
-const finaleSelector = () => store.state.config.finale;
 const scaleFactorSelector = () => store.state.config.scaleFactor;
 
 const nodeKeyToHelpKey = {
@@ -273,7 +225,6 @@ const nodeKeyToHelpKey = {
     qualityLabel: 'quality',
     scaleFactorLabel: 'scaleFactor',
     autoLaunchLabel: 'autoLaunch',
-    fullscreenLabel: 'fullscreen',
     longExposureLabel: 'longExposure'
 };
 
@@ -293,9 +244,6 @@ const appNodes = {
     scaleFactorLabel: '.scaleFactor-label',
     autoLaunch: '.auto-launch',
     autoLaunchLabel: '.auto-launch-label',
-    fullscreenFormOption: '.form-option--fullscreen',
-    fullscreen: '.fullscreen',
-    fullscreenLabel: '.fullscreen-label',
     longExposure: '.long-exposure',
     longExposureLabel: '.long-exposure-label',
 };
@@ -305,11 +253,6 @@ Object.keys(appNodes).forEach(key => {
   appNodes[key] = document.querySelector(appNodes[key]);
   });
 
-  // Remove fullscreen control if not supported.
-  if (!fullscreenEnabled()) {
-      appNodes.fullscreenFormOption.classList.add('remove');
-  }
-
 // First render is called in init()
 function renderApp(state) {
     appNodes.canvasContainer.classList.toggle('blur', state.menuOpen);
@@ -317,7 +260,6 @@ function renderApp(state) {
     appNodes.shellType.value = state.config.shell;
     appNodes.shellSize.value = state.config.size;
     appNodes.autoLaunch.checked = state.config.autoLaunch;
-    appNodes.fullscreen.checked = state.fullscreen;
     appNodes.longExposure.checked = state.config.longExposure;
     appNodes.scaleFactor.value = state.config.scaleFactor.toFixed(2);
     appNodes.menuInnerWrap.style.opacity = state.openHelpTopic ? 0.12 : 1;
@@ -328,7 +270,7 @@ store.subscribe(renderApp);
 function getConfigFromDOM() {
     return {
         quality: appNodes.quality.value,
-        shell: appNodes.shellType.value,
+        shell: 'Random',
         size: appNodes.shellSize.value,
         autoLaunch: appNodes.autoLaunch.checked,
         longExposure: appNodes.longExposure.checked,
@@ -343,7 +285,6 @@ appNodes.shellType.addEventListener('input', updateConfigNoEvent);
 appNodes.shellSize.addEventListener('input', updateConfigNoEvent);
 appNodes.autoLaunch.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.longExposure.addEventListener('click', () => setTimeout(updateConfig, 0));
-appNodes.fullscreen.addEventListener('click', () => setTimeout(toggleFullscreen, 0));
 // Changing scaleFactor requires triggering resize handling code as well.
 appNodes.scaleFactor.addEventListener('input', () => {
 updateConfig();
@@ -901,8 +842,6 @@ const sequences = [
 
 
    let isFirstSeq = true;
-   const finaleCount = 32;
-   let currentFinaleCount = 0;
    function startSequence() {
        if (isFirstSeq) {
            isFirstSeq = false;
@@ -915,19 +854,6 @@ const sequences = [
                return 2400;
            }
        }
-
-       if (finaleSelector()) {
-           seqRandomFastShell();
-           if (currentFinaleCount < finaleCount) {
-               currentFinaleCount++;
-               return 170;
-           }
-           else {
-               currentFinaleCount = 0;
-               return 6000;
-           }
-       }
-
        const rand = Math.random();
 
        if (rand < 0.08 && Date.now() - seqSmallBarrage.lastCalled > seqSmallBarrage.cooldown) {
