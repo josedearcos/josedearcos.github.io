@@ -28,10 +28,10 @@ let simSpeed = 1;
 let stageW, stageH;
 
 // All quality globals will be overwritten and updated via `configDidUpdate`.
-let quality = 1;
-let isLowQuality = true;
+let quality = 3;
+let isLowQuality = false;
 let isNormalQuality = false;
-let isHighQuality = false;
+let isHighQuality = true;
 
 const QUALITY_LOW = 1;
 const QUALITY_NORMAL = 2;
