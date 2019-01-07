@@ -21,7 +21,7 @@ return hwConcurrency >= minCount;
 const MAX_WIDTH = 7680;
 const MAX_HEIGHT = 4320;
 const GRAVITY = 0.9; // Acceleration in px/s
-let simSpeed = 1;
+let simSpeed = 0.5;
 
 // Width/height values that take scale into account.
 // USE THESE FOR DRAWING POSITIONS
