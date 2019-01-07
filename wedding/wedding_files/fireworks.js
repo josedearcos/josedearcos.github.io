@@ -75,7 +75,7 @@ mainStage
          // Note that config values used for <select>s must be strings, unless manually converting values to strings
          // at render time, and parsing on change.
          config: {
-         quality: String(IS_HIGH_END_DEVICE ? QUALITY_HIGH : QUALITY_LOW), // will be mirrored to a global variable named `quality` in `configDidUpdate`, for perf.
+         quality: String(QUALITY_LOW), // will be mirrored to a global variable named `quality` in `configDidUpdate`, for perf.
              shell: 'Random',
              size: IS_DESKTOP
              ? '3' // Desktop default
@@ -192,13 +192,11 @@ function updateConfig(nextConfig) {
 function configDidUpdate() {
     const config = store.state.config;
 
-    quality = qualitySelector();
+    quality = QUALITY_LOW;
     isLowQuality = quality === QUALITY_LOW;
     isNormalQuality = quality === QUALITY_NORMAL;
     isHighQuality = quality === QUALITY_HIGH;
-
     console.log(`quality ( ${quality})`);
-
     
     Spark.drawWidth = quality === QUALITY_HIGH ? 0.75 : 1;
 }
@@ -207,7 +205,6 @@ function configDidUpdate() {
 // -----------
 
 const isRunning = (state=store.state) => !state.paused && !state.menuOpen;
-// Whether user has enabled sound.
 // Convert quality to number.
 const qualitySelector = () => +store.state.config.quality;
 const shellNameSelector = () => store.state.config.shell;
