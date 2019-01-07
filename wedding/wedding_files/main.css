@@ -572,6 +572,21 @@ html.no-touch nav ul li:hover {
     right: 0%;
 }
 
+@media screen and (max-width: 531px) {
+    .moment p.right {
+        /*right: 50px;*/
+        left: 0%;
+    }
+    
+    #balloon{
+        left:66%;
+    }
+    
+    #balloon:hover{
+        left:66%;
+    }
+}
+
 .moment p.left {
 }
 
@@ -599,12 +614,10 @@ html.no-touch nav ul li:hover {
     width:500px;
 }
 
-
 #message
 {
     margin-top:220px;
 }
-
 
 .cloud {
     left: 50%;
