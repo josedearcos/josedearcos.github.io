@@ -13,6 +13,7 @@ return false;
 // Large screens indicate a full size computer, which often have hyper threading these days.
 // So a quad core desktop machine has 8 cores. We'll place a higher min threshold there.
 const minCount = window.innerWidth <= 1024 ? 4 : 8;
+console.log(`minCount ( ${minCount})`);
 return hwConcurrency >= minCount;
 })();
 // Prevent canvases from getting too large on ridiculous screen sizes.
@@ -28,8 +29,8 @@ let stageW, stageH;
 
 // All quality globals will be overwritten and updated via `configDidUpdate`.
 let quality = 1;
-let isLowQuality = false;
-let isNormalQuality = true;
+let isLowQuality = true;
+let isNormalQuality = false;
 let isHighQuality = false;
 
 const QUALITY_LOW = 1;
@@ -81,7 +82,6 @@ mainStage
              : IS_HEADER
              ? '1.2' // Profile header default (doesn't need to be an int)
              : '2', // Mobile default
-             autoLaunch: true,
              longExposure: false,
          }
      },
@@ -122,6 +122,8 @@ mainStage
                  throw new Error('version switch should be exhaustive');
              }
              console.log(`Loaded config (schema version ${schemaVersion})`);
+             console.log(`Size ( ${config.size})`);
+
          }
          // Deprecated data format. Checked with care (it's not namespaced).
          else if (localStorage.getItem('schemaVersion') === '1') {
@@ -195,6 +197,9 @@ function configDidUpdate() {
     isNormalQuality = quality === QUALITY_NORMAL;
     isHighQuality = quality === QUALITY_HIGH;
 
+    console.log(`quality ( ${quality})`);
+
+    
     Spark.drawWidth = quality === QUALITY_HIGH ? 0.75 : 1;
 }
 
@@ -213,7 +218,6 @@ const nodeKeyToHelpKey = {
     shellTypeLabel: 'shellType',
     shellSizeLabel: 'shellSize',
     qualityLabel: 'quality',
-    autoLaunchLabel: 'autoLaunch',
     longExposureLabel: 'longExposure'
 };
 
@@ -229,8 +233,6 @@ const appNodes = {
     shellSizeLabel: '.shell-size-label',
     quality: '.quality-ui',
     qualityLabel: '.quality-ui-label',
-    autoLaunch: '.auto-launch',
-    autoLaunchLabel: '.auto-launch-label',
     longExposure: '.long-exposure',
     longExposureLabel: '.long-exposure-label',
 };
@@ -246,7 +248,6 @@ function renderApp(state) {
     appNodes.quality.value = state.config.quality;
     appNodes.shellType.value = state.config.shell;
     appNodes.shellSize.value = state.config.size;
-    appNodes.autoLaunch.checked = state.config.autoLaunch;
     appNodes.longExposure.checked = state.config.longExposure;
     appNodes.menuInnerWrap.style.opacity = state.openHelpTopic ? 0.12 : 1;
 }
@@ -258,7 +259,6 @@ function getConfigFromDOM() {
         quality: appNodes.quality.value,
         shell: 'Random',
         size: appNodes.shellSize.value,
-        autoLaunch: appNodes.autoLaunch.checked,
         longExposure: appNodes.longExposure.checked,
         // Store value as number.
     };
@@ -268,7 +268,6 @@ const updateConfigNoEvent = () => updateConfig();
 appNodes.quality.addEventListener('input', updateConfigNoEvent);
 appNodes.shellType.addEventListener('input', updateConfigNoEvent);
 appNodes.shellSize.addEventListener('input', updateConfigNoEvent);
-appNodes.autoLaunch.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.longExposure.addEventListener('click', () => setTimeout(updateConfig, 0));
 
 // Constant derivations
@@ -901,9 +900,7 @@ function handleResize() {
 
 // Compute initial dimensions
 handleResize();
-
 window.addEventListener('resize', handleResize);
-
 
 // Dynamic globals
 let currentFrame = 0;
@@ -939,12 +936,10 @@ function updateGlobals(timeStep, lag) {
     }
 
     // auto launch shells
-    if (store.state.config.autoLaunch) {
         autoLaunchTime -= timeStep;
         if (autoLaunchTime <= 0) {
             autoLaunchTime = startSequence() * 1.25;
         }
-    }
 }
 
 
