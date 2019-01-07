@@ -301,11 +301,9 @@ body {
 
 footer {
     position: relative;
-    left: 0;
-    width:100%;
-    height:calc(23vh);
+    height: 378px;
+    margin-top: -230px;
     background: url('../img/ground.png') center no-repeat;
-    background-size: 100%;
     z-index: 0;
 }
 
@@ -728,7 +726,7 @@ html.no-touch nav ul li:hover {
 
   footer {
     background-image: url('../img/ground@2x.png');
-    background-size: 100%;
+    background-size: 3028px 378px;
   }
 
   nav ul li {
