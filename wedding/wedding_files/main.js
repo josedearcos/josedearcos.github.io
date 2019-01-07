@@ -68,7 +68,6 @@ $(document).ready(function() {
       atArrival = false;
       $balloon.removeClass('soaring').addClass('rocking');
         const IS_MOBILE = $(window).width() <= 640;
-                  togglePause(true);
 
         if(IS_MOBILE)
         {
@@ -80,21 +79,21 @@ $(document).ready(function() {
         }
 
       setTimeout(function() {
-        $balloon.removeClass('rocking').addClass('soaring');
-      }, 1000);
+        $balloon.addClass('soaring');
+      }, 2000);
     } else if (!atArrival && isReturningToArrivalPoint) {
       atArrival = true;
       $balloon.animate({"margin-top": -190 + 'px'}, 1000);
     } else if (!atDeparture && isDeparturing) {
       atDeparture = true;
       $balloon.animate({"margin-top" : marginTopFlying + 'px'}, 1000);
-                  $balloon.removeClass('soaring');
-                  togglePause(false);
-
+      $balloon.removeClass('rocking');
 
     } else if (atDeparture && isLeavingDeparturePoint) {
       atDeparture = false;
       $("#balloon").animate({"margin-top": marginTopFlying + 'px'}, 1000);
+                  $balloon.addClass('rocking');
+
     }
 
     lastScrollTop = scrollTop;
