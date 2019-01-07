@@ -82,7 +82,6 @@ mainStage
              : IS_HEADER
              ? '1.2' // Profile header default (doesn't need to be an int)
              : '2', // Mobile default
-             longExposure: false,
          }
      },
 
@@ -215,7 +214,6 @@ const nodeKeyToHelpKey = {
     shellTypeLabel: 'shellType',
     shellSizeLabel: 'shellSize',
     qualityLabel: 'quality',
-    longExposureLabel: 'longExposure'
 };
 
 // Render app UI / keep in sync with state
@@ -230,8 +228,6 @@ const appNodes = {
     shellSizeLabel: '.shell-size-label',
     quality: '.quality-ui',
     qualityLabel: '.quality-ui-label',
-    longExposure: '.long-exposure',
-    longExposureLabel: '.long-exposure-label',
 };
 
 // Convert appNodes selectors to dom nodes
@@ -245,7 +241,6 @@ function renderApp(state) {
     appNodes.quality.value = state.config.quality;
     appNodes.shellType.value = state.config.shell;
     appNodes.shellSize.value = state.config.size;
-    appNodes.longExposure.checked = state.config.longExposure;
     appNodes.menuInnerWrap.style.opacity = state.openHelpTopic ? 0.12 : 1;
 }
 
@@ -256,7 +251,6 @@ function getConfigFromDOM() {
         quality: appNodes.quality.value,
         shell: 'Random',
         size: appNodes.shellSize.value,
-        longExposure: appNodes.longExposure.checked,
         // Store value as number.
     };
 };
@@ -265,7 +259,6 @@ const updateConfigNoEvent = () => updateConfig();
 appNodes.quality.addEventListener('input', updateConfigNoEvent);
 appNodes.shellType.addEventListener('input', updateConfigNoEvent);
 appNodes.shellSize.addEventListener('input', updateConfigNoEvent);
-appNodes.longExposure.addEventListener('click', () => setTimeout(updateConfig, 0));
 
 // Constant derivations
 const COLOR_NAMES = Object.keys(COLOR);
@@ -1064,7 +1057,7 @@ function render(speed) {
     mainCtx.scale(dpr , dpr );
 
     trailsCtx.globalCompositeOperation = 'source-over';
-    trailsCtx.fillStyle = `rgba(0, 0, 0, ${store.state.config.longExposure ? 0.0025 : 0.175 * speed})`;
+    trailsCtx.fillStyle = `rgba(0, 0, 0,  0.1)`;//0.1 for long exposure, 0.5 will make it shorter
     trailsCtx.fillRect(0, 0, width, height);
 
     mainCtx.clearRect(0, 0, width, height);
