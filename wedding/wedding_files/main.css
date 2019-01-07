@@ -586,6 +586,7 @@ html.no-touch nav ul li:hover {
     margin-left: 100px;
     font-size: 1em;
     z-index:100;
+    width:30%;
 }
 
 .moment.last strong{
