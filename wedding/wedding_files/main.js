@@ -1,6 +1,8 @@
 
 $(document).ready(function() {
 
+  const IS_MOBILE = $(window).width() <= 640;
+
   var RAISE_THRESHOLD = 950;
   var DESCENT_THRESHOLD = 240;
   var HIDDEN_HEIGHT_AT_ARRIVAL = 190;
@@ -10,17 +12,32 @@ $(document).ready(function() {
   var lastScrollTop = 0;
   var $balloon = $("#balloon");
 
+  if(IS_MOBILE)
+  {
   var CLOUDS = [
-    {top: "400", offset: "-450px", css_class: "cloud-1", delay: .8},
-    {top: "500", offset: "10%", css_class: "cloud-3", delay: 1.2},
-    {top: "900", offset: "-320px", css_class: "cloud-2", delay: .2},
-    {top: "1500", offset: "280px", css_class: "cloud-2", delay: .8},
-    {top: "2250", offset: "-380px", css_class: "cloud-4", delay: 1.2},
-    {top: "2950", offset: "-380px", css_class: "cloud-1", delay: .8},
-    {top: "3750", offset: "25%", css_class: "cloud-6", delay: .7},
-    {top: "4050", offset: "-380px", css_class: "cloud-5", delay: 1.2},
-  ];
-
+                {top: "400", offset: "-450px", css_class: "cloud-1", delay: .8},
+                {top: "500", offset: "10%", css_class: "cloud-3", delay: 1.2},
+                {top: "900", offset: "-5%", css_class: "cloud-2", delay: .2},
+                {top: "1500", offset: "280px", css_class: "cloud-2", delay: .8},
+                {top: "2250", offset: "-20%", css_class: "cloud-4", delay: 1.2},
+                {top: "2950", offset: "0%", css_class: "cloud-1", delay: .8},
+                {top: "3750", offset: "25%", css_class: "cloud-6", delay: .7},
+                {top: "4050", offset: "5%", css_class: "cloud-5", delay: 1.2},
+                ];
+  }
+  else
+  {
+  var CLOUDS = [
+                {top: "400", offset: "-450px", css_class: "cloud-1", delay: .8},
+                {top: "500", offset: "10%", css_class: "cloud-3", delay: 1.2},
+                {top: "900", offset: "-320px", css_class: "cloud-2", delay: .2},
+                {top: "1500", offset: "280px", css_class: "cloud-2", delay: .8},
+                {top: "2250", offset: "-380px", css_class: "cloud-4", delay: 1.2},
+                {top: "2950", offset: "-380px", css_class: "cloud-1", delay: .8},
+                {top: "3750", offset: "25%", css_class: "cloud-6", delay: .7},
+                {top: "4050", offset: "-380px", css_class: "cloud-5", delay: 1.2},
+                ];
+  }
   function createClouds() {
     var cloudIndex = 0;
     $moments = $(".moment").not(".bad");
@@ -32,6 +49,7 @@ $(document).ready(function() {
       attr('id', 'cloud-' + index).
       css("top", cloud.top + 'px').
       css("margin-left", cloud.offset);
+
       $("body").append($cloud);
 
       $(window).scroll(function() {
@@ -67,11 +85,16 @@ $(document).ready(function() {
     if (atArrival && isArriving) {
       atArrival = false;
       $balloon.removeClass('soaring').addClass('rocking');
-        const IS_MOBILE = $(window).width() <= 640;
 
         if(IS_MOBILE)
         {
-            $balloon.animate({"margin-top": 900 + 'px'}, 1000);
+          $balloon.animate({
+                           "left": "66%",
+                           "margin-top" : "-100px"
+                           }, 1000);
+          $balloon.animate({
+                           "margin-top" : "900px"
+                           }, 3000);
         }
         else
         {
@@ -83,7 +106,25 @@ $(document).ready(function() {
       }, 2000);
     } else if (!atArrival && isReturningToArrivalPoint) {
       atArrival = true;
-      $balloon.animate({"margin-top": -190 + 'px'}, 1000);
+                  if(IS_MOBILE)
+                  {
+                  $balloon.animate({
+                                   "left": "58%",
+                                   "margin-top" : "100px"
+                                   }, 2000);
+      $balloon.animate({
+                      "left": "50%",
+                      "margin-top" : "-190px"
+                      }, 2000);
+                  }
+                  else
+                  {
+                  $balloon.animate({
+                                   "margin-top" : "-190px"
+                                   }, 1000);
+                  }
+                  
+             
     } else if (!atDeparture && isDeparturing) {
       atDeparture = true;
       $balloon.animate({"margin-top" : marginTopFlying + 'px'}, 1000);
@@ -92,8 +133,7 @@ $(document).ready(function() {
     } else if (atDeparture && isLeavingDeparturePoint) {
       atDeparture = false;
       $("#balloon").animate({"margin-top": marginTopFlying + 'px'}, 1000);
-                  $balloon.addClass('rocking');
-
+      $balloon.addClass('rocking');
     }
 
     lastScrollTop = scrollTop;

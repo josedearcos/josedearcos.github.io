@@ -302,7 +302,6 @@ body {
 footer {
     position: relative;
     height: 378px;
-    margin-top: -230px;
     background: url('../img/ground.png') center no-repeat;
     z-index: 0;
 }
@@ -517,14 +516,14 @@ html.no-touch nav ul li:hover {
     width: 90%;
     margin-left: 5%;
     margin-right: -5%;
-    height: 675px;
+    height: 800px;
     font-size: 1.3em;
 }
 
 .moment p {
     position: absolute;
     width: 250px;
-    top: 20%;
+    top: 0%;
     z-index: 10;
     color: white;
 }
@@ -577,14 +576,6 @@ html.no-touch nav ul li:hover {
         /*right: 50px;*/
         left: 0%;
     }
-    
-    #balloon{
-        left:66%;
-    }
-    
-    #balloon:hover{
-        left:66%;
-    }
 }
 
 .moment p.left {
@@ -596,10 +587,12 @@ html.no-touch nav ul li:hover {
 
 .moment.last {
     position: relative;
-    margin-left: 100px;
+    margin-left: 5%;
     font-size: 1em;
     z-index:100;
     width:30%;
+    margin-bottom: 250px;
+
 }
 
 .moment.last strong{
