@@ -71,7 +71,7 @@ $(document).ready(function() {
 
         if(IS_MOBILE)
         {
-            $balloon.animate({"margin-top": 940 + 'px'}, 1000);
+            $balloon.animate({"margin-top": 900 + 'px'}, 1000);
         }
         else
         {
