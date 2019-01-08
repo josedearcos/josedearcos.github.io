@@ -376,24 +376,22 @@ footer p a:hover {
     position: fixed;
     left: 50%;
     margin-left: -304px;
-    margin-top: -190px;
     width: 609px;
     height: 940px;
     background: url('../img/balloon_default@2x.png') no-repeat center top;
     z-index: 99;
-    background-size: 609px 940px;
+    background-size: 544px 840px;
 }
 
 #balloon:hover {
     position: fixed;
     left: 50%;
     margin-left: -304px;
-    margin-top: -190px;
     width: 609px;
     height: 940px;
     background: url('../img/balloon_smiling@2x.png') no-repeat center top;
     z-index: 99;
-    background-size: 609px 940px;
+    background-size: 544px 840px;
 }
 
 header {
@@ -522,7 +520,7 @@ html.no-touch nav ul li:hover {
 
 .moment p {
     position: absolute;
-    width: 250px;
+    width: 28%;
     top: 0%;
     z-index: 10;
     color: white;
@@ -717,14 +715,14 @@ html.no-touch nav ul li:hover {
 
   #balloon {
     background-image: url('../img/balloon_default@2x.png');
-    background-size: 609px 940px;
+    background-size: 544px 840px;
   }
 
   #bird {
     background-image: url('../img/bird@2x.png');
     background-size: 48px 32px;
   }
-
+  
   .cloud {
     background-image: url('../img/clouds@2x.png');
     background-size: 308px 446px;
@@ -947,3 +945,7 @@ html.no-touch nav ul li:hover {
     }
 }
 
+#hotels{
+    margin-top:1em;
+    right:0.5em;
+}

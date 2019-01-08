@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   var RAISE_THRESHOLD = 950;
   var DESCENT_THRESHOLD = 240;
-  var HIDDEN_HEIGHT_AT_ARRIVAL = 190;
+  var HIDDEN_HEIGHT_AT_ARRIVAL = 140;
 
   var atArrival = $(window).scrollTop() < 30;
   var atDeparture = $(document).height() - $(window).scrollTop() - $(window).height() < 30;
@@ -67,18 +67,22 @@ $(document).ready(function() {
     var isMovingDown = scrollTop > lastScrollTop;
     var isMovingUp = !isMovingDown;
     var scrollBottom = $(document).height() - scrollTop - $(window).height();
-    var maxBalloons = $(window).height() / 940;
+    var maxBalloons = $(window).height() / 840;
     var marginTopArrival = -HIDDEN_HEIGHT_AT_ARRIVAL;
-    var marginTopFlying = maxBalloons < 1 ? -((1 - maxBalloons) * 940) : 0;
-    var marginTopDeparture = -((1 - maxBalloons) * 940);
+    var marginTopFlying = maxBalloons < 1 ? -((1 - maxBalloons) * 840) : 0;
+    var marginTopDeparture = -((1 - maxBalloons) * 840);
 
     var isReturningToArrivalPoint = scrollTop < 30 && isMovingUp;
     var isArriving = scrollTop > 30 && isMovingDown;
-    var isDeparturing = scrollBottom < 30 && isMovingDown;
-    var isLeavingDeparturePoint = scrollBottom > 30 && isMovingUp;
-
+    var isDeparturing = scrollBottom < 1800 && isMovingDown;
+    var isLeavingDeparturePoint = scrollBottom > 1800 && isMovingUp;
+      if(IS_MOBILE)
+      {
+        isDeparturing< RAISE_THRESHOLD && isMovingDown;
+        isLeavingDeparturePoint = scrollBottom > RAISE_THRESHOLD && isMovingUp;
+      }
     var flagOffset = scrollTop + parseInt($balloon.css('margin-top'));
-    var basketOffset = flagOffset + 940;
+    var basketOffset = flagOffset + 840;
 
     var edgePoint = isMovingUp ? flagOffset + RAISE_THRESHOLD : basketOffset - DESCENT_THRESHOLD;
 
@@ -92,47 +96,57 @@ $(document).ready(function() {
                            "left": "66%",
                            "margin-top" : "-100px"
                            }, 1000);
-          $balloon.animate({
-                           "margin-top" : "900px"
-                           }, 3000);
         }
         else
         {
-            $balloon.animate({"margin-top": marginTopFlying + 'px'}, 1000);
+            $balloon.animate({"margin-top": 0 + 'px'}, 1000);
         }
+                  
+        console.log(' at arrival');
 
-      setTimeout(function() {
+        setTimeout(function() {
         $balloon.addClass('soaring');
       }, 2000);
     } else if (!atArrival && isReturningToArrivalPoint) {
       atArrival = true;
-                  if(IS_MOBILE)
-                  {
-                  $balloon.animate({
-                                   "left": "58%",
-                                   "margin-top" : "100px"
-                                   }, 2000);
-      $balloon.animate({
-                      "left": "50%",
-                      "margin-top" : "-190px"
-                      }, 2000);
-                  }
-                  else
-                  {
-                  $balloon.animate({
-                                   "margin-top" : "-190px"
-                                   }, 1000);
-                  }
-                  
-             
+      console.log('returning at arrival');
+
+      if(IS_MOBILE)
+      {
+          $balloon.animate({
+              "left": "50%",
+              "margin-top" : "-140px"
+              }, 2000);
+      }
+      else
+      {
+        $balloon.animate({ "margin-top" : "-140px"}, 1000);
+      }
     } else if (!atDeparture && isDeparturing) {
       atDeparture = true;
-      $balloon.animate({"margin-top" : marginTopFlying + 'px'}, 1000);
+      console.log('At departure');
       $balloon.removeClass('rocking');
-
+      if(IS_MOBILE)
+      {
+                  $balloon.animate({ "margin-top" : "900px"}, 2000);
+      }
+      else
+      {
+                  $balloon.animate({"margin-top": marginTopFlying + 'px'}, 1000);
+      }
     } else if (atDeparture && isLeavingDeparturePoint) {
       atDeparture = false;
-      $("#balloon").animate({"margin-top": marginTopFlying + 'px'}, 1000);
+      console.log('leaving departure');
+
+      if(IS_MOBILE)
+      {
+          $balloon.animate({ "margin-top" : "0px"}, 2000);
+      }
+      else
+      {
+          $balloon.animate({"margin-top": marginTopFlying + 'px'}, 1000);
+      }
+                  
       $balloon.addClass('rocking');
     }
 
