@@ -262,6 +262,8 @@ textarea {
   }
 
 * {
+       position: relative;
+        box-sizing: border-box;
    margin: 0px;
    padding: 0px;
 }
@@ -302,7 +304,7 @@ body {
 footer {
     position: relative;
     height: 700px;
-    background: url('../img/newground_orange@2x.png') center no-repeat;
+    background: url('../img/newground_orange.png') center no-repeat;
     background-size: 100% 700px;
     z-index: 0;
 }
@@ -401,6 +403,7 @@ header {
     position: relative;
     height: 255px;
     background: url('../img/ribbonsvg.png') center no-repeat;
+    background-size: 1079px 245px;
     z-index: 100;
 }
 
@@ -571,13 +574,6 @@ html.no-touch nav ul li:hover {
     right: 0%;
 }
 
-@media screen and (max-width: 531px) {
-    .moment p.right {
-        /*right: 50px;*/
-        left: 0%;
-    }
-}
-
 .moment p.left {
 }
 
@@ -708,43 +704,7 @@ html.no-touch nav ul li:hover {
     z-index: 30;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
 
-  .moment p.scroll-hint {
-    background-image: url('../img/arrow@2x.png');
-    background-size: 17px 29px;
-  }
-
-  #balloon {
-    background-image: url('../img/balloon_default@2x.png');
-    background-size: 544px 840px;
-  }
-
-  #bird {
-    background-image: url('../img/bird@2x.png');
-    background-size: 48px 32px;
-  }
-  
-  .cloud {
-    background-image: url('../img/clouds@2x.png');
-    background-size: 308px 446px;
-  }
-
-  footer {
-    background: url('../img/newground_orange@2x.png') center no-repeat;
-    background-size: 100% 700px;
-  }
-
-  nav ul li {
-    background-image: url('../img/hearts@2x.png');
-    background-size: 20px 36px;
-  }
-
-  header {
-    background-image: url('../img/ribbonsvg@2x.png');
-    background-size: 1079px 245px;
-  }
-}
 
 /* ==========================================================================
    Helper classes
@@ -807,17 +767,6 @@ html.no-touch nav ul li:hover {
     position: static;
     width: auto;
 }
-
-
-#zone-hotels p
-{
-    color:white;
-}
-#zone-form
-{
-    color:white;
-}
-
 
 /*
  * Hide visually and from screenreaders, but maintain layout
@@ -949,20 +898,20 @@ html.no-touch nav ul li:hover {
 
 #hotels{
     margin-top:18em;
-    left:62%;
-    width:690px;
-    height:559px;
-    background: url("../img/accomodation@2x.png") no-repeat center top;
-    background-size: 50% 50%;
+    left:73%;
+    width:345px;
+    height:280px;
+    background: url("../img/accomodation.png") no-repeat center top;
+    background-size: 100% 100%;
 }
 
 #bigday{
     margin-top:15em;
-    left:-30%;
-    width:3420px;
-    height:3276px;
-    background: url("../img/thebigday@2x.png") no-repeat center top;
-    background-size: 12% 12%;
+    left:71%;
+    width:410px;
+    height:393px;
+    background: url("../img/thebigday.png") no-repeat center top;
+    background-size: 100% 100%;
     
 }
 
@@ -971,7 +920,7 @@ html.no-touch nav ul li:hover {
     margin-top:14em;
     width:97px;
     height:93px;
-    background: url("../img/rings@2x.png") no-repeat center top;
+    background: url("../img/rings.png") no-repeat center top;
     background-size: 100% 100%;
 
 }
@@ -995,9 +944,103 @@ html.no-touch nav ul li:hover {
     background-size: 100% 100%;
 }
 
+#zone-hotels p
+{
+    color:white;
+}
+#zone-form
+{
+    color:white;
+}
+
 #zone-eventi i{
     padding-left:1em;
 }
 #zone-eventi b{
     padding-left:1em;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    
+    .moment p.scroll-hint {
+        background-image: url('../img/arrow@2x.png');
+        background-size: 17px 29px;
+    }
+    
+    #balloon {
+        background-image: url('../img/balloon_default@2x.png');
+        background-size: 544px 840px;
+    }
+    
+    #bird {
+        background-image: url('../img/bird@2x.png');
+        background-size: 48px 32px;
+    }
+    
+    .cloud {
+        background-image: url('../img/clouds@2x.png');
+        background-size: 308px 446px;
+    }
+    
+    footer {
+        background: url('../img/newground_orange@2x.png') center no-repeat;
+        background-size: 100% 700px;
+    }
+    
+    nav ul li {
+        background-image: url('../img/hearts@2x.png');
+        background-size: 20px 36px;
+    }
+    
+    header {
+        background-image: url('../img/ribbonsvg@2x.png');
+        background-size: 1079px 245px;
+    }
+    
+    #cincin
+    {
+        background: url("../img/CINCIN@2x.png") no-repeat center top;
+        background-size: 100% 100%;
+    }
+    
+    #rings
+    {
+        background: url("../img/rings@2x.png") no-repeat center top;
+        background-size: 100% 100%;
+    }
+    
+    #rings:hover
+    {
+        background: url("../img/lord@2x.png") no-repeat center top;
+        background-size: 100% 100%;
+    }
+    
+    #bigday{
+        background: url("../img/thebigday@2x.png") no-repeat center top;
+        background-size: 100% 100%;
+    }
+    
+    #hotels{
+        background: url("../img/accomodation@2x.png") no-repeat center top;
+        background-size: 100% 100%;
+    }
+}
+
+@media screen and (max-width: 531px) {
+    .moment p.right {
+        left: 0%;
+    }
+    
+    #bigday {
+        left: -5%;
+    }
+    
+    #rings {
+        margin-top:16em;
+        left: 7%;
+    }
+    #hotels {
+        left: -5%;
+        margin-top:20em;
+    }
 }
