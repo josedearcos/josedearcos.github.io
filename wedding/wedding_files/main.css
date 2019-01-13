@@ -301,8 +301,9 @@ body {
 
 footer {
     position: relative;
-    height: 378px;
-    background: url('../img/ground.png') center no-repeat;
+    height: 700px;
+    background: url('../img/newground_orange@2x.png') center no-repeat;
+    background-size: 100% 700px;
     z-index: 0;
 }
 
@@ -373,6 +374,7 @@ footer p a:hover {
 }
 
 #balloon {
+    margin-top: -140px;
     position: fixed;
     left: 50%;
     margin-left: -304px;
@@ -398,7 +400,7 @@ header {
     top: 110px;
     position: relative;
     height: 255px;
-    background: url('../img/ribbon.png') center no-repeat;
+    background: url('../img/ribbonsvg.png') center no-repeat;
     z-index: 100;
 }
 
@@ -729,8 +731,8 @@ html.no-touch nav ul li:hover {
   }
 
   footer {
-    background-image: url('../img/ground@2x.png');
-    background-size: 3028px 378px;
+    background: url('../img/newground_orange@2x.png') center no-repeat;
+    background-size: 100% 700px;
   }
 
   nav ul li {
@@ -739,7 +741,7 @@ html.no-touch nav ul li:hover {
   }
 
   header {
-    background-image: url('../img/ribbon@2x.png');
+    background-image: url('../img/ribbonsvg@2x.png');
     background-size: 1079px 245px;
   }
 }
@@ -946,6 +948,56 @@ html.no-touch nav ul li:hover {
 }
 
 #hotels{
-    margin-top:1em;
-    right:0.5em;
+    margin-top:18em;
+    left:62%;
+    width:690px;
+    height:559px;
+    background: url("../img/accomodation@2x.png") no-repeat center top;
+    background-size: 50% 50%;
+}
+
+#bigday{
+    margin-top:15em;
+    left:-30%;
+    width:3420px;
+    height:3276px;
+    background: url("../img/thebigday@2x.png") no-repeat center top;
+    background-size: 12% 12%;
+    
+}
+
+#rings{
+    right:-7em;
+    margin-top:14em;
+    width:97px;
+    height:93px;
+    background: url("../img/rings@2x.png") no-repeat center top;
+    background-size: 100% 100%;
+
+}
+
+#rings:hover{
+    right:-7em;
+    margin-top:14em;
+    width:97px;
+    height:93px;
+    background: url("../img/lord@2x.png") no-repeat center top;
+    background-size: 100% 100%;
+}
+
+#cincin
+{
+    right:-4em;
+    margin-top:26em;
+    width:175px;
+    height:175px;
+    background: url("../img/CINCIN@2x.png") no-repeat center top;
+    background-size: 100% 100%;
+}
+
+#zone-eventi i{
+    padding-left:1em;
+}
+#zone-eventi b{
+    padding-left:1em;
 }

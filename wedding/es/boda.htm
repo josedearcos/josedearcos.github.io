@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths " style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" href="../img/balloon@2x.png">
+        <link rel="shortcut icon" href="./img/balloon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>G&J</title>
@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
         <link rel="stylesheet" href="../wedding_files/normalize.css">
         <link rel="stylesheet" href="../wedding_files/main.css">
+        <link rel="stylesheet" href="../wedding_files/fireworks.css">
+            
         <script>
             function show()
             {
@@ -63,61 +65,38 @@
         </script>
     </head>
     <body data-gr-c-s-loaded="true" style="">
-        <div id="balloon" class="soaring" style="margin-top: -190px;"></div>
+        <div id="balloon" class="soaring"></div>
         <div id="language-switcher-es" class="cloud cloud-1"><a href="http://josedearcos.com/wedding/" title="English">English</a></div>
         <div id="language-switcher-it" class="cloud cloud-2"><a href="http://josedearcos.com/wedding/it/matrimonio.htm" title="Italian">Italiano</a></div>
-        <header>
-            <div id="ribbon">
-                <div class="subtitle date">1 Sept</div>
-                <div class="title bride">Gio</div>
-                <div class="title groom">José</div>
-                <div class="subtitle year">2019</div>
-            </div>
-        </header>
-        <!--<nav>
-            <ul>
-                <li class="selected"><a href="#zone-where" title="Where">1</a></li>
-                <li class=""><a href="#zone-venue" title="Venue">2</a></li>
-                <li class=""><a href="#zone-eventi" title="Events">3</a></li>
-                <li class=""><a href="#zone-hotels" title="Where to stay">4</a></li>
-                <li><a href="#zone-form" title="RSVP">5</a></li>
-            </ul>
-        </nav>-->
-      
+       <header><div id="ribbon"></div></header>
       <div id="zone-where" class="moment first">
           <p class="scroll-hint">Sigue <br>debajo</p>
           <p class="left"><strong>¡Ya era hora!</strong>Nos casaremos en la bella <b>Italia</b> y nos encantaría que pasarais con nosotros un día tan especial.</p>
+          <div id="rings"><a></a></div>
       </div>
       
       <div id="zone-venue" class="moment">
           <p class="right"><strong>El gran día</strong>Después de la ceremonia pasaremos una magnífica velada disfrutando de la región vinícola de <b>Monferrato</b>.</p>
-          <div id="bird"></div>
+          <div id="bigday"><a></a></div>
       </div>
       
       <div id="zone-eventi" class="moment">
           <p class="left"><strong>Un fin de semana de celebraciones</strong>Como muchos de vosotros no sois de la zona, hemos organizado una variedad de eventos y actividades.<br>Os daremos una lista completa más adelante. Los dos eventos principales serán:<br><br> <b>Cena preboda</b><br> <i>Sábado 31 de agosto</i><br><br> <b>Brunch (Degustación de vinos)</b> <br><i>Lunes 2 de Septiembre</i></p>
+          <div id="cincin"><a></a></div>
       </div>
       
       <div id="zone-hotels" class="moment">
           <p class="right"><strong>Alojamiento</strong> Hay una gran variedad de opciones para hospedarse en la ciudad de <b>Turín</b> o en alguno de los <i>agriturismos</i> de la zona de Monferrato. <br><br> Pronto pondremos algunas sugerencias en esta página.<br>¡Os avisaremos!</p>
+          <div id="hotels"><a></a></div>
       </div>
-      
       <div id="zone-form" class="moment last">
           <h2 style="margin-left:50px;"> <strong>RSVP</strong> </h2>
-          
           <form class="gform pure-form pure-form-stacked" id="form_center" method="POST" action="https://script.google.com/macros/s/AKfycbzU2jx5U1GYHN1JdPEAM6xAfV8L321et6wkS-vQ/exec">
               <div class="form-elements">
                   <fieldset class="pure-group">
                       <label for="Name"><h4>Nombre:</h4></label>
                       <input required class="form_center" id="Name" name="Name" onchange="check_injection()" placeholder="" />
                   </fieldset>
-                  
-                  <!-- <fieldset class="pure-group">
-                      <label for="Comments">Comentarios: </label>
-                      <textarea id="Comments" name="Comments" rows="7"
-                          placeholder="¿Necesitas algo en especial? ¿Tienes alguna alergia o intolerancia? ¿Necesitarás transporte desde un punto de encuentro a la iglesia?"></textarea>
-                  </fieldset>-->
-                  
                   <fieldset class="pure-group">
                       <label for="Email"><h4>Tu dirección de e-mail:</h4></label>
                       <input class="form_center" id="Email" name="Email" type="Email" value=""
@@ -125,7 +104,6 @@
                       <span class="email-invalid" style="display:none">
                           Debe ser una dirección de e-mail valida</span>
                   </fieldset>
-                  
                   <fieldset class="pure-checkbox">
                       <label for="Guest"><h4>Confirmación</h4></label>
                       <label for="Confirmation-Yes" class="pure-radio">
@@ -137,13 +115,11 @@
                               No podré ir
                      </label>
                   </fieldset>
-                  
-                  <fieldset class="pure-group" id="Address" style="margin-top:0px;display:none;">
+                  <fieldset class="pure-group" id="Address" style="margin-top:-15px;display:none;">
                       <label for="paddress"><h4>Dirección:</h4></label>
                       <input required class="form_center" type="text" id="paddress" name="paddress" value="" onchange="check_injection()" placeholder="¿Dónde enviamos la invitación?"/>
                   </fieldset>
-                  
-                  <fieldset class="pure-group" id="guests" style="margin-top:-10px;display:none;">
+                  <fieldset class="pure-group" id="guests" style="display:none;">
                       <label for="Guest"><h4>¿Cuántos venís?</h4></label>
                       <select name="Guest" class="form_center" id="Guest">
                           <option name="Guest" value="0" selected hidden>Elige aquí</option>
@@ -154,10 +130,8 @@
                           <option name="Guest" value="5">Familia (5)</option>
                       </select>
                   </fieldset>
-                  
                   <fieldset class="pure-checkbox" id="events" style="display:none;">
                       <h4>¿Quieres participar en alguno de estos eventos?</h4>
-
                       <label for="Dinner" class="pure-checkbox">
                           <input name="Dinner" id="Dinner" type="checkbox"  value="No" onCLick="check()">
                               Sábado: Cena prenupcial
@@ -167,18 +141,14 @@
                               Lunes: Brunch (Degustación de vinos)
                       </label>
                   </fieldset>
-                  
-                  <button class="button-success pure-button button-xlarge" id="button-send">
-                      <i class="fa fa-paper-plane"></i>&nbsp;Envíar</button>
+                  <button class="button-success pure-button button-xlarge" id="button-send"><i class="fa fa-paper-plane"></i>&nbsp;Envíar</button>
               </div>
               <div class="thankyou_message" style="display:none;">
                   <h2 id='message'></h2>
               </div>
           </form>
       </div>
-      
-      <footer>
-      </footer>
+      <footer></footer>
       
       <script src="../wedding_files/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
