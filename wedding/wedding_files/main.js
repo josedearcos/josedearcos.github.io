@@ -127,6 +127,7 @@ $(document).ready(function() {
     } else if (!atArrival && isReturningToArrivalPoint) {
       atArrival = true;
       console.log('returning at arrival');
+      $balloon.removeClass('rocking').addClass('soaring');
 
       if(IS_MOBILE)
       {
