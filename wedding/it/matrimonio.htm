@@ -12,13 +12,17 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
         <link rel="stylesheet" href="../wedding_files/normalize.css">
         <link rel="stylesheet" href="../wedding_files/main.css">
+        <script src="../wedding_files/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="../wedding_files/plugins.js"></script>
+        <script src="../wedding_files/main.js"></script>
+        <script data-cfasync="false" type="text/javascript" src="../wedding_files/form-submission-handler.js"></script>
         <script>
             function show()
             {
                 document.getElementById('guests').style.display="block";
                 document.getElementById('events').style.display="block";
                 document.getElementById('Address').style.display="block";
-
                 var message = document.getElementById('message');
                 message.innerHTML = 'Grazie per aver risposto.<br><br>Ci vediamo il gran giorno!';
             }
@@ -27,7 +31,6 @@
                 document.getElementById('guests').style.display="none";
                 document.getElementById('events').style.display="none";
                 document.getElementById('Address').style.display="none";
-
                 var message = document.getElementById('message');
                 message.innerHTML = 'Grazie per aver risposto.<br><br>Ci mancherai.';
             }
@@ -35,7 +38,6 @@
             {
                 var elm_dinner = document.getElementById('Dinner');
                 var elm_brunch = document.getElementById('Brunch');
-
                 if (elm_dinner.checked) {
                     elm_dinner.value="Yes";
                 }
@@ -155,12 +157,5 @@
       
       <footer>
       </footer>
-      
-      <script src="../wedding_files/jquery.min.js"></script>
-      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-      <script src="../wedding_files/plugins.js"></script>
-      <script src="../wedding_files/main.js"></script>
-      
-      <script data-cfasync="false" type="text/javascript" src="../wedding_files/form-submission-handler.js"></script>
 
 </body></html>
