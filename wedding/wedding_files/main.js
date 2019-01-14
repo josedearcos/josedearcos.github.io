@@ -123,7 +123,6 @@ $(document).ready(function() {
         console.log(' at arrival');
 
         setTimeout(function() {
-        $balloon.addClass('soaring');
       }, 2000);
     } else if (!atArrival && isReturningToArrivalPoint) {
       atArrival = true;
@@ -143,8 +142,9 @@ $(document).ready(function() {
     } else if (!atDeparture && isDeparturing) {
       atDeparture = true;
       console.log('At departure');
-      $balloon.removeClass('rocking');
-              
+      //$balloon.removeClass('rocking');
+     $balloon.removeClass('rocking').addClass('soaring');
+
       if(navigator.userAgent.match(/Tablet|iPad/i))
       {
           if (window.matchMedia("(orientation: landscape)").matches) {
@@ -182,7 +182,7 @@ $(document).ready(function() {
           $balloon.animate({"margin-top": marginTopFlying + 'px'}, 1000);
       }
                   
-      $balloon.addClass('rocking');
+    $balloon.removeClass('soaring').addClass('rocking');
     }
 
     lastScrollTop = scrollTop;
