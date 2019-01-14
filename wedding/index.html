@@ -11,10 +11,13 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
         <link rel="stylesheet" href="./wedding_files/normalize.css">
         <link rel="stylesheet" href="./wedding_files/main.css">
+            <link rel="stylesheet" href="./wedding_files/fireworks.css">
+
         <script src="./wedding_files/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="./wedding_files/plugins.js"></script>
         <script src="./wedding_files/main.js"></script>
+
         <script data-cfasync="false" type="text/javascript" src="./wedding_files/form-submission-handler.js"></script>
         <script>
             function show()
@@ -151,7 +154,72 @@
                 <div class="thankyou_message" style="display:none;"><h2 id='message'></h2></div>
             </form>
         </div>
-
-        <footer></footer>
-
-</body></html>
+        <div class="container" style="z-index:95;margin-top:-50em;margin-bottom:-52em;width:100%;;
+">
+        <div class="stage-container">
+            <div class="canvas-container">
+                <canvas id="trails-canvas"></canvas>
+                <canvas id="main-canvas"></canvas>
+            </div>
+        </div>
+        </div>
+        
+        <div class="menu hide">
+            <div class="menu__inner-wrap">
+                <div class="btn btn--bright close-menu-btn">
+                    <svg fill="white" width="24" height="24"><use href="#icon-close" xlink:href="#icon-close"></use></svg>
+                </div>
+                <div class="menu__header">Settings</div>
+                <div class="menu__subheader">For more info, click any label.</div>
+                <form>
+                    <div class="form-option form-option--select">
+                        <label class="shell-type-label">Shell Type</label>
+                        <select class="shell-type"></select>
+                    </div>
+                    <div class="form-option form-option--select">
+                        <label class="shell-size-label">Shell Size</label>
+                        <select class="shell-size"></select>
+                    </div>
+                    <div class="form-option form-option--select">
+                        <label class="quality-ui-label">Quality</label>
+                        <select class="quality-ui"></select>
+                    </div>
+                    <div class="form-option form-option--select">
+                        <label class="sky-lighting-label">Sky Lighting</label>
+                        <select class="sky-lighting"></select>
+                    </div>
+                    <div class="form-option form-option--select">
+                        <label class="scaleFactor-label">Scale</label>
+                        <select class="scaleFactor"></select>
+                    </div>
+                    <div class="form-option form-option--checkbox">
+                        <label class="auto-launch-label">Auto Fire</label>
+                        <input class="auto-launch" type="checkbox" />
+                    </div>
+                    <div class="form-option form-option--checkbox form-option--finale-mode">
+                        <label class="finale-mode-label">Finale Mode</label>
+                        <input class="finale-mode" type="checkbox" />
+                    </div>
+                    <div class="form-option form-option--checkbox">
+                        <label class="hide-controls-label">Hide Controls</label>
+                        <input class="hide-controls" type="checkbox" />
+                    </div>
+                    <div class="form-option form-option--checkbox form-option--fullscreen">
+                        <label class="fullscreen-label">Fullscreen</label>
+                        <input class="fullscreen" type="checkbox" />
+                    </div>
+                    <div class="form-option form-option--checkbox">
+                        <label class="long-exposure-label">Open Shutter</label>
+                        <input class="long-exposure" type="checkbox" />
+                    </div>
+                </form>
+            </div>
+        </div>        <footer></footer>
+        
+        <script src="./wedding_files/plugins.js"></script>
+        <script src='./wedding_files/fscreen@1.0.1.js'></script>
+        <script src='./wedding_files/Stage@0.1.4.js'></script>
+        <script src='./wedding_files/MyMath.js'></script>
+        <script type="text/javascript" src="./wedding_files/fireworks.js"></script>
+    <script type="text/javascript">init();</script>
+        </body></html>

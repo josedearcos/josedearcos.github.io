@@ -243,11 +243,9 @@ Object.keys(appNodes).forEach(key => {
 
 // First render is called in init()
 function renderApp(state) {
-    appNodes.canvasContainer.classList.toggle('blur', state.menuOpen);
     appNodes.quality.value = state.config.quality;
     appNodes.shellType.value = state.config.shell;
     appNodes.shellSize.value = state.config.size;
-    appNodes.menuInnerWrap.style.opacity = state.openHelpTopic ? 0.12 : 1;
 }
 
 store.subscribe(renderApp);
@@ -556,10 +554,6 @@ const shellTypes = {
 const shellNames = Object.keys(shellTypes);
 
 function init() {
-    // Remove loading state
-    document.querySelector('.loading-init').remove();
-    appNodes.stageContainer.classList.remove('remove');
-
     // Populate dropdowns
     function setOptionsForSelect(node, options) {
         node.innerHTML = options.reduce((acc, opt) => acc += `<option value="${opt.value}">${opt.label}</option>`, '');
@@ -681,6 +675,7 @@ function handleResize() {
     const containerH = w <= 420 ? h : Math.min(h, MAX_HEIGHT);
     appNodes.stageContainer.style.width = containerW + 'px';
     appNodes.stageContainer.style.height = containerH + 'px';
+
     stages.forEach(stage => stage.resize(containerW, containerH));
     // Account for scale
     stageW = containerW ;
@@ -849,7 +844,7 @@ function render(speed) {
     trailsCtx.scale(dpr , dpr );
     mainCtx.scale(dpr , dpr );
 
-    trailsCtx.globalCompositeOperation = 'source-over';
+    trailsCtx.globalCompositeOperation = 'destination-out';
     trailsCtx.fillStyle = `rgba(0, 0, 0,  0.1)`;//0.1 for long exposure, 0.5 will make it shorter
     trailsCtx.fillRect(0, 0, width, height);
 
@@ -910,17 +905,6 @@ function render(speed) {
                                                            });
                                             trailsCtx.stroke();
                                             });
-
-
-                                            // Render speed bar if visible
-                                            if (speedBarOpacity) {
-                                                const speedBarHeight = 6;
-                                                mainCtx.globalAlpha = speedBarOpacity;
-                                                mainCtx.fillStyle = COLOR.Blue;
-                                                mainCtx.fillRect(0, height - speedBarHeight, width * simSpeed, speedBarHeight);
-                                                mainCtx.globalAlpha = 1;
-                                            }
-
 
                                             trailsCtx.setTransform(1, 0, 0, 1, 0, 0);
                                             mainCtx.setTransform(1, 0, 0, 1, 0, 0);
