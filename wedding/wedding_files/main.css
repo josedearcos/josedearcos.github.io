@@ -383,7 +383,7 @@ footer p a:hover {
     width: 609px;
     height: 940px;
     background: url('../img/balloon_default.png') no-repeat center top;
-    z-index: 99;
+    z-index: 98;
     background-size: 544px 840px;
 }
 
@@ -893,6 +893,7 @@ html.no-touch nav ul li:hover {
 
 
 #hotels{
+    z-index:99;
     margin-top:19em;
     left:73%;
     width:333px;
@@ -902,6 +903,7 @@ html.no-touch nav ul li:hover {
 }
 
 #hotels:hover{
+    z-index:99;
     margin-top:19em;
     left:73%;
     width:333px;
@@ -911,6 +913,7 @@ html.no-touch nav ul li:hover {
 }
 
 #bigday{
+    z-index:99;
     margin-top:15em;
     left:73%;
     width:333px;
@@ -921,6 +924,7 @@ html.no-touch nav ul li:hover {
 }
 
 #rings{
+    z-index:99;
     left:2%;
     margin-top:15em;
     width:333px;
@@ -931,6 +935,7 @@ html.no-touch nav ul li:hover {
 }
 
 #rings:hover{
+    z-index:99;
     margin-top:15em;
     width:333px;
     height:115px;
@@ -940,6 +945,7 @@ html.no-touch nav ul li:hover {
 
 #cincin
 {
+    z-index:99;
     right:-2em;
     margin-top:24em;
     width:250px;
@@ -950,6 +956,7 @@ html.no-touch nav ul li:hover {
 
 #cincin:hover
 {
+    z-index:99;
     right:-2em;
     margin-top:24em;
     width:250px;
@@ -983,8 +990,15 @@ html.no-touch nav ul li:hover {
     #hotels{
         margin-top:21em;
     }
+    #hotels:hover{
+        margin-top:21em;
+    }
     
     #cincin{
+        margin-top:28em;
+        left:5%;
+    }
+    #cincin:hover{
         margin-top:28em;
         left:5%;
     }
@@ -1073,53 +1087,6 @@ html.no-touch nav ul li:hover {
     }
 }
 
-/*Phones*/
-@media only screen and (orientation:portrait) {
-
-    .moment p.left
-    {
-        width:40%;
-    }
-    .moment p.right {
-        width:40%;
-        left: 0%;
-    }
-    
-    #bigday {
-        left: 0%;
-        margin-top:14.5em;
-    }
-    
-    #rings {
-        margin-top:17em;
-        left: 0%;
-    }
-    #hotels {
-        left: 0%;
-        margin-top:20em;
-    }
-    #zone-where{
-        height:380px;
-    }
-    #zone-venue{
-        height:540px;
-    }
-    #zone-eventi{
-        height:640px;
-    }
-    #zone-hotels{
-        height:760px;
-    }
-    #zone-form{
-        height:400px;
-    }
-    #cincin{
-        left:10%;
-        margin-top:27em;
-    }
-}
-
-
 /* iPads (portrait) ----------- */
 @media only screen and (orientation:portrait) {
     .moment p.left
@@ -1140,7 +1107,15 @@ html.no-touch nav ul li:hover {
         margin-top:17em;
         left: 0%;
     }
+    #rings:hover {
+        margin-top:17em;
+        left: 0%;
+    }
     #hotels {
+        left: 0%;
+        margin-top:20em;
+    }
+    #hotels:hover {
         left: 0%;
         margin-top:20em;
     }
@@ -1161,9 +1136,75 @@ html.no-touch nav ul li:hover {
     }
     #cincin{
         left:10%;
-        margin-top:27em;
+        margin-top:25em;
+    }
+    #cincin:hover{
+        left:10%;
+        margin-top:25em;
     }
 }
+
+
+/*Phones*/
+@media only screen and (orientation:portrait) {
+    
+    .moment p.left
+    {
+        width:40%;
+    }
+    .moment p.right {
+        width:40%;
+        left: 0%;
+    }
+    
+    #bigday {
+        left: 0%;
+        margin-top:14.5em;
+    }
+    
+    #rings {
+        margin-top:17em;
+        left: 0%;
+    }
+    
+    #rings:hover {
+        margin-top:17em;
+        left: 0%;
+    }
+    #hotels {
+        left: 0%;
+        margin-top:20em;
+    }
+    #hotels:hover {
+        left: 0%;
+        margin-top:20em;
+    }
+    #zone-where{
+        height:380px;
+    }
+    #zone-venue{
+        height:540px;
+    }
+    #zone-eventi{
+        height:640px;
+    }
+    #zone-hotels{
+        height:760px;
+    }
+    #zone-form{
+        height:400px;
+    }
+    #cincin{
+        left:8%;
+        margin-top:24em;
+    }
+    #cincin:hover{
+        left:8%;
+        margin-top:24em;
+    }
+}
+
+
 /*Large 4K*/
 @media (min-width: 2000px) {
     #bigday {
@@ -1171,13 +1212,22 @@ html.no-touch nav ul li:hover {
     }
     #hotels {
         left: 78%;
-
+    }
+    #hotels:hover {
+        left: 78%;
     }
     #cincin
     {
         left: 7%;
     }
+    #cincin:hover
+    {
+        left: 7%;
+    }
     #rings {
+        left: 7%;
+    }
+    #rings:hover {
         left: 7%;
     }
 }
@@ -1199,6 +1249,10 @@ and (max-device-width : 1024px) {
         left: 66%;
         margin-top:20em;
     }
+    #hotels:hover {
+        left: 66%;
+        margin-top:20em;
+    }
     #balloon{
         width: 609px;
         height: 940px;
@@ -1212,12 +1266,15 @@ and (max-device-width : 1024px) {
 }
 
 /*landscape phones*/
-@media only screen and (orientation:landscape) and  (max-device-width : 400px) {
+@media only screen and (orientation:landscape) and  (max-device-width : 600px) {
     #bigday {
         left: 67%;
         margin-top:16em;
     }
     #hotels {
+        left: 66%;
+    }
+    #hotels:hover {
         left: 66%;
     }
 }

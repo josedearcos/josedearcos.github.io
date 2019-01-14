@@ -117,7 +117,7 @@ $(document).ready(function() {
         }
         else
         {
-            $balloon.animate({"margin-top": 0 + 'px'}, 1000);
+                  $balloon.animate({"margin-top": marginTopFlying + 'px'}, 1000);
         }
                   
         console.log(' at arrival');
