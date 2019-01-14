@@ -1049,7 +1049,7 @@ html.no-touch nav ul li:hover {
     
     #cincin
     {
-        background: url("../img/cincin@2x.png") no-repeat center top;
+        background: url("../img/cincina@2x.png") no-repeat center top;
         background-size: 100% 100%;
     }
     
@@ -1159,48 +1159,48 @@ html.no-touch nav ul li:hover {
     
     #bigday {
         left: 0%;
-        margin-top:14.5em;
+        margin-top:14em;
     }
     
     #rings {
-        margin-top:17em;
+        margin-top:15em;
         left: 0%;
     }
     
     #rings:hover {
-        margin-top:17em;
+        margin-top:15em;
         left: 0%;
     }
     #hotels {
         left: 0%;
-        margin-top:20em;
+        margin-top:19em;
     }
     #hotels:hover {
         left: 0%;
-        margin-top:20em;
+        margin-top:19em;
     }
     #zone-where{
-        height:380px;
+        height:420px;
     }
     #zone-venue{
-        height:540px;
+        height:600px;
     }
     #zone-eventi{
-        height:640px;
+        height:760px;
     }
     #zone-hotels{
-        height:760px;
+        height:810px;
     }
     #zone-form{
         height:400px;
     }
     #cincin{
-        left:8%;
-        margin-top:24em;
+        left:6%;
+        margin-top:25em;
     }
     #cincin:hover{
-        left:8%;
-        margin-top:24em;
+        left:6%;
+        margin-top:25em;
     }
 }
 
@@ -1266,7 +1266,7 @@ and (max-device-width : 1024px) {
 }
 
 /*landscape phones*/
-@media only screen and (orientation:landscape) and  (max-device-width : 600px) {
+@media only screen and (orientation:landscape) and  (max-device-height : 600px) {
     #bigday {
         left: 67%;
         margin-top:16em;
@@ -1276,5 +1276,15 @@ and (max-device-width : 1024px) {
     }
     #hotels:hover {
         left: 66%;
+    }
+    #cincin
+    {
+        left: 0%;
+        margin-top:26em;
+    }
+    #cincin:hover
+    {
+        left: 0%;
+        margin-top:26em;
     }
 }
