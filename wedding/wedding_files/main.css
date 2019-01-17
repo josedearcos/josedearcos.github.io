@@ -927,7 +927,7 @@ header {
         height: auto;
         border: none !important;
         top: -10em;
-        mix-blend-mode: screen;
+        mix-blend-mode: multiply;
 
     }
     
