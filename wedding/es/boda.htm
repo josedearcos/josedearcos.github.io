@@ -64,8 +64,6 @@
                 document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/+/g,"");
                 document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/@/g,"");
             }
-            $('.Confirmation-Yes').on('click touchstart', function() {show();});
-            $('.Confirmation-No').on('click touchstart', function() {hide();});
         </script>
         <style>
             /*Preload of images to avoid blinking when hovering over the images*/
@@ -180,4 +178,20 @@
       <div style="margin-top:-15em;border: none !important;">
           <img class="poster" src="../img/newground_orange.png"/><video id="video_fire_works" src="../img/Fireworks_1024_compressed.mov" playsinline autoplay preload="auto" loop></video>
       </div>
+      <script>
+          $( document ).ready(function() {
+              $('#Confirmation-No').on('touchstart click', function(e) {
+                                       e.stopPropagation(); //stops propagation
+                                       hide();
+                                       });
+              
+              $('#Confirmation-Yes').on('touchstart click', function(e) {
+                                        e.stopPropagation(); //stops propagation
+                                        show();
+                                        });
+          });
+          $(window).load(function() {
+             document.getElementById('video_fire_works').play();
+         });
+      </script>
 </body></html>
