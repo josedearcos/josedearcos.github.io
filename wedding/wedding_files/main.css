@@ -308,6 +308,7 @@ body {
     top:0px;
     width: 100%;
     height: auto;
+    border: none !important;
 }
 
 #language-switcher-it {
@@ -909,6 +910,12 @@ header {
     #cincin:hover{
         margin-top:28em;
         left:5%;
+    }
+    #rings{
+        left:0%;
+    }
+    #rings:hover{
+        left:0%;
     }
 
 }
