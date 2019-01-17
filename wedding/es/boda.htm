@@ -39,7 +39,6 @@
             {
                 var elm_dinner = document.getElementById('Dinner');
                 var elm_brunch = document.getElementById('Brunch');
-                
                 if (elm_dinner.checked) {
                     elm_dinner.value="Yes";
                 }
@@ -65,6 +64,8 @@
                 document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/+/g,"");
                 document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/@/g,"");
             }
+            $('.Confirmation-Yes').on('click touchstart', function() {show();});
+            $('.Confirmation-No').on('click touchstart', function() {hide();});
         </script>
         <style>
             /*Preload of images to avoid blinking when hovering over the images*/

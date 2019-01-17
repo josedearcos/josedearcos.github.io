@@ -16,48 +16,54 @@
         <script src="../wedding_files/main.js"></script>
         <script data-cfasync="false" type="text/javascript" src="../wedding_files/form-submission-handler.js"></script>
         <script type="text/javascript">
-            $(window).load(function() { // better to use $(document).ready(function(){
-                $('.Confirmation-Yes').on('click touchstart', function() {
-                                                     show();
-                });
-                 $('.Confirmation-No').on('click touchstart', function() {
-                                                     hide();
-                });
-            });
-                           
-            function show()
-            {
-                document.getElementById('guests').style.display="block";
-                document.getElementById('events').style.display="block";
-                document.getElementById('Address').style.display="block";
-                var message = document.getElementById('message');
-                message.innerHTML = 'Grazie per aver risposto.<br><br>Ci vediamo il gran giorno!';
-            }
-            function hide()
-            {
-                document.getElementById('guests').style.display="none";
-                document.getElementById('events').style.display="none";
-                document.getElementById('Address').style.display="none";
-                var message = document.getElementById('message');
-                message.innerHTML = 'Grazie per aver risposto.<br><br>Ci mancherai.';
-            }
-            function check()
-            {
-                var elm_dinner = document.getElementById('Dinner');
-                var elm_brunch = document.getElementById('Brunch');
-                if (elm_dinner.checked) {
-                    elm_dinner.value="Yes";
-                }
-                else{
+             function show()
+             {
+                 document.getElementById('guests').style.display="block";
+                 document.getElementById('events').style.display="block";
+                 document.getElementById('Address').style.display="block";
+                 var message = document.getElementById('message');
+                 message.innerHTML = 'Grazie per aver risposto.<br><br>Ci vediamo il gran giorno!';
+             }
+             function hide()
+             {
+                 document.getElementById('guests').style.display="none";
+                 document.getElementById('events').style.display="none";
+                 document.getElementById('Address').style.display="none";
+                 var message = document.getElementById('message');
+                 message.innerHTML = 'Grazie per aver risposto.<br><br>Ci mancherai.';
+             }
+             function check()
+             {
+                 var elm_dinner = document.getElementById('Dinner');
+                 var elm_brunch = document.getElementById('Brunch');
+                 if (elm_dinner.checked) {
+                     elm_dinner.value="Yes";
+                 }
+                 else{
                     elm_dinner.value="No";
-                }
-                if (elm_brunch.checked) {
+                 }
+                 if (elm_brunch.checked) {
                     elm_brunch.value="Yes";
-                }
-                else{
+                 }
+                 else{
                     elm_brunch.value="No";
-                }
-            }
+                 }
+             }
+              function check_injection()
+              {
+                  document.getElementById("Name").value = document.getElementById("Name").value.replace(/=/g,"");
+                  document.getElementById("Name").value = document.getElementById("Name").value.replace(/-/g,"");
+                  document.getElementById("Name").value = document.getElementById("Name").value.replace(/+/g,"");
+                  document.getElementById("Name").value = document.getElementById("Name").value.replace(/@/g,"");
+                  
+                  document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/=/g,"");
+                  document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/-/g,"");
+                  document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/+/g,"");
+                  document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/@/g,"");
+              }
+        
+            $('.Confirmation-Yes').on('click touchstart', function() {show();});
+            $('.Confirmation-No').on('click touchstart', function() {hide();});
         </script>
         <style>
             /*Preload of images to avoid blinking when hovering over the images*/

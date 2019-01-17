@@ -19,78 +19,77 @@
 
         <script data-cfasync="false" type="text/javascript" src="./wedding_files/form-submission-handler.js"></script>
         <script type="text/javascript">
-            function show()
-            {
-                document.getElementById('guests').style.display="block";
-                document.getElementById('events').style.display="block";
-                document.getElementById('Address').style.display="block";
-
-                var message = document.getElementById('message');
-                message.innerHTML = 'Thank you for your reply.<br><br>See you on the big day!';
-            }
-            function hide()
-            {
-                document.getElementById('guests').style.display="none";
-                document.getElementById('events').style.display="none";
-                document.getElementById('Address').style.display="none";
-
-                var message = document.getElementById('message');
-                message.innerHTML = 'Thank you for your reply!<br><br>We will miss you.';
-            }
-            function check()
-            {
-                var elm_dinner = document.getElementById('Dinner');
-                var elm_brunch = document.getElementById('Brunch');
-                
-                if (elm_dinner.checked) {
-                    elm_dinner.value="Yes";
-                }
-                else{
-                    elm_dinner.value="No";
-                }
-                if (elm_brunch.checked) {
-                    elm_brunch.value="Yes";
-                }
-                else{
-                    elm_brunch.value="No";
-                }
-            }
-            function check_injection()
-            {
-                document.getElementById("Name").value = document.getElementById("Name").value.replace(/=/g,"");
-                document.getElementById("Name").value = document.getElementById("Name").value.replace(/-/g,"");
-                document.getElementById("Name").value = document.getElementById("Name").value.replace(/+/g,"");
-                document.getElementById("Name").value = document.getElementById("Name").value.replace(/@/g,"");
-                
-                document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/=/g,"");
-                document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/-/g,"");
-                document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/+/g,"");
-                document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/@/g,"");
-            }
+          function show()
+          {
+              document.getElementById('guests').style.display="block";
+              document.getElementById('events').style.display="block";
+              document.getElementById('Address').style.display="block";
+              var message = document.getElementById('message');
+              message.innerHTML = 'Thank you for your reply.<br><br>See you on the big day!';
+          }
+          function hide()
+          {
+              document.getElementById('guests').style.display="none";
+              document.getElementById('events').style.display="none";
+              document.getElementById('Address').style.display="none";
+              var message = document.getElementById('message');
+              message.innerHTML = 'Thank you for your reply!<br><br>We will miss you.';
+          }
+          function check()
+          {
+              var elm_dinner = document.getElementById('Dinner');
+              var elm_brunch = document.getElementById('Brunch');
+              if (elm_dinner.checked) {
+                  elm_dinner.value="Yes";
+             }
+              else{
+                  elm_dinner.value="No";
+              }
+              if (elm_brunch.checked) {
+                  elm_brunch.value="Yes";
+              }
+              else{
+                  elm_brunch.value="No";
+              }
+          }
+          function check_injection()
+          {
+              document.getElementById("Name").value = document.getElementById("Name").value.replace(/=/g,"");
+              document.getElementById("Name").value = document.getElementById("Name").value.replace(/-/g,"");
+              document.getElementById("Name").value = document.getElementById("Name").value.replace(/+/g,"");
+              document.getElementById("Name").value = document.getElementById("Name").value.replace(/@/g,"");
+              
+              document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/=/g,"");
+              document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/-/g,"");
+              document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/+/g,"");
+              document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/@/g,"");
+          }
+          $('.Confirmation-Yes').on('click touchstart', function() {show();});
+          $('.Confirmation-No').on('click touchstart', function() { hide();});
     </script>
-        <style>
-            /*Preload of images to avoid blinking when hovering over the images*/
-            /*TO DO: This can be improved using sprites to reduce HTML requests*/
-            body:after{
-            content:
-            url('./img/ribbon.png')
-            url('./img/balloon_default.png')
-            url('./img/balloon_smiling.png')
-            url("./img/thebigday_hover.png")
-            url("./img/cincin_hover.png")
-            url("./img/lord_calendar.png")
-            url("./img/accomodation_hover.png")
-            url('./img/ribbon@2x.png')
-            url('./img/balloon_default@2x.png')
-            url('./img/balloon_smiling@2x.png')
-            url("./img/cincin_hover@2x.png")
-            url("./img/thebigday_hover@2x.png")
-            url("./img/lord_calendar@2x.png")
-            url("./img/accomodation_hover@2x.png");
-            url("./img/Fireworks.m4v");
-            display:none;
-        }
-        </style>
+    <style>
+        /*Preload of images to avoid blinking when hovering over the images*/
+        /*TO DO: This can be improved using sprites to reduce HTML requests*/
+        body:after{
+        content:
+        url('./img/ribbon.png')
+        url('./img/balloon_default.png')
+        url('./img/balloon_smiling.png')
+        url("./img/thebigday_hover.png")
+        url("./img/cincin_hover.png")
+        url("./img/lord_calendar.png")
+        url("./img/accomodation_hover.png")
+        url('./img/ribbon@2x.png')
+        url('./img/balloon_default@2x.png')
+        url('./img/balloon_smiling@2x.png')
+        url("./img/cincin_hover@2x.png")
+        url("./img/thebigday_hover@2x.png")
+        url("./img/lord_calendar@2x.png")
+        url("./img/accomodation_hover@2x.png");
+        url("./img/Fireworks.m4v");
+        display:none;
+    }
+    </style>
     </head>
     <body data-gr-c-s-loaded="true" style="">
         <div id="balloon" class="soaring"><a></a></div>
