@@ -61,9 +61,11 @@
                   document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/+/g,"");
                   document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/@/g,"");
               }
-        
-            $('.Confirmation-Yes').on('click touchstart', function() {show();});
-            $('.Confirmation-No').on('click touchstart', function() {hide();});
+             $(window).load(function() {
+                   $('.Confirmation-Yes').on('click touchstart', function() {show();});
+                   $('.Confirmation-No').on('click touchstart', function() {hide();});
+                   document.getElementById('video_fire_works').play();
+             }
         </script>
         <style>
             /*Preload of images to avoid blinking when hovering over the images*/
