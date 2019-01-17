@@ -15,9 +15,10 @@
         <script src="../wedding_files/plugins.js"></script>
         <script src="../wedding_files/main.js"></script>
         <script data-cfasync="false" type="text/javascript" src="../wedding_files/form-submission-handler.js"></script>
-        <script>
+        <script type="text/javascript">
             function show()
             {
+                alert('You clicked the menu icon');
                 document.getElementById('guests').style.display="block";
                 document.getElementById('events').style.display="block";
                 document.getElementById('Address').style.display="block";
@@ -147,12 +148,10 @@
                   </fieldset>
                   <button class="button-success pure-button button-xlarge" id="button-send"><i class="fa fa-paper-plane"></i>&nbsp;Invio</button>
               </div>
-              <div class="thankyou_message" style="display:none;">
-                  <h2 id='message'></h2>
-              </div>
+              <div class="thankyou_message" style="display:none;"><h2 id='message'></h2></div>
           </form>
       </div>
-      <div style="border: none !important;margin-top:-30em;">
-          <video style="border: none !important;" id="video_fire_works" poster="../img/newground_orange@2x.png" src="../img/Fireworks_1024_compressed.mov"  autoplay preload="auto" loop></video>
+      <div style="border: none !important;margin-top:-15em;">
+          <img class="poster" src="../img/newground_orange.png"/><video style="border: none !important;" id="video_fire_works" src="../img/Fireworks_1024_compressed.mov" autoplay preload="auto" loop></video>
       </div>
 </body></html>
