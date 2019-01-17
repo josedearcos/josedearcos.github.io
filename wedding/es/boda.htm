@@ -104,6 +104,7 @@
           &nbsp;
           <p class="right"><strong>El gran día</strong>Después de la ceremonia pasaremos una magnífica velada disfrutando de la región vinícola de <a href="https://goo.gl/maps/tw1MpGyDPPJ2" target="_blank"><b><u>Monferrato</u></b></a>.</p>
           <div onclick="" id="bigday"><a></a></div>
+          <audio id="wedding_music" src="../img/WeddingMarch.mp3"  preload="auto"></audio>
       </div>
       <div id="zone-eventi" class="moment">
           &nbsp;
@@ -190,5 +191,21 @@
                                         show();
               });
           });
+          
+          $(window).load(function() {
+         document.getElementById('video_fire_works').play();
+         });
+                         
+          count = false;
+          var audio =  $("#wedding_music")[0];
+          $("#bigday").mouseenter(function() {
+                if(count==false)
+                {
+                audio.volume = 0.05;
+                audio.play();
+                count=true;
+                }
+            });
+          
       </script>
 </body></html>

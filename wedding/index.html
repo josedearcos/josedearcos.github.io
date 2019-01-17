@@ -105,6 +105,7 @@
             <p class="right"><strong>The big day</strong>
             Following the afternoon ceremony, we will continue the festivities in the enchanting wine region of <a href="https://goo.gl/maps/tw1MpGyDPPJ2" target="_blank"><b><u>Monferrato</u></b></a> <abbr data-toggle="tooltip" title="i.e., until 1 am.">all night long.</abbr> </p>
             <div onclick="" id="bigday"><a></a></div>
+            <audio id="wedding_music" src="../img/WeddingMarch.mp3"  preload="auto"></audio>
         </div>
         <div id="zone-eventi" class="moment">
          &nbsp;
@@ -188,8 +189,20 @@
                                       show();
             });
         });
+        
         $(window).load(function() {
             document.getElementById('video_fire_works').play();
         });
+        
+        count = false;
+        var audio =  $("#wedding_music")[0];
+        $("#bigday").mouseenter(function() {
+                                if(count==false)
+                                {
+                                audio.volume = 0.05;
+                                audio.play();
+                                count=true;
+                                }
+                                });
         </script>
 </body></html>

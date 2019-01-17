@@ -816,9 +816,8 @@ header {
     left:73%;
     width:333px;
     height:320px;
-    background: url("../img/thebigday.png") no-repeat center top;
+    background: url("../img/thebigday_default.png") no-repeat center top;
     background-size: 100% 100%;
-    
 }
 
 #bigday:hover{
@@ -1006,7 +1005,7 @@ header {
     }
     
     #bigday{
-        background: url("../img/thebigday@2x.png") no-repeat center top;
+        background: url("../img/thebigday_default@2x.png") no-repeat center top;
         background-size: 100% 100%;
     }
     
