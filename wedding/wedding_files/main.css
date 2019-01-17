@@ -1275,10 +1275,6 @@ a:visited {
 
 /* For iPad*/
 
-#Confirmation-Yes{
-    cursor: pointer;
-}
-
-#Confirmation-No{
+.clickElement{
     cursor: pointer;
 }
