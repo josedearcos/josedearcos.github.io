@@ -313,6 +313,7 @@ body {
     height: auto;
     border: none !important;
     top: -2px;
+    poster:"../img/newground_orange.png;
 }
 
 #language-switcher-it {
@@ -925,6 +926,16 @@ header {
 
 /*Retina*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    
+    #video_fire_works{
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        border: none !important;
+        top: -2px;
+        poster:"../img/newground_orange@2x.png;
+    }
     
     .moment p.scroll-hint {
         background-image: url('../img/arrow@2x.png');
