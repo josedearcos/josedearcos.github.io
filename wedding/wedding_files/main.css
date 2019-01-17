@@ -305,10 +305,10 @@ body {
 #video_fire_works{
     z-index: 1;
     position: absolute;
-    top:0px;
     width: 100%;
     height: auto;
     border: none !important;
+    top: -2px;
 }
 
 #language-switcher-it {
@@ -421,7 +421,7 @@ header {
     margin-left: 5%;
     margin-right: -5%;
     height: 750px;
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 
 .moment p {
@@ -435,7 +435,7 @@ header {
 .moment p.scroll-hint {
     color: #FAFDFC;
     font-family: "Sreda", "Georgia", "Times New Roman", serif;
-    font-size: 1.25em;
+    font-size: 1.4em;
     background: url('../img/arrow.png') right no-repeat;
     padding-right: 2px;
     width: 100px;
@@ -454,7 +454,7 @@ header {
     font-family: "Sreda", "Georgia", "Times New Roman", serif;
     margin-top: 150px;
     margin-bottom: 13px;
-    font-size: 1.5em;
+    font-size: 1.6em;
     line-height: 1em;
     font-weight: 300;
     display: block;
@@ -462,10 +462,10 @@ header {
 }
 
 .moment h2 strong {
-    font-size: 1.5em;
+    font-size: 1.4em;
     line-height: 1em;
     font-weight: 300;
-    margin-left:1.4em;
+    margin-left:1.7em;
     display: block;
     color: #F26A47;
 }
@@ -481,7 +481,7 @@ header {
 .moment.last {
     position: relative;
     margin-left: 5%;
-    font-size: 1em;
+    font-size: 1.1em;
     z-index:100;
     width:30%;
     margin-bottom: 250px;
