@@ -295,36 +295,22 @@ body {
 
     background: -ms-linear-gradient(top,  #a7d3db 0%,#cfddc9 88%,#e2e3ce 94%,#fceabd 100%); /* IE10+ */
 
-   background: linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, #002751 75%); /* W3C */
+    background: linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, #012552
+ 75%); /* W3C */
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7d3db', endColorstr='#fceabd',GradientType=0 ); /* IE6-8 */
 
 }
 
-footer {
-    position: relative;
-    height: 700px;
-    background: url('../img/newground_orange.png') center no-repeat;
-    background-size: 100% 700px;
-    z-index: 0;
-}
-
-footer p {
+#video_fire_works{
+    z-index: 1;
     position: absolute;
-    left: 50%;
-    margin-left: 350px;
-    color: #677435;
-    font-size: 0.8em
+    top:0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
 }
-
-footer p a, footer p a:active, footer p a:visited, footer p a:hover {
-    color: #677435;
-}
-
-footer p a:hover {
-    text-decoration: none;
-}
-
 
 #language-switcher-it {
     position: absolute;
@@ -402,12 +388,12 @@ header {
     top: 110px;
     position: relative;
     height: 255px;
-    background: url('../img/ribbon.png') center no-repeat;
+    background: center no-repeat;
     background-size: 1079px 245px;
     z-index: 100;
 }
 
-header #ribbon {
+#ribbon {
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -415,9 +401,10 @@ header #ribbon {
     padding-left: 30px;
     padding-right: 30px;
     height: 100%;
+    background: center no-repeat;url('../img/ribbon.png');
 }
 
-header #ribbonit {
+#ribbonit {
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -427,43 +414,6 @@ header #ribbonit {
     height: 100%;
     background: url('../img/ribbonit.png') center no-repeat;
     background-size: 1079px 245px;
-}
-
-nav {
-    position: fixed;
-    bottom: 0px;
-    right: 50px;
-    z-index: 1000;
-}
-
-nav ul {
-    position: relative;
-    list-style: none;
-}
-
-nav ul li {
-    background: 0px 0px url('../img/hearts.png') no-repeat;
-    line-height: 0.7em;
-    margin-bottom: 32px;
-    height: 18px;
-    width: 18px;
-}
-
-nav ul li a {
-    display: none;
-    position: absolute;
-    right: 40px;
-    color: #F26A47;
-    text-decoration: none
-}
-
-nav ul li.selected {
-    background-position: 0px -18px;
-}
-
-html.no-touch nav ul li:hover {
-    cursor: pointer;
-    background-position: 0px -18px;
 }
 
 .moment {
@@ -843,7 +793,6 @@ html.no-touch nav ul li:hover {
     }
 }
 
-
 #hotels{
     z-index:99;
     margin-top:19em;
@@ -964,6 +913,15 @@ html.no-touch nav ul li:hover {
         background-size: 17px 29px;
     }
     
+    .footer_static{
+        background: url('../img/newground_orange_footer@2x.png') no-repeat center top;
+        background-size: 100%;
+    }
+   
+    footer{
+        background: url('../img/newground_orange@2x.png') no-repeat center top;
+        background-size: 100% 700px;
+    }
     #balloon {
         background-image: url('../img/balloon_default@2x.png');
         background-size: 544px 840px;
@@ -984,10 +942,6 @@ html.no-touch nav ul li:hover {
         background-size: 308px 446px;
     }
     
-    footer {
-        background: url('../img/newground_orange@2x.png') center no-repeat;
-        background-size: 100% 700px;
-    }
     
     nav ul li {
         background-image: url('../img/hearts@2x.png');
@@ -996,6 +950,11 @@ html.no-touch nav ul li:hover {
     
     header {
         background-image: url('../img/ribbon@2x.png');
+        background-size: 1079px 245px;
+    }
+    
+    #ribbonit{
+        background-image: url('../img/ribbonit@2x.png');
         background-size: 1079px 245px;
     }
     

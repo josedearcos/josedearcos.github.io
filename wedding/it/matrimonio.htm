@@ -50,6 +50,27 @@
                 }
             }
         </script>
+        <style>
+            /*Preload of images to avoid blinking when hovering over the images*/
+            /*TO DO: This can be improved using sprites to reduce HTML requests*/
+            body:after{
+                content:
+                url('../img/ribbonit.png')
+                url('../img/balloon_default.png')
+                url('../img/balloon_smiling.png')
+                url("../img/cincin_hover.png")
+                url("../img/lord_calendar.png")
+                url("../img/accomodation_hover.png")
+                url('../img/ribbonit@2x.png')
+                url('../img/balloon_default@2x.png')
+                url('../img/balloon_smiling@2x.png')
+                url("../img/cincin_hover@2x.png")
+                url("../img/lord_calendar@2x.png")
+                url("../img/accomodation_hover@2x.png");
+                url("../img/Fireworks.m4v");
+                display:none;
+            }
+        </style>
     </head>
     <body data-gr-c-s-loaded="true" style="">
         <div id="balloon" class="soaring" style="margin-top: -140px;"></div>
@@ -138,5 +159,7 @@
               </div>
           </form>
       </div>
-      <footer></footer>
+      <div style="margin-top:-30em">
+          <video id="video_fire_works" src="./img/Fireworks.m4v" autoplay preload loop></video>
+      </div>
 </body></html>

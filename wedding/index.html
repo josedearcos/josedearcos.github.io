@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
         <link rel="stylesheet" href="./wedding_files/normalize.css">
         <link rel="stylesheet" href="./wedding_files/main.css">
-            <link rel="stylesheet" href="./wedding_files/fireworks.css">
+        <link rel="stylesheet" href="./wedding_files/fireworks.css">
 
         <script src="./wedding_files/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
@@ -69,6 +69,27 @@
                 document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/@/g,"");
             }
     </script>
+        <style>
+            /*Preload of images to avoid blinking when hovering over the images*/
+            /*TO DO: This can be improved using sprites to reduce HTML requests*/
+            body:after{
+            content:
+            url('./img/ribbon.png')
+            url('./img/balloon_default.png')
+            url('./img/balloon_smiling.png')
+            url("./img/cincin_hover.png")
+            url("./img/lord_calendar.png")
+            url("./img/accomodation_hover.png")
+            url('./img/ribbon@2x.png')
+            url('./img/balloon_default@2x.png')
+            url('./img/balloon_smiling@2x.png')
+            url("./img/cincin_hover@2x.png")
+            url("./img/lord_calendar@2x.png")
+            url("./img/accomodation_hover@2x.png");
+            url("./img/Fireworks.m4v");
+            display:none;
+        }
+        </style>
     </head>
     <body data-gr-c-s-loaded="true" style="">
         <div id="balloon" class="soaring"><a></a></div>
@@ -154,6 +175,12 @@
                 <div class="thankyou_message" style="display:none;"><h2 id='message'></h2></div>
             </form>
         </div>
+<<<<<<< HEAD
+        <div style="margin-top:-30em">
+            <video id="video_fire_works" src="./img/Fireworks_1024_compressed.mov" autoplay preload loop></video>
+        </div>
+</body></html>
+=======
         <div class="container" style="z-index:95;margin-top:-50em;margin-bottom:-52em;width:100%;;
 ">
         <div class="stage-container">
@@ -223,3 +250,4 @@
         <script type="text/javascript" src="./wedding_files/fireworks.js"></script>
     <script type="text/javascript">init();</script>
         </body></html>
+>>>>>>> parent of 70f12bf... Adding videos
