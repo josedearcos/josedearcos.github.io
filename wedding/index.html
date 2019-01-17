@@ -174,19 +174,19 @@
             </form>
         </div>
         <div style="border: none !important;margin-top:-30em;">
-            <img class="poster" src="./img/newground_orange.png"/><video id="video_fire_works" src="./img/Fireworks_1024_compressed.mov" playsinline autoplay preload="auto" loop></video>
+            <img class="poster" src="./img/newground_orange.png"/><video id="video_fire_works" src="./img/Fireworks_1024_compressed.mov" playsinline autoplay preload="auto" loop muted></video>
         </div>
         <script>
         $( document ).ready(function() {
             $('#Confirmation-No').on('touchstart click', function(e) {
                                      e.stopPropagation(); //stops propagation
                                      hide();
-                                     });
+            });
             
             $('#Confirmation-Yes').on('touchstart click', function(e) {
                                       e.stopPropagation(); //stops propagation
                                       show();
-                                      });
+            });
         });
         $(window).load(function() {
             document.getElementById('video_fire_works').play();
