@@ -1272,3 +1272,13 @@ a:visited {
     border: none !important;
     top: -2px;
 }
+
+/* For iPad*/
+
+#Confirmation-Yes{
+    cursor: pointer;
+}
+
+#Confirmation-No{
+    cursor: pointer;
+}
