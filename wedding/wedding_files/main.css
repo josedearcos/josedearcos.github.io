@@ -306,9 +306,7 @@ body {
     z-index: 1;
     position: absolute;
     top:0px;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
+    width: 100%;
     height: auto;
 }
 
@@ -824,6 +822,16 @@ header {
     
 }
 
+#bigday:hover{
+    z-index:99;
+    margin-top:15em;
+    left:73%;
+    width:333px;
+    height:320px;
+    background: url("../img/thebigday_hover.png") no-repeat center top;
+    background-size: 100% 100%;
+}
+
 #rings{
     z-index:99;
     left:2%;
@@ -894,7 +902,6 @@ header {
     #hotels:hover{
         margin-top:21em;
     }
-    
     #cincin{
         margin-top:28em;
         left:5%;
@@ -903,6 +910,7 @@ header {
         margin-top:28em;
         left:5%;
     }
+
 }
 
 /*Retina*/
@@ -987,6 +995,11 @@ header {
         background-size: 100% 100%;
     }
     
+    #bigday:hover{
+        background: url("../img/thebigday_hover@2x.png") no-repeat center top;
+        background-size: 100% 100%;
+    }
+
     #hotels{
         background: url("../img/accomodation@2x.png") no-repeat center top;
         background-size: 100% 100%;
@@ -1013,7 +1026,10 @@ header {
         left: 0%;
         margin-top:14.5em;
     }
-    
+    #bigday:hover {
+        left: 0%;
+        margin-top:14.5em;
+    }
     #rings {
         margin-top:17em;
         left: 0%;
@@ -1072,7 +1088,10 @@ header {
         left: 0%;
         margin-top:15em;
     }
-    
+    #bigday:hover {
+        left: 0%;
+        margin-top:15em;
+    }
     #rings {
         margin-top:15em;
         left: 0%;
@@ -1121,6 +1140,9 @@ header {
     #bigday {
         left: 78%;
     }
+    #bigday:hover{
+        left: 78%;
+    }
     #hotels {
         left: 78%;
     }
@@ -1156,6 +1178,10 @@ and (max-device-width : 1024px) {
         left: 66%;
         margin-top:16em;
     }
+    #bigday:hover {
+        left: 66%;
+        margin-top:16em;
+    }
     #hotels {
         left: 66%;
         margin-top:20em;
@@ -1179,6 +1205,10 @@ and (max-device-width : 1024px) {
 /*landscape phones*/
 @media only screen and (orientation:landscape) and  (max-device-height : 600px) {
     #bigday {
+        left: 67%;
+        margin-top:16em;
+    }
+    #bigday:hover {
         left: 67%;
         margin-top:16em;
     }
