@@ -482,7 +482,7 @@ header {
     position: relative;
     margin-left: 5%;
     font-size: 1.1em;
-    z-index:100;
+    z-index:99;
     width:30%;
     margin-bottom: 250px;
 }
@@ -889,10 +889,10 @@ header {
 }
 
 #zone-eventi i{
-    padding-left:1em;
+    padding-left:0.5em;
 }
 #zone-eventi b{
-    padding-left:1em;
+    padding-left:0.5em;
 }
 
 /*Normal laptops*/
