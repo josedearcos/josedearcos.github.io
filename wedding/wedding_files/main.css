@@ -435,7 +435,7 @@ header {
 .moment p.scroll-hint {
     color: #FAFDFC;
     font-family: "Sreda", "Georgia", "Times New Roman", serif;
-    font-size: 1.4em;
+    font-size: 1.2em;
     background: url('../img/arrow.png') right no-repeat;
     padding-right: 2px;
     width: 100px;
