@@ -838,7 +838,7 @@ header {
 #rings{
     z-index:99;
     left:2%;
-    margin-top:15em;
+    margin-top:19em;
     width:333px;
     height:115px;
     background: url("../img/rings_calendar.png") no-repeat center top;
@@ -848,7 +848,7 @@ header {
 
 #rings:hover{
     z-index:99;
-    margin-top:15em;
+    margin-top:19em;
     width:333px;
     height:115px;
     background: url("../img/lord_calendar.png") no-repeat center top;
@@ -1048,11 +1048,11 @@ header {
         margin-top:14.5em;
     }
     #rings {
-        margin-top:17em;
+        margin-top:20em;
         left: 0%;
     }
     #rings:hover {
-        margin-top:17em;
+        margin-top:20em;
         left: 0%;
     }
     #hotels {
@@ -1118,12 +1118,12 @@ header {
         margin-top:15em;
     }
     #rings {
-        margin-top:15em;
+        margin-top:18em;
         left: 0%;
     }
     
     #rings:hover {
-        margin-top:15em;
+        margin-top:18em;
         left: 0%;
     }
     #hotels {
