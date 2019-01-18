@@ -964,6 +964,7 @@ header {
     
     .footer_static{
         top:-15em;
+        border: none !important;
     }
    
     #balloon {
