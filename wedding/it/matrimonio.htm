@@ -196,13 +196,6 @@
        </script>
       <script>
           /* Crazy fix for the different rending of colors depending on browser and GPU optimization*/
-          
-          // Detect which browser prefix to use for the specified CSS value
-          // (e.g., background-image: -moz-linear-gradient(...);
-          //        background-image:   -o-linear-gradient(...); etc).
-          //
-          
-          
           // Setting the gradient with the proper prefix
           function isColorInRange(expectedColor, givenColor) {
               const THRESHOLD = 40;
@@ -230,7 +223,7 @@
                   ctx.drawImage(vid, 0, 0, 1, 1);
                   
                   var p = ctx.getImageData(0, 0, 1, 1).data;
-                  console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
+                  //console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
                   if (isColorInRange(nativeColor, p)) {
                       
                       
@@ -244,7 +237,7 @@
                       
                       dom_main.style.background = '-ms-linear-gradient(top,  rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* IE10+ */
                       
-                      console.log( 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');/* W3C */
+                      //console.log( 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');/* W3C */
                       
                   }
               }

@@ -206,18 +206,9 @@
                 count=true;
                 }
             });
-          
       </script>
       <script>
           /* Crazy fix for the different rending of colors depending on browser and GPU optimization*/
-          
-          // Detect which browser prefix to use for the specified CSS value
-          // (e.g., background-image: -moz-linear-gradient(...);
-          //        background-image:   -o-linear-gradient(...); etc).
-          //
-          
-          
-          // Setting the gradient with the proper prefix
           function isColorInRange(expectedColor, givenColor) {
               const THRESHOLD = 40;
               for (var i = 0; i < 3; i++) {
@@ -229,44 +220,44 @@
               return true;
           }
       
-      function setVideoBgColor(vid, nativeColor) {
-          if (vid) {
-              var dom_main = document.getElementsByTagName("body")[0];;
-              
-              if (dom_main) {
-                  // draw first pixel of video to a canvas
-                  // then get pixel color from that canvas
+          function setVideoBgColor(vid, nativeColor) {
+              if (vid) {
+                  var dom_main = document.getElementsByTagName("body")[0];;
                   
-                  var canvas = document.createElement("canvas");
-                  canvas.width = 1;
-                  canvas.height = 1;
-                  var ctx = canvas.getContext("2d");
-                  ctx.drawImage(vid, 0, 0, 1, 1);
-                  
-                  var p = ctx.getImageData(0, 0, 1, 1).data;
-                  console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
-                  if (isColorInRange(nativeColor, p)) {
+                  if (dom_main) {
+                      // draw first pixel of video to a canvas
+                      // then get pixel color from that canvas
                       
+                      var canvas = document.createElement("canvas");
+                      canvas.width = 1;
+                      canvas.height = 1;
+                      var ctx = canvas.getContext("2d");
+                      ctx.drawImage(vid, 0, 0, 1, 1);
                       
-                      dom_main.style.background = '-moz-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)'; /* FF3.6+ */
-                      
-                      dom_main.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(116, 193, 254)), color-stop(25%,rgb(167, 211, 219)), color-stop(50%,lightskyblue), color-stop(75%,'+ p[0] + ',' + p[1] + ',' + p[2] + ')'; /* Chrome,Safari4+ */
-                      
-                      dom_main.style.background =- 'webkit-linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* Chrome10+,Safari5.1+ */
-                      
-                      dom_main.style.background =  '-o-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* Opera 11.10+ */
-                      
-                      dom_main.style.background = '-ms-linear-gradient(top,  rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* IE10+ */
-                      
-                      console.log( 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');/* W3C */
-                      
+                      var p = ctx.getImageData(0, 0, 1, 1).data;
+                      //console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
+                      if (isColorInRange(nativeColor, p)) {
+                          
+                          
+                          dom_main.style.background = '-moz-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)'; /* FF3.6+ */
+                          
+                          dom_main.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(116, 193, 254)), color-stop(25%,rgb(167, 211, 219)), color-stop(50%,lightskyblue), color-stop(75%,'+ p[0] + ',' + p[1] + ',' + p[2] + ')'; /* Chrome,Safari4+ */
+                          
+                          dom_main.style.background =- 'webkit-linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* Chrome10+,Safari5.1+ */
+                          
+                          dom_main.style.background =  '-o-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* Opera 11.10+ */
+                          
+                          dom_main.style.background = '-ms-linear-gradient(top,  rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* IE10+ */
+                          
+                          //console.log( 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');/* W3C */
+                          
+                      }
                   }
               }
           }
-      }
       
-      function setVideoBgColorDelayed(vid, nativeColor) {
-          setTimeout(setVideoBgColor, 100, vid, nativeColor);
-      }
+          function setVideoBgColorDelayed(vid, nativeColor) {
+              setTimeout(setVideoBgColor, 100, vid, nativeColor);
+          }
       </script>
 </body></html>
