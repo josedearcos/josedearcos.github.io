@@ -19,12 +19,7 @@
 
         <script data-cfasync="false" type="text/javascript" src="./wedding_files/form-submission-handler.js"></script>
         <script type="text/javascript">
-            function hideLoader() {
-                $('##loading_element').hide();
-            }
-            $(window).ready(hideLoader);
-            setTimeout(hideLoader, 20 * 1000); // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
-        </script>
+             </script>
         <script type="text/javascript">
           function show()
           {
@@ -72,6 +67,7 @@
               document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/@/g,"");
           }
 </script>
+        
     <style>
         /*Preload of images to avoid blinking when hovering over the images*/
         /*TO DO: This can be improved using sprites to reduce HTML requests*/
@@ -97,7 +93,7 @@
     </style>
     </head>
     <body data-gr-c-s-loaded="true" style="">
-        <div id="loading_element"></div>
+        <div id="loading_element"><div class="heart"><p>Loading</p></div></div>
         <div onclick="" id="balloon" class="soaring"><a></a></div>
         <div id="language-switcher-es" class="cloud cloud-1"><a href="http://josedearcos.com/wedding/es/boda.htm" title="Spanish">Español</a></div>
         <div id="language-switcher-it" class="cloud cloud-2"><a href="http://josedearcos.com/wedding/it/matrimonio.htm" title="Italian">Italiano</a></div>
@@ -199,7 +195,12 @@
         });
         
         $(window).load(function() {
-            document.getElementById('video_fire_works').play();
+                       function hideLoader() {
+                       $('#loading_element').hide();
+                       }
+                       $(window).ready(hideLoader);
+                       setTimeout(hideLoader, 5000); // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+                       document.getElementById('video_fire_works').play();
         });
         
         count = false;

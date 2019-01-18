@@ -927,6 +927,16 @@ header {
 /*Retina*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
     
+    .heart{
+        background: url("../img/heart_loader@2x.gif") no-repeat center top;
+        background-size: 60%;
+    }
+    
+    .heart:hover{
+        background: url("../img/heart_loader_full@2x.gif") no-repeat center top;
+        background-size: 60%;
+    }
+    
     #video_fire_works{
         z-index: 1;
         position: absolute;
@@ -1287,11 +1297,37 @@ a:visited {
 }
 
 #loading_element{
-    background: url('../img/heart_loader@2x.png') no-repeat center center;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 9999999;
+    z-index: 99999;
+    background-color:white;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+
+#loading_element p{
+    text-align:center;
+    top: 35em;
+}
+
+.heart{
+    margin: auto;
+    width: 50%;
+    height:100%;
+    background: url("../img/heart_loader.gif") no-repeat center top;
+    background-size: 60%;
+    margin-top:10em;
+}
+
+.heart:hover{
+    margin: auto;
+    width: 50%;
+    height:100%;
+    background: url("../img/heart_loader_full.gif") no-repeat center top;
+    background-size: 60%;
+    margin-top:10em;
+}
+
