@@ -270,9 +270,9 @@
                     console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
                     if (isColorInRange(nativeColor, p)) {
                         
-                        dom_main.style.background = 'linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 60%)';
+                        dom_main.style.background = getCssValuePrefix() + 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';
                         
-                        console.log(getCssValuePrefix() + 'linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 60%)');
+                        console.log(getCssValuePrefix() + 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');
                         
                     }
                 }
