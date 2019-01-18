@@ -144,7 +144,7 @@
          $('#loading_element').hide();
          }
          $(window).ready(hideLoader);
-         setTimeout(hideLoader, 5000); // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+         setTimeout(hideLoader, 10000); // Strongly recommended: Hide loader after 10 seconds, even if the page hasn't finished loading
          document.getElementById('video_fire_works').play();
       });
       
@@ -158,8 +158,6 @@
             count=true;
             }
         });
-    </script>
-    <script>
     /* Crazy fix for the different rending of colors depending on browser and GPU optimization*/
     function isColorInRange(expectedColor, givenColor) {
       const THRESHOLD = 40;
@@ -171,7 +169,6 @@
       }
       return true;
     }
-
     function setVideoBgColor(vid, nativeColor) {
       if (vid) {
           var dom_main = document.getElementsByTagName("body")[0];;
@@ -197,22 +194,18 @@
           }
       }
     }
-
     function setVideoBgColorDelayed(vid, nativeColor) {
       setTimeout(setVideoBgColor, 100, vid, nativeColor);
     }
-    </script>
-    <script type="text/javascript">
-      function show()
-      {
+    function show()
+    {
           document.getElementById('guests').style.display="block";
           document.getElementById('events').style.display="block";
           document.getElementById('Address').style.display="block";
           
           var message = document.getElementById('message');
           message.innerHTML = 'Gracias por contestar.<br><br>¡Nos vemos el gran día!';
-      }
-
+    }
     function hide()
     {
       document.getElementById('guests').style.display="none";
@@ -239,7 +232,7 @@
           elm_brunch.value="No";
       }
     }
-  /*Trying to fix iPad radio button issue*/
+    /*Trying to fix iPad radio button issue*/
     $('#Confirmation-No').bind('touchstart click', function(e) {
     console.log('binding');
     e.stopPropagation(); //stops propagation

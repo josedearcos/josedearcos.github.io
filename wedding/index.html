@@ -15,18 +15,14 @@
     <title>G&J</title>
     <meta name="description" content="Giorgia and Jose&#39;s wedding website">
     <meta name="viewport" content="width=device-width">
-    <!-- Form style css-->
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
     <link rel="stylesheet" href="./wedding_files/normalize.css">
     <link rel="stylesheet" href="./wedding_files/main.css">
-
     <script src="./wedding_files/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
     <script src="./wedding_files/plugins.js"></script>
     <script src="./wedding_files/main.js"></script>
-
     <script data-cfasync="false" type="text/javascript" src="./wedding_files/form-submission-handler.js"></script>
-
     <style>
     /*Preload of images to avoid blinking when hovering over the images*/
     /*TO DO: This can be improved using sprites to reduce HTML requests*/
@@ -140,10 +136,10 @@
     /*Loading bar*/
     $(window).load(function() {
                    function hideLoader() {
-                   $('#loading_element').hide();
+                        $('#loading_element').hide();
                    }
                    $(window).ready(hideLoader);
-                   setTimeout(hideLoader, 5000); // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+                   setTimeout(hideLoader, 10000); // Strongly recommended: Hide loader after 10 seconds, even if the page hasn't finished loading
                    document.getElementById('video_fire_works').play();
     });
     /*Audio easter egg*/
@@ -157,8 +153,6 @@
                             count=true;
                             }
                             });
-    </script>
-    <script>
         /* Crazy fix for the different rending of colors depending on browser and GPU optimization*/
         function isColorInRange(expectedColor, givenColor) {
             const THRESHOLD = 40;
@@ -170,7 +164,6 @@
             }
             return true;
         }
-
         function setVideoBgColor(vid, nativeColor) {
             if (vid) {
                 var dom_main = document.getElementsByTagName("body")[0];;
@@ -206,12 +199,9 @@
                 }
             }
         }
-
         function setVideoBgColorDelayed(vid, nativeColor) {
             setTimeout(setVideoBgColor, 100, vid, nativeColor);
         }
-    </script>
-    <script type="text/javascript">/*Form*/
         function show()
         {
             document.getElementById('guests').style.display="block";
@@ -255,7 +245,6 @@
         e.stopPropagation(); //stops propagation
         show();
         });
-        
         function check_injection()
         {
             document.getElementById("Name").value = document.getElementById("Name").value.replace(/\=/g,"");

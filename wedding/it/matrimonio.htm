@@ -132,7 +132,7 @@
                    $('#loading_element').hide();
                    }
                    $(window).ready(hideLoader);
-                   setTimeout(hideLoader, 5000); // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+                   setTimeout(hideLoader, 10000); // Strongly recommended: Hide loader after 10 seconds, even if the page hasn't finished loading
                    document.getElementById('video_fire_works').play();
     });
     /*Audio easter egg*/
@@ -146,8 +146,7 @@
         count=true;
         }
     });
-    </script>
-    <script>
+
       /* Crazy fix for the different rending of colors depending on browser and GPU optimization*/
       // Setting the gradient with the proper prefix
       function isColorInRange(expectedColor, givenColor) {
@@ -200,8 +199,7 @@
       function setVideoBgColorDelayed(vid, nativeColor) {
           setTimeout(setVideoBgColor, 100, vid, nativeColor);
       }
-    </script>
-    <script type="text/javascript">/*Form*/
+    
       function show()
       {
           document.getElementById('guests').style.display="block";
@@ -236,7 +234,7 @@
           }
       }
 
-      /*Trying to fix iPad radio button issue*/
+       /*Trying to fix iPad radio button issue*/
         $('#Confirmation-No').bind('touchstart click', function(e) {
         console.log('binding');
         e.stopPropagation(); //stops propagation
