@@ -1,220 +1,162 @@
 <!DOCTYPE html>
- <!-- HOLA DIEGO/CÉSAR, NO CREO QUE NINGUNA OTRA PERSONA ENTRE A VER EL CÓDIGO, SI TENEIS ALGUNA SUGERENCIA PARA MEJORAR LA PÁGINA LET ME KNOW. ¡SALUDOS TELEQUILES!-->
+ <!-- CIAO DIEGO/CÉSAR, NO CREO QUE NINGUNA OTRA PERSONA ENTRE A VER EL CÓDIGO, SI TENEIS ALGUNA SUGERENCIA PARA MEJORAR LA PÁGINA LET ME KNOW. ¡SALUDOS TELEQUILES!-->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" href="../img/balloon.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>G&J</title>
-        <meta name="description" content="Giorgia and Jose&#39;s wedding website">
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-        <link rel="stylesheet" href="../wedding_files/normalize.css">
-        <link rel="stylesheet" href="../wedding_files/main.css">
-        <script src="../wedding_files/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="../wedding_files/plugins.js"></script>
-        <script src="../wedding_files/main.js"></script>
-        <script data-cfasync="false" type="text/javascript" src="../wedding_files/form-submission-handler.js"></script>
-        <script type="text/javascript">
-             function show()
-             {
-                 document.getElementById('guests').style.display="block";
-                 document.getElementById('events').style.display="block";
-                 document.getElementById('Address').style.display="block";
-                 var message = document.getElementById('message');
-                 message.innerHTML = 'Grazie per aver risposto.<br><br>Ci vediamo il gran giorno!';
-             }
-             function hide()
-             {
-                 document.getElementById('guests').style.display="none";
-                 document.getElementById('events').style.display="none";
-                 document.getElementById('Address').style.display="none";
-                 var message = document.getElementById('message');
-                 message.innerHTML = 'Grazie per aver risposto.<br><br>Ci mancherai.';
-             }
-             function check()
-             {
-                 var elm_dinner = document.getElementById('Dinner');
-                 var elm_brunch = document.getElementById('Brunch');
-                 if (elm_dinner.checked) {
-                     elm_dinner.value="Yes";
-                 }
-                 else{
-                    elm_dinner.value="No";
-                 }
-                 if (elm_brunch.checked) {
-                    elm_brunch.value="Yes";
-                 }
-                 else{
-                    elm_brunch.value="No";
-                 }
-             }
-              function check_injection()
-              {
-                  document.getElementById("Name").value = document.getElementById("Name").value.replace(/=/g,"");
-                  document.getElementById("Name").value = document.getElementById("Name").value.replace(/-/g,"");
-                  document.getElementById("Name").value = document.getElementById("Name").value.replace(/+/g,"");
-                  document.getElementById("Name").value = document.getElementById("Name").value.replace(/@/g,"");
-                  
-                  document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/=/g,"");
-                  document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/-/g,"");
-                  document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/+/g,"");
-                  document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/@/g,"");
-              }
-        </script>
-        <style>
-            /*Preload of images to avoid blinking when hovering over the images*/
-            /*TO DO: This can be improved using sprites to reduce HTML requests but I am a bit lazy to redo all the images again*/
-            :root:before {
-                content:
-                url('../img/ribbonit.png')
-                url('../img/balloon_default.png')
-                url('../img/balloon_smiling.png')
-                url("../img/thebigday_hover.png")
-                url("../img/cincin_hover.png")
-                url("../img/lord_calendar.png")
-                url("../img/accomodation_hover.png")
-                url('../img/ribbonit@2x.png')
-                url('../img/balloon_default@2x.png')
-                url('../img/balloon_smiling@2x.png')
-                url("../img/thebigday_hover@2x.png")
-                url("../img/cincin_hover@2x.png")
-                url("../img/lord_calendar@2x.png")
-                url("../img/accomodation_hover@2x.png");
-                url("../img/Fireworks.m4v");
-                display:none;
-            }
-        </style>
+    <link rel="shortcut icon" href="../img/balloon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>G&J</title>
+    <meta name="description" content="Giorgia and Jose&#39;s wedding website">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="../wedding_files/normalize.css">
+    <link rel="stylesheet" href="../wedding_files/main.css">
+    <script src="../wedding_files/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="../wedding_files/plugins.js"></script>
+    <script src="../wedding_files/main.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="../wedding_files/form-submission-handler.js"></script>
+    <style>
+        /*Preload of images to avoid blinking when hovering over the images*/
+        /*TO DO: This can be improved using sprites to reduce HTML requests but I am a bit lazy to redo all the images again*/
+        :root:before {
+            content:
+            url('../img/ribbonit.png')
+            url('../img/balloon_default.png')
+            url('../img/balloon_smiling.png')
+            url("../img/thebigday_hover.png")
+            url("../img/cincin_hover.png")
+            url("../img/lord_calendar.png")
+            url("../img/accomodation_hover.png")
+            url('../img/ribbonit@2x.png')
+            url('../img/balloon_default@2x.png')
+            url('../img/balloon_smiling@2x.png')
+            url("../img/thebigday_hover@2x.png")
+            url("../img/cincin_hover@2x.png")
+            url("../img/lord_calendar@2x.png")
+            url("../img/accomodation_hover@2x.png");
+            url("../img/Fireworks.m4v");
+            display:none;
+        }
+    </style>
     </head>
     <body data-gr-c-s-loaded="true" style="">
-        <div id="loading_element"><div class="heart"><p>Caricando...</p></div></div>
-        <div onclick="" id="balloon" class="soaring" style="margin-top: -140px;"></div>
-        <div id="language-switcher-es" class="cloud cloud-1"><a href="http://josedearcos.com/wedding/" title="English">English</a></div>
-        <div id="language-switcher-it" class="cloud cloud-2"><a href="http://josedearcos.com/wedding/es/boda.htm" title="Spanish">Spanish</a></div>
-        <header>
-            <div id="ribbonit"></div>
-        </header>
-      <div id="zone-where" class="moment first">
-          &nbsp;
-          <p class="scroll-hint" style="height:2em;">Scorri in gi&ugrave;</p>
-          <p class="left"><strong>Era ora!</strong>Dopo molti (molti!) anni insieme passati a viaggiare, a collezionare lauree, a trasferirci da un appartamento all'altro
-          e a giocare a giochi di società con amici, abbiamo deciso di sposarci e ci piacerebbe condividere con voi questo giorno così speciale.</p>
-          <div onclick="" id="rings"><a></a></div>
-      </div>
-      <div id="zone-venue" class="moment">
-          &nbsp;
-          <p class="right"><strong>Il nostro giorno</strong>Dopo la ceremonia nel primo pomeriggio, continueremo i festeggiamenti per tutta la sera in una splendida tenuta tra le vigne delle colline del <a href="https://goo.gl/maps/tw1MpGyDPPJ2" target="_blank"><b><u>Monferrato</u></b></a>.</p>
-          <div onclick="" id="bigday"><a></a></div>
-          <audio id="wedding_music" src="../img/WeddingMarch.mp3"  preload="auto"></audio>
-      </div>
-      <div id="zone-eventi" class="moment">
-          &nbsp;
-          <p class="left"><strong>Weekend di festeggiamenti</strong>Per coloro che vengono da fuori Torino abbiamo organizzato una serie di eventi e attività. A breve, provvederemo una lista completa, ma i due eventi principali saranno:<br><br><b>Cena al ristorante di famiglia </b><br><i>Sabato 31 Agosto</i><br><br><b>Brunch con degustazione di vini</b> <br><i>Lunedì 2 Settembre</i></p>
-          <div onclick="" id="cincin"><a></a></div>
-      </div>
-      <div id="zone-hotels" class="moment">
-          &nbsp;
-          <p class="right"><strong>Dove alloggiare</strong>Ci sono diverse opzioni sia nella città di <b>Torino</b> che nelle colline di Monferrato.<br><br>Vi proporremo una selezione al più presto.</p>
-          <div onClick="" id="hotels"><a></a></div>
-      </div>
-      <div id="zone-form" class="moment last">
-          <h2 style="margin-left:50px;"> <strong>RSVP</strong> </h2>
-          <form class="gform pure-form pure-form-stacked" id="form_center" method="POST" action="https://script.google.com/macros/s/AKfycbzU2jx5U1GYHN1JdPEAM6xAfV8L321et6wkS-vQ/exec">
-              <div class="form-elements">
-                  <fieldset  class="pure-group">
-                      <label for="Name"><h4>Nome:</h4></label>
-                      <input required class="form_center" id="Name" name="Name" placeholder="" />
-                  </fieldset>
-                  <fieldset class="pure-group">
-                      <label for="Email"><h4>Il tuo indirizzo email:</h4></label>
-                      <input class="form_center" id="Email" name="Email" type="Email" value=""
-                      required placeholder=""/>
-                      <span class="email-invalid" style="display:none">
-                          Deve essere un indirizzo email valido</span>
-                  </fieldset>
-                  <fieldset class="pure-checkbox">
-                      <h4>Conferma</h4>
-                      <label for="Confirmation-Yes" class="pure-radio clickElement">
-                          <input class="clickElement" id="Confirmation-Yes" type="radio" name="Confirmation" onClick="" value="Yes">
-                              Sì, posso venire
-                      </label>
-                      <label for="Confirmation-No" class="pure-radio clickElement">
-                          <input class="clickElement" id="Confirmation-No" type="radio" name="Confirmation" onClick="" value="No" >
-                              No, non potrò partecipare
-                      </label>
-                  </fieldset>
-                  <fieldset class="pure-group" id="Address" style="margin-top:-10px;display:none;">
-                      <label for="paddress"><h4>Indirizzo:</h4></label>
-                      <input required class="form_center" type="text" id="paddress" name="paddress" value=""  placeholder="Dove spediremo l'invito?"/>
-                  </fieldset>
-                  <fieldset class="pure-group" id="guests" style="margin-top:-10px;display:none;">
-                      <label for="Guest"><h4>Quanti verranno?</h4></label>
-                      <select name="Guest" class="form_center" id="Guest">
-                          <option name="Guest" value="0" selected hidden>Seleziona</option>
-                          <option name="Guest" value="1">Io (1)</option>
-                          <option name="Guest" value="2">Io e un accompagnatore (2)</option>
-                          <option name="Guest" value="3">Famiglia (3)</option>
-                          <option name="Guest" value="4">Famiglia (4)</option>
-                          <option name="Guest" value="5">Famiglia (5)</option>
-                      </select>
-                  </fieldset>
-                  <fieldset class="pure-checkbox" id="events" style="display:none;">
-                  </fieldset>
-                  <button class="button-success pure-button button-xlarge" id="button-send"><i class="fa fa-paper-plane"></i>&nbsp;Invio</button>
-              </div>
-              <div class="thankyou_message" style="display:none;"><h2 id='message'></h2></div>
-          </form>
-      </div>
-      <div style="margin-top:-15em;border: none !important;">
-          <img class="poster" src="../img/newground_orange.png"/><video id="video_fire_works" src="../img/Fireworks_1024_compressed.mov" onplay="setVideoBgColorDelayed(this,[1, 33, 72])" oncanplay="setVideoBgColorDelayed(this,[1, 33, 72])" playsinline autoplay preload="auto" loop muted></video>
-      </div>
-      <script>
-      $( document ).ready(function() {
-
-          $('#Confirmation-No').bind('touchstart click', function(e) {
-                                    e.stopPropagation(); //stops propagation
-                                    hide();
-          });
-                                    
-          $('#Confirmation-Yes').bind('touchstart click', function(e) {
-                e.stopPropagation(); //stops propagation
-                show();
-           });
-        });
-        $(window).load(function() {
-                       function hideLoader() {
-                       $('#loading_element').hide();
-                       }
-                       $(window).ready(hideLoader);
-                       setTimeout(hideLoader, 5000); // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
-                       document.getElementById('video_fire_works').play();
-        });
-        
-        count = false;
-        var audio =  $("#wedding_music")[0];
-        $("#bigday").mouseenter(function() {
-            if(count==false)
-            {
-            audio.volume = 0.05;
-            audio.play();
-            count=true;
-            }
-        });
-       </script>
-      <script>
-          /* Crazy fix for the different rending of colors depending on browser and GPU optimization*/
-          // Setting the gradient with the proper prefix
-          function isColorInRange(expectedColor, givenColor) {
-              const THRESHOLD = 40;
-              for (var i = 0; i < 3; i++) {
-                  if (((expectedColor[i] - THRESHOLD) > givenColor[i])
-                      || ((expectedColor[i] + THRESHOLD) < givenColor[i])) {
-                      return false;
-                  }
+    <div id="loading_element"><div class="heart"><p>Caricando...</p></div></div>
+    <div onclick="" id="balloon" class="soaring" style="margin-top: -140px;"></div>
+    <div id="language-switcher-es" class="cloud cloud-1"><a href="http://josedearcos.com/wedding/" title="English">English</a></div>
+    <div id="language-switcher-it" class="cloud cloud-2"><a href="http://josedearcos.com/wedding/es/boda.htm" title="Spanish">Spanish</a></div>
+    <header>
+        <div id="ribbonit"></div>
+    </header>
+    <div id="zone-where" class="moment first">
+      &nbsp;
+      <p class="scroll-hint" style="height:2em;">Scorri in gi&ugrave;</p>
+      <p class="left"><strong>Era ora!</strong>Dopo molti (molti!) anni insieme passati a viaggiare, a collezionare lauree, a trasferirci da un appartamento all'altro
+      e a giocare a giochi di società con amici, abbiamo deciso di sposarci e ci piacerebbe condividere con voi questo giorno così speciale.</p>
+      <div onclick="" id="rings"><a></a></div>
+    </div>
+    <div id="zone-venue" class="moment">
+      &nbsp;
+      <p class="right"><strong>Il nostro giorno</strong>Dopo la ceremonia nel primo pomeriggio, continueremo i festeggiamenti per tutta la sera in una splendida tenuta tra le vigne delle colline del <a href="https://goo.gl/maps/tw1MpGyDPPJ2" target="_blank"><b><u>Monferrato</u></b></a>.</p>
+      <div onclick="" id="bigday"><a></a></div>
+      <audio id="wedding_music" src="../img/WeddingMarch.mp3"  preload="auto"></audio>
+    </div>
+    <div id="zone-eventi" class="moment">
+      &nbsp;
+      <p class="left"><strong>Weekend di festeggiamenti</strong>Per coloro che vengono da fuori Torino abbiamo organizzato una serie di eventi e attività. A breve, provvederemo una lista completa, ma i due eventi principali saranno:<br><br><b>Cena al ristorante di famiglia </b><br><i>Sabato 31 Agosto</i><br><br><b>Brunch con degustazione di vini</b> <br><i>Lunedì 2 Settembre</i></p>
+      <div onclick="" id="cincin"><a></a></div>
+    </div>
+    <div id="zone-hotels" class="moment">
+      &nbsp;
+      <p class="right"><strong>Dove alloggiare</strong>Ci sono diverse opzioni sia nella città di <b>Torino</b> che nelle colline di Monferrato.<br><br>Vi proporremo una selezione al più presto.</p>
+      <div onClick="" id="hotels"><a></a></div>
+    </div>
+    <div id="zone-form" class="moment last">
+      <h2 style="margin-left:50px;"> <strong>RSVP</strong> </h2>
+      <form class="gform pure-form pure-form-stacked" id="form_center" method="POST" action="https://script.google.com/macros/s/AKfycbzU2jx5U1GYHN1JdPEAM6xAfV8L321et6wkS-vQ/exec">
+          <div class="form-elements">
+              <fieldset  class="pure-group">
+                  <label for="Name"><h4>Nome:</h4></label>
+                  <input required class="form_center" id="Name" name="Name" placeholder="" />
+              </fieldset>
+              <fieldset class="pure-group">
+                  <label for="Email"><h4>Il tuo indirizzo email:</h4></label>
+                  <input class="form_center" id="Email" name="Email" type="Email" value=""
+                  required placeholder=""/>
+                  <span class="email-invalid" style="display:none">
+                      Deve essere un indirizzo email valido</span>
+              </fieldset>
+              <fieldset class="pure-checkbox">
+                  <h4>Conferma</h4>
+                  <label for="Confirmation-Yes" class="pure-radio clickElement">
+                      <input class="clickElement" id="Confirmation-Yes" type="radio" name="Confirmation" onClick="" value="Yes">
+                          Sì, posso venire
+                  </label>
+                  <label for="Confirmation-No" class="pure-radio clickElement">
+                      <input class="clickElement" id="Confirmation-No" type="radio" name="Confirmation" onClick="" value="No" >
+                          No, non potrò partecipare
+                  </label>
+              </fieldset>
+              <fieldset class="pure-group" id="Address" style="margin-top:-10px;display:none;">
+                  <label for="paddress"><h4>Indirizzo:</h4></label>
+                  <input required class="form_center" type="text" id="paddress" name="paddress" value=""  placeholder="Dove spediremo l'invito?"/>
+              </fieldset>
+              <fieldset class="pure-group" id="guests" style="margin-top:-10px;display:none;">
+                  <label for="Guest"><h4>Quanti verranno?</h4></label>
+                  <select name="Guest" class="form_center" id="Guest">
+                      <option name="Guest" value="0" selected hidden>Seleziona</option>
+                      <option name="Guest" value="1">Io (1)</option>
+                      <option name="Guest" value="2">Io e un accompagnatore (2)</option>
+                      <option name="Guest" value="3">Famiglia (3)</option>
+                      <option name="Guest" value="4">Famiglia (4)</option>
+                      <option name="Guest" value="5">Famiglia (5)</option>
+                  </select>
+              </fieldset>
+              <fieldset class="pure-checkbox" id="events" style="display:none;">
+              </fieldset>
+              <button class="button-success pure-button button-xlarge" id="button-send"><i class="fa fa-paper-plane"></i>&nbsp;Invio</button>
+          </div>
+          <div class="thankyou_message" style="display:none;"><h2 id='message'></h2></div>
+      </form>
+    </div>
+    <div style="margin-top:-15em;border: none !important;">
+      <img class="poster" src="../img/newground_orange.png"/><video id="video_fire_works" src="../img/Fireworks_1024_compressed.mov" onplay="setVideoBgColorDelayed(this,[1, 33, 72])" oncanplay="setVideoBgColorDelayed(this,[1, 33, 72])" playsinline autoplay preload="auto" loop muted></video>
+    </div>
+    <script>
+    /*Loading bar*/
+    $(window).load(function() {
+                   function hideLoader() {
+                   $('#loading_element').hide();
+                   }
+                   $(window).ready(hideLoader);
+                   setTimeout(hideLoader, 5000); // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+                   document.getElementById('video_fire_works').play();
+    });
+    /*Audio easter egg*/
+    count = false;
+    var audio =  $("#wedding_music")[0];
+    $("#bigday").mouseenter(function() {
+        if(count==false)
+        {
+        audio.volume = 0.05;
+        audio.play();
+        count=true;
+        }
+    });
+    </script>
+    <script>
+      /* Crazy fix for the different rending of colors depending on browser and GPU optimization*/
+      // Setting the gradient with the proper prefix
+      function isColorInRange(expectedColor, givenColor) {
+          const THRESHOLD = 40;
+          for (var i = 0; i < 3; i++) {
+              if (((expectedColor[i] - THRESHOLD) > givenColor[i])
+                  || ((expectedColor[i] + THRESHOLD) < givenColor[i])) {
+                  return false;
               }
-              return true;
           }
-      
+          return true;
+      }
+
       function setVideoBgColor(vid, nativeColor) {
           if (vid) {
               var dom_main = document.getElementsByTagName("body")[0];;
@@ -250,9 +192,56 @@
               }
           }
       }
-      
+
       function setVideoBgColorDelayed(vid, nativeColor) {
           setTimeout(setVideoBgColor, 100, vid, nativeColor);
       }
-      </script>
+    </script>
+    <script type="text/javascript">/*Form*/
+      function show()
+      {
+          document.getElementById('guests').style.display="block";
+          document.getElementById('events').style.display="block";
+          document.getElementById('Address').style.display="block";
+          var message = document.getElementById('message');
+          message.innerHTML = 'Grazie per aver risposto.<br><br>Ci vediamo il gran giorno!';
+      }
+      function hide()
+      {
+          document.getElementById('guests').style.display="none";
+          document.getElementById('events').style.display="none";
+          document.getElementById('Address').style.display="none";
+          var message = document.getElementById('message');
+          message.innerHTML = 'Grazie per aver risposto.<br><br>Ci mancherai.';
+      }
+      function check()
+      {
+          var elm_dinner = document.getElementById('Dinner');
+          var elm_brunch = document.getElementById('Brunch');
+          if (elm_dinner.checked) {
+              elm_dinner.value="Yes";
+          }
+          else{
+              elm_dinner.value="No";
+          }
+          if (elm_brunch.checked) {
+              elm_brunch.value="Yes";
+          }
+          else{
+              elm_brunch.value="No";
+          }
+      }
+
+      /*Trying to fix iPad radio button issue*/
+        $('#Confirmation-No').bind('touchstart click', function(e) {
+        console.log('binding');
+        e.stopPropagation(); //stops propagation
+        hide();
+        });
+        
+        $('#Confirmation-Yes').bind('touchstart click', function(e) {
+        e.stopPropagation(); //stops propagation
+        show();
+        });
+    </script>
 </body></html>

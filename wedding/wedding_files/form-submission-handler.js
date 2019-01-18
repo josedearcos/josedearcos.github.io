@@ -6,10 +6,8 @@
   
     function validateHuman(honeypot) {
       if (honeypot) {  //if hidden form filled up
-        console.log("Robot Detected!");
         return true;
       } else {
-        console.log("Welcome Human!");
       }
     }
   
