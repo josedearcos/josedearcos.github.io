@@ -229,7 +229,7 @@
         function getCssValuePrefix()
         {
             var rtrnVal = '';//default to standard syntax
-            var prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
+            var prefixes = ['','-o-', '-ms-', '-moz-', '-webkit-'];
             
             // Create a temporary DOM object for testing
             var dom = document.createElement('div');
@@ -270,7 +270,7 @@
                     //console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
                     if (isColorInRange(nativeColor, p)) {
                         
-                        dom_main.style.background = 'linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';
+                        dom_main.style.background = 'linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, rgb(' + 255 + ',' + p[1] + ',' + p[2] + ') 75%)';
                         
                         console.log(getCssValuePrefix() + 'linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');
                         
