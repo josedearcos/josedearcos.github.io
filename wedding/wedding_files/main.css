@@ -807,7 +807,7 @@ header {
 
 #hotels:hover{
     z-index:99;
-    margin-top:19em;
+    margin-top:18em;
     left:73%;
     width:333px;
     height:270px;
@@ -837,7 +837,7 @@ header {
 
 #rings{
     z-index:99;
-    left:2%;
+    left:1%;
     margin-top:19em;
     width:333px;
     height:115px;
@@ -847,6 +847,7 @@ header {
 }
 
 #rings:hover{
+    left:1%;
     z-index:99;
     margin-top:19em;
     width:333px;
@@ -858,8 +859,8 @@ header {
 #cincin
 {
     z-index:99;
-    right:-2em;
-    margin-top:26em;
+    right:-1em;
+    margin-top:20em;
     width:250px;
     height:286px;
     background: url("../img/cincin.png") no-repeat center top;
@@ -869,8 +870,8 @@ header {
 #cincin:hover
 {
     z-index:99;
-    right:-2em;
-    margin-top:26em;
+    right:-1em;
+    margin-top:20em;
     width:250px;
     height:286px;
     background: url("../img/cincin_hover.png") no-repeat center top;
@@ -899,19 +900,29 @@ header {
 
 /*Normal laptops*/
 @media only screen and (max-device-width:1280px){
+    #bigday{
+        margin-top:16em;
+        left:71%;
+    }
+    #bigday:hover{
+        margin-top:16em;
+        left:71%;
+    }
     #hotels{
-        margin-top:21em;
+        margin-top:18em;
+        left:70%;
     }
     #hotels:hover{
-        margin-top:21em;
+        margin-top:18em;
+        left:70%;
     }
     #cincin{
-        margin-top:28em;
-        left:5%;
+        margin-top:26em;
+        right:-0.5em;
     }
     #cincin:hover{
-        margin-top:28em;
-        left:5%;
+        margin-top:26em;
+        right:-0.5em;
     }
     #rings{
         left:0%;
@@ -920,7 +931,6 @@ header {
     #rings:hover{
         left:0%;
         margin-top:20em;
-
     }
 }
 
@@ -1000,12 +1010,16 @@ header {
     {
         background: url("../img/cincin@2x.png") no-repeat center top;
         background-size: 100% 100%;
+        margin-top:26em;
+        right:-0.5em;
     }
     
     #cincin:hover
     {
         background: url("../img/cincin_hover@2x.png") no-repeat center top;
         background-size: 100% 100%;
+        margin-top:26em;
+        right:-0.5em;
     }
     
     #rings
@@ -1033,11 +1047,15 @@ header {
     #hotels{
         background: url("../img/accomodation@2x.png") no-repeat center top;
         background-size: 100% 100%;
+        margin-top:18em;
+        left:72%;
     }
     
     #hotels:hover{
         background: url("../img/accomodation_hover@2x.png") no-repeat center top;
         background-size: 100% 100%;
+        margin-top:18em;
+        left:72%;
     }
 }
 
@@ -1163,12 +1181,12 @@ header {
         height:400px;
     }
     #cincin{
-        left:6%;
-        margin-top:25em;
+        left:4%;
+        margin-top:26em;
     }
     #cincin:hover{
-        left:6%;
-        margin-top:25em;
+        left:4%;
+        margin-top:26em;
     }
 }
 
@@ -1243,28 +1261,40 @@ and (max-device-width : 1024px) {
 /*landscape phones*/
 @media only screen and (orientation:landscape) and  (max-device-height : 600px) {
     #bigday {
-        left: 67%;
-        margin-top:16em;
+        left: 68%;
+        margin-top:17em;
     }
     #bigday:hover {
-        left: 67%;
-        margin-top:16em;
+        left: 68%;
+        margin-top:17em;
     }
     #hotels {
         left: 66%;
+        margin-top:20em;
     }
     #hotels:hover {
         left: 66%;
+        margin-top:20em;
     }
     #cincin
     {
         left: 0%;
-        margin-top:26em;
+        margin-top:29em;
     }
     #cincin:hover
     {
         left: 0%;
-        margin-top:26em;
+        margin-top:29em;
+    }
+    #rings
+    {
+        margin-top:22em;
+        left:-3%;
+    }
+    #rings:hover
+    {
+        margin-top:22em;
+        left:-3%;
     }
 }
 
