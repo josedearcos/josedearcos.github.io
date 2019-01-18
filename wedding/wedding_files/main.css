@@ -279,6 +279,7 @@ html, body {
 }
 
 body {
+    
     background:  rgb(1, 33, 72); /* Old browsers */
 
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -303,7 +304,6 @@ background: -webkit-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 21
  75%); /* W3C */
 
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(116, 193, 254)', endColorstr='rgb(1, 37, 82)',GradientType=0 ); /* IE6-8 */
-
 }
 
 #video_fire_works{
@@ -1284,4 +1284,14 @@ a:visited {
 
 .clickElement{
     cursor: pointer;
+}
+
+#loading {
+    background: url('../img/heart_loader@2x.png') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
 }

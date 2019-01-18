@@ -19,6 +19,16 @@
 
         <script data-cfasync="false" type="text/javascript" src="./wedding_files/form-submission-handler.js"></script>
         <script type="text/javascript">
+        function hideLoader() {
+        $('#loading').hide();
+        }
+        
+        $(window).ready(hideLoader);
+        
+        // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+        setTimeout(hideLoader, 20 * 1000);
+        </script>
+        <script type="text/javascript">
           function show()
           {
               document.getElementById('guests').style.display="block";
@@ -90,6 +100,7 @@
     </style>
     </head>
     <body data-gr-c-s-loaded="true" style="">
+        <div id="loading"></div>
         <div onclick="" id="balloon" class="soaring"><a></a></div>
         <div id="language-switcher-es" class="cloud cloud-1"><a href="http://josedearcos.com/wedding/es/boda.htm" title="Spanish">Español</a></div>
         <div id="language-switcher-it" class="cloud cloud-2"><a href="http://josedearcos.com/wedding/it/matrimonio.htm" title="Italian">Italiano</a></div>
@@ -258,4 +269,5 @@
                 setTimeout(setVideoBgColor, 100, vid, nativeColor);
             }
         </script>
+        
 </body></html>
