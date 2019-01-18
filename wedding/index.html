@@ -267,12 +267,12 @@
                     ctx.drawImage(vid, 0, 0, 1, 1);
                     
                     var p = ctx.getImageData(0, 0, 1, 1).data;
-                    //console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
+                    console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
                     if (isColorInRange(nativeColor, p)) {
                         
-                        dom_main.style.background = 'linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, rgb(' + 255 + ',' + p[1] + ',' + p[2] + ') 75%)';
+                        dom_main.style.background = 'linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 60%)';
                         
-                        console.log(getCssValuePrefix() + 'linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');
+                        console.log(getCssValuePrefix() + 'linear-gradient(to bottom, #74c1fe 0%, #a7d3db 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 60%)');
                         
                     }
                 }
