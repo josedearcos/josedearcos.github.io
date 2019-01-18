@@ -938,14 +938,14 @@ header {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
     
     .heart{
-        background: url("../img/heart_loader@2x.gif") no-repeat center top;
-        background-size: 60%;
-    }
-    
-    .heart:hover{
         background: url("../img/heart_loader_full@2x.gif") no-repeat center top;
         background-size: 60%;
     }
+    
+   /* .heart:hover{
+        background: url("../img/heart_loader_full@2x.gif") no-repeat center top;
+        background-size: 60%;
+    }*/
     
     #video_fire_works{
         z-index: 1;
@@ -1333,31 +1333,49 @@ a:visited {
     height: 100%;
     width: 100%;
     z-index: 99999;
-    background-color:white;
+    background:rgb(118,193,253);
+    background: -moz-linear-gradient(top,  rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(1, 33, 72)
+    75%); /* FF3.6+ */
+    
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(116, 193, 254)), color-stop(25%,rgb(167, 211, 219)), color-stop(50%,lightskyblue), color-stop(75%,rgb(1, 33, 72))); /* Chrome,Safari4+ */
+    
+    background: -webkit-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(1, 33, 72)
+    75%); /* Chrome10+,Safari5.1+ */
+    
+    background: -o-linear-gradient(top,  rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(1, 33, 72)
+    75%); /* Opera 11.10+ */
+    
+    background: -ms-linear-gradient(top,  rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(1, 33, 72)
+    75%); /* IE10+ */
+    
+    background: linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(1, 33, 72)
+    75%); /* W3C */
+
     overflow-x: hidden;
     overflow-y: auto;
 }
 
 #loading_element p{
     text-align:center;
-    top: 35em;
+    top: 9em;
+    font-size:2em;
 }
 
 .heart{
     margin: auto;
     width: 50%;
     height:100%;
-    background: url("../img/heart_loader.gif") no-repeat center top;
-    background-size: 60%;
+    background: url("../img/heart_loader_full.gif") no-repeat center top;
+    background-size: 25%;
     margin-top:10em;
 }
 
-.heart:hover{
+/*.heart:hover{
     margin: auto;
     width: 50%;
     height:100%;
     background: url("../img/heart_loader_full.gif") no-repeat center top;
-    background-size: 60%;
+    background-size: 25%;
     margin-top:10em;
-}
+}*/
 
