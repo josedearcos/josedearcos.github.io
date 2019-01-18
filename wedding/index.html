@@ -226,32 +226,6 @@
                 return true;
             }
         
-        function getCssValuePrefix()
-        {
-            var rtrnVal = '';//default to standard syntax
-            var prefixes = ['','-o-', '-ms-', '-moz-', '-webkit-'];
-            
-            // Create a temporary DOM object for testing
-            var dom = document.createElement('div');
-            
-            for (var i = 0; i < prefixes.length; i++)
-            {
-                // Attempt to set the style
-                dom.style.background = prefixes[i] + 'linear-gradient(#74c1fe, #012552)';
-                
-                // Detect if the style was successfully set
-                if (dom.style.background)
-                {
-                    rtrnVal = prefixes[i];
-                }
-            }
-            
-            dom = null;
-            delete dom;
-            
-            return rtrnVal;
-        }
-        
         function setVideoBgColor(vid, nativeColor) {
             if (vid) {
                 var dom_main = document.getElementsByTagName("body")[0];;
@@ -270,9 +244,18 @@
                     console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
                     if (isColorInRange(nativeColor, p)) {
                         
-                        dom_main.style.background = getCssValuePrefix() + 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';
                         
-                        console.log(getCssValuePrefix() + 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');
+                        dom_main.style.background = '-moz-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)'; /* FF3.6+ */
+                        
+                        dom_main.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(116, 193, 254)), color-stop(25%,rgb(167, 211, 219)), color-stop(50%,lightskyblue), color-stop(75%,'+ p[0] + ',' + p[1] + ',' + p[2] + ')'; /* Chrome,Safari4+ */
+
+                        dom_main.style.background =- 'webkit-linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* Chrome10+,Safari5.1+ */
+
+                        dom_main.style.background =  '-o-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* Opera 11.10+ */
+
+                        dom_main.style.background = '-ms-linear-gradient(top,  rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* IE10+ */
+
+                        console.log( 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');/* W3C */
                         
                     }
                 }
