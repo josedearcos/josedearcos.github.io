@@ -132,24 +132,17 @@
     </div>
     <script>
       $( document ).ready(function() {
-          $('#Confirmation-No').bind('touchstart click', function(e) {
-                                   e.stopPropagation(); //stops propagation
-                                   hide();
-          });
-          
-          $('#Confirmation-Yes').bind('touchstart click', function(e) {
-                                    e.stopPropagation(); //stops propagation
-                                    show();
-          });
+          $('#Confirmation-No').bind('touchstart click', function(e) {e.stopPropagation();hide();});
+          $('#Confirmation-Yes').bind('touchstart click', function(e) { e.stopPropagation();show();});
       });
       
       $(window).load(function() {
-                     function hideLoader() {
-                     $('#loading_element').hide();
-                     }
-                     $(window).ready(hideLoader);
-                     setTimeout(hideLoader, 5000); // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
-                     document.getElementById('video_fire_works').play();
+         function hideLoader() {
+         $('#loading_element').hide();
+         }
+         $(window).ready(hideLoader);
+         setTimeout(hideLoader, 5000); // Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
+         document.getElementById('video_fire_works').play();
       });
       
       count = false;
@@ -179,11 +172,9 @@
     function setVideoBgColor(vid, nativeColor) {
       if (vid) {
           var dom_main = document.getElementsByTagName("body")[0];;
-          
           if (dom_main) {
               // draw first pixel of video to a canvas
               // then get pixel color from that canvas
-              
               var canvas = document.createElement("canvas");
               canvas.width = 1;
               canvas.height = 1;
@@ -193,20 +184,12 @@
               var p = ctx.getImageData(0, 0, 1, 1).data;
               //console.log("rgb(" + p[0] + "," + p[1] + "," + p[2] + ")");
               if (isColorInRange(nativeColor, p)) {
-                  
-                  
                   dom_main.style.background = '-moz-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)'; /* FF3.6+ */
-                  
                   dom_main.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(116, 193, 254)), color-stop(25%,rgb(167, 211, 219)), color-stop(50%,lightskyblue), color-stop(75%,'+ p[0] + ',' + p[1] + ',' + p[2] + ')'; /* Chrome,Safari4+ */
-                  
                   dom_main.style.background =- 'webkit-linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* Chrome10+,Safari5.1+ */
-                  
                   dom_main.style.background =  '-o-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* Opera 11.10+ */
-                  
                   dom_main.style.background = '-ms-linear-gradient(top,  rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)';/* IE10+ */
-                  
                   //console.log( 'linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ') 75%)');/* W3C */
-                  
               }
           }
       }
@@ -264,5 +247,18 @@
     e.stopPropagation(); //stops propagation
     show();
     });
+    
+    function check_injection()
+    {
+        document.getElementById("Name").value = document.getElementById("Name").value.replace(/\=/g,"");
+        document.getElementById("Name").value = document.getElementById("Name").value.replace(/\-/g,"");
+        document.getElementById("Name").value = document.getElementById("Name").value.replace(/\+/g,"");
+        document.getElementById("Name").value = document.getElementById("Name").value.replace(/\@/g,"");
+        
+        document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/\=/g,"");
+        document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/\-/g,"");
+        document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/\+/g,"");
+        document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/\@/g,"");
+    }
     </script>
 </body></html>

@@ -76,7 +76,7 @@
           <div class="form-elements">
               <fieldset  class="pure-group">
                   <label for="Name"><h4>Nome:</h4></label>
-                  <input required class="form_center" id="Name" name="Name" placeholder="" />
+                  <input required class="form_center" id="Name" name="Name"  onchange="check_injection()" placeholder="" />
               </fieldset>
               <fieldset class="pure-group">
                   <label for="Email"><h4>Il tuo indirizzo email:</h4></label>
@@ -98,7 +98,7 @@
               </fieldset>
               <fieldset class="pure-group" id="Address" style="margin-top:-10px;display:none;">
                   <label for="paddress"><h4>Indirizzo:</h4></label>
-                  <input required class="form_center" type="text" id="paddress" name="paddress" value=""  placeholder="Dove spediremo l'invito?"/>
+                  <input required class="form_center" type="text" id="paddress" name="paddress" value=""  onchange="check_injection()" placeholder="Dove spediremo l'invito?"/>
               </fieldset>
               <fieldset class="pure-group" id="guests" style="margin-top:-10px;display:none;">
                   <label for="Guest"><h4>Quanti verranno?</h4></label>
@@ -243,5 +243,18 @@
         e.stopPropagation(); //stops propagation
         show();
         });
+        
+        function check_injection()
+        {
+            document.getElementById("Name").value = document.getElementById("Name").value.replace(/\=/g,"");
+            document.getElementById("Name").value = document.getElementById("Name").value.replace(/\-/g,"");
+            document.getElementById("Name").value = document.getElementById("Name").value.replace(/\+/g,"");
+            document.getElementById("Name").value = document.getElementById("Name").value.replace(/\@/g,"");
+            
+            document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/\=/g,"");
+            document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/\-/g,"");
+            document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/\+/g,"");
+            document.getElementById("paddress").value = document.getElementById("paddress").value.replace(/\@/g,"");
+        }
     </script>
 </body></html>
