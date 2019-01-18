@@ -1286,7 +1286,7 @@ a:visited {
     cursor: pointer;
 }
 
-#loading {
+#loading_element{
     background: url('../img/heart_loader@2x.png') no-repeat center center;
     position: absolute;
     top: 0;
