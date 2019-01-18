@@ -424,12 +424,11 @@ header {
     width: 90%;
     margin-left: 5%;
     margin-right: -5%;
-    height: 750px;
     font-size: 1.4em;
 }
 
 .moment p {
-    position: absolute;
+    position: relative;
     width: 28%;
     top: 0%;
     z-index: 10;
@@ -475,7 +474,8 @@ header {
 }
 
 .moment p.right {
-    right: 0%;
+    position: relative;
+    left: 72%;
 }
 
 .moment.first {
@@ -495,11 +495,11 @@ header {
 }
 
 .form_center{
-    width:300px;
+    width:100%;
 }
 
 #form_center{
-    width:500px;
+    width:100%;
 }
 
 #message
@@ -795,9 +795,42 @@ header {
     }
 }
 
+#zone-where{
+    height:23em;
+    position:relative;
+}
+#zone-venue{
+    height:20em;
+    position:relative;
+}
+#zone-eventi{
+    height:27em;
+    position:relative;
+}
+#zone-eventi i{
+    padding-left:0.5em;
+}
+#zone-eventi b{
+    padding-left:0.5em;
+}
+#zone-hotels{
+    height:25em;
+    position:relative;
+}
+#zone-hotels p
+{
+    color:white;
+}
+#zone-form{
+    color:white;
+    height:40em;
+    position:relative;
+}
+
 #hotels{
+    position:relative;
     z-index:99;
-    margin-top:19em;
+    margin-top:2em;
     left:73%;
     width:333px;
     height:270px;
@@ -807,7 +840,6 @@ header {
 
 #hotels:hover{
     z-index:99;
-    margin-top:18em;
     left:73%;
     width:333px;
     height:270px;
@@ -816,18 +848,18 @@ header {
 }
 
 #bigday{
+    position:relative;
     z-index:99;
-    margin-top:15em;
     left:73%;
     width:333px;
     height:320px;
     background: url("../img/thebigday_default.png") no-repeat center top;
     background-size: 100% 100%;
+    margin-top:2em;
 }
 
 #bigday:hover{
     z-index:99;
-    margin-top:15em;
     left:73%;
     width:333px;
     height:320px;
@@ -836,31 +868,29 @@ header {
 }
 
 #rings{
+    position:relative;
     z-index:99;
     left:1%;
-    margin-top:19em;
+    margin-top:2em;
     width:333px;
     height:115px;
     background: url("../img/rings_calendar.png") no-repeat center top;
     background-size: 100% 100%;
 
 }
-
 #rings:hover{
     left:1%;
     z-index:99;
-    margin-top:19em;
     width:333px;
     height:115px;
     background: url("../img/lord_calendar.png") no-repeat center top;
     background-size: 100% 100%;
 }
-
 #cincin
 {
+    position:relative;
     z-index:99;
     right:-1em;
-    margin-top:20em;
     width:250px;
     height:286px;
     background: url("../img/cincin.png") no-repeat center top;
@@ -871,66 +901,37 @@ header {
 {
     z-index:99;
     right:-1em;
-    margin-top:20em;
     width:250px;
     height:286px;
     background: url("../img/cincin_hover.png") no-repeat center top;
     background-size: 100% 100%;
 }
 
-#zone-where
-{
-    height:550px;
-}
-#zone-hotels p
-{
-    color:white;
-}
-#zone-form
-{
-    color:white;
-}
-
-#zone-eventi i{
-    padding-left:0.5em;
-}
-#zone-eventi b{
-    padding-left:0.5em;
-}
-
 /*Normal laptops*/
 @media only screen and (max-device-width:1280px){
     #bigday{
-        margin-top:16em;
         left:71%;
     }
     #bigday:hover{
-        margin-top:16em;
         left:71%;
     }
     #hotels{
-        margin-top:18em;
         left:70%;
     }
     #hotels:hover{
-        margin-top:18em;
         left:70%;
     }
     #cincin{
-        margin-top:26em;
         right:-0.5em;
     }
     #cincin:hover{
-        margin-top:26em;
         right:-0.5em;
     }
     #rings{
         left:0%;
-        margin-top:20em;
     }
     #rings:hover{
         left:0%;
-        margin-top:20em;
     }
 }
 
@@ -962,14 +963,9 @@ header {
     }
     
     .footer_static{
-        background: url('../img/newground_orange_footer@2x.png') no-repeat center top;
-        background-size: 100%;
+        top:-15em;
     }
    
-    footer{
-        background: url('../img/newground_orange@2x.png') no-repeat center top;
-        background-size: 100% 700px;
-    }
     #balloon {
         background-image: url('../img/balloon_default@2x.png');
         background-size: 544px 840px;
@@ -990,7 +986,6 @@ header {
         background-size: 308px 446px;
     }
     
-    
     nav ul li {
         background-image: url('../img/hearts@2x.png');
         background-size: 20px 36px;
@@ -1010,28 +1005,28 @@ header {
     {
         background: url("../img/cincin@2x.png") no-repeat center top;
         background-size: 100% 100%;
-        margin-top:26em;
-        right:-0.5em;
+        right:-1.5em;
     }
     
     #cincin:hover
     {
         background: url("../img/cincin_hover@2x.png") no-repeat center top;
         background-size: 100% 100%;
-        margin-top:26em;
-        right:-0.5em;
+        right:-1.5em;
     }
     
     #rings
     {
         background: url("../img/rings_calendar@2x.png") no-repeat center top;
         background-size: 100% 100%;
+        margin-top:2em;
     }
     
     #rings:hover
     {
         background: url("../img/lord_calendar@2x.png") no-repeat center top;
         background-size: 100% 100%;
+        margin-top:2em;
     }
     
     #bigday{
@@ -1047,14 +1042,12 @@ header {
     #hotels{
         background: url("../img/accomodation@2x.png") no-repeat center top;
         background-size: 100% 100%;
-        margin-top:18em;
         left:72%;
     }
     
     #hotels:hover{
         background: url("../img/accomodation_hover@2x.png") no-repeat center top;
         background-size: 100% 100%;
-        margin-top:18em;
         left:72%;
     }
 }
@@ -1069,56 +1062,31 @@ header {
         width:40%;
         left: 0%;
     }
-    
     #bigday {
         left: 0%;
-        margin-top:14.5em;
     }
     #bigday:hover {
         left: 0%;
-        margin-top:14.5em;
     }
     #rings {
-        margin-top:26em;
         left: 0%;
     }
     #rings:hover {
-        margin-top:26em;
         left: 0%;
     }
     #hotels {
         left: 0%;
-        margin-top:20em;
     }
     #hotels:hover {
         left: 0%;
-        margin-top:20em;
-    }
-    #zone-where{
-        height:470px;
-    }
-    #zone-venue{
-        height:540px;
-    }
-    #zone-eventi{
-        height:640px;
-    }
-    #zone-hotels{
-        height:760px;
-    }
-    #zone-form{
-        height:400px;
     }
     .moment.last{
-        height:800px;
     }
     #cincin{
         left:10%;
-        margin-top:25em;
     }
     #cincin:hover{
         left:10%;
-        margin-top:25em;
     }
 }
 
@@ -1130,64 +1098,41 @@ header {
     {
         margin-bottom: 30em;
     }
-
     .moment p.left
     {
+        position:relative;
         width:40%;
     }
     .moment p.right {
         width:40%;
         left: 0%;
     }
-    
     #bigday {
         left: 0%;
-        margin-top:15em;
     }
     #bigday:hover {
         left: 0%;
-        margin-top:15em;
     }
     #rings {
-        margin-top:20em;
         left: 0%;
     }
-    
     #rings:hover {
-        margin-top:20em;
         left: 0%;
     }
-    
     #hotels {
         left: 0%;
-        margin-top:21em;
     }
     #hotels:hover {
         left: 0%;
-        margin-top:21em;
-    }
-    #zone-where{
-        height:470px;
-    }
-    #zone-venue{
-        height:600px;
-    }
-    #zone-eventi{
-        height:760px;
-    }
-    #zone-hotels{
-        height:810px;
-    }
-    #zone-form{
-        height:400px;
     }
     #cincin{
         left:4%;
-        margin-top:26em;
     }
     #cincin:hover{
         left:4%;
-        margin-top:26em;
+    }
+    #zone-form{
+        height:20em;
     }
 }
 
@@ -1226,6 +1171,7 @@ header {
 and (max-device-width : 1024px) {
     .moment p.left
     {
+        position:relative;
         width:30%;
     }
     .moment p.right {
@@ -1233,19 +1179,15 @@ and (max-device-width : 1024px) {
     }
     #bigday {
         left: 66%;
-        margin-top:16em;
     }
     #bigday:hover {
         left: 66%;
-        margin-top:16em;
     }
     #hotels {
         left: 66%;
-        margin-top:20em;
     }
     #hotels:hover {
         left: 66%;
-        margin-top:20em;
     }
     #balloon{
         width: 609px;
@@ -1263,38 +1205,30 @@ and (max-device-width : 1024px) {
 @media only screen and (orientation:landscape) and  (max-device-height : 600px) {
     #bigday {
         left: 68%;
-        margin-top:17em;
     }
     #bigday:hover {
         left: 68%;
-        margin-top:17em;
     }
     #hotels {
         left: 66%;
-        margin-top:20em;
     }
     #hotels:hover {
         left: 66%;
-        margin-top:20em;
     }
     #cincin
     {
         left: 0%;
-        margin-top:29em;
     }
     #cincin:hover
     {
         left: 0%;
-        margin-top:29em;
     }
     #rings
     {
-        margin-top:22em;
         left:-3%;
     }
     #rings:hover
     {
-        margin-top:22em;
         left:-3%;
     }
 }
