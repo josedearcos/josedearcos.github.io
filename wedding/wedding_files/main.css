@@ -932,8 +932,6 @@ header {
         height: auto;
         border: none !important;
         top: -10em;
-        mix-blend-mode: source-in;
-
     }
     
     .moment p.scroll-hint {
