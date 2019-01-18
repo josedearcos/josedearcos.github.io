@@ -796,15 +796,15 @@ header {
 }
 
 #zone-where{
-    height:23em;
+    height:25em;
     position:relative;
 }
 #zone-venue{
-    height:20em;
+    height:22em;
     position:relative;
 }
 #zone-eventi{
-    height:27em;
+    height:29em;
     position:relative;
 }
 #zone-eventi i{
@@ -814,7 +814,7 @@ header {
     padding-left:0.5em;
 }
 #zone-hotels{
-    height:25em;
+    height:27em;
     position:relative;
 }
 #zone-hotels p
