@@ -1149,21 +1149,22 @@ header {
         margin-top:15em;
     }
     #rings {
-        margin-top:19em;
+        margin-top:20em;
         left: 0%;
     }
     
     #rings:hover {
-        margin-top:19em;
+        margin-top:20em;
         left: 0%;
     }
+    
     #hotels {
         left: 0%;
-        margin-top:19em;
+        margin-top:21em;
     }
     #hotels:hover {
         left: 0%;
-        margin-top:19em;
+        margin-top:21em;
     }
     #zone-where{
         height:470px;
