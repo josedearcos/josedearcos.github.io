@@ -1351,8 +1351,7 @@ a:visited {
     background: linear-gradient(to bottom, rgb(116, 193, 254) 0%, rgb(167, 211, 219) 25%, lightskyblue 50%, rgb(1, 33, 72)
     75%); /* W3C */
 
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 #loading_element p{
