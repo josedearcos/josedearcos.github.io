@@ -318,7 +318,7 @@ background: -webkit-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 21
 #language-switcher-it {
     position: absolute;
     top: 65px;
-    margin-left: 2%;
+    margin-left: 83%;
     left:0;
     text-align: center;
     vertical-align: middle;
@@ -342,7 +342,7 @@ background: -webkit-linear-gradient(top, rgb(116, 193, 254) 0%, rgb(167, 211, 21
 #language-switcher-es {
     position: absolute;
     top: 60px;
-    margin-left: 11%;
+    margin-left: 75%;
     left:0;
     text-align: center;
     vertical-align: middle;
@@ -1096,6 +1096,12 @@ header {
 /*Phones*/
 @media only screen and (orientation:portrait) {
     
+    #language-switcher-es {
+        margin-left: 12%;
+    }
+    #language-switcher-it {
+        margin-left: 2%;
+    }
     .moment.last
     {
         margin-bottom: 30em;
