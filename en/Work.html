@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -77,11 +77,12 @@
 					<div class="row">
 						<div class="col-md-4 col-sx-4 col-sm-4"></div>
 						<div class=" col-md-6 col-sx-6 col-sm-6">
-							<ul style="position:relative; width:120%; margin-left: -25%;" class="nav nav-pills">
+							<ul style="position:relative; width:140%; margin-left: -25%;" class="nav nav-pills">
 							  <li class="active"><a data-toggle="pill" href="#Studies">Education</a></li>
 							  <li><a data-toggle="pill" href="#Experience">Experience</a></li>
+                              <li><a data-toggle="pill" href="#Teaching">Teaching</a></li>
 							  <li><a data-toggle="pill" href="#Publications">Publications</a></li>
-							  <li><a data-toggle="pill" href="#Projects">Projects & Skills</a></li>
+							  <li><a data-toggle="pill" href="#Projects">Projects &amp; Skills</a></li>
 							  <li><a data-toggle="pill" href="#Awards">Awards</a></li>
 							  <li><a data-toggle="pill" href="#Languages">Languages</a></li>
 							</ul>
@@ -102,8 +103,7 @@
 								<h2> Doctor of Philosophy in Physics</h2>
 							</div>
 							<div class="col-md-6 col-sx-6 col-sm-6">
-								<h3> My research was part of the <a title='Wikipedia article about the Daya Bay experiment' href='http://en.wikipedia.org/wiki/Daya_Bay_Reactor_Neutrino_Experiment'>Daya Bay reactor neutrino experiment</a>,
-								a multinational particle physics project studying neutrinos, the lightest and most abundant known matter particles in the universe.</h3>
+								<h3> My research was part of the <a title="Wikipedia article about the Daya Bay experiment" href="http://en.wikipedia.org/wiki/Daya_Bay_Reactor_Neutrino_Experiment"> Daya Bay reactor neutrino experiment</a>, a multinational particle physics project studying neutrinos, the lightest and most abundant known matter particles in the universe.</h3>
 								<div class=sumario>
 									<details>
 										<summary>More info</summary>
@@ -112,17 +112,17 @@
 									    </h3>
 										<h3>In the Daya Bay experiment I developed my work simulating the detector response to the interaction of an antineutrino with a proton
 										(Inverse Beta Decay), which releases a positron and neutron in a short time window.
-										This pair of particles can be detected by the detectors' photomultiplier tubes after the positrion annihilates with an electron
+										This pair of particles can be detected by the detectors&apos; photomultiplier tubes after the positrion annihilates with an electron
 										(producing a pair of 5.11 MeV gamma rays) and the neutron is captured on gadolinium or hydrogen nuclei
 										(releasing gamma rays with total energy ~8 MeV or 2.2 MeV respectively). If both signals happen to be inside a specific time
 										window we can determine that an antineutrino has been measured. Nevertheless, there are some
 										background sources that produce similar signals in our experiment. By modeling and measuring their activity we can subtract
-										them from the main antineutrino signal.
+                                        them from the main antineutrino signal.
 										</h3>
 										<h3>The relevance of my work resides on the posibility of finding the neutrino oscillation parameters &theta;<sub>13</sub>
 										and &Delta;m<sub>ee</sub> by designing a shape fit for the mentioned hydrogen signal,
 										providing an independent measurement to the main analysis based on gadollinium capture with a similar amount of events and,
-										thus, this work has the potential of doubling the statistics of our current measurement. </h3>
+										thus, this work has the potential of doubling the statistics of our current measurement.</h3>
 									</details>
 								</div>
 							</div>
@@ -133,21 +133,87 @@
 								<h2 id='Physics'> Master of Science in Physics</h2>
 							</div>
 							<div class="col-md-6 col-sx-6 col-sm-6">
-								<h3> I was selected to participate in a merit-based double degree Master's program with a 50% tuition scholarship at <a title='Illinois Institute of Technology website' href='http://www.iit.edu'>Illinois Institue of Technology</a>.</h3>
+								<h3> I was selected to participate in a merit-based double degree Master's program with a 50% tuition scholarship at <a title="Illinois Institute of Technology website" href="http://www.iit.edu">Illinois Institue of Technology</a>.</h3>
 								<div class=sumario>
 									<details>
-										<summary>Physics courses</summary>
+										<summary>Courses and projects</summary>
 										<div class="lista">
 											<ul>
 												<li>Analytical Dynamics</li>
-												<li>Quantum Theory I & II</li>
+												<li>Quantum Theory I &amp; II</li>
 												<li>Statistical Mechanics</li>
+                                                <details>
+
+                                                <summary>Monte Carlo simulation</summary>
+                                                <h2>I developed my first C++ Monte Carlo simulation to study the percolation properties (Neel temperature, average magnetization and energy)
+                                                    from antiferromagnetic materials in a 2D lattice, by implementing the simple but powerful Ising model, based on a stochastic system of
+                                                    cellular automata where the probability of a spin flip is a function of the number of neighbors in the spin up (or down) direction. </h2>
+                                                <div class="row">
+                                                    <div class="col-md-offset-2 col-sm-offset-1 col-md-4 col-xs-6 col-sm-4">
+                                                        <div class="thumbnail">
+                                                            <img title="Evolution of an antiferromagnetic 2D system in time" src='../Images/Evolution.png'>
+                                                                </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-6 col-sm-4">
+                                                        <div class="thumbnail">
+                                                            <img title="Percolation detected" src='../Images/Percolation.png'>
+                                                                </div>
+                                                    </div>
+                                                </div>
+                                                </details>
+
 												<li>Electromagnetic Theory</li>
 												<li>Methods of Theoretical Physics I</li>
 												<li>Physics of the Solid State I</li>
 												<li>Introduction to Synchrotron Radiation</li>
-												<li>Particle Physics I & II</li>
+												<li>Particle Physics I &amp; II</li>
 												<li>Computer Vision and Image Processing</li>
+                                                <details>
+                                                    <summary>Image processing algorithms</summary>
+                                                    <h2>I developed several image processing algorithms used to segment different kind of images using MATLAB. <br><br> We analyzed the performance of threshold,
+                                                        K-means clustering, region growing, region splitting/merging and labelling segmentations.</h2>
+                                                    <div class="row">
+                                                       <!-- <div class="col-md-3 col-sx-3 col-sm-3">
+                                                            <div class="thumbnail">
+                                                                <img title="Blood cells threshold segmentation" src='../Images/ImageSegmentation2.jpg'>
+                                                                    </div>
+                                                        </div>
+                                                        <div class="col-md-3 col-sx-3 col-sm-3">
+                                                            <div class="thumbnail">
+                                                                <img title="Nuts and bolts threshold segmentation" src='../Images/ImageSegmentation4.jpg'>
+                                                                    </div>
+                                                        </div>
+                                                        <div class="col-md-3 col-sx-3 col-sm-3">
+                                                            <div class="thumbnail">
+                                                                <img title="Splash threshold segmentation" src='../Images/ImageSegmentation.jpg'>
+                                                                    </div>
+                                                        </div>
+                                                        <div class="col-md-3 col-sx-3 col-sm-3">
+                                                            <div class="thumbnail">
+                                                                <img title="Tumor threshold segmentation" src='../Images/ImageSegmentation3.jpg'>
+                                                                    </div>
+                                                        </div>-->
+                                                        <div class="col-md-12 col-sx-12 col-sm-12">
+                                                            <div class="thumbnail">
+                                                                <img title="K-means clustering segmentation" src='../Images/Clustering.png'>
+                                                                    </div>
+                                                        </div>
+                                                    </div>
+                                                </details>
+                                                
+                                                <details>
+                                                    <summary>Motion estimation</summary>
+                                                    <h2>In this project I developed the Block Matching algorithm and studied how its parameters affect the correct estimation of motion.<br><br>
+                                                        This algorithm is very useful to compress video information by detecting one of the most common features of videos,
+                                                        the very few differences between consecutive frames. It can also be applied in the analysis of object movements.</h2>
+                                                    <div class="row">
+                                                        <div class="col-md-offset-1 col-md-10 col-sx-10 col-sm-10">
+                                                            <div class="thumbnail">
+                                                                <img title="Motion detection" src='../Images/Motion.png'>
+                                                                    </div>
+                                                        </div>
+                                                    </div>
+                                                </details>
 											</ul>
 										</div>
 									</details>
@@ -160,7 +226,7 @@
 								<h2 id='Engineering'> Telecommunication Engineering <br>(<abbr data-toggle="tooltip" title="Bachelor of Science">B.Sc.</abbr> + <abbr data-toggle="tooltip" title="Master of Science">M.Sc.</abbr>) </h2>
 							</div>
 							<div class="col-md-6 col-sx-6 col-sm-6">
-								<h3> At <a title="UPM Wikipedia article"href='http://en.wikipedia.org/wiki/Technical_University_of_Madrid'>Technical University of Madrid</a> I completed an <abbr data-toggle="tooltip" title='Accreditation Board for Engineering and Technology'>ABET</abbr> accredited degree in <a title="Link to complete curriculum with further information about courses" href='http://www4.etsit.upm.es/plan1994/otros_cursos/asignaturas/asignaturas0910/eindice_asig_3.htm'>Telecommunication Engineering</a>, a field of study that encompasses: </h3>
+								<h3> At <a title="UPM Wikipedia article"href="http://en.wikipedia.org/wiki/Technical_University_of_Madrid">Technical University of Madrid</a> I completed an <abbr data-toggle="tooltip" title='Accreditation Board for Engineering and Technology'>ABET</abbr> accredited degree in <a title="Link to complete curriculum with further information about courses" href="http://www4.etsit.upm.es/plan1994/otros_cursos/asignaturas/asignaturas0910/eindice_asig_3.htm">Telecommunication Engineering</a>, a field of study that encompasses: </h3>
 								<div class=sumario>
 									<details>
 										<summary>Electrical Engineering </summary>
@@ -168,18 +234,18 @@
 											<ul>
 												<li>Analog electronics circuits</li>
 												<li>Digital electronic circuits</li>
-												<li>Circuit analysis & design</li>
+												<li>Circuit analysis &amp; design</li>
 												<li>Digital electronic systems</li>
 												<li>Digital electronic systems lab.</li>
 												<li>Electronic circuits laboratory</li>
 												<li>Electrical measurement lab.</li>
-												<li>Design of electronic circuits & systems</li>
+												<li>Design of electronic circuits &amp; systems</li>
 												<li>Communication electronics</li>
 												<li>Electronic communication lab.</li>
 												<li>Technologies of electronics manufacturing</li>
 												<li>Micro-electronics</li>
 												<li>Microwaves</li>
-												<li>Radiation & propagation</li>
+												<li>Radiation &amp; propagation</li>
 												<li>Optical communications</li>
 												<li>Switching</li>
 											</ul>
@@ -194,7 +260,7 @@
 												<li>Computer architecture</li>
 												<li>Computer technology</li>
 												<li>Computer networks</li>
-												<li>Communication networks & services I & II</li>
+												<li>Communication networks &amp; services I &amp; II</li>
 												<li>Systems programming lab.</li>
 											</ul>
 										</div>
@@ -209,7 +275,7 @@
 												<li>Digital communication</li>
 												<li>Data communication</li>
 												<li>Transmission systems</li>
-												<li>Communication & signals lab.</li>
+												<li>Communication &amp; signals lab.</li>
 												<li>Digital signal processing</li>
 												<li>Digital signal processing lab.</li>
 											</ul>
@@ -221,6 +287,110 @@
 					<br>
 					</div>
 				</div>
+                
+                <div id="Teaching" class="tab-pane fade">
+                    <h1  align="center" >Teaching</h1>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2 col-sx-2 col-sm-2">
+                                <h2>2017</h2>
+                            </div>
+                            <div class="col-md-4 col-sx-4 col-sm-4">
+                                <h2>Instructor, Harvard Surgical Program in Innovation, Boston, MA, USA </h2>
+                            </div>
+                            <div class="col-md-6 col-sx-6 col-sm-6">
+                                <h2>I designed and taught the Electronics for Medical Device Development Workshop, introducing
+                                    surgical residents to the concepts of circuitry, sensors, filtering and microprocessing</h2>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-2 col-sx-2 col-sm-2">
+                                <h2>2011-2012</h2>
+                            </div>
+                            <div class="col-md-4 col-sx-4 col-sm-4">
+                                <h2>Teaching Assistant, Illinois Institute of Technology, Chicago, IL, USA </h2>
+                            </div>
+                            <div class="col-md-6 col-sx-6 col-sm-6">
+                                <h2>I worked as a teacher assistant and designed a section to introduce Arduino systems.
+                                I coded several tutorials, from controlling <abbr data-toggle="tooltip" title="Light-emitting diode">LEDs</abbr>,
+                                to counters, music <abbr data-toggle="tooltip" title="Input/Output">I/O</abbr>, thermometers and <abbr data-toggle="tooltip"
+                                    title="Electromagnetic field">EMF</abbr> detectors (antennas). <br><br>The synchronization of different events was explored by building a traffic
+                                light with <abbr data-toggle="tooltip" title="Binary-coded decimal">BCD</abbr> counters, LEDs and bell ringing controlled with an Arduino.
+                                The student evaluation was very satisfactory.</h2>
+                                <br>
+                                <details>
+                                    <summary>Instructions for the class</summary>
+                                    <div class="row">
+                                        <!--<div class="col-md-6 col-xs-6 col-sm-6">
+                                         <div class="hidden_element">
+                                         <div class="thumbnail">
+                                         <iframe class="framepdf" src="about:blank" data-src="http://prezi.com/embed/ltztrfwtgz5j/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" frameBorder="0" webkitAllowFullScreen mozAllowFullscreen allowfullscreen></iframe>
+                                         <div class="caption">
+                                         <h3>Prezi presentation for the first class</h3>
+                                         </div>
+                                         </div>
+                                         </div>
+                                         </div>-->
+                                        <div class="col-md-1 col-xs-1 col-sm-1"></div>
+                                        <div class="col-md-10 col-xs-10 col-sm-10">
+                                            <div class="thumbnail">
+                                                <iframe class="framepdf" src="../PDFs/ArduinoClass.pdf#zoom=100&view=fitH" type="application/pdf">
+                                                    <p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="../PDFs/ArduinoClass.pdf">click here to download the PDF file.</a></p>
+                                                </iframe>
+                                                <div class="caption">
+                                                    <h3>PDF Instructions for the class</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-xs-1 col-sm-1"></div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-2 col-sx-2 col-sm-2">
+                                <h2>2010</h2>
+                            </div>
+                            <div class="col-md-4 col-sx-4 col-sm-4">
+                                <h2>Mentor, Technical University of Madrid, Spain.</h2>
+                            </div>
+                            <div class="col-md-6 col-sx-6 col-sm-6">
+                                <h2>I had a group of 8 freshmen under my supervision. I organized biweekly meetings to discuss
+                                topics of interest selected to orient and help new students, providing academic guidance, social
+                                orientation and administrative guidance.</h2>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-2 col-sx-2 col-sm-2">
+                                <h2>2009</h2>
+                            </div>
+                            <div class="col-md-4 col-sx-4 col-sm-4">
+                                <h2>Electronics Lab Instructor, Technical University of Madrid, Spain.</h2>
+                            </div>
+                            <div class="col-md-6 col-sx-6 col-sm-6">
+                                <h2>I supervised the use of laboratory instrumentation, lead students in laboratory experiments
+                                and assist them with analog and digital circuit development.</h2>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-2 col-sx-2 col-sm-2">
+                                <h2>2007-2008 </h2>
+                            </div>
+                            <div class="col-md-4 col-sx-4 col-sm-4">
+                                <h2>  Tutor, San Diego y San Vicente, Madrid, Spain.</h2>
+                            </div>
+                            <div class="col-md-6 col-sx-6 col-sm-6">
+                                <h2>Remedial teacher in science and mathematics for groups of 8th and 9th grade students. Later
+                                on, I have also worked as a science tutor for high-school and college students.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
 				<div id="Publications" class="tab-pane fade">
 					<h1  align="center" >Publications</h1>
 						<div class="container">
@@ -425,68 +595,37 @@
 				</div>
 				</div>
 				<div id='Projects' class="tab-pane fade" >
-				
-					<article>
+				   <!--	<article>
 						<img title="Tracking Data" src='../Images/ImageSegmentation2.jpg'>
 						<h3>Code</h3>
 					</article>
 					<article>
 						<img title="Tracking Data" src='../Images/IIT.jpg'>
 						<h3>Code</h3>
-					</article>
-					<h1 align="center">Projects & Skills</h1>
+					</article>-->
+					<h1 align="center">Projects &amp; Skills</h1>
 					<div class="container">
-					<h2><b>Arduino</b></h2>
-						<dl class="dl-horizontal">
-							<dt>Prototype design</dt>
-							<dd>As a teacher assistant I designed a section to introduce Arduino systems.
-							I coded several tutorials, from controlling <abbr data-toggle="tooltip" title="Light-emitting diode">LEDs</abbr>,
-							to counters, music <abbr data-toggle="tooltip" title="Input/Output">I/O</abbr>, thermometers and <abbr data-toggle="tooltip"
-							title="Electromagnetic field">EMF</abbr> detectors (antennas). <br><br>The synchronization of different events was explored by building a traffic
-							light with <abbr data-toggle="tooltip" title="Binary-coded decimal">BCD</abbr> counters, LEDs and bell ringing controlled with an Arduino.
-							The student evaluation was very satisfactory.
-								<br>
-								<br>
-								<details>
-							<summary>Instructions for the class</summary>
-							<div class="row">
-									<!--<div class="col-md-6 col-xs-6 col-sm-6">
-										<div class="hidden_element">
-										<div class="thumbnail">
-											<iframe class="framepdf" src="about:blank" data-src="http://prezi.com/embed/ltztrfwtgz5j/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" frameBorder="0" webkitAllowFullScreen mozAllowFullscreen allowfullscreen></iframe>
-											<div class="caption">
-												<h3>Prezi presentation for the first class</h3>
-											</div>
-										</div>
-										</div>
-									</div>-->
-									<div class="col-md-1 col-xs-1 col-sm-1"></div>
-									<div class="col-md-10 col-xs-10 col-sm-10">
-										<div class="thumbnail">
-											<iframe class="framepdf" src="../PDFs/ArduinoClass.pdf#zoom=100&view=fitH" type="application/pdf">
-												<p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="../PDFs/ArduinoClass.pdf">click here to download the PDF file.</a></p>
-											</iframe>
-											<div class="caption">
-												<h3>PDF Instructions for the class</h3>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-1 col-xs-1 col-sm-1"></div>
-								</div>
-							</details>
-							</dd>
-						</dl>
+					<h2><b>Microcontrollers</b></h2>
+
+                        <dl class="dl-horizontal">
+                            <dt>Motorola ColdFire<br>MCF5272</dt>
+                            <dd>We developed an interactive application using an interface consisting of an array of LEDs
+                                and a keyboard to input data. <br><br> The application displayed a sucession of falling notes in the LED array, the goal of the player was to press a set of keys trying to match the notes in a timely fashion,
+                                obtaining points according to his performance. <br><br>A menu was displayed on an LCD interface allowing to choose between different songs and modes.
+                                Each note was played using a buzzer and at the end of the song the score was shown through the LCD screen.
+                                The synchronization of different events was the main challenge of the project. </dd>
+                        </dl>
+                        
 					</div>
 					<div class="container">
 					<h2><b>C/C++</b></h2>
-					
 						<dl class="dl-horizontal">
 							<dt> Siemens IDEA <br>Pulse sequence<br>development</dt>
 							<dd> An MRI sequence is a series of radio-frequency pulses and magnetic gradients designed to acquire a set of MR images with a contrast dependent on the sequence parameters and the physical properties of the sample.
-						    <br><br>I have been trained to develop MRI sequences in the Siemens IDEA framework; in particular I have worked on active-tracking and motion correction sequences in VB17, VB19 and VD13 IDEA versions, and functional MRE sequences in VE11A,VE11C and VE11P versions. </dd>
+						    <br> Since 2015, I have designed MRI sequences in the Siemens IDEA framework; in particular I have developed novel sequences on active-tracking, motion correction and elastography in a variety of research projects with direct clinical application. </dd>
 						</dl>
 						<dl class="dl-horizontal">
-							<dt>Ph.D. Thesis</dt>
+							<dt>Particle Physics<br>Monte Carlo<br>simulation</dt>
 							<dd>Part of my dissertation consisted on the development of a C++ toy Monte Carlo simulation to predict the electron antineutrino energy spectrum
 							from gadollinium and hydrogen neutron capture signals.
 							<br><br>The simulation was also used to generate systematic, background and statistical covariance matrices that account for the uncertainties
@@ -520,15 +659,7 @@
 							</details>
 							</dd>
 						</dl>
-				
-						<dl class="dl-horizontal">
-							<dt>Interactive game</dt>
-							<dd>Using the Motorola ColdFire MCF5272 microprocontroller, we developed an interactive application using an interface consisting of an array of LEDs 
-						    and a keyboard to input data. <br><br> The application displayed a sucession of falling notes in the LED array, the goal of the player was to press a set of keys trying to match the notes in a timely fashion,
-							obtaining points according to his performance. <br><br>A menu was displayed on an LCD interface allowing to choose between different songs and modes.
-							Each note was played using a buzzer and at the end of the song the score was shown through the LCD screen.
-							The synchronization of different events was the main challenge of the project. </dd>
-						</dl>
+        
 					</div>
 						
 					<div class="container">
@@ -543,7 +674,7 @@
 									This information can then be used to correct the imaging process for motion distortion in real time with millimeter resolution and response time in the millisecond order.
 								   </h2>
 									
-										<iframe src='https://onedrive.live.com/embed?cid=C3EB7B703FE7FCEB&resid=C3EB7B703FE7FCEB%21136&authkey=ACHyMWWrV6T_w0k&em=2&wdAr=1.7777777777777777' width='962px' height='565px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>									
+										<iframe src="https://onedrive.live.com/embed?cid=C3EB7B703FE7FCEB&resid=C3EB7B703FE7FCEB%21136&authkey=ACHyMWWrV6T_w0k&em=2&wdAr=1.7777777777777777" width='962px' height='565px' frameborder='0'>This is an embedded <a target='_blank' href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office Online</a>.</iframe>
 										<!--<div class="row">
 										<div class="col-md-3 col-sx-3 col-sm-3">
 											<div class="thumbnail">
@@ -564,89 +695,11 @@
 								</details>
 							</dd>
 						</dl>
-						<dl class="dl-horizontal">
-							<dt>Computer Vision: </dt>
-							<dd>
-								<details>
-									<summary>Image processing algorithms</summary>
-									<h2>We developed several image processing algorithms used to segment different kind of images. <br><br> We analyzed the performance of threshold,
-									K-means clustering, region growing, region splitting/merging and labelling segmentations.</h2>
-									<div class="row">
-										<div class="col-md-3 col-sx-3 col-sm-3">
-											<div class="thumbnail">
-												<img title="Blood cells threshold segmentation" src='../Images/ImageSegmentation2.jpg'>
-											</div>
-										</div>
-										<div class="col-md-3 col-sx-3 col-sm-3">
-											<div class="thumbnail">
-												<img title="Nuts and bolts threshold segmentation" src='../Images/ImageSegmentation4.jpg'>
-											</div>
-										</div>
-										<div class="col-md-3 col-sx-3 col-sm-3">
-											<div class="thumbnail">
-												<img title="Splash threshold segmentation" src='../Images/ImageSegmentation.jpg'>
-											</div>
-										</div>
-										<div class="col-md-3 col-sx-3 col-sm-3">
-											<div class="thumbnail">
-												<img title="Tumor threshold segmentation" src='../Images/ImageSegmentation3.jpg'>
-											</div>
-										</div>
-										<div class="col-md-12 col-sx-12 col-sm-12">
-											<div class="thumbnail">
-												<img title="K-means clustering segmentation" src='../Images/Clustering.png'>
-											</div>
-										</div>
-									</div>
-								</details>
-							</dd>
-						</dl>
-						<dl class="dl-horizontal">
-							<dt>Computer Vision: </dt>
-							<dd>
-								<details>
-									<summary>Motion estimation</summary>
-									<h2>In this project we developed the Block Matching algorithm and studied how its parameters affect the correct estimation of motion.<br><br>
-									This algorithm is very useful to compress video information by detecting one of the most common features of videos,
-									the very few differences between consecutive frames. It can also be applied in the analysis of object movements.</h2>
-									<div class="row">
-										<div class="col-md-offset-1 col-md-10 col-sx-10 col-sm-10">
-											<div class="thumbnail">
-												<img title="Motion detection" src='../Images/Motion.png'>
-											</div>
-										</div>
-									</div>
-								</details>
-							</dd>
-						</dl>
-						<dl class="dl-horizontal">
-							<dt>Statistical <br> Mechanics:</dt>
-							<dd>
-								<details>
-									<summary>Monte Carlo simulation</summary>
-									<h2>I developed my first Monte Carlo simulation to study the percolation properties (Neel temperature, average magnetization and energy)
-									from antiferromagnetic materials in a 2D lattice. <br><br> Following the simple but powerful Ising model, that resembles a stochastic system of
-									cellular automata where the probability of a spin flip is a function of the number of neighbors in the spin up (or down) direction. </h2>
-									<div class="row">
-										<div class="col-md-offset-2 col-sm-offset-1 col-md-4 col-xs-6 col-sm-4">
-											<div class="thumbnail">
-												<img title="Evolution of an antiferromagnetic 2D system in time" src='../Images/Evolution.png'>
-											</div>
-										</div>
-										<div class="col-md-4 col-xs-6 col-sm-4">
-											<div class="thumbnail">
-												<img title="Percolation detected" src='../Images/Percolation.png'>
-											</div>
-										</div>
-									</div>
-								</details>
-							</dd>
-						</dl>
 					</div>
 					<div class="container">
 					<h2><b>Java</b></h2>
 						<dl class="dl-horizontal">
-							<dt>Algorithms & <br> simulations</dt>
+							<dt>Algorithms &amp; <br> simulations</dt>
 							<dd>I learned Java in my freshman year, where I had to work on a few introductory projects, i.e.,
 							developing the Dijkstra algorithm to solve the single-source shortest path problem, and, more interestingly, building a sand-box simulation to analyize the population evolution of two antagonist animals (such as rabbits and foxes)
 							under different environmental conditions.
@@ -654,11 +707,11 @@
 						</dl>
 					</div>
 					<div class="container">
-					<h2><b>HTML & JavaScript</b></h2>
+					<h2><b>HTML &amp; JavaScript</b></h2>
 						<dl class="dl-horizontal">
 							<dt>Personal website</dt>
 							<dd>I learned HTML and JavaScript to be able to build this website from scratch. As an introduction to the language I used
-							<a href='http://www.codecademy.com/'>Codecademy</a> and I kept learning different tools depending on my needs:
+							<a href="http://www.codecademy.com/">Codecademy</a> and I kept learning different tools depending on my needs:
 								<blockquote>
 									<p>"You learn to code by coding."</p>
 									<footer>My first programming teacher</footer>
@@ -671,18 +724,29 @@
 				</div>
 				<div id="Awards" class="tab-pane fade" >
 					<h1 align="center">Awards</h1>
-					<div class="container">					
-							<div class="row">
-						    	<div class="col-md-1 col-sx-1 col-sm-1">
-						    		<h2 align="right">2017/2018</h2>
-						    	</div>
-						    	<div class="col-md-4 col-sx-4 col-sm-4">
-							    	<h2>Trainee Educational Stipend Award</h2>
-							    </div>
-							    <div class="col-md-7 col-sx-7 col-sm-7">
-							    	<h2>Two times awardee of financial support to attend ISMRM Annual Meeting & Exhibition.</h2>
-							    </div>
-							</div>
+					<div class="container">
+                            <div class="row">
+                                <div class="col-md-1 col-sx-1 col-sm-1">
+                                    <h2 align="right">2017/2019</h2>
+                                </div>
+                                <div class="col-md-4  col-sx-4 col-sm-4">
+                                    <h2>Trainee educational stipend award</h2>
+                                </div>
+                                <div class="col-md-7 col-sx-7 col-sm-7">
+                                    <h2>Three times awardee of financial support to attend ISMRM Annual Meeting &amp; Exhibition.</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 col-sx-1 col-sm-1">
+                                    <h2 align="right">2018</h2>
+                                </div>
+                                <div class="col-md-4 col-sx-4 col-sm-4">
+                                    <h2>ISMRM Summa Cum Laude merit award</h2>
+                                </div>
+                                <div class="col-md-7 col-sx-7 col-sm-7">
+                                    <h2>Presentation scored in the top 5% at ISMRM 2018.</h2>
+                                </div>
+                            </div>
 							<div class="row">
 						    	<div class="col-md-1 col-sx-1 col-sm-1">
 						    		<h2 align="right">2017</h2>
@@ -734,7 +798,7 @@ and Technical University of Madrid with a 50% tuition scholarship.</h2>
 					<h1 align="center">Languages</h1>
 					<div class="container">
 
-					<p> Learning languages is one of my favorite activities, I use online resources such as <a href='https://www.duolingo.com/Jose_de_Arcos'>duolingo</a> to master the basics.</p>
+					<p> Learning languages is one of my favorite activities, I use online resources such as <a href="https://www.duolingo.com/Jose_de_Arcos">duolingo</a> to master the basics.</p>
 					<p> In order of proficiency I can speak:</p>
 					<div class="container">
 						<dl class="dl-horizontal">
